@@ -44,7 +44,7 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Texto */}
           <div className="max-w-xl">
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-4xl lg:text-6xl">
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
               Hola, soy <span className="text-slate-900">Enrique</span>
             </h1>
 
@@ -68,9 +68,9 @@ export default function Hero() {
                 href="https://wa.me/7351241139"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
               >
-                <FaWhatsapp size={18} />
+                <FaWhatsapp size={24} />
                 Contáctame
               </a>
 
@@ -110,10 +110,10 @@ export default function Hero() {
 
           {/* Imagen */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.15)]">
-              <div className="relative aspect-[4/5]">
+            <div className="relative w-full max-w-[360px] sm:max-w-[380px] lg:max-w-[480px]">
+              <div className="relative h-[500px] overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.15)]">
                 <Image
-                  src="/hero.jpg"
+                  src="/images/yo1.jpeg"
                   alt="Imagen de presentación"
                   fill
                   className="object-cover"
