@@ -224,7 +224,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="mt-7 space-y-8 border-t border-slate-200 pt-8">
+        <div className="mt-7 space-y-8 pt-8">
           {/* Experiencia */}
           <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
             <div className="flex items-center gap-3">
