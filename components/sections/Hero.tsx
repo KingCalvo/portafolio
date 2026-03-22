@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, Folder, Github, Linkedin } from "lucide-react";
+import { Folder, Github, Linkedin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const fullText = "Desarrollador Mobile & Web";
@@ -44,7 +44,7 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Texto */}
           <div className="max-w-xl">
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1">
               Hola, soy <span className="text-slate-900">Enrique</span>
             </h1>
 
@@ -55,12 +55,11 @@ export default function Hero() {
               </span>
             </div>
 
-            <p className="mt-6 max-w-lg text-base leading-7 text-slate-500 sm:text-lg">
-              Soy Ingeniero en Sistemas Computacionales, soy autodidacta y
-              disciplinado; me entusiasma aprender nuevas tecnologías y aplicar
-              buenas prácticas para entregar soluciones de calidad. Me destaco
-              en trabajo en equipo, comunicación con clientes y resolución
-              pragmática de problemas.
+            <p className="mt-6 max-w-lg text-base leading-7 text-slate-500 sm:text-lg text-justify">
+              Ingeniero en Sistemas Computacionales apasionado por construir
+              soluciones de software prácticas y escalables. Disfruto convertir
+              ideas en productos digitales funcionales que combinan eficiencia
+              técnica con creatividad, especialmente en desarrollo web y móvil.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -84,7 +83,7 @@ export default function Hero() {
             </div>
 
             <div className="mt-10 border-t border-slate-200 pt-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+              <p className="font-semibold uppercase tracking-[0.25em] text-slate-400">
                 Sígueme
               </p>
 
@@ -110,13 +109,13 @@ export default function Hero() {
 
           {/* Imagen */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[360px] sm:max-w-[380px] lg:max-w-[480px]">
-              <div className="relative h-[500px] overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.15)]">
+            <div className="group relative w-full max-w-[360px] sm:max-w-[380px] lg:max-w-[480px]">
+              <div className="relative h-[500px] overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.15)] transition duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
                 <Image
                   src="/images/yo1.jpeg"
                   alt="Imagen de presentación"
                   fill
-                  className="object-cover"
+                  className="object-cover transition duration-700 group-hover:scale-110"
                   priority
                 />
               </div>

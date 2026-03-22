@@ -1,0 +1,157 @@
+import Image from "next/image";
+
+const skills = [
+  "Autoaprendizaje",
+  "Trabajo en equipo",
+  "Resolución de problemas",
+  "Atención y trato con clientes",
+  "Creatividad",
+  "Disciplina y responsabilidad",
+];
+
+export default function About() {
+  return (
+    <section
+      id="about"
+      className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-24 text-slate-900"
+    >
+      <div className="relative mx-auto max-w-6xl px-6">
+        {/* Título */}
+        <div className="text-center">
+          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
+            About me
+          </span>
+          <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
+            Acerca de{" "}
+            <span className="text-shadow-slate-950 animate-pulse">mí</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
+            Una breve presentación sobre mi perfil, experiencia, formación y
+            habilidades.
+          </p>
+        </div>
+
+        {/* Bloque principal */}
+        <div className="mt-7 grid items-center gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
+          {/* Texto */}
+          <div className="order-2 lg:order-1">
+            <div className="rounded-[2rem] border border-slate-200/80 bg-white/80 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(15,23,42,0.12)]">
+              <div className="flex items-center gap-3">
+                <span className="h-10 w-1.5 rounded-full bg-slate-900" />
+                <div>
+                  <h3 className="text-2xl font-semibold sm:text-3xl">
+                    Enrique Calvo Garcia
+                  </h3>
+                  <p className="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
+                    Ingeniero en Sistemas Computacionales
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-6 text-[15px] leading-8 text-slate-600 sm:text-base text-justify">
+                Soy Ingeniero en Sistemas Computacionales, soy autodidacta y
+                disciplinado; me entusiasma aprender nuevas tecnologías y
+                aplicar buenas prácticas para entregar soluciones de calidad. Me
+                destaco en trabajo en equipo, comunicación con clientes y
+                resolución pragmática de problemas.
+              </p>
+            </div>
+          </div>
+
+          {/* Imagen */}
+          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
+            <div className="group relative">
+              <div className="absolute -inset-4 rounded-full bg-slate-200/60 blur-2xl transition duration-500 group-hover:bg-slate-300/70" />
+              <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] ring-1 ring-slate-200 sm:h-64 sm:w-64 lg:h-72 lg:w-72 transition duration-500">
+                <Image
+                  src="/images/yo.jpg"
+                  alt="Foto de Enrique Calvo Garcia"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Secciones inferiores */}
+        <div className="mt-7 space-y-8 border-t border-slate-200 pt-8">
+          {/* Experiencia */}
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="flex items-center gap-3">
+              <span className="h-6 w-1 rounded-full bg-slate-900" />
+              <h4 className="text-2xl font-semibold">Experiencia</h4>
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-mist-50 p-6">
+              <p className="text-lg font-semibold text-slate-900">
+                Mobile Developer (Flutter)
+              </p>
+              <p className="mt-1 text-sm font-medium text-slate-600">
+                Naatik A.I. Solutions SAPI de CV · Jornada completa
+              </p>
+              <p className="mt-1 text-sm text-slate-500">
+                jun. 2025 - dic. 2025 · 7 meses
+              </p>
+              <p className="mt-1 text-sm text-slate-500">
+                San Francisco 23, Frac. Burgos, Temixco, Morelos, C.P. 62584 ·
+                En remoto
+              </p>
+              <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
+                Desarrollo de la aplicación móvil FixGo (Android) con Flutter,
+                implementando módulos de proveedor y administrador; gestión de
+                servicios, autenticación, imágenes, reportes PDF, gráficas,
+                mapas, panel administrativo y optimización de rendimiento.
+              </p>
+            </div>
+          </div>
+
+          {/* Educación */}
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="flex items-center gap-3">
+              <span className="h-6 w-1 rounded-full bg-slate-900" />
+              <h4 className="text-2xl font-semibold">Educación</h4>
+            </div>
+
+            <div className="mt-6 rounded-2xl bg-mist-50 p-6">
+              <p className="text-lg font-semibold text-slate-900">
+                Ingeniero en Sistemas Computacionales
+              </p>
+              <p className="mt-1 text-sm text-slate-600">
+                Instituto Tecnológico de Cuautla
+              </p>
+              <p className="mt-1 text-sm text-slate-500">2021 – 2026</p>
+              <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
+                Participación en Hackathon Morelos 12a edición y 13a edición y
+                Hackatec etapa regional y etapa nacional. Formación académica y
+                autodidacta junto con participación en talleres
+                extracurriculares de especialización (Ciberseguridad, IA, redes
+                neuronales, etc.).
+              </p>
+            </div>
+          </div>
+
+          {/* Habilidades */}
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="flex items-center gap-3">
+              <span className="h-6 w-1 rounded-full bg-slate-900" />
+              <h4 className="text-2xl font-semibold">Habilidades</h4>
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-900 hover:bg-slate-900 hover:text-white"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
