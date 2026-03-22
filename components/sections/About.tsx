@@ -1,4 +1,153 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import type { IconType } from "react-icons";
+import {
+  SiJavascript,
+  SiDart,
+  SiTypescript,
+  SiPython,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiAstro,
+  SiTailwindcss,
+  SiFlutter,
+  SiFirebase,
+  SiSupabase,
+  SiPostgresql,
+  SiSqlite,
+  SiRedis,
+  SiMongodb,
+  SiDocker,
+  SiFigma,
+  SiTrello,
+  SiGit,
+  SiGithub,
+  SiNpm,
+  SiVite,
+  SiPnpm,
+  SiGooglecloud,
+} from "react-icons/si";
+import {
+  FaJava,
+  FaDatabase,
+  FaCode,
+  FaMobileScreenButton,
+} from "react-icons/fa6";
+import { VscVscode } from "react-icons/vsc";
+type TechItem = {
+  name: string;
+  Icon: IconType;
+  color: string;
+};
+
+type TechGroup = {
+  title: string;
+  items: TechItem[];
+};
+
+const techGroups: TechGroup[] = [
+  {
+    title: "Lenguajes",
+    items: [
+      { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
+      { name: "Dart", Icon: SiDart, color: "#0175C2" },
+      { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+      { name: "Python", Icon: SiPython, color: "#3776AB" },
+      { name: "SQL", Icon: FaDatabase, color: "#4E73DF" },
+      { name: "Java", Icon: FaJava, color: "#F89820" },
+    ],
+  },
+  {
+    title: "Desarrollo web",
+    items: [
+      { name: "React", Icon: SiReact, color: "#61DAFB" },
+      { name: "Next JS", Icon: SiNextdotjs, color: "#111111" },
+      { name: "NodeJS", Icon: SiNodedotjs, color: "#339933" },
+      { name: "Express.js", Icon: SiExpress, color: "#000000" },
+      { name: "Astro", Icon: SiAstro, color: "#FF5D01" },
+      { name: "TailwindCSS", Icon: SiTailwindcss, color: "#06B6D4" },
+    ],
+  },
+  {
+    title: "Desarrollo móvil",
+    items: [
+      { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
+      { name: "React Native", Icon: FaMobileScreenButton, color: "#61DAFB" },
+    ],
+  },
+  {
+    title: "Bases de datos",
+    items: [
+      { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+      { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
+      { name: "Postgres", Icon: SiPostgresql, color: "#336791" },
+      { name: "SQLite", Icon: SiSqlite, color: "#003B57" },
+      { name: "Redis", Icon: SiRedis, color: "#DC382D" },
+      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+    ],
+  },
+  {
+    title: "Herramientas",
+    items: [
+      { name: "Docker", Icon: SiDocker, color: "#2496ED" },
+      { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
+      { name: "Trello", Icon: SiTrello, color: "#0052CC" },
+      { name: "Git", Icon: SiGit, color: "#F05032" },
+      { name: "GitHub", Icon: SiGithub, color: "#181717" },
+      { name: "npm", Icon: SiNpm, color: "#CB3837" },
+      { name: "VS Code", Icon: VscVscode, color: "#007ACC" },
+      { name: "pnpm", Icon: SiPnpm, color: "#F69220" },
+      { name: "Vite.js", Icon: SiVite, color: "#646CFF" },
+      { name: "Cursor", Icon: FaCode, color: "#111111" },
+      { name: "Google Cloud", Icon: SiGooglecloud, color: "#4285F4" },
+    ],
+  },
+];
+
+function TechChip({ item }: { item: TechItem }) {
+  const { Icon, color } = item;
+
+  return (
+    <div
+      className="group relative flex items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--tech-color)]"
+      style={
+        {
+          "--tech-color": color,
+        } as CSSProperties
+      }
+    >
+      <Icon
+        size={22}
+        style={{ color }}
+        className="transition duration-300 group-hover:scale-110"
+      />
+
+      <span className="text-sm font-medium text-slate-700">{item.name}</span>
+
+      <div
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          boxShadow: `0 0 18px var(--tech-color)`,
+        }}
+      />
+    </div>
+  );
+}
+
+function TechGroupCard({ group }: { group: TechGroup }) {
+  return (
+    <div className="rounded-2xl bg-white p-6 backdrop-blur-sm ">
+      <h5 className="text-lg font-semibold text-slate-900 ">{group.title}</h5>
+      <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-6">
+        {group.items.map((item) => (
+          <TechChip key={item.name} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const skills = [
   "Autoaprendizaje",
@@ -62,7 +211,7 @@ export default function About() {
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
             <div className="group relative">
               <div className="absolute -inset-4 rounded-full bg-slate-200/60 blur-2xl transition duration-500 group-hover:bg-slate-300/70" />
-              <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] ring-1 ring-slate-200 sm:h-64 sm:w-64 lg:h-72 lg:w-72 transition duration-500">
+              <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] ring-1 ring-slate-200 sm:h-64 sm:w-64 lg:h-72 lg:w-72">
                 <Image
                   src="/images/yo.jpg"
                   alt="Foto de Enrique Calvo Garcia"
@@ -75,7 +224,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Secciones inferiores */}
         <div className="mt-7 space-y-8 border-t border-slate-200 pt-8">
           {/* Experiencia */}
           <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
@@ -147,6 +295,22 @@ export default function About() {
                 >
                   {skill}
                 </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Habilidades como desarrollador */}
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="flex items-center gap-3">
+              <span className="h-6 w-1 rounded-full bg-slate-900" />
+              <h4 className="text-2xl font-semibold">
+                Mis habilidades como desarrollador
+              </h4>
+            </div>
+
+            <div className="mt-2 space-y-0">
+              {techGroups.map((group) => (
+                <TechGroupCard key={group.title} group={group} />
               ))}
             </div>
           </div>
