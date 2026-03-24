@@ -15,6 +15,7 @@ type PortfolioProject = {
   title: string;
   image: string;
   liveDemo: string;
+  buttons?: boolean;
   details: {
     description: string;
     technologies: string[];
@@ -37,7 +38,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   return (
     <section className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white py-16 text-slate-900">
       <div className="mx-auto max-w-6xl px-6">
-        {/* Top row */}
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href="/#projects"
@@ -53,9 +53,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Main layout */}
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          {/* LEFT SIDE */}
           <div className="space-y-8">
             <div>
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -67,7 +65,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </p>
             </div>
 
-            {/* Counters */}
             <div className="grid grid-cols-2 gap-4">
               <div className="group rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
                 <div className="flex items-center gap-3">
@@ -100,7 +97,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Technologies */}
             <div>
               <h2 className="flex items-center gap-3 text-2xl font-semibold tracking-tight">
                 <LuCode className="h-5 w-5 text-sky-600" />
@@ -120,27 +116,27 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-3 pt-2">
-              <a
-                href={project.liveDemo}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
-              >
-                Demo en directo
-              </a>
+            {project.buttons && (
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
+                >
+                  Demo en directo
+                </a>
 
-              <a
-                href="#"
-                className="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-900 hover:shadow-md"
-              >
-                GitHub
-              </a>
-            </div>
+                <a
+                  href="#"
+                  className="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-900 hover:shadow-md"
+                >
+                  GitHub
+                </a>
+              </div>
+            )}
           </div>
 
-          {/* RIGHT SIDE */}
           <div className="space-y-6">
             <div className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_24px_60px_rgba(15,23,42,0.12)]">
               <div className="relative aspect-[16/10] bg-slate-100">
