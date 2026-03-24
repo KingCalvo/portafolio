@@ -213,7 +213,7 @@ export default function About() {
               <div className="absolute -inset-4 rounded-full bg-slate-200/60 blur-2xl transition duration-500 group-hover:bg-slate-300/70" />
               <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] ring-1 ring-slate-200 sm:h-64 sm:w-64 lg:h-72 lg:w-72">
                 <Image
-                  src="/images/yo.jpg"
+                  src="/images/foto.jpg"
                   alt="Foto de Enrique Calvo Garcia"
                   fill
                   className="object-cover"
