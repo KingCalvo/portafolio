@@ -11,7 +11,8 @@ type PortfolioItem = {
   title: string;
   description: string;
   image: string;
-  liveDemo: string;
+  liveDemo?: string;
+  botonDemo?: boolean;
 };
 
 const tabs = [
@@ -113,14 +114,18 @@ export default function Projects() {
 
                       <div className="mt-auto pt-6">
                         <div className="flex items-center justify-between gap-4">
-                          <a
-                            href={item.liveDemo}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
-                          >
-                            Live Demo
-                          </a>
+                          {item.botonDemo && item.liveDemo ? (
+                            <a
+                              href={item.liveDemo}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
+                            >
+                              Live Demo
+                            </a>
+                          ) : (
+                            <span />
+                          )}
 
                           {activeTab === "projects" ? (
                             <Link

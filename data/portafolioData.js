@@ -7,7 +7,9 @@ export const portfolioData = {
         "Descripción corta del proyecto. Aquí puedes resumir lo más importante.",
       image: "/images/projects/project-1.jpg",
       liveDemo: "#",
-      buttons: false,
+      githubUrl: "#",
+      botonDemo: true,
+      botonGit: true,
       details: {
         description:
           "Descripción completa del proyecto. Explica a fondo qué hiciste, cómo lo desarrollaste y qué problema resuelve.",
@@ -35,7 +37,9 @@ export const portfolioData = {
       description: "Descripción corta del proyecto.",
       image: "/images/projects/project-2.jpg",
       liveDemo: "#",
-      buttons: false,
+      githubUrl: "#",
+      botonDemo: true,
+      botonGit: true,
       details: {
         description: "Descripción completa del proyecto.",
         technologies: ["Flutter", "Firebase", "Dart"],
@@ -49,7 +53,9 @@ export const portfolioData = {
       description: "Descripción corta del proyecto.",
       image: "/images/projects/project-3.jpg",
       liveDemo: "#",
-      buttons: false,
+      githubUrl: "#",
+      botonDemo: true,
+      botonGit: true,
       details: {
         description: "Descripción completa del proyecto.",
         technologies: ["React Native", "Node.js", "MongoDB"],
@@ -63,7 +69,9 @@ export const portfolioData = {
       description: "Descripción corta del proyecto.",
       image: "/images/projects/chivalry.jpg",
       liveDemo: "#",
-      buttons: false,
+      githubUrl: "#",
+      botonDemo: true,
+      botonGit: true,
       details: {
         description: "Descripción completa del proyecto.",
         technologies: ["Astro", "TailwindCSS", "Supabase", "prueba"],
@@ -77,7 +85,9 @@ export const portfolioData = {
       description: "Descripción corta del proyecto.",
       image: "/images/projects/project-5.jpg",
       liveDemo: "#",
-      buttons: false,
+      githubUrl: "#",
+      botonDemo: true,
+      botonGit: true,
       details: {
         description: "Descripción completa del proyecto.",
         technologies: ["Next.js", "Postgres", "Redis"],
@@ -94,7 +104,7 @@ export const portfolioData = {
         "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Nacional. Obteniendo el tercer lugar como integrante del equipo DevG.",
       image: "/images/hackathons/hackathon-1.jpg",
       liveDemo: "#",
-      buttons: true,
+      botonDemo: false,
     },
     {
       slug: "hackathon-02",
@@ -103,7 +113,7 @@ export const portfolioData = {
         "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Regional. Obteniendo el segundo lugar como integrante del equipo DevG.",
       image: "/images/hackathons/hackathon-2.jpg",
       liveDemo: "#",
-      buttons: true,
+      botonDemo: false,
     },
     {
       slug: "hackathon-03",
@@ -111,7 +121,7 @@ export const portfolioData = {
       description: "Ganador del premio a mejor aplicación Auth0.",
       image: "/images/hackathons/hackathon-3.jpg",
       liveDemo: "#",
-      buttons: true,
+      botonDemo: false,
     },
     {
       slug: "hackathon-04",
@@ -120,7 +130,7 @@ export const portfolioData = {
         "Ganador de los premios: Best Use of Google Cloud y Best Domain Name from GoDaddy Registry.",
       image: "/images/hackathons/hackathon-4.jpg",
       liveDemo: "#",
-      buttons: false,
+      botonDemo: false,
     },
   ],
 };

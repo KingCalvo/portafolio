@@ -14,8 +14,10 @@ type PortfolioProject = {
   slug: string;
   title: string;
   image: string;
-  liveDemo: string;
-  buttons?: boolean;
+  liveDemo?: string;
+  githubUrl?: string;
+  botonDemo?: boolean;
+  botonGit?: boolean;
   details: {
     description: string;
     technologies: string[];
@@ -116,8 +118,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {project.buttons && (
-              <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap gap-3 pt-2">
+              {project.botonDemo && project.liveDemo && (
                 <a
                   href={project.liveDemo}
                   target="_blank"
@@ -126,15 +128,19 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 >
                   Demo en directo
                 </a>
+              )}
 
+              {project.botonGit && project.githubUrl && (
                 <a
-                  href="#"
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-900 hover:shadow-md"
                 >
                   GitHub
                 </a>
-              </div>
-            )}
+              )}
+            </div>
           </div>
 
           <div className="space-y-6">
