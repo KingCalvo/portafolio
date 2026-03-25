@@ -11,9 +11,6 @@ export const portfolioData = {
       botonDemo: true,
       botonGit: true,
       details: {
-        description:
-          "Descripción completa del proyecto. Explica a fondo qué hiciste, cómo lo desarrollaste y qué problema resuelve.",
-
         technologies: [
           "React",
           "Next.js",
@@ -27,6 +24,7 @@ export const portfolioData = {
           "Característica principal 2",
           "Característica principal 3",
           "Característica principal 4",
+          "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Nacional. Obteniendo el tercer lugar como integrante del equipo DevG.",
         ],
       },
     },
@@ -41,7 +39,6 @@ export const portfolioData = {
       botonDemo: true,
       botonGit: true,
       details: {
-        description: "Descripción completa del proyecto.",
         technologies: ["Flutter", "Firebase", "Dart"],
         features: ["Característica 1", "Característica 2", "Característica 3"],
       },
@@ -57,7 +54,6 @@ export const portfolioData = {
       botonDemo: true,
       botonGit: true,
       details: {
-        description: "Descripción completa del proyecto.",
         technologies: ["React Native", "Node.js", "MongoDB"],
         features: ["Característica 1", "Característica 2", "Característica 3"],
       },
@@ -77,7 +73,6 @@ export const portfolioData = {
       botonDemo: true,
       botonGit: true,
       details: {
-        description: "Descripción completa del proyecto.",
         technologies: ["Astro", "TailwindCSS", "Supabase", "prueba"],
         features: ["Característica 1", "Característica 2", "Característica 3"],
       },
@@ -93,7 +88,6 @@ export const portfolioData = {
       botonDemo: true,
       botonGit: true,
       details: {
-        description: "Descripción completa del proyecto.",
         technologies: ["Next.js", "Postgres", "Redis"],
         features: ["Característica 1", "Característica 2", "Característica 3"],
       },
@@ -109,6 +103,10 @@ export const portfolioData = {
       images: ["/images/hackathons/hackathon-1.jpg"],
       liveDemo: "#",
       botonDemo: false,
+      details: {
+        technologies: ["Next.js", "Postgres", "Redis"],
+        features: ["Característica 1", "Característica 2", "Característica 3"],
+      },
     },
     {
       slug: "hackathon-02",
@@ -118,6 +116,10 @@ export const portfolioData = {
       images: ["/images/hackathons/hackathon-2.jpg"],
       liveDemo: "#",
       botonDemo: false,
+      details: {
+        technologies: ["Next.js", "Postgres", "Redis"],
+        features: ["Característica 1", "Característica 2", "Característica 3"],
+      },
     },
     {
       slug: "hackathon-03",
@@ -126,6 +128,10 @@ export const portfolioData = {
       images: ["/images/hackathons/hackathon-3.jpg"],
       liveDemo: "#",
       botonDemo: false,
+      details: {
+        technologies: ["Next.js", "Postgres", "Redis"],
+        features: ["Característica 1", "Característica 2", "Característica 3"],
+      },
     },
     {
       slug: "hackathon-04",
@@ -135,6 +141,10 @@ export const portfolioData = {
       images: ["/images/hackathons/hackathon-4.jpg"],
       liveDemo: "#",
       botonDemo: false,
+      details: {
+        technologies: ["Next.js", "Postgres", "Redis"],
+        features: ["Característica 1", "Característica 2", "Característica 3"],
+      },
     },
   ],
 };

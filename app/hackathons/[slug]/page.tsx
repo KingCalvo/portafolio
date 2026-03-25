@@ -18,7 +18,7 @@ type PortfolioProject = (typeof portfolioData.projects)[number];
 export default async function ProjectDetailPage({ params }: PageProps) {
   const { slug } = await params;
 
-  const project = portfolioData.projects.find((p) => p.slug === slug);
+  const project = portfolioData.hackathons.find((p) => p.slug === slug);
 
   if (!project) return notFound();
 
@@ -32,7 +32,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <BackToProjectsButton />
 
           <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400">
-            <span>Projects</span>
+            <span>Hackathons</span>
             <span>›</span>
             <span className="font-medium text-slate-900">{project.title}</span>
           </div>
@@ -41,7 +41,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div className="space-y-8">
             <div>
-              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h1 className="text-4xl font-semibold tracking-tight sm:text-4xl">
                 {project.title}
               </h1>
 
@@ -113,17 +113,6 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 >
                   <FaExternalLinkAlt className="h-3.5 w-3.5" />
                   Demo en directo
-                </a>
-              )}
-
-              {project.botonGit && project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-900 hover:shadow-md"
-                >
-                  GitHub
                 </a>
               )}
             </div>

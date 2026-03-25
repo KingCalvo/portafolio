@@ -1,9 +1,10 @@
 "use client";
-
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function BackToProjectsButton() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const tab = searchParams.get("tab") || "projects";
 
   const scrollToProjects = () => {
     const section = document.getElementById("projects");
@@ -20,7 +21,7 @@ export default function BackToProjectsButton() {
   };
 
   const handleBack = () => {
-    router.push("/", { scroll: false });
+    router.push(`/?tab=${tab}`, { scroll: false });
 
     let attempts = 0;
 

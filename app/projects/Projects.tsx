@@ -5,6 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { portfolioData } from "@/data/portafolioData";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { IoArrowForward } from "react-icons/io5";
+import { useSearchParams } from "next/navigation";
 
 type PortfolioCardItem = {
   slug: string;
@@ -21,8 +24,13 @@ const tabs = [
 ];
 
 export default function Projects() {
+  const searchParams = useSearchParams();
+
+  const initialTab =
+    (searchParams.get("tab") as "projects" | "hackathons") || "projects";
+
   const [activeTab, setActiveTab] = useState<"projects" | "hackathons">(
-    "projects",
+    initialTab,
   );
 
   const currentItems: PortfolioCardItem[] = (
@@ -69,7 +77,7 @@ export default function Projects() {
                   onClick={() =>
                     setActiveTab(tab.id as "projects" | "hackathons")
                   }
-                  className={`rounded-full px-9 py-4 text-sm font-medium transition-all duration-300 ${
+                  className={`cursor-pointer rounded-full px-9 py-4 text-sm font-medium transition-all duration-300 ${
                     isActive
                       ? "bg-slate-900 text-white shadow-md"
                       : "text-slate-500 hover:text-slate-900"
@@ -95,9 +103,14 @@ export default function Projects() {
                 {currentItems.map((item, index) => (
                   <motion.article
                     key={`${activeTab}-${item.slug}`}
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.06, duration: 0.35 }}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, margin: "-80px" }}
+                    transition={{
+                      duration: 0.2,
+                      delay: index * 0.05,
+                      ease: "easeOut",
+                    }}
                     className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
                   >
                     <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
@@ -125,30 +138,22 @@ export default function Projects() {
                               href={item.liveDemo}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
+                              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
                             >
-                              Live Demo
+                              <FaExternalLinkAlt className="h-3.5 w-3.5" />
+                              Ver proyecto
                             </a>
                           ) : (
                             <span />
                           )}
 
-                          {activeTab === "projects" ? (
-                            <Link
-                              href={`/projects/${item.slug}`}
-                              className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
-                            >
-                              Details
-                            </Link>
-                          ) : (
-                            <button
-                              type="button"
-                              disabled
-                              className="inline-flex cursor-not-allowed items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-400 opacity-70"
-                            >
-                              Details
-                            </button>
-                          )}
+                          <Link
+                            href={`/${activeTab}/${item.slug}?tab=${activeTab}`}
+                            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                          >
+                            Detalles
+                            <IoArrowForward className="h-4 w-4" />
+                          </Link>
                         </div>
                       </div>
                     </div>
