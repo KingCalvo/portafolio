@@ -6,7 +6,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { portfolioData } from "@/data/portafolioData";
 
-type PortfolioItem = {
+type PortfolioCardItem = {
   slug: string;
   title: string;
   description: string;
@@ -25,10 +25,16 @@ export default function Projects() {
     "projects",
   );
 
-  const currentItems: PortfolioItem[] =
-    activeTab === "projects"
-      ? portfolioData.projects
-      : portfolioData.hackathons;
+  const currentItems: PortfolioCardItem[] = (
+    activeTab === "projects" ? portfolioData.projects : portfolioData.hackathons
+  ).map((item) => ({
+    slug: item.slug,
+    title: item.title,
+    description: item.description,
+    image: item.images?.[0] ?? "/images/placeholder.jpg",
+    liveDemo: item.liveDemo,
+    botonDemo: item.botonDemo,
+  }));
 
   return (
     <section
@@ -99,7 +105,7 @@ export default function Projects() {
                         src={item.image}
                         alt={item.title}
                         fill
-                        className="object-cover transition duration-500 group-hover:scale-105"
+                        className="object-cover"
                       />
                     </div>
 
