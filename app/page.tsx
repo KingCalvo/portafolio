@@ -1,15 +1,9 @@
-import Hero from "@/app/Home/hero";
-import About from "@/app/about/about";
-import Projects from "@/app/projects/projects";
-import Services from "@/app/contact/services";
+import Hero from "@/app/home/hero";
 
 export default function Home() {
   return (
-    <main className="pt-24">
+    <main className="pt-10">
       <Hero />
-      <About />
-      <Projects />
-      <Services />
     </main>
   );
 }
