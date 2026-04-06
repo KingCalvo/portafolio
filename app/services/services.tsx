@@ -1,43 +1,507 @@
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
+import { IoArrowForward } from "react-icons/io5";
+import { FaWhatsapp } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Services() {
+  const [form, setForm] = useState({
+    nombre: "",
+    apellidos: "",
+    correo: "",
+    telefono: "",
+    servicio: "",
+  });
+
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setError("");
+    setSuccess("");
+
+    if (name === "nombre" || name === "apellidos") {
+      if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(value)) return;
+    }
+
+    if (name === "telefono") {
+      if (!/^\d*$/.test(value)) return;
+      if (value.length > 10) return;
+    }
+
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = () => {
+    setError("");
+    setSuccess("");
+
+    if (!form.nombre.trim())
+      return setError("El nombre es obligatorio y solo debe contener letras.");
+
+    if (!form.apellidos.trim())
+      return setError(
+        "Los apellidos son obligatorios y solo deben contener letras.",
+      );
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(form.correo))
+      return setError("Ingresa un correo electrónico válido.");
+
+    if (!/^\d{10}$/.test(form.telefono))
+      return setError("El teléfono debe tener exactamente 10 dígitos.");
+
+    if (!form.servicio) return setError("Selecciona un servicio.");
+
+    setSuccess("Tu mensaje fue enviado, te contestamos en breve.");
+
+    setForm({
+      nombre: "",
+      apellidos: "",
+      correo: "",
+      telefono: "",
+      servicio: "",
+    });
+  };
   return (
     <section
       id="services"
-      className="min-h-screen bg-white text-slate-900 flex items-center"
+      className="min-h-screen bg-white text-slate-900 py-24"
     >
-      <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-24">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Texto */}
-          <div className="max-w-xl">
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1">
-              Hola, soy <span className="text-slate-900">Enrique</span>
-            </h1>
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="text-center">
+          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+            Transformo ideas en Realidad digital.
+          </h1>
 
-            <div className="mt-10 border-t border-slate-200 pt-6">
-              <p className="font-semibold uppercase tracking-[0.25em] text-slate-400">
-                Sígueme
+          <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-slate-500 sm:text-lg">
+            Diseñador y desarrollador web. Ofrezco soluciones completas para
+            hacer realidad tus ideas digitales, desde páginas de destino
+            sencillas hasta proyectos complejos con inteligencia artificial y
+            gamificación.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {/* Card 1 */}
+          <article className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            {/* Badge */}
+            <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white">
+              Destacado
+            </span>
+
+            {/* Imagen */}
+            <div className="relative aspect-[16/10] bg-slate-100" />
+
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-xl font-semibold">Sitios web</h3>
+
+              <p className="mt-3 text-sm text-slate-500 leading-7">
+                Creo sitios web modernos y responsivos, desde páginas de destino
+                sencillas hasta sitios completos con todas las funciones que
+                necesitas. Diseño personalizado, optimización SEO y excelente
+                rendimiento.
               </p>
-            </div>
-          </div>
 
-          {/* Imagen */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="group relative w-full max-w-[360px] sm:max-w-[380px] lg:max-w-[480px]">
-              <div className="relative h-[500px] overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.15)] transition duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
-                <Image
-                  src="/images/yo1.jpeg"
-                  alt="Imagen de presentación"
-                  fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
-                  priority
+              <div className="mt-auto pt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                >
+                  Descubre más
+                  <IoArrowForward className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </article>
+
+          {/* Card 2 */}
+          <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div className="relative aspect-[16/10] bg-slate-100" />
+
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-xl font-semibold">Aplicaciones web y PWA</h3>
+
+              <p className="mt-3 text-sm text-slate-500 leading-7">
+                Desarrollo aplicaciones web personalizadas y Aplicaciones Web
+                Progresivas (PWA): desde paneles de control empresariales hasta
+                plataformas complejas, hasta aplicaciones instalables en
+                cualquier dispositivo, funcionando incluso offline.
+              </p>
+
+              <div className="mt-auto pt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                >
+                  Descubre más
+                  <IoArrowForward className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </article>
+
+          {/* Card 3 */}
+          <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div className="relative aspect-[16/10] bg-slate-100" />
+
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-xl font-semibold">Integraciones con IA</h3>
+
+              <p className="mt-3 text-sm text-slate-500 leading-7">
+                Integro inteligencia artificial en tus proyectos para
+                automatizar procesos, mejorar la experiencia del usuario y crear
+                soluciones innovadoras. Chatbots, análisis de datos,
+                automatización inteligente.
+              </p>
+
+              <div className="mt-auto pt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                >
+                  Descubre más
+                  <IoArrowForward className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </article>
+
+          {/* Card 4 */}
+          <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div className="relative aspect-[16/10] bg-slate-100" />
+
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-xl font-semibold">Sitio Web Básico</h3>
+
+              <p className="mt-3 text-sm text-slate-500 leading-7">
+                Este es el plan perfecto para crear un sitio rápido y con todo
+                lo necesario. Ideal para eventos, productos únicos o esa gran
+                idea que no puede esperar más. Comienza con un sitio básico,
+                siempre hay tiempo para crecer.
+              </p>
+
+              <div className="mt-auto pt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                >
+                  Descubre más
+                  <IoArrowForward className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </article>
+
+          {/* Card 5 */}
+          <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div className="relative aspect-[16/10] bg-slate-100" />
+
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-xl font-semibold">Diseño UX</h3>
+
+              <p className="mt-3 text-sm text-slate-500 leading-7">
+                Definimos y validamos tu producto antes de desarrollarlo.
+                Realizamos product discovery y prototipos en baja y alta
+                definición para probar ideas, optimizar flujos y reducir errores
+                desde el inicio.
+              </p>
+
+              <div className="mt-auto pt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                >
+                  Descubre más
+                  <IoArrowForward className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </article>
+
+          {/* Card 6 */}
+          <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div className="relative aspect-[16/10] bg-slate-100" />
+
+            <div className="flex flex-1 flex-col p-6">
+              <h3 className="text-xl font-semibold">Metaverso</h3>
+
+              <p className="mt-3 text-sm text-slate-500 leading-7">
+                Creo servidores personalizados de Minecraft, Roblox y Hytale
+                para marcas y particulares. Experiencias virtuales
+                personalizadas, configuración completa, plugins personalizados y
+                gestión dedicada para tu mundo virtual.
+              </p>
+
+              <div className="mt-auto pt-6">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                >
+                  Descubre más
+                  <IoArrowForward className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </article>
+        </div>
+        {/* Contacto */}
+        <div className="mt-24">
+          <div className="grid gap-12 lg:grid-cols-2">
+            {/* Form */}
+            <div className="animate-fadeInUp">
+              <h2 className="text-4xl font-semibold tracking-tight">
+                Hablemos de tu proyecto
+              </h2>
+
+              <p className="mt-4 text-slate-500 text-justify">
+                Rellena el formulario para ser contactado o escribe directamente
+                por WhatsApp. Normalmente respondo en menos de 24 horas
+                laborales.
+              </p>
+
+              {/* Botones */}
+              <div className="mt-6 flex flex-wrap gap-4">
+                <a
+                  href="https://wa.me/7351241139"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
+                >
+                  <FaWhatsapp size={24} />
+                  WhatsApp
+                </a>
+
+                <a
+                  href="https://mail.google.com/mail/?view=cm&to=enriquecalvo.dev@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#EA4335] px-6 py-3 text-white font-bold shadow-md transition hover:-translate-y-0.5 hover:bg-[#C5221F] hover:shadow-lg"
+                >
+                  <SiGmail size={16} />
+                  Gmail
+                </a>
+              </div>
+
+              {/* Inputs */}
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="block text-sm font-medium text-gray-600 pb-2">
+                    Nombre
+                  </label>
+                  <input
+                    name="nombre"
+                    value={form.nombre}
+                    onChange={handleChange}
+                    placeholder="Escribe tu nombre"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-600 pb-2">
+                    Apellidos
+                  </label>
+                  <input
+                    name="apellidos"
+                    value={form.apellidos}
+                    onChange={handleChange}
+                    placeholder="Escribe tu apellido"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-600 pb-2">
+                  Correo electrónico
+                </label>
+                <input
+                  name="correo"
+                  value={form.correo}
+                  onChange={(e) => {
+                    setError("");
+                    setSuccess("");
+                    setForm({ ...form, correo: e.target.value });
+                  }}
+                  placeholder="your@email.com"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
+              </div>
+
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-600 pb-2">
+                  Teléfono
+                </label>
+                <input
+                  name="telefono"
+                  value={form.telefono}
+                  onChange={handleChange}
+                  placeholder="7351241139"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div className="mt-4">
+                <label className="block text-sm font-medium text-gray-600 pb-2">
+                  Servicio
+                </label>
+                <select
+                  name="servicio"
+                  value={form.servicio}
+                  onChange={(e) => {
+                    setError("");
+                    setSuccess("");
+                    setForm({ ...form, servicio: e.target.value });
+                  }}
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-500 cursor-pointer transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="">Seleccione un servicio</option>
+                  <option>Sitios web</option>
+                  <option>Aplicaciones web y PWA</option>
+                  <option>Integraciones con IA</option>
+                  <option>Sitio web básico</option>
+                  <option>Diseño UX</option>
+                  <option>Metaverso</option>
+                </select>
+              </div>
+
+              <button
+                onClick={handleSubmit}
+                className="mt-6 w-full rounded-xl bg-blue-600 py-4 text-white font-semibold hover:bg-blue-700 transition cursor-pointer"
+              >
+                Enviar solicitud
+              </button>
+              {/* MENSAJES */}
+              {error && (
+                <p className="text-red-500 text-sm mt-4 text-center">{error}</p>
+              )}
+
+              {success && (
+                <p className="text-green-600 text-sm mt-4 text-center font-medium">
+                  {success}
+                </p>
+              )}
+            </div>
+
+            {/* Lado derecho */}
+            <div className="space-y-6 animate-fadeInUp delay-100">
+              {/* FAQ */}
+              <div>
+                <h3 className="text-2xl font-semibold">Preguntas frecuentes</h3>
+
+                <div className="mt-6 space-y-3">
+                  {/* ITEM */}
+                  <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
+                    <summary className="flex justify-between items-center font-medium">
+                      ¿Cuánto tiempo tarda un proyecto?
+                      <span className="transition group-open:rotate-180">
+                        ⌄
+                      </span>
+                    </summary>
+                    <p className="mt-3 text-sm text-slate-500">
+                      Depende del proyecto, normalmente entre 1 y 4 semanas.
+                    </p>
+                  </details>
+
+                  <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
+                    <summary className="flex justify-between items-center font-medium">
+                      ¿Está incluido el diseño en el servicio?
+                      <span className="transition group-open:rotate-180">
+                        ⌄
+                      </span>
+                    </summary>
+                    <p className="mt-3 text-sm text-slate-500">
+                      Sí, todos los proyectos incluyen diseño UX/UI.
+                    </p>
+                  </details>
+
+                  <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
+                    <summary className="flex justify-between items-center font-medium">
+                      ¿Qué métodos de pago aceptan?
+                      <span className="transition group-open:rotate-180">
+                        ⌄
+                      </span>
+                    </summary>
+                    <p className="mt-3 text-sm text-slate-500">
+                      Transferencia bancaria, PayPal y otros métodos.
+                    </p>
+                  </details>
+                </div>
+
+                <a href="#" className="mt-4 inline-block text-blue-600">
+                  Consulta todas las preguntas frecuentes →
+                </a>
+              </div>
+
+              {/* Donde trabajo */}
+              <div className="rounded-2xl border border-slate-200 p-6">
+                <h4 className="text-lg font-semibold">Dónde trabajo</h4>
+                <p className="mt-2 text-sm text-slate-500">
+                  Trabajo de forma remota y puedo colaborar en proyectos
+                  nacionales e internacionales.
+                </p>
+              </div>
+
+              {/* Horario */}
+              <div className="rounded-2xl border border-slate-200 p-6">
+                <h4 className="text-lg font-semibold">Horario de trabajo</h4>
+
+                <div className="mt-3 text-sm text-slate-500 space-y-2">
+                  <div className="flex justify-between">
+                    <span>Lunes - viernes</span>
+                    <span>09:00 – 18:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Internacional</span>
+                    <span>Flexible</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Sábado - domingo</span>
+                    <span>Cerrado</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Teléfono */}
+              <div className="text-sm">
+                <span className="font-semibold">Teléfono:</span>{" "}
+                <a href="#" className="text-blue-600">
+                  +52 735 124 1139
+                </a>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Animaciones */}
+        <style jsx>{`
+          .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease both;
+          }
+
+          .delay-100 {
+            animation-delay: 0.1s;
+          }
+
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}</style>
       </div>
     </section>
   );

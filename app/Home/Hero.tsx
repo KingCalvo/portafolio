@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Folder, Github, Linkedin } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaExternalLinkAlt } from "react-icons/fa";
+import { IoArrowForward } from "react-icons/io5";
+import { portfolioData } from "@/data/portafolioData";
 
 const fullText = "Desarrollador Mobile & Web";
 
@@ -35,14 +37,13 @@ export default function Hero() {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting]);
 
+  const featuredProjects = portfolioData.projects.slice(0, 3);
+
   return (
-    <section
-      id="home"
-      className="min-h-screen bg-white text-slate-900 flex items-center"
-    >
-      <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-24">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Texto */}
+    <section id="home" className="bg-white text-slate-900 flex flex-col">
+      {/* Hero */}
+      <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-24 min-h-screen flex items-center">
+        <div className="grid items-center gap-12 lg:grid-cols-2 w-full">
           <div className="max-w-xl">
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1">
               Hola, soy <span className="text-slate-900">Enrique</span>
@@ -120,6 +121,260 @@ export default function Hero() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* About + experiencia */}
+      <div className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
+              About me
+            </span>
+            <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
+              Acerca de <span className="animate-pulse">mí</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
+              Una breve presentación sobre mi perfil y experiencia.
+            </p>
+          </div>
+
+          <div className="mt-12 grid items-center gap-12 lg:grid-cols-[1.3fr_0.7fr]">
+            <div>
+              <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <h3 className="text-2xl font-semibold">Enrique Calvo Garcia</h3>
+                <p className="mt-1 text-sm uppercase tracking-[0.2em] text-slate-500">
+                  Ingeniero en Sistemas Computacionales
+                </p>
+
+                <p className="mt-6 text-slate-600 text-justify">
+                  Soy Ingeniero en Sistemas Computacionales, autodidacta y
+                  disciplinado. Me apasiona aprender nuevas tecnologías y crear
+                  soluciones de software eficientes y bien estructuradas.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-lg">
+                <Image
+                  src="/images/foto.jpg"
+                  alt="Foto"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+            <h4 className="text-2xl font-semibold">Experiencia</h4>
+
+            <div className="mt-6 rounded-2xl bg-slate-50 p-6">
+              <p className="text-lg font-semibold">
+                Mobile Developer (Flutter)
+              </p>
+              <p className="text-sm text-slate-600">
+                Naatik A.I. Solutions · 2025
+              </p>
+              <p className="mt-4 text-sm text-slate-600">
+                Desarrollo de aplicación móvil, gestión de servicios,
+                autenticación, dashboards y optimización de rendimiento.
+              </p>
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-white font-medium shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
+              >
+                Ver perfil completo
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Proyectos destacados */}
+      <div className="bg-white py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              Proyectos destacados
+            </h2>
+
+            <div className="mt-6">
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-900 hover:text-slate-900"
+              >
+                Ver todo
+              </Link>
+            </div>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {featuredProjects.map((item) => (
+              <article
+                key={item.slug}
+                className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                  <Image
+                    src={item.images?.[0] ?? "/images/placeholder.jpg"}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+
+                  <p className="mt-3 line-clamp-3 text-sm text-slate-500">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-auto pt-6 flex justify-between">
+                    {item.botonDemo && item.liveDemo ? (
+                      <a
+                        href={item.liveDemo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm text-white"
+                      >
+                        <FaExternalLinkAlt className="h-3.5 w-3.5" />
+                        Ver proyecto
+                      </a>
+                    ) : (
+                      <span />
+                    )}
+
+                    <Link
+                      href={`/projects/${item.slug}`}
+                      className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 hover:border-slate-900 hover:text-slate-900"
+                    >
+                      Detalles
+                      <IoArrowForward className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Servicios */}
+      <div className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="text-center">
+            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              Mis servicios
+            </h2>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <p className="max-w-xl text-slate-500 text-base">
+              Soluciones personalizadas para tus necesidades digitales.
+            </p>
+
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-900 hover:text-slate-900"
+            >
+              Ver todos los servicios
+            </Link>
+          </div>
+
+          {/* Cards */}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {/* CARD 1 */}
+            <article className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+              {/* Badge */}
+              <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white">
+                Destacado
+              </span>
+
+              <div className="relative aspect-[16/10] bg-slate-100" />
+
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-xl font-semibold">Sitios web</h3>
+
+                <p className="mt-3 text-sm text-slate-500 leading-7">
+                  Creo sitios web modernos y responsivos, desde páginas de
+                  destino sencillas hasta sitios completos con todas las
+                  funciones que necesitas. Diseño personalizado, optimización
+                  SEO y excelente rendimiento.
+                </p>
+
+                <div className="mt-auto pt-6">
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  >
+                    Descubre más
+                    <IoArrowForward className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </article>
+
+            {/* CARD 2 */}
+            <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative aspect-[16/10] bg-slate-100" />
+
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-xl font-semibold">
+                  Aplicaciones web y PWA
+                </h3>
+
+                <p className="mt-3 text-sm text-slate-500 leading-7">
+                  Desarrollo aplicaciones web personalizadas y Aplicaciones Web
+                  Progresivas (PWA): desde paneles de control empresariales
+                  hasta plataformas complejas, hasta aplicaciones instalables en
+                  cualquier dispositivo, funcionando incluso offline.
+                </p>
+
+                <div className="mt-auto pt-6">
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  >
+                    Descubre más
+                    <IoArrowForward className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </article>
+
+            {/* CARD 3 */}
+            <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative aspect-[16/10] bg-slate-100" />
+
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-xl font-semibold">Integraciones con IA</h3>
+
+                <p className="mt-3 text-sm text-slate-500 leading-7">
+                  Integro inteligencia artificial en tus proyectos para
+                  automatizar procesos, mejorar la experiencia del usuario y
+                  crear soluciones innovadoras. Chatbots, análisis de datos,
+                  automatización inteligente.
+                </p>
+
+                <div className="mt-auto pt-6">
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  >
+                    Descubre más
+                    <IoArrowForward className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
