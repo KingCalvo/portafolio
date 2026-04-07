@@ -5,7 +5,7 @@ import { IoArrowForward } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 export default function Services() {
   const [form, setForm] = useState({
@@ -18,6 +18,7 @@ export default function Services() {
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -37,7 +38,7 @@ export default function Services() {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setError("");
     setSuccess("");
 
@@ -59,16 +60,34 @@ export default function Services() {
 
     if (!form.servicio) return setError("Selecciona un servicio.");
 
-    setSuccess("Tu mensaje fue enviado, te contestamos en breve.");
+    setLoading(true);
 
-    setForm({
-      nombre: "",
-      apellidos: "",
-      correo: "",
-      telefono: "",
-      servicio: "",
-    });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setSuccess("Tu mensaje fue enviado correctamente 🚀");
+
+      setForm({
+        nombre: "",
+        apellidos: "",
+        correo: "",
+        telefono: "",
+        servicio: "",
+      });
+    } catch (err) {
+      setError("Error al enviar el formulario.");
+      setLoading(false);
+    }
   };
+
   return (
     <section
       id="services"
@@ -253,7 +272,7 @@ export default function Services() {
           </article>
         </div>
         {/* Contacto */}
-        <div className="mt-24">
+        <div id="contacto" className="mt-24">
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Form */}
             <div className="animate-fadeInUp">
@@ -372,14 +391,16 @@ export default function Services() {
                   <option>Metaverso</option>
                 </select>
               </div>
-
               <button
                 onClick={handleSubmit}
-                className="mt-6 w-full rounded-xl bg-blue-600 py-4 text-white font-semibold hover:bg-blue-700 transition cursor-pointer"
+                disabled={loading}
+                className={`mt-6 w-full rounded-xl py-4 text-white font-semibold transition cursor-pointer
+                  ${loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}
+                `}
               >
-                Enviar solicitud
+                {loading ? "Enviando..." : "Enviar solicitud"}
               </button>
-              {/* MENSAJES */}
+              {/* Mensajes */}
               {error && (
                 <p className="text-red-500 text-sm mt-4 text-center">{error}</p>
               )}
@@ -398,12 +419,11 @@ export default function Services() {
                 <h3 className="text-2xl font-semibold">Preguntas frecuentes</h3>
 
                 <div className="mt-6 space-y-3">
-                  {/* ITEM */}
                   <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
                     <summary className="flex justify-between items-center font-medium">
                       ¿Cuánto tiempo tarda un proyecto?
-                      <span className="transition group-open:rotate-180">
-                        ⌄
+                      <span className="flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 group-open:rotate-180 group-open:bg-slate-100">
+                        <ChevronDown size={16} className="text-slate-600" />
                       </span>
                     </summary>
                     <p className="mt-3 text-sm text-slate-500">
@@ -414,8 +434,8 @@ export default function Services() {
                   <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
                     <summary className="flex justify-between items-center font-medium">
                       ¿Está incluido el diseño en el servicio?
-                      <span className="transition group-open:rotate-180">
-                        ⌄
+                      <span className="flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 group-open:rotate-180 group-open:bg-slate-100">
+                        <ChevronDown size={16} className="text-slate-600" />
                       </span>
                     </summary>
                     <p className="mt-3 text-sm text-slate-500">
@@ -426,8 +446,8 @@ export default function Services() {
                   <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
                     <summary className="flex justify-between items-center font-medium">
                       ¿Qué métodos de pago aceptan?
-                      <span className="transition group-open:rotate-180">
-                        ⌄
+                      <span className="flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 group-open:rotate-180 group-open:bg-slate-100">
+                        <ChevronDown size={16} className="text-slate-600" />
                       </span>
                     </summary>
                     <p className="mt-3 text-sm text-slate-500">
@@ -436,7 +456,7 @@ export default function Services() {
                   </details>
                 </div>
 
-                <a href="#" className="mt-4 inline-block text-blue-600">
+                <a href="/faq" className="mt-4 ml-1 inline-block text-blue-600">
                   Consulta todas las preguntas frecuentes →
                 </a>
               </div>
@@ -467,15 +487,11 @@ export default function Services() {
                     <span>Sábado - domingo</span>
                     <span>Cerrado</span>
                   </div>
+                  <div className="flex justify-between">
+                    <span className="font-semibold">Teléfono:</span>{" "}
+                    <span>+52 735 124 1139</span>
+                  </div>
                 </div>
-              </div>
-
-              {/* Teléfono */}
-              <div className="text-sm">
-                <span className="font-semibold">Teléfono:</span>{" "}
-                <a href="#" className="text-blue-600">
-                  +52 735 124 1139
-                </a>
               </div>
             </div>
           </div>

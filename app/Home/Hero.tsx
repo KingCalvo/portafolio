@@ -7,6 +7,21 @@ import { Folder, Github, Linkedin } from "lucide-react";
 import { FaWhatsapp, FaExternalLinkAlt } from "react-icons/fa";
 import { IoArrowForward } from "react-icons/io5";
 import { portfolioData } from "@/data/portafolioData";
+import { SiGmail } from "react-icons/si";
+import {
+  SiJavascript,
+  SiDart,
+  SiTypescript,
+  SiPython,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiAstro,
+  SiFlutter,
+  SiPostgresql,
+  SiDocker,
+} from "react-icons/si";
+import { FaDatabase } from "react-icons/fa6";
 
 const fullText = "Desarrollador Mobile & Web";
 
@@ -39,17 +54,32 @@ export default function Hero() {
 
   const featuredProjects = portfolioData.projects.slice(0, 3);
 
+  const stack = [
+    { name: "React", Icon: SiReact, color: "#61DAFB" },
+    { name: "Next.js", Icon: SiNextdotjs, color: "#111111" },
+    { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
+    { name: "Astro", Icon: SiAstro, color: "#FF5D01" },
+    { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
+    { name: "Docker", Icon: SiDocker, color: "#2496ED" },
+    { name: "Postgres", Icon: SiPostgresql, color: "#336791" },
+    { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+    { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
+    { name: "Dart", Icon: SiDart, color: "#0175C2" },
+    { name: "SQL", Icon: FaDatabase, color: "#4E73DF" },
+    { name: "Python", Icon: SiPython, color: "#3776AB" },
+  ];
+
   return (
     <section id="home" className="bg-white text-slate-900 flex flex-col">
       {/* Hero */}
-      <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-24 min-h-screen flex items-center">
+      <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-20 min-h-screen flex flex-col justify-center">
         <div className="grid items-center gap-12 lg:grid-cols-2 w-full">
           <div className="max-w-xl">
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1">
               Hola, soy <span className="text-slate-900">Enrique</span>
             </h1>
 
-            <div className="mt-6 inline-flex rounded-2xl border border-slate-200 bg-slate-50 px-5 py-3 shadow-sm">
+            <div className="mt-4 inline-flex rounded-2xl border border-slate-200 bg-slate-50 px-5 py-3 shadow-sm">
               <span className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
                 {displayText}
                 <span className="ml-1 animate-pulse">|</span>
@@ -73,9 +103,18 @@ export default function Hero() {
                 <FaWhatsapp size={24} />
                 Contáctame
               </a>
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=enriquecalvo.dev@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#EA4335] px-6 py-3 text-white font-bold shadow-md transition hover:-translate-y-0.5 hover:bg-[#C5221F] hover:shadow-lg"
+              >
+                <SiGmail size={16} />
+                Gmail
+              </a>
 
               <Link
-                href="#projects"
+                href="/projects"
                 className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 <Folder size={18} />
@@ -120,6 +159,40 @@ export default function Hero() {
                   priority
                 />
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stack tecnologico */}
+        <div className="py-10 overflow-hidden marquee-wrapper">
+          <div className="mx-auto max-w-6xl px-6">
+            <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+              Stack principal
+            </p>
+
+            <div className="mt-9 relative overflow-hidden">
+              <div className="flex gap-8 whitespace-nowrap animate-marquee">
+                {[...stack, ...stack].map((tech, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center justify-center min-w-[90px] group/item"
+                  >
+                    <tech.Icon
+                      size={34}
+                      style={{ color: tech.color }}
+                      className="transition duration-300 group-hover/item:scale-110 mt-2"
+                    />
+
+                    <span className="mt-3 text-sm text-slate-600">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Fades */}
+              <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent" />
+              <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent" />
             </div>
           </div>
         </div>
@@ -203,13 +276,16 @@ export default function Hero() {
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               Proyectos destacados
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
+              Algunos de los proyectos que he creado
+            </p>
 
-            <div className="mt-6">
+            <div className="text-center mt-8">
               <Link
                 href="/projects"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-900 hover:text-slate-900"
               >
-                Ver todo
+                Ver todos los proyectos
               </Link>
             </div>
           </div>
@@ -271,16 +347,15 @@ export default function Hero() {
       <div className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
-            <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+            <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
               Mis servicios
             </h2>
-          </div>
-
-          <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <p className="max-w-xl text-slate-500 text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
               Soluciones personalizadas para tus necesidades digitales.
             </p>
+          </div>
 
+          <div className="text-center mt-8">
             <Link
               href="/services"
               className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-900 hover:text-slate-900"

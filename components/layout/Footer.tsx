@@ -106,7 +106,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/7351241139"
+                  href="/services#contacto"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-white"
