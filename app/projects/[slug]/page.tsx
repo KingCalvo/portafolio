@@ -26,7 +26,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const featureCount = project.details.features.length;
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white py-16 text-slate-900">
+    <section className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white py-16 text-slate-900 pt-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-wrap items-center gap-3">
           <BackToProjectsButton />

@@ -88,6 +88,12 @@ export default function Services() {
     }
   };
 
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section
       id="services"
@@ -129,7 +135,7 @@ export default function Services() {
                 rendimiento.
               </p>
 
-              <div className="mt-auto pt-6">
+              <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
@@ -155,7 +161,7 @@ export default function Services() {
                 cualquier dispositivo, funcionando incluso offline.
               </p>
 
-              <div className="mt-auto pt-6">
+              <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
@@ -181,7 +187,7 @@ export default function Services() {
                 automatización inteligente.
               </p>
 
-              <div className="mt-auto pt-6">
+              <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
@@ -207,7 +213,7 @@ export default function Services() {
                 siempre hay tiempo para crecer.
               </p>
 
-              <div className="mt-auto pt-6">
+              <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
@@ -233,7 +239,7 @@ export default function Services() {
                 desde el inicio.
               </p>
 
-              <div className="mt-auto pt-6">
+              <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
@@ -259,7 +265,7 @@ export default function Services() {
                 gestión dedicada para tu mundo virtual.
               </p>
 
-              <div className="mt-auto pt-6">
+              <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
@@ -418,42 +424,61 @@ export default function Services() {
               <div>
                 <h3 className="text-2xl font-semibold">Preguntas frecuentes</h3>
 
-                <div className="mt-6 space-y-3">
-                  <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
-                    <summary className="flex justify-between items-center font-medium">
-                      ¿Cuánto tiempo tarda un proyecto?
-                      <span className="flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 group-open:rotate-180 group-open:bg-slate-100">
-                        <ChevronDown size={16} className="text-slate-600" />
-                      </span>
-                    </summary>
-                    <p className="mt-3 text-sm text-slate-500">
-                      Depende del proyecto, normalmente entre 1 y 4 semanas.
-                    </p>
-                  </details>
+                <div className="mt-6 space-y-3 text-justify">
+                  {[
+                    {
+                      question:
+                        "¿Cómo se gestiona la comunicación durante el proyecto?",
+                      answer:
+                        "La comunicación es una prioridad para mí: te mantengo informado con actualizaciones periódicas de progreso (semanales o según prefieras). Nos mantenemos en contacto por correo electrónico, chat o videollamadas. Te involucro en decisiones importantes y siempre estoy disponible para preguntas.",
+                    },
+                    {
+                      question: "¿Qué métodos de pago aceptas?",
+                      answer:
+                        "Acepto transferencias bancarias, PayPal y otros métodos de pago seguros. Podemos acordar un calendario de pagos basado en la duración y la complejidad del proyecto: normalmente un depósito inicial (30-50%) y saldo a la entrega; Para proyectos más largos, pagos intermedios vinculados a hitos. Todo se registra y documenta mediante facturación electrónica para total transparencia y seguridad.",
+                    },
+                    {
+                      question: "¿Trabajas con presupuestos limitados?",
+                      answer:
+                        "Sí, puedo adaptar soluciones a tu presupuesto. Podemos empezar con un MVP (Producto Mínimo Viable) que incluya características esenciales y luego escalar gradualmente según los resultados y tus necesidades. También ofrezco soluciones modulares que permiten añadir funciones a lo largo del tiempo, para que puedas invertir progresivamente. Lo importante es definir las prioridades juntos.",
+                    },
+                  ].map((faq, index) => {
+                    const isOpen = openIndex === index;
 
-                  <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
-                    <summary className="flex justify-between items-center font-medium">
-                      ¿Está incluido el diseño en el servicio?
-                      <span className="flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 group-open:rotate-180 group-open:bg-slate-100">
-                        <ChevronDown size={16} className="text-slate-600" />
-                      </span>
-                    </summary>
-                    <p className="mt-3 text-sm text-slate-500">
-                      Sí, todos los proyectos incluyen diseño UX/UI.
-                    </p>
-                  </details>
+                    return (
+                      <div
+                        key={index}
+                        onClick={() => toggle(index)}
+                        className="group rounded-xl border border-slate-200 p-4 cursor-pointer transition hover:shadow-sm"
+                      >
+                        <div className="flex justify-between items-center font-medium">
+                          {faq.question}
 
-                  <details className="group rounded-xl border border-slate-200 p-4 cursor-pointer">
-                    <summary className="flex justify-between items-center font-medium">
-                      ¿Qué métodos de pago aceptan?
-                      <span className="flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 group-open:rotate-180 group-open:bg-slate-100">
-                        <ChevronDown size={16} className="text-slate-600" />
-                      </span>
-                    </summary>
-                    <p className="mt-3 text-sm text-slate-500">
-                      Transferencia bancaria, PayPal y otros métodos.
-                    </p>
-                  </details>
+                          <span
+                            className={`flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 ${
+                              isOpen ? "rotate-180 bg-slate-100" : ""
+                            }`}
+                          >
+                            <ChevronDown size={16} className="text-slate-600" />
+                          </span>
+                        </div>
+
+                        <div
+                          className={`grid transition-all duration-300 ${
+                            isOpen
+                              ? "grid-rows-[1fr] opacity-100 mt-3"
+                              : "grid-rows-[0fr] opacity-0"
+                          }`}
+                        >
+                          <div className="overflow-hidden">
+                            <p className="text-sm text-slate-500">
+                              {faq.answer}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <a href="/faq" className="mt-4 ml-1 inline-block text-blue-600">

@@ -213,51 +213,126 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="mt-12 grid items-center gap-12 lg:grid-cols-[1.3fr_0.7fr]">
-            <div>
-              <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-                <h3 className="text-2xl font-semibold">Enrique Calvo Garcia</h3>
-                <p className="mt-1 text-sm uppercase tracking-[0.2em] text-slate-500">
-                  Ingeniero en Sistemas Computacionales
-                </p>
+          <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            {/* Left */}
+            <div className="relative h-full">
+              <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-sky-500/10 blur-2xl" />
+              <div className="absolute -bottom-6 right-0 h-24 w-24 rounded-full bg-indigo-500/10 blur-2xl" />
 
-                <p className="mt-6 text-slate-600 text-justify">
-                  Soy Ingeniero en Sistemas Computacionales, autodidacta y
-                  disciplinado. Me apasiona aprender nuevas tecnologías y crear
-                  soluciones de software eficientes y bien estructuradas.
-                </p>
+              <div className="relative h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                    Enrique Calvo García
+                  </h3>
+                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500">
+                    Ingeniero en Sistemas Computacionales
+                  </p>
+
+                  <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-[15px] text-justify">
+                    Desarrollo de la aplicación móvil FixGo (Android) con
+                    Flutter, implementando módulos de proveedor y administrador;
+                    gestión de servicios, autenticación, imágenes, reportes PDF,
+                    gráficas, mapas, panel administrativo y optimización de
+                    rendimiento.
+                  </p>
+                </div>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                      Enfoque
+                    </p>
+                    <p className="mt-2 text-sm text-slate-700">
+                      Web apps, mobile apps y experiencia de usuario
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                      Forma de trabajo
+                    </p>
+                    <p className="mt-2 text-sm text-slate-700">
+                      Limpio, eficiente, comunicativo y orientado a resultados
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="flex justify-center">
-              <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-lg">
-                <Image
-                  src="/images/foto.jpg"
-                  alt="Foto"
-                  fill
-                  className="object-cover"
-                />
+            {/* Right */}
+            <div className="flex h-full">
+              <div className="w-full rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+                {/* Imagen centrada */}
+                <div className="flex h-[260px] items-center justify-center">
+                  <div className="relative h-56 w-56 overflow-hidden rounded-full bg-slate-100 shadow-lg">
+                    <Image
+                      src="/images/foto.jpg"
+                      alt="Foto de Enrique Calvo García"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                {/* Contenido */}
+                <div className="mt-2 space-y-3 text-center">
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <p className="text-sm text-slate-600 leading-6">
+                      Desarrollo de aplicaciones web modernas con React &
+                      Next.js.
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                    <p className="text-sm text-slate-600 leading-6">
+                      Apps móviles multiplataforma con Flutter.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="mt-12 rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
-            <h4 className="text-2xl font-semibold">Experiencia</h4>
+          {/* EXPERIENCIA */}
+          <div className="mt-19">
+            <h4 className="text-2xl font-semibold text-center">
+              Experiencia profesional
+            </h4>
 
-            <div className="mt-6 rounded-2xl bg-slate-50 p-6">
-              <p className="text-lg font-semibold">
-                Mobile Developer (Flutter)
-              </p>
-              <p className="text-sm text-slate-600">
-                Naatik A.I. Solutions · 2025
-              </p>
-              <p className="mt-4 text-sm text-slate-600">
-                Desarrollo de aplicación móvil, gestión de servicios,
-                autenticación, dashboards y optimización de rendimiento.
-              </p>
+            <div className="mt-10 space-y-6">
+              <div className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
+                <div className="flex items-center justify-between flex-wrap gap-2">
+                  <p className="text-lg font-semibold">
+                    Mobile Developer (Flutter)
+                  </p>
+
+                  <span className="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-600">
+                    2025
+                  </span>
+                </div>
+
+                <p className="mt-1 text-sm font-medium text-slate-600">
+                  Naatik A.I. Solutions SAPI de CV · Jornada completa
+                </p>
+                <p className="mt-1 text-sm text-slate-500">
+                  jun. 2025 - dic. 2025 · 7 meses
+                </p>
+                <p className="mt-1 text-sm text-slate-500">
+                  San Francisco 23, Frac. Burgos, Temixco, Morelos, C.P. 62584 ·
+                  En remoto
+                </p>
+                <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
+                  Desarrollo de la aplicación móvil FixGo (Android) con Flutter,
+                  implementando módulos de proveedor y administrador; gestión de
+                  servicios, autenticación, imágenes, reportes PDF, gráficas,
+                  mapas, panel administrativo y optimización de rendimiento.
+                </p>
+              </div>
             </div>
 
-            <div className="mt-8 flex justify-center">
+            {/* CTA */}
+            <div className="mt-10 flex justify-center">
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-white font-medium shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"

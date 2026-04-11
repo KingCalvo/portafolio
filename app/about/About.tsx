@@ -181,44 +181,80 @@ export default function About() {
         </div>
 
         {/* Bloque principal */}
-        <div className="mt-7 grid items-center gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16">
-          {/* Texto */}
-          <div className="order-2 lg:order-1">
-            <div className="rounded-[2rem] border border-slate-200/80 bg-white/80 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(15,23,42,0.12)]">
-              <div className="flex items-center gap-3">
-                <span className="h-10 w-1.5 rounded-full bg-slate-900" />
-                <div>
-                  <h3 className="text-2xl font-semibold sm:text-3xl">
-                    Enrique Calvo Garcia
-                  </h3>
-                  <p className="mt-1 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
-                    Ingeniero en Sistemas Computacionales
+        <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          {/* Left */}
+          <div className="relative h-full">
+            <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-sky-500/10 blur-2xl" />
+            <div className="absolute -bottom-6 right-0 h-24 w-24 rounded-full bg-indigo-500/10 blur-2xl" />
+
+            <div className="relative h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+              <div>
+                <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                  Enrique Calvo García
+                </h3>
+                <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500">
+                  Ingeniero en Sistemas Computacionales
+                </p>
+
+                <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-[15px] text-justify">
+                  Desarrollo de la aplicación móvil FixGo (Android) con Flutter,
+                  implementando módulos de proveedor y administrador; gestión de
+                  servicios, autenticación, imágenes, reportes PDF, gráficas,
+                  mapas, panel administrativo y optimización de rendimiento.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                    Enfoque
+                  </p>
+                  <p className="mt-2 text-sm text-slate-700">
+                    Web apps, mobile apps y experiencia de usuario
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                    Forma de trabajo
+                  </p>
+                  <p className="mt-2 text-sm text-slate-700">
+                    Limpio, eficiente, comunicativo y orientado a resultados
                   </p>
                 </div>
               </div>
-
-              <p className="mt-6 text-[15px] leading-8 text-slate-600 sm:text-base text-justify">
-                Soy Ingeniero en Sistemas Computacionales, soy autodidacta y
-                disciplinado; me entusiasma aprender nuevas tecnologías y
-                aplicar buenas prácticas para entregar soluciones de calidad. Me
-                destaco en trabajo en equipo, comunicación con clientes y
-                resolución pragmática de problemas.
-              </p>
             </div>
           </div>
 
-          {/* Imagen */}
-          <div className="order-1 flex justify-center lg:order-2 lg:justify-end">
-            <div className="group relative">
-              <div className="absolute -inset-4 rounded-full bg-slate-200/60 blur-2xl transition duration-500 group-hover:bg-slate-300/70" />
-              <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] ring-1 ring-slate-200 sm:h-64 sm:w-64 lg:h-72 lg:w-72">
-                <Image
-                  src="/images/foto.jpg"
-                  alt="Foto de Enrique Calvo Garcia"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+          {/* Right */}
+          <div className="flex h-full">
+            <div className="w-full rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+              {/* Imagen centrada */}
+              <div className="flex h-[260px] items-center justify-center">
+                <div className="relative h-56 w-56 overflow-hidden rounded-full bg-slate-100 shadow-lg">
+                  <Image
+                    src="/images/foto.jpg"
+                    alt="Foto de Enrique Calvo García"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Contenido */}
+              <div className="mt-2 space-y-3 text-center">
+                <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                  <p className="text-sm text-slate-600 leading-6">
+                    Desarrollo de aplicaciones web modernas con React & Next.js.
+                  </p>
+                </div>
+
+                <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                  <p className="text-sm text-slate-600 leading-6">
+                    Apps móviles multiplataforma con Flutter.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
