@@ -1,4 +1,4 @@
-import About from "@/app/about/about";
+import About from "@/app/about/aboutme";
 
 export default function AboutPage() {
   return (

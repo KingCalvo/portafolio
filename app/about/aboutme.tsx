@@ -229,11 +229,10 @@ export default function About() {
           {/* Right */}
           <div className="flex h-full">
             <div className="w-full rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
-              {/* Imagen centrada */}
               <div className="flex h-[260px] items-center justify-center">
                 <div className="relative h-56 w-56 overflow-hidden rounded-full bg-slate-100 shadow-lg">
                   <Image
-                    src="/images/foto.jpg"
+                    src="/images/contenido/foto.jpg"
                     alt="Foto de Enrique Calvo García"
                     fill
                     className="object-cover"

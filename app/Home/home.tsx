@@ -23,9 +23,9 @@ import {
 } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa6";
 
-const fullText = "Desarrollador Mobile & Web";
-
 export default function Hero() {
+  const [isHoveringCTA, setIsHoveringCTA] = useState(false);
+  const fullText = "Desarrollador Mobile & Web";
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -98,6 +98,8 @@ export default function Hero() {
                 href="https://wa.me/7351241139"
                 target="_blank"
                 rel="noopener noreferrer"
+                onMouseEnter={() => setIsHoveringCTA(true)}
+                onMouseLeave={() => setIsHoveringCTA(false)}
                 className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
               >
                 <FaWhatsapp size={24} />
@@ -107,6 +109,8 @@ export default function Hero() {
                 href="https://mail.google.com/mail/?view=cm&to=enriquecalvo.dev@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                onMouseEnter={() => setIsHoveringCTA(true)}
+                onMouseLeave={() => setIsHoveringCTA(false)}
                 className="inline-flex items-center gap-2 rounded-full bg-[#EA4335] px-6 py-3 text-white font-bold shadow-md transition hover:-translate-y-0.5 hover:bg-[#C5221F] hover:shadow-lg"
               >
                 <SiGmail size={16} />
@@ -115,6 +119,8 @@ export default function Hero() {
 
               <Link
                 href="/projects"
+                onMouseEnter={() => setIsHoveringCTA(true)}
+                onMouseLeave={() => setIsHoveringCTA(false)}
                 className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 <Folder size={18} />
@@ -131,6 +137,8 @@ export default function Hero() {
                 <a
                   href="https://www.linkedin.com/in/enrique-calvo-garcia-022151168/"
                   aria-label="LinkedIn"
+                  onMouseEnter={() => setIsHoveringCTA(true)}
+                  onMouseLeave={() => setIsHoveringCTA(false)}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
                   <Linkedin size={18} />
@@ -139,6 +147,8 @@ export default function Hero() {
                 <a
                   href="https://github.com/KingCalvo"
                   aria-label="GitHub"
+                  onMouseEnter={() => setIsHoveringCTA(true)}
+                  onMouseLeave={() => setIsHoveringCTA(false)}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
                   <Github size={18} />
@@ -150,12 +160,16 @@ export default function Hero() {
           {/* Imagen */}
           <div className="flex justify-center lg:justify-end">
             <div className="group relative w-full max-w-[360px] sm:max-w-[380px] lg:max-w-[480px]">
-              <div className="relative h-[500px] overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.15)] transition duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
+              <div className="relative h-[520px] overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.15)] transition duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
                 <Image
-                  src="/images/yo1.jpeg"
-                  alt="Imagen de presentación"
+                  src={
+                    isHoveringCTA
+                      ? "/images/contenido/avatar_PulgarL.png"
+                      : "/images/contenido/avatar_SaludandoM.png"
+                  }
+                  alt="Avatar de Enrique"
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
+                  className="object-cover transition duration-500"
                   priority
                 />
               </div>
@@ -262,11 +276,10 @@ export default function Hero() {
             {/* Right */}
             <div className="flex h-full">
               <div className="w-full rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
-                {/* Imagen centrada */}
                 <div className="flex h-[260px] items-center justify-center">
                   <div className="relative h-56 w-56 overflow-hidden rounded-full bg-slate-100 shadow-lg">
                     <Image
-                      src="/images/foto.jpg"
+                      src="/images/contenido/foto.jpg"
                       alt="Foto de Enrique Calvo García"
                       fill
                       className="object-cover"
@@ -294,7 +307,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* EXPERIENCIA */}
+          {/* Experiencia */}
           <div className="mt-19">
             <h4 className="text-2xl font-semibold text-center">
               Experiencia profesional
