@@ -65,9 +65,10 @@ const techGroups: TechGroup[] = [
       { name: "React", Icon: SiReact, color: "#61DAFB" },
       { name: "Next JS", Icon: SiNextdotjs, color: "#111111" },
       { name: "NodeJS", Icon: SiNodedotjs, color: "#339933" },
-      { name: "Express.js", Icon: SiExpress, color: "#000000" },
       { name: "Astro", Icon: SiAstro, color: "#FF5D01" },
+      { name: "Express.js", Icon: SiExpress, color: "#000000" },
       { name: "TailwindCSS", Icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Vite.js", Icon: SiVite, color: "#646CFF" },
     ],
   },
   {
@@ -80,9 +81,9 @@ const techGroups: TechGroup[] = [
   {
     title: "Bases de datos",
     items: [
+      { name: "Postgres", Icon: SiPostgresql, color: "#336791" },
       { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
       { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
-      { name: "Postgres", Icon: SiPostgresql, color: "#336791" },
       { name: "SQLite", Icon: SiSqlite, color: "#003B57" },
       { name: "Redis", Icon: SiRedis, color: "#DC382D" },
       { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
@@ -96,12 +97,11 @@ const techGroups: TechGroup[] = [
       { name: "Trello", Icon: SiTrello, color: "#0052CC" },
       { name: "Git", Icon: SiGit, color: "#F05032" },
       { name: "GitHub", Icon: SiGithub, color: "#181717" },
-      { name: "npm", Icon: SiNpm, color: "#CB3837" },
-      { name: "VS Code", Icon: VscVscode, color: "#007ACC" },
-      { name: "pnpm", Icon: SiPnpm, color: "#F69220" },
-      { name: "Vite.js", Icon: SiVite, color: "#646CFF" },
-      { name: "Cursor", Icon: FaCode, color: "#111111" },
       { name: "Google Cloud", Icon: SiGooglecloud, color: "#4285F4" },
+      { name: "npm", Icon: SiNpm, color: "#CB3837" },
+      { name: "pnpm", Icon: SiPnpm, color: "#F69220" },
+      { name: "VS Code", Icon: VscVscode, color: "#007ACC" },
+      { name: "Cursor", Icon: FaCode, color: "#111111" },
     ],
   },
 ];
@@ -111,25 +111,30 @@ function TechChip({ item }: { item: TechItem }) {
 
   return (
     <div
-      className="group relative flex items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[var(--tech-color)]"
+      className="group relative flex flex-col items-center justify-center rounded-2xl bg-white px-5 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
       style={
         {
           "--tech-color": color,
         } as CSSProperties
       }
     >
+      {/* Icono */}
       <Icon
-        size={22}
+        size={30}
         style={{ color }}
         className="transition duration-300 group-hover:scale-110"
       />
 
-      <span className="text-sm font-medium text-slate-700">{item.name}</span>
+      {/* Texto */}
+      <span className="mt-3 text-sm font-medium text-slate-600 text-center">
+        {item.name}
+      </span>
 
+      {/* Glow */}
       <div
         className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
-          boxShadow: `0 0 18px var(--tech-color)`,
+          boxShadow: `0 0 22px var(--tech-color)`,
         }}
       />
     </div>
@@ -138,9 +143,17 @@ function TechChip({ item }: { item: TechItem }) {
 
 function TechGroupCard({ group }: { group: TechGroup }) {
   return (
-    <div className="rounded-2xl bg-white p-6 backdrop-blur-sm ">
-      <h5 className="text-lg font-semibold text-slate-900 ">{group.title}</h5>
-      <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-6">
+    <div className="p-6">
+      {/* Header */}
+      <div className="flex items-center gap-3 justify-center">
+        <div className="h-2 w-2 rounded-full bg-slate-900" />
+        <h5 className="text-base font-semibold text-slate-900 tracking-tight">
+          {group.title}
+        </h5>
+      </div>
+
+      {/* Chips */}
+      <div className="mt-6 grid gap-5 grid-cols-3 sm:grid-cols-4">
         {group.items.map((item) => (
           <TechChip key={item.name} item={item} />
         ))}
@@ -197,10 +210,11 @@ export default function About() {
                 </p>
 
                 <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-[15px] text-justify">
-                  Desarrollo de la aplicación móvil FixGo (Android) con Flutter,
-                  implementando módulos de proveedor y administrador; gestión de
-                  servicios, autenticación, imágenes, reportes PDF, gráficas,
-                  mapas, panel administrativo y optimización de rendimiento.
+                  Soy Ingeniero en Sistemas Computacionales, soy autodidacta y
+                  disciplinado; me entusiasma aprender nuevas tecnologías y
+                  aplicar buenas prácticas para entregar soluciones de calidad.
+                  Me destaco en trabajo en equipo, comunicación con clientes y
+                  resolución pragmática de problemas.
                 </p>
               </div>
 
@@ -260,66 +274,82 @@ export default function About() {
         </div>
 
         <div className="mt-7 space-y-8 pt-8">
-          {/* Experiencia */}
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
-            <div className="flex items-center gap-3">
-              <span className="h-6 w-1 rounded-full bg-slate-900" />
-              <h4 className="text-2xl font-semibold">Experiencia</h4>
-            </div>
+          <div className="mt-10">
+            <div className="relative">
+              {/* Línea */}
+              <div className="absolute left-4 top-0 h-full w-[2px] bg-slate-200" />
 
-            <div className="mt-6 rounded-2xl bg-mist-50 p-6">
-              <p className="text-lg font-semibold text-slate-900">
-                Mobile Developer (Flutter)
-              </p>
-              <p className="mt-1 text-sm font-medium text-slate-600">
-                Naatik A.I. Solutions SAPI de CV · Jornada completa
-              </p>
-              <p className="mt-1 text-sm text-slate-500">
-                jun. 2025 - dic. 2025 · 7 meses
-              </p>
-              <p className="mt-1 text-sm text-slate-500">
-                San Francisco 23, Frac. Burgos, Temixco, Morelos, C.P. 62584 ·
-                En remoto
-              </p>
-              <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
-                Desarrollo de la aplicación móvil FixGo (Android) con Flutter,
-                implementando módulos de proveedor y administrador; gestión de
-                servicios, autenticación, imágenes, reportes PDF, gráficas,
-                mapas, panel administrativo y optimización de rendimiento.
-              </p>
-            </div>
-          </div>
+              {/* Experiencia */}
+              <div className="relative pl-12 mb-10">
+                <div className="absolute left-4 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-slate-900 ring-4 ring-white" />
 
-          {/* Educación */}
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
-            <div className="flex items-center gap-3">
-              <span className="h-6 w-1 rounded-full bg-slate-900" />
-              <h4 className="text-2xl font-semibold">Educación</h4>
-            </div>
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+                  <h4 className="text-xl font-semibold">Experiencia</h4>
 
-            <div className="mt-6 rounded-2xl bg-mist-50 p-6">
-              <p className="text-lg font-semibold text-slate-900">
-                Ingeniero en Sistemas Computacionales
-              </p>
-              <p className="mt-1 text-sm text-slate-600">
-                Instituto Tecnológico de Cuautla
-              </p>
-              <p className="mt-1 text-sm text-slate-500">2021 – 2026</p>
-              <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
-                Participación en Hackathon Morelos 12a edición y 13a edición y
-                Hackatec etapa regional y etapa nacional. Formación académica y
-                autodidacta junto con participación en talleres
-                extracurriculares de especialización (Ciberseguridad, IA, redes
-                neuronales, etc.).
-              </p>
+                  <div className="mt-4 rounded-xl bg-slate-50 p-5">
+                    <p className="text-lg font-semibold text-slate-900">
+                      Mobile Developer (Flutter)
+                    </p>
+
+                    <p className="mt-1 text-sm font-medium text-slate-600">
+                      Naatik A.I. Solutions SAPI de CV · Jornada completa
+                    </p>
+
+                    <p className="mt-1 text-xs text-slate-500">
+                      jun. 2025 - dic. 2025 · 7 meses
+                    </p>
+
+                    <p className="mt-1 text-xs text-slate-500">
+                      San Francisco 23, Frac. Burgos, Temixco, Morelos · Remoto
+                    </p>
+
+                    <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
+                      Desarrollo de la aplicación móvil FixGo (Android) con
+                      Flutter, implementando módulos de proveedor y
+                      administrador; gestión de servicios, autenticación,
+                      imágenes, reportes PDF, gráficas, mapas, panel
+                      administrativo y optimización de rendimiento.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Educación */}
+              <div className="relative pl-12">
+                <div className="absolute left-4 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-slate-900 ring-4 ring-white" />
+
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+                  <h4 className="text-xl font-semibold">Educación</h4>
+
+                  <div className="mt-4 rounded-xl bg-slate-50 p-5">
+                    <p className="text-lg font-semibold text-slate-900">
+                      Ingeniero en Sistemas Computacionales
+                    </p>
+
+                    <p className="mt-1 text-sm text-slate-600">
+                      Instituto Tecnológico de Cuautla
+                    </p>
+
+                    <p className="mt-1 text-xs text-slate-500">2021 – 2026</p>
+
+                    <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
+                      Participación en Hackathon Morelos 12a edición y 13a
+                      edición y Hackatec etapa regional y etapa nacional.
+                      Formación académica y autodidacta junto con participación
+                      en talleres extracurriculares de especialización
+                      (Ciberseguridad, IA, redes neuronales, etc.).
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Habilidades */}
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
             <div className="flex items-center gap-3">
               <span className="h-6 w-1 rounded-full bg-slate-900" />
-              <h4 className="text-2xl font-semibold">Habilidades</h4>
+              <h4 className="text-xl font-semibold">Habilidades</h4>
             </div>
 
             <div className="mt-3 flex flex-wrap gap-2">
@@ -335,18 +365,43 @@ export default function About() {
           </div>
 
           {/* Habilidades como desarrollador */}
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
             <div className="flex items-center gap-3">
               <span className="h-6 w-1 rounded-full bg-slate-900" />
-              <h4 className="text-2xl font-semibold">
+              <h4 className="text-xl font-semibold">
                 Mis habilidades como desarrollador
               </h4>
             </div>
 
-            <div className="mt-2 space-y-0">
-              {techGroups.map((group) => (
-                <TechGroupCard key={group.title} group={group} />
-              ))}
+            <div className="mt-6 space-y-10">
+              <div className="grid md:grid-cols-2 gap-10">
+                {/* Columna izquierda */}
+                <div className="space-y-10">
+                  <div className="bg-[#F8FAFC] rounded-2xl">
+                    <TechGroupCard group={techGroups[1]} />
+                  </div>
+
+                  <div className="bg-[#F8FAFC] rounded-2xl">
+                    <TechGroupCard group={techGroups[2]} />
+                  </div>
+                </div>
+
+                {/* Columna derecha */}
+                <div className="space-y-10">
+                  <div className="bg-[#F8FAFC] rounded-2xl">
+                    <TechGroupCard group={techGroups[0]} />
+                  </div>
+
+                  <div className="bg-[#F8FAFC] rounded-2xl">
+                    <TechGroupCard group={techGroups[3]} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Herramientas */}
+              <div className="bg-[#F8FAFC] rounded-2xl pt-6">
+                <TechGroupCard group={techGroups[4]} />
+              </div>
             </div>
           </div>
         </div>

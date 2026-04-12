@@ -101,11 +101,14 @@ export default function Services() {
     >
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
+            Solutions
+          </span>
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
             Transformo ideas en Realidad digital.
           </h1>
 
-          <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-slate-500 sm:text-lg">
+          <p className="mx-auto mt-8 max-w-3xl text-base leading-7 text-slate-500 sm:text-lg">
             Diseñador y desarrollador web. Ofrezco soluciones completas para
             hacer realidad tus ideas digitales, desde páginas de destino
             sencillas hasta proyectos complejos con inteligencia artificial y

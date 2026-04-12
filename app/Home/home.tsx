@@ -216,9 +216,6 @@ export default function Hero() {
       <div className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
-            <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
-              About me
-            </span>
             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
               Acerca de <span className="animate-pulse">mí</span>
             </h2>
@@ -243,11 +240,11 @@ export default function Hero() {
                   </p>
 
                   <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-[15px] text-justify">
-                    Desarrollo de la aplicación móvil FixGo (Android) con
-                    Flutter, implementando módulos de proveedor y administrador;
-                    gestión de servicios, autenticación, imágenes, reportes PDF,
-                    gráficas, mapas, panel administrativo y optimización de
-                    rendimiento.
+                    Soy Ingeniero en Sistemas Computacionales, soy autodidacta y
+                    disciplinado; me entusiasma aprender nuevas tecnologías y
+                    aplicar buenas prácticas para entregar soluciones de
+                    calidad. Me destaco en trabajo en equipo, comunicación con
+                    clientes y resolución pragmática de problemas.
                   </p>
                 </div>
 
@@ -308,23 +305,20 @@ export default function Hero() {
           </div>
 
           {/* Experiencia */}
-          <div className="mt-19">
+          <div className="mt-10 space-y-8 pt-8">
             <h4 className="text-2xl font-semibold text-center">
               Experiencia profesional
             </h4>
+            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div className="flex items-center gap-3">
+                <span className="h-6 w-1 rounded-full bg-slate-900" />
+                <h4 className="text-2xl font-semibold">Experiencia</h4>
+              </div>
 
-            <div className="mt-10 space-y-6">
-              <div className="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition">
-                <div className="flex items-center justify-between flex-wrap gap-2">
-                  <p className="text-lg font-semibold">
-                    Mobile Developer (Flutter)
-                  </p>
-
-                  <span className="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-600">
-                    2025
-                  </span>
-                </div>
-
+              <div className="mt-6 rounded-2xl bg-mist-50 p-6">
+                <p className="text-lg font-semibold text-slate-900">
+                  Mobile Developer (Flutter)
+                </p>
                 <p className="mt-1 text-sm font-medium text-slate-600">
                   Naatik A.I. Solutions SAPI de CV · Jornada completa
                 </p>
