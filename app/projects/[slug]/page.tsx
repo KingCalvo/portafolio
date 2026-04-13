@@ -2,10 +2,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { IoIosApps } from "react-icons/io";
-import { LuBox, LuCode } from "react-icons/lu";
+import { LuBox, LuCode, LuFileText } from "react-icons/lu";
 import { portfolioData } from "@/data/portafolioData";
 import ProjectImageCarousel from "@/components/layout/ProjectImageCarousel";
 import BackToProjectsButton from "@/components/molecules/BackToProjectsButton";
+import { Github } from "lucide-react";
 
 type PageProps = {
   params: Promise<{
@@ -38,14 +39,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-stretch">
           <div className="space-y-8">
             <div>
-              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                 {project.title}
               </h1>
 
-              <p className="mt-5 max-w-xl text-base text-justify leading-8 text-slate-600 sm:text-lg">
+              <p className="mt-5 max-w-xl text-base text-justify leading-8 text-slate-600 sm:text-lg whitespace-pre-line">
                 {project.description}
               </p>
             </div>
@@ -121,27 +122,40 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-slate-900 hover:text-slate-900 hover:shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-blue-800 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-sky-800 hover:bg-blue-900 hover:text-white hover:shadow-md"
                 >
+                  <Github className="h-4 w-4" />
                   GitHub
+                </a>
+              )}
+
+              {project.botonDocumentacion && project.documentacionUrl && (
+                <a
+                  href={project.documentacionUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-800 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-sky-800 hover:bg-sky-800 hover:text-white hover:shadow-md"
+                >
+                  <LuFileText className="h-4 w-4" />
+                  Documentación
                 </a>
               )}
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="flex flex-col gap-6 h-full max-h-[calc(100vh-80px)]">
             <ProjectImageCarousel
               title={project.title}
               images={project.images}
             />
 
-            <div className="group rounded-[2rem] border border-orange-200 bg-white p-6 shadow-sm ">
+            <div className="group rounded-[2rem] border border-orange-200 bg-white p-6 shadow-sm flex flex-col flex-1 overflow-hidden">
               <h2 className="flex items-center gap-3 text-2xl font-semibold tracking-tight">
                 <IoIosApps className="h-5 w-5 text-orange-500" />
                 <span>Características principales</span>
               </h2>
 
-              <div className="mt-5 space-y-3">
+              <div className="mt-5 space-y-3 overflow-y-auto pr-2 flex-1 min-h-0">
                 {project.details.features.map((feature) => (
                   <div
                     key={feature}

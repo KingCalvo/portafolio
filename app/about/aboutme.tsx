@@ -377,11 +377,11 @@ export default function About() {
               <div className="grid md:grid-cols-2 gap-10">
                 {/* Columna izquierda */}
                 <div className="space-y-10">
-                  <div className="bg-[#F8FAFC] rounded-2xl">
+                  <div className="bg-slate-100 rounded-2xl">
                     <TechGroupCard group={techGroups[1]} />
                   </div>
 
-                  <div className="bg-[#F8FAFC] rounded-2xl">
+                  <div className="bg-[#F5F5F5] rounded-2xl">
                     <TechGroupCard group={techGroups[2]} />
                   </div>
                 </div>

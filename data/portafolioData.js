@@ -1,90 +1,163 @@
 export const portfolioData = {
   projects: [
     {
-      slug: "proyecto-01",
-      title: "Proyecto 01",
+      slug: "proyecto-05",
+      title: "Aplicación Android FixGo",
       description:
-        "Descripción corta del proyecto. Aquí puedes resumir lo más importante.",
+        "FixGo es una aplicación móvil enfocada en la contratación de servicios a domicilio, como plomería, electricidad, pintura, jardinería y mantenimiento general. Su objetivo es conectar a clientes con proveedores cercanos de manera rápida, confiable y organizada dentro de una sola plataforma. \n\n El sistema permite gestionar todo el proceso de contratación, desde la búsqueda de proveedores hasta la administración de servicios. Dentro del desarrollo del proyecto, se implementaron principalmente los módulos de proveedor y administrador, estableciendo una base sólida y escalable para futuras funcionalidades.",
       images: ["/images/projects/project-1.jpg"],
       liveDemo: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/KingCalvo/FixGo",
+      documentacionUrl: "#",
+      botonDocumentacion: false,
+      botonDemo: false,
+      botonGit: true,
+      details: {
+        technologies: [
+          "Flutter",
+          "Dart",
+          "Supabase",
+          "Firebase",
+          "Clean Architecture",
+          "PostgreSQL",
+          "OpenStreetMap",
+          "Flutter Map",
+        ],
+
+        features: [
+          "Autenticación de usuarios mediante correo electrónico y Google.",
+          "Gestión de perfiles de proveedores, incluyendo datos personales, servicios ofrecidos, disponibilidad y galería de trabajos.",
+          "Búsqueda de proveedores cercanos, basada en ubicación, distancia y categoría de servicio.",
+          "Gestión de solicitudes de servicio, permitiendo aceptar, rechazar o enviar contrapropuestas entre cliente y proveedor.",
+          "Panel de administrador, con control sobre proveedores, métricas y configuración del sistema.",
+          "Historial y desempeño del proveedor, incluyendo métricas y visualización de actividad.",
+          "Gestión de servicios activos, finalizados o cancelados dentro de la plataforma.",
+          "Almacenamiento de imágenes en la nube, para perfiles, trabajos y servicios.",
+          "Arquitectura escalable, preparada para integrar futuras funcionalidades como pagos, mensajería y calificaciones.",
+        ],
+      },
+    },
+
+    {
+      slug: "proyecto-04",
+      title:
+        "SafeBridge: Plataforma digital y sistema inteligente para la prevención de inundaciones en puentes en tiempo real",
+      description:
+        "SafeBridge es una aplicación web que funciona como una plataforma digital inteligente para la prevención de inundaciones en puentes mediante el monitoreo, análisis y respuesta en tiempo real. Su objetivo principal es reducir riesgos, accidentes y pérdidas humanas ocasionadas por el incremento del nivel del agua en infraestructuras viales críticas. \n\n La plataforma integra un sistema basado en sensores que recopilan datos en tiempo real sobre el estado de los puentes. Esta información es procesada y visualizada dentro de la aplicación web, permitiendo a usuarios, autoridades y operadores tomar decisiones informadas de manera inmediata. \n\n Además, la aplicación web ofrece una interfaz intuitiva donde se pueden visualizar datos, consultar el estado de los puentes, analizar alertas y acceder a información meteorológica relevante, facilitando la gestión eficiente de situaciones de riesgo.",
+      images: ["/images/projects/project-2.jpg"],
+      liveDemo: "https://safe-bridge-eight.vercel.app/",
+      githubUrl: "https://github.com/KingCalvo/SafeBridge",
+      documentacionUrl: "#",
+      botonDocumentacion: false,
       botonDemo: true,
       botonGit: true,
       details: {
         technologies: [
           "React",
-          "Next.js",
-          "TailwindCSS",
-          "TypeScript",
-          "Firebase",
+          "JavaScript",
+          "Tailwind CSS",
+          "PostgreSQL",
+          "Supabase",
+          "Open-Meteo",
+          "Vite",
         ],
-
         features: [
-          "Característica principal 1",
-          "Característica principal 2",
-          "Característica principal 3",
-          "Característica principal 4",
-          "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Nacional. Obteniendo el tercer lugar como integrante del equipo DevG.",
+          "La plataforma recopila datos constantemente desde sensores IoT para detectar cambios en el nivel del agua y condiciones ambientales críticas.",
+          "Cuando se detecta un riesgo, el sistema envía notificaciones inmediatas a usuarios y autoridades, permitiendo una reacción rápida y coordinada.",
+          "Incluye dashboards con gráficos interactivos y datos meteorológicos en tiempo real, facilitando el análisis de la situación actual.",
+          "Permite consultar, filtrar y buscar puentes por nombre, ubicación o estado (activo, inactivo o en reparación).",
+          "Almacena eventos pasados para análisis de patrones, ayudando a mejorar estrategias de prevención futuras.",
+          "La aplicación web maneja distintos tipos de usuario: Administrador, Operador, Invitado. Cada uno con permisos específicos, garantizando seguridad y control de la información.",
+          "Permite a cualquier usuario consultar información relevante sin necesidad de registro, promoviendo transparencia.",
+          "El sistema puede activar barreras automáticas y alarmas físicas en los puentes para evitar el paso en situaciones de riesgo.",
+        ],
+      },
+    },
+
+    {
+      slug: "proyecto-03",
+      title:
+        "Energ-X: plataforma digital para el monitoreo y gestión del consumo energético",
+      description:
+        "Energ-X es una aplicación web orientada al monitoreo inteligente del consumo energético. La plataforma está diseñada para registrar, organizar y visualizar información de dispositivos, áreas y edificios, con el objetivo de ayudar a administrar mejor el uso de la energía. \n\nTambién incluye módulos de autenticación, paneles de control y visualizaciones gráficas que permiten consultar consumo estimado, facturación, emisiones de CO2e y evolución histórica.",
+      images: [
+        "/images/projects/chivalry.jpg",
+        "/images/projects/prueba.jpg",
+        "/images/projects/prueba2.png",
+      ],
+      liveDemo: "https://energ-x.vercel.app/",
+      githubUrl: "https://github.com/KingCalvo/EnergX",
+      documentacionUrl: "#",
+      botonDocumentacion: false,
+      botonDemo: true,
+      botonGit: true,
+      details: {
+        technologies: [
+          "Astro",
+          "React",
+          "TypeScript",
+          "JavaScript",
+          "Tailwind CSS",
+          "PostgreSQL",
+          "supabase",
+        ],
+        features: [
+          "Presenta una aplicación web informativa con portada, misión, visión, oferta y sección “Sobre Nosotros”.",
+          "Permite registro, inicio de sesión y gestión de usuarios con formularios validados y manejo de errores mediante modales.",
+          "Incluye un panel administrativo para visualizar áreas disponibles y acceder al seguimiento energético.",
+          "Permite registrar dispositivos asociados a áreas y edificios dentro de la plataforma.",
+          "Muestra un panel por edificio y área para navegar entre los espacios monitoreados.",
+          "Visualiza consumo energético con gráficas y medidores usando componentes dinámicos.",
+          "Calcula indicadores útiles como facturación semanal, consumo por m² y emisiones de CO2e por m²",
+          "Integra recomendaciones visuales y mensajes de ahorro energético para reforzar el uso eficiente de la energía.",
         ],
       },
     },
 
     {
       slug: "proyecto-02",
-      title: "Proyecto 02",
-      description: "Descripción corta del proyecto.",
-      images: ["/images/projects/project-2.jpg"],
-      liveDemo: "#",
-      githubUrl: "#",
-      botonDemo: true,
-      botonGit: true,
-      details: {
-        technologies: ["Flutter", "Firebase", "Dart"],
-        features: ["Característica 1", "Característica 2", "Característica 3"],
-      },
-    },
-
-    {
-      slug: "proyecto-03",
-      title: "Proyecto 03",
-      description: "Descripción corta del proyecto.",
+      title: "SVARC: Sistema de Visión Artificial para Robots de Competencia",
+      description:
+        "SVARC es un robot móvil autónomo diseñado para identificar objetos en tiempo real mediante visión artificial, segmentación por color y sensores. El sistema captura imágenes con una cámara ESP32-S3-WROOM CAM, las envía por UDP a una computadora para su procesamiento y, con base en la detección y la distancia estimada al objetivo, decide movimientos como avanzar, girar o detenerse.\n\n Además, integra un chasis impreso en 3D, tracción de cuatro ruedas, sensores infrarrojos y de distancia, y un sistema de control basado en microcontroladores para operar en escenarios de competencia.",
       images: ["/images/projects/project-3.jpg"],
       liveDemo: "#",
       githubUrl: "#",
-      botonDemo: true,
-      botonGit: true,
+      documentacionUrl:
+        "https://drive.google.com/drive/folders/1xBUzKZmBJ2BKnlDzAJV903BOCqymH9uk?usp=sharing",
+      botonDocumentacion: true,
+      botonDemo: false,
+      botonGit: false,
       details: {
-        technologies: ["React Native", "Node.js", "MongoDB"],
-        features: ["Característica 1", "Característica 2", "Característica 3"],
+        technologies: [
+          "Python",
+          "TensorFlow",
+          "OpenCV",
+          "YOLO",
+          "Arduino IDE",
+          "Thonny",
+          "Proteus",
+        ],
+        features: [
+          "Detecta objetos de forma automática mediante visión artificial y segmentación por color.",
+          "Calcula la distancia al objeto en tiempo real para decidir la acción del robot.",
+          "Transmite imágenes fragmentadas por UDP para procesarlas en una computadora.",
+          "Ejecuta movimiento autónomo con decisiones como avanzar, girar a la izquierda, girar a la derecha o detenerse al alcanzar el objetivo.",
+          "Integra sensores de distancia e infrarrojos para mejorar la navegación y la detección del entorno.",
+          "Usa una interfaz visual para monitorear la detección, el contorno del objeto y la distancia estimada.",
+          "Está construido sobre una plataforma física modular con chasis 3D, tracción de cuatro ruedas y control microcontrolado.",
+        ],
       },
     },
 
     {
-      slug: "proyecto-04",
-      title: "Proyecto 04",
-      description: "Descripción corta del proyecto.",
-      images: [
-        "/images/projects/chivalry.jpg",
-        "/images/projects/prueba.jpg",
-        "/images/projects/prueba2.png",
-      ],
-      liveDemo: "#",
-      githubUrl: "#",
-      botonDemo: true,
-      botonGit: true,
-      details: {
-        technologies: ["Astro", "TailwindCSS", "Supabase", "prueba"],
-        features: ["Característica 1", "Característica 2", "Característica 3"],
-      },
-    },
-
-    {
-      slug: "proyecto-05",
-      title: "Proyecto 05",
+      slug: "proyecto-01",
+      title: "Proyecto 01",
       description: "Descripción corta del proyecto.",
       images: ["/images/projects/project-5.jpg"],
       liveDemo: "#",
       githubUrl: "#",
+      documentacionUrl: "#",
+      botonDocumentacion: false,
       botonDemo: true,
       botonGit: true,
       details: {
@@ -101,8 +174,8 @@ export const portfolioData = {
       description:
         "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Nacional. Obteniendo el tercer lugar como integrante del equipo DevG.",
       images: ["/images/hackathons/hackathon-1.jpg"],
-      liveDemo: "#",
-      botonDemo: false,
+      documentacionUrl: "#",
+      botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: ["Característica 1", "Característica 2", "Característica 3"],
@@ -114,8 +187,8 @@ export const portfolioData = {
       description:
         "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Regional. Obteniendo el segundo lugar como integrante del equipo DevG.",
       images: ["/images/hackathons/hackathon-2.jpg"],
-      liveDemo: "#",
-      botonDemo: false,
+      documentacionUrl: "#",
+      botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: ["Característica 1", "Característica 2", "Característica 3"],
@@ -126,8 +199,8 @@ export const portfolioData = {
       title: "Participación en el Hackathon Morelos 13a Edición.",
       description: "Ganador del premio a mejor aplicación Auth0.",
       images: ["/images/hackathons/hackathon-3.jpg"],
-      liveDemo: "#",
-      botonDemo: false,
+      documentacionUrl: "#",
+      botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: ["Característica 1", "Característica 2", "Característica 3"],
@@ -139,8 +212,8 @@ export const portfolioData = {
       description:
         "Ganador de los premios: Best Use of Google Cloud y Best Domain Name from GoDaddy Registry.",
       images: ["/images/hackathons/hackathon-4.jpg"],
-      liveDemo: "#",
-      botonDemo: false,
+      documentacionUrl: "#",
+      botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: ["Característica 1", "Característica 2", "Característica 3"],

@@ -56,7 +56,7 @@ export default function ProjectImageCarousel({
         <button
           type="button"
           onClick={() => setIsExpanded(true)}
-          className="relative block aspect-[16/10] w-full bg-slate-100"
+          className="relative block w-full h-64 lg:h-72 bg-slate-100"
         >
           <Image
             src={currentImage}
