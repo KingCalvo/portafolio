@@ -75,7 +75,7 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-20 min-h-screen flex flex-col justify-center">
         <div className="grid items-center gap-12 lg:grid-cols-2 w-full">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1">
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1 text-center lg:text-left">
               Hola, soy <span className="text-slate-900">Enrique</span>
             </h1>
 
@@ -93,14 +93,23 @@ export default function Hero() {
               técnica con creatividad, especialmente en desarrollo web y móvil.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex justify-center gap-2 sm:gap-4 lg:justify-start">
+              <Link
+                href="/projects"
+                onMouseEnter={() => setIsHoveringCTA(true)}
+                onMouseLeave={() => setIsHoveringCTA(false)}
+                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm text-center sm:px-6 sm:py-3 sm:text-base font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
+              >
+                <Folder size={18} className="hidden sm:inline" />
+                Ver proyectos
+              </Link>
               <a
                 href="https://wa.me/7351241139"
                 target="_blank"
                 rel="noopener noreferrer"
                 onMouseEnter={() => setIsHoveringCTA(true)}
                 onMouseLeave={() => setIsHoveringCTA(false)}
-                className="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
               >
                 <FaWhatsapp size={24} />
                 Contáctame
@@ -111,37 +120,27 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 onMouseEnter={() => setIsHoveringCTA(true)}
                 onMouseLeave={() => setIsHoveringCTA(false)}
-                className="inline-flex items-center gap-2 rounded-full bg-[#EA4335] px-6 py-3 text-white font-bold shadow-md transition hover:-translate-y-0.5 hover:bg-[#C5221F] hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-[#EA4335] px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base text-white font-bold shadow-md transition hover:-translate-y-0.5 hover:bg-[#C5221F] hover:shadow-lg"
               >
                 <SiGmail size={16} />
                 Gmail
               </a>
-
-              <Link
-                href="/projects"
-                onMouseEnter={() => setIsHoveringCTA(true)}
-                onMouseLeave={() => setIsHoveringCTA(false)}
-                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
-              >
-                <Folder size={18} />
-                Ver proyectos
-              </Link>
             </div>
 
-            <div className="mt-10 border-t border-slate-200 pt-6">
+            <div className="mt-10 border-t border-slate-200 pt-6 text-center lg:text-center">
               <p className="font-semibold uppercase tracking-[0.25em] text-slate-400">
                 Sígueme
               </p>
 
-              <div className="mt-4 flex items-center gap-4">
+              <div className="mt-4 flex items-center justify-center gap-4">
                 <a
                   href="https://www.linkedin.com/in/enrique-calvo-garcia-022151168/"
                   aria-label="LinkedIn"
                   onMouseEnter={() => setIsHoveringCTA(true)}
                   onMouseLeave={() => setIsHoveringCTA(false)}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-blue-500 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md"
                 >
-                  <Linkedin size={18} />
+                  <Linkedin className="text-white" size={18} />
                 </a>
 
                 <a
@@ -149,9 +148,9 @@ export default function Hero() {
                   aria-label="GitHub"
                   onMouseEnter={() => setIsHoveringCTA(true)}
                   onMouseLeave={() => setIsHoveringCTA(false)}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-900 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
                 >
-                  <Github size={18} />
+                  <Github className="text-white" size={18} />
                 </a>
               </div>
             </div>
@@ -160,7 +159,7 @@ export default function Hero() {
           {/* Imagen */}
           <div className="flex justify-center lg:justify-end">
             <div className="group relative w-full max-w-[360px] sm:max-w-[380px] lg:max-w-[480px]">
-              <div className="relative h-[520px] overflow-hidden rounded-3xl bg-slate-100 shadow-[0_20px_60px_rgba(15,23,42,0.15)] transition duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
+              <div className="relative h-[340px] sm:h-[420px] lg:h-[520px] overflow-hidden rounded-3xl bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.15)] transition duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
                 <Image
                   src={
                     isHoveringCTA

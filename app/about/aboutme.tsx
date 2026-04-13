@@ -28,6 +28,7 @@ import {
   SiVite,
   SiPnpm,
   SiGooglecloud,
+  SiExpo,
 } from "react-icons/si";
 import {
   FaJava,
@@ -75,7 +76,9 @@ const techGroups: TechGroup[] = [
     title: "Desarrollo móvil",
     items: [
       { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
+      { name: "BLoC", Icon: SiFlutter, color: "#0175C2" },
       { name: "React Native", Icon: FaMobileScreenButton, color: "#61DAFB" },
+      { name: "Expo", Icon: SiExpo, color: "#000020" },
     ],
   },
   {
@@ -111,7 +114,7 @@ function TechChip({ item }: { item: TechItem }) {
 
   return (
     <div
-      className="group relative flex flex-col items-center justify-center rounded-2xl bg-white px-5 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+      className="group relative flex flex-col items-center justify-center rounded-2xl bg-white px-4 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md w-full overflow-hidden"
       style={
         {
           "--tech-color": color,
@@ -126,7 +129,7 @@ function TechChip({ item }: { item: TechItem }) {
       />
 
       {/* Texto */}
-      <span className="mt-3 text-sm font-medium text-slate-600 text-center">
+      <span className="mt-3 text-sm font-medium text-slate-600 text-center break-words leading-tight">
         {item.name}
       </span>
 
@@ -153,7 +156,7 @@ function TechGroupCard({ group }: { group: TechGroup }) {
       </div>
 
       {/* Chips */}
-      <div className="mt-6 grid gap-5 grid-cols-3 sm:grid-cols-4">
+      <div className="mt-6 grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
         {group.items.map((item) => (
           <TechChip key={item.name} item={item} />
         ))}
@@ -374,32 +377,32 @@ export default function About() {
             </div>
 
             <div className="mt-6 space-y-10">
-              <div className="grid md:grid-cols-2 gap-10">
+              <div className="grid md:grid-cols-1 gap-10">
                 {/* Columna izquierda */}
                 <div className="space-y-10">
-                  <div className="bg-slate-100 rounded-2xl">
+                  <div className="bg-slate-50 rounded-2xl">
                     <TechGroupCard group={techGroups[1]} />
                   </div>
 
-                  <div className="bg-[#F5F5F5] rounded-2xl">
+                  <div className="bg-slate-50 rounded-2xl">
                     <TechGroupCard group={techGroups[2]} />
                   </div>
                 </div>
 
                 {/* Columna derecha */}
                 <div className="space-y-10">
-                  <div className="bg-[#F8FAFC] rounded-2xl">
+                  <div className="bg-slate-50 rounded-2xl">
                     <TechGroupCard group={techGroups[0]} />
                   </div>
 
-                  <div className="bg-[#F8FAFC] rounded-2xl">
+                  <div className="bg-slate-50 rounded-2xl">
                     <TechGroupCard group={techGroups[3]} />
                   </div>
                 </div>
               </div>
 
               {/* Herramientas */}
-              <div className="bg-[#F8FAFC] rounded-2xl pt-6">
+              <div className="bg-slate-50 rounded-2xl pt-6">
                 <TechGroupCard group={techGroups[4]} />
               </div>
             </div>
