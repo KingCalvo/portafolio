@@ -72,7 +72,7 @@ export default function Hero() {
   return (
     <section id="home" className="bg-white text-slate-900 flex flex-col">
       {/* Hero */}
-      <div className="mx-auto w-full max-w-6xl px-6 py-16 lg:py-20 min-h-screen flex flex-col justify-center">
+      <div className="mx-auto w-full max-w-6xl px-6 py-20 min-h-screen flex flex-col justify-center">
         <div className="grid items-center gap-12 lg:grid-cols-2 w-full">
           <div className="max-w-xl">
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1 text-center lg:text-left">
@@ -212,7 +212,7 @@ export default function Hero() {
       </div>
 
       {/* About + experiencia */}
-      <div className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
+      <div className="bg-gradient-to-b from-white via-slate-50 to-white py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
@@ -223,7 +223,7 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div className="mt-12 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
             {/* Left */}
             <div className="relative h-full">
               <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-sky-500/10 blur-2xl" />
@@ -304,7 +304,7 @@ export default function Hero() {
           </div>
 
           {/* Experiencia */}
-          <div className="mt-10 space-y-8 pt-8">
+          <div className="mt-6 space-y-8 pt-8">
             <h4 className="text-2xl font-semibold text-center">
               Experiencia profesional
             </h4>
@@ -351,7 +351,7 @@ export default function Hero() {
       </div>
 
       {/* Proyectos destacados */}
-      <div className="bg-white py-24">
+      <div className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -425,7 +425,7 @@ export default function Hero() {
       </div>
 
       {/* Servicios */}
-      <div className="bg-gradient-to-b from-white via-slate-50 to-white py-24">
+      <div className="bg-gradient-to-b from-white via-slate-50 to-white py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
@@ -446,30 +446,40 @@ export default function Hero() {
           </div>
 
           {/* Cards */}
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {/* CARD 1 */}
-            <article className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <div className="mt-12 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
+            {/* Card 1 */}
+            <article className="overflow-hidden rounded-[2rem] border border-blue-500/30 ring-2 ring-blue-500/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-500/10 before:blur-xl before:opacity-70 before:-z-10">
               {/* Badge */}
-              <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white">
+              <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-1 text-sm font-semibold text-white">
                 Destacado
               </span>
 
-              <div className="relative aspect-[16/10] bg-slate-100" />
+              {/* Imagen */}
+              <div className="relative aspect-16/10 overflow-hidden">
+                <Image
+                  src="/images/projects/chivalry.jpg"
+                  alt="Sitios web"
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-xl font-semibold">Sitios web</h3>
+                <h3 className="text-xl font-semibold text-center">
+                  Sitios web
+                </h3>
 
-                <p className="mt-3 text-sm text-slate-500 leading-7">
+                <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
                   Creo sitios web modernos y responsivos, desde páginas de
-                  destino sencillas hasta sitios completos con todas las
+                  destino sencillas hasta sitios mas completos con todas las
                   funciones que necesitas. Diseño personalizado, optimización
                   SEO y excelente rendimiento.
                 </p>
 
-                <div className="mt-auto pt-6">
+                <div className="mt-2 pt-6 flex justify-center">
                   <Link
-                    href="/services"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                    href="/contact"
+                    className="inline-flex items-center gap-2 rounded-full  bg-blue-600 px-5 py-2 text-sm text-white  transition hover:bg-blue-700 shadow-md hover:shadow-lg"
                   >
                     Descubre más
                     <IoArrowForward className="h-4 w-4" />
@@ -478,25 +488,32 @@ export default function Hero() {
               </div>
             </article>
 
-            {/* CARD 2 */}
-            <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative aspect-[16/10] bg-slate-100" />
+            {/* Card 2 */}
+            <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative aspect-16/10 overflow-hidden">
+                <Image
+                  src="/images/projects/chivalry.jpg"
+                  alt="Sitios web"
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-xl font-semibold">
+                <h3 className="text-xl font-semibold text-center">
                   Aplicaciones web y PWA
                 </h3>
 
-                <p className="mt-3 text-sm text-slate-500 leading-7">
+                <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
                   Desarrollo aplicaciones web personalizadas y Aplicaciones Web
                   Progresivas (PWA): desde paneles de control empresariales
                   hasta plataformas complejas, hasta aplicaciones instalables en
                   cualquier dispositivo, funcionando incluso offline.
                 </p>
 
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pt-6 flex justify-center">
                   <Link
-                    href="/services"
+                    href="/contact"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                   >
                     Descubre más
@@ -506,23 +523,32 @@ export default function Hero() {
               </div>
             </article>
 
-            {/* CARD 3 */}
-            <article className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="relative aspect-[16/10] bg-slate-100" />
+            {/* Card 3 */}
+            <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative aspect-16/10 overflow-hidden">
+                <Image
+                  src="/images/projects/chivalry.jpg"
+                  alt="Sitios web"
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
 
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-xl font-semibold">Integraciones con IA</h3>
+                <h3 className="text-xl font-semibold text-center">
+                  Integraciones con IA
+                </h3>
 
-                <p className="mt-3 text-sm text-slate-500 leading-7">
+                <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
                   Integro inteligencia artificial en tus proyectos para
                   automatizar procesos, mejorar la experiencia del usuario y
                   crear soluciones innovadoras. Chatbots, análisis de datos,
                   automatización inteligente.
                 </p>
 
-                <div className="mt-auto pt-6">
+                <div className="mt-auto pt-6 flex justify-center">
                   <Link
-                    href="/services"
+                    href="/contact"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                   >
                     Descubre más
