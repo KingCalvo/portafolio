@@ -218,7 +218,7 @@ export default function Services() {
 
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
-                  href="/contact"
+                  href="/services/web-basico"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
                   Descubre más
