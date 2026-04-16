@@ -148,7 +148,7 @@ export default function Services() {
 
               <div className="mt-2 pt-6 flex justify-center">
                 <Link
-                  href="/contact"
+                  href="/services/web"
                   className="inline-flex items-center gap-2 rounded-full  bg-blue-600 px-5 py-2 text-sm text-white  transition hover:bg-blue-700 shadow-md hover:shadow-lg"
                 >
                   Descubre más
@@ -177,13 +177,13 @@ export default function Services() {
               <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
                 Desarrollo aplicaciones web personalizadas y Aplicaciones Web
                 Progresivas (PWA): desde paneles de control empresariales hasta
-                plataformas complejas, hasta aplicaciones instalables en
-                cualquier dispositivo, funcionando incluso offline.
+                plataformas complejas, hasta aplicaciones que funcionan en
+                cualquier dispositivo.
               </p>
 
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
-                  href="/contact"
+                  href="/services/appweb"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
                   Descubre más
@@ -218,7 +218,7 @@ export default function Services() {
 
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
-                  href="/contact"
+                  href="/services/inteligencia"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
                   Descubre más
@@ -286,7 +286,7 @@ export default function Services() {
 
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
-                  href="/contact"
+                  href="/services/design"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
                   Descubre más
@@ -318,7 +318,7 @@ export default function Services() {
 
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
-                  href="/contact"
+                  href="/services/metaverso"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
                   Descubre más

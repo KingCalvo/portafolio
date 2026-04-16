@@ -43,7 +43,7 @@ function FeatureCard({
   );
 }
 
-export default function ServicioSitioWebBasico() {
+export default function ServicioAppWeb() {
   return (
     <main className="bg-white text-slate-900">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#22002c] via-[#6b005f] to-[#8a0a5d] text-white">
@@ -56,9 +56,8 @@ export default function ServicioSitioWebBasico() {
 
         <div className="relative mx-auto flex min-h-[82vh] w-full max-w-6xl flex-col items-center justify-center px-6 py-20 text-center">
           <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Tu primera landing page
-            <br />
-            rápida y funcional
+            Aplicaciones web y PWA
+            <br />a la medida de tu negocio
           </h1>
 
           <a
@@ -73,53 +72,31 @@ export default function ServicioSitioWebBasico() {
 
       <section className="relative bg-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="order-2 lg:order-1">
-            <div className="relative mx-auto w-full max-w-[360px]">
-              <div className="absolute -left-8 top-10 h-24 w-24 rounded-full bg-fuchsia-200/70 blur-2xl" />
-              <div className="rounded-4xl border border-fuchsia-100 bg-gradient-to-br from-fuchsia-50 via-white to-violet-100 p-6 shadow-[0_18px_55px_rgba(76,29,149,0.10)]">
-                <div className="rounded-[1.35rem] border border-fuchsia-200 bg-white p-3 shadow-inner">
-                  <div className="flex items-center gap-2 border-b border-fuchsia-100 pb-3">
-                    <div className="h-3 w-3 rounded-full bg-fuchsia-300" />
-                    <div className="h-3 w-3 rounded-full bg-violet-200" />
-                    <div className="h-3 w-3 rounded-full bg-pink-200" />
-                    <div className="ml-auto h-2 w-16 rounded-full bg-slate-100" />
-                  </div>
-
-                  <div className="mt-4 grid gap-3">
-                    <div className="h-24 rounded-2xl bg-gradient-to-br from-fuchsia-100 to-violet-200" />
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="h-20 rounded-2xl bg-fuchsia-50" />
-                      <div className="h-20 rounded-2xl bg-violet-50" />
-                    </div>
-                    <div className="h-14 rounded-2xl bg-slate-50" />
-                  </div>
-                </div>
-
-                <div className="mt-5 flex items-center justify-between text-center">
-                  <div className="rounded-full bg-fuchsia-100 px-1 lg:px-2 py-2 text-sm font-medium text-violet-900">
-                    Landing simple y clara
-                  </div>
-                  <div className="flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm text-violet-900 shadow-sm">
-                    <MousePointerClick size={16} />
-                    <span>Fácil de navegar</span>
-                  </div>
-                </div>
-              </div>
+          <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
+            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+              <Image
+                src="/images/servicios/web-basica-escalable.png"
+                alt="Sitio escalable"
+                fill
+                className="object-cover"
+                sizes="320px"
+              />
             </div>
           </div>
 
           <div className="order-1 lg:order-2">
             <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
-              Empieza sin complicarte
+              Software hecho para ti
             </h2>
             <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
-              Lo esencial para estar online
+              Más que una página
             </p>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700 text-justify">
-              Si estás comenzando o necesitas lanzar algo rápido, un sitio web
-              básico es la mejor opción. Una página clara, directa y profesional
-              donde puedes mostrar tu idea, producto o servicio sin perder
-              tiempo.
+              Cuando un sitio web no es suficiente, necesitas una aplicación.
+              Desarrollo aplicaciones web personalizadas que se adaptan
+              exactamente a lo que tu negocio requiere: desde paneles de control
+              hasta plataformas completas. Todo pensado para automatizar
+              procesos y mejorar la eficiencia.
             </p>
           </div>
         </div>
@@ -129,15 +106,16 @@ export default function ServicioSitioWebBasico() {
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
-              Rápido y sin complicaciones
+              Potente y funcional
             </h2>
             <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
-              Tu one-page o landing lista en pocos días
+              Todo en un solo lugar
             </p>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
-              Creo tu sitio en poco tiempo, con todo lo necesario para que
-              funcione correctamente desde el inicio. Sin procesos largos ni
-              complicados, enfocado en que puedas estar online lo antes posible.
+              Tus herramientas, datos y procesos centralizados en una sola
+              aplicación. Creo soluciones intuitivas, rápidas y seguras que
+              funcionan directamente desde el navegador, sin necesidad de
+              instalaciones complicadas.
             </p>
           </div>
 
@@ -172,15 +150,16 @@ export default function ServicioSitioWebBasico() {
 
           <div className="order-1 lg:order-2">
             <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
-              Simple y efectivo
+              Funciona en cualquier dispositivo
             </h2>
             <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
-              Una sola página
+              Acceso desde cualquier lugar
             </p>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
-              Tu sitio se estructura en una sola página donde organizamos toda
-              la información de forma clara. Ideal para presentar tu proyecto,
-              evento o producto de manera directa y fácil de entender.
+              Tu aplicación funciona directamente desde el navegador, ya sea en
+              celular, tablet o computadora. No necesitas instalar nada:
+              simplemente accedes y trabajas de forma rápida, cómoda y desde
+              cualquier lugar.
             </p>
           </div>
         </div>
@@ -191,15 +170,16 @@ export default function ServicioSitioWebBasico() {
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
-                Listo para crecer
+                Escalable y flexible
               </h2>
               <p className="mt-8 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
-                Empieza pequeño
+                Crece sin límites
               </p>
               <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
-                Comienzas con lo básico, pero con una base sólida. Cuando tu
-                proyecto crezca, tu sitio también puede evolucionar sin
-                necesidad de empezar desde cero.
+                Tu aplicación está preparada para evolucionar: nuevas funciones,
+                más usuarios o integraciones con otros sistemas. Empiezas con lo
+                necesario y expandes la plataforma conforme tu negocio lo
+                requiera.
               </p>
             </div>
 
@@ -224,35 +204,36 @@ export default function ServicioSitioWebBasico() {
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl">
-              Tener una página web hace la diferencia
+              Una aplicación cambia tu forma de trabajar
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate-700">
-              Aunque sea simple, un sitio web propio transmite confianza y
-              profesionalismo. Es el primer paso para mostrar tu proyecto al
-              mundo y comenzar a generar oportunidades.
+              Una aplicación web no es solo presencia, es una herramienta que
+              transforma tu negocio. Te permite organizar procesos, gestionar
+              información y operar de forma más eficiente, todo desde un solo
+              lugar y accesible en cualquier momento.
             </p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <FeatureCard
               icon={TrendingUp}
-              title="Presencia inmediata"
-              text="Publica tu proyecto en internet de forma rápida y sencilla."
+              title="Automatización"
+              text="Reduce tareas manuales y optimiza procesos dentro de tu negocio."
             />
             <FeatureCard
               icon={ShieldCheck}
-              title="Fácil de entender"
-              text="Toda tu información organizada en una sola página clara y directa."
+              title="Acceso en tiempo real"
+              text="Consulta y gestiona información desde cualquier lugar y en cualquier momento."
             />
             <FeatureCard
               icon={Rocket}
-              title="Bajo costo"
-              text="Una solución accesible con todo lo necesario para empezar."
+              title="Mayor productividad"
+              text="Centraliza herramientas y mejora la eficiencia de tu equipo o proyecto."
             />
             <FeatureCard
               icon={Layers3}
-              title="Diseño profesional"
-              text="Una página moderna y adaptada a cualquier dispositivo"
+              title="Experiencia profesional"
+              text="Interfaces modernas, intuitivas y diseñadas para facilitar el uso."
             />
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
               <div className="flex items-center justify-center gap-3">
@@ -261,11 +242,12 @@ export default function ServicioSitioWebBasico() {
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-800">
-                  Base sólida
+                  100% personalizada
                 </h3>
               </div>
               <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
-                Empiezas con lo esencial, pero listo para mejorar en el futuro.
+                Cada aplicación se desarrolla según tus necesidades, sin
+                plantillas ni limitaciones.
               </p>
             </article>
           </div>
