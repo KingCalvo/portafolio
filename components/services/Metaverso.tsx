@@ -1,12 +1,11 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Layers3,
-  MousePointerClick,
-  Rocket,
   ShieldCheck,
-  TrendingUp,
   Users,
+  Gamepad2,
+  Globe,
+  Settings,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -214,29 +213,29 @@ export default function ServicioMetaverso() {
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <FeatureCard
-              icon={TrendingUp}
+              icon={Gamepad2}
               title="Experiencia única"
               text="Crea un mundo virtual totalmente diferente y adaptado a tu visión."
             />
             <FeatureCard
-              icon={ShieldCheck}
+              icon={Users}
               title="Comunidad activa"
               text="Fomenta la interacción y participación constante de tus usuarios."
             />
             <FeatureCard
-              icon={Rocket}
+              icon={Settings}
               title="Alta personalización"
               text="Plugins, mecánicas y diseño completamente a medida."
             />
             <FeatureCard
-              icon={Layers3}
+              icon={ShieldCheck}
               title="Rendimiento estable"
               text="Servidores optimizados para una experiencia fluida y sin fallos."
             />
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
               <div className="flex items-center justify-center gap-3">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-100 to-violet-200 text-violet-800 shadow-sm">
-                  <Users size={22} />
+                  <Globe size={22} />
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-800">
@@ -258,12 +257,12 @@ export default function ServicioMetaverso() {
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-8 shadow-[0_18px_60px_rgba(76,29,149,0.08)] sm:p-12">
               <div className="flex items-center justify-center gap-3">
                 <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                  ¿No encontraste la respuesta que buscabas?
+                  Crea tu propio mundo virtual
                 </h3>
               </div>
               <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
-                Contáctame para una consulta gratuita y hablemos juntos de tu
-                proyecto.
+                Hablemos sobre tu idea y construyamos una experiencia única que
+                conecte con tu comunidad.
               </p>
               <a
                 href="/services#contacto"

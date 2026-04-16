@@ -1,12 +1,11 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Layers3,
   MousePointerClick,
-  Rocket,
   ShieldCheck,
-  TrendingUp,
-  Users,
+  Zap,
+  DollarSign,
+  Layout,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -235,29 +234,29 @@ export default function ServicioSitioWebBasico() {
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <FeatureCard
-              icon={TrendingUp}
+              icon={Zap}
               title="Presencia inmediata"
               text="Publica tu proyecto en internet de forma rápida y sencilla."
             />
             <FeatureCard
-              icon={ShieldCheck}
+              icon={MousePointerClick}
               title="Fácil de entender"
               text="Toda tu información organizada en una sola página clara y directa."
             />
             <FeatureCard
-              icon={Rocket}
+              icon={DollarSign}
               title="Bajo costo"
               text="Una solución accesible con todo lo necesario para empezar."
             />
             <FeatureCard
-              icon={Layers3}
+              icon={Layout}
               title="Diseño profesional"
               text="Una página moderna y adaptada a cualquier dispositivo"
             />
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
               <div className="flex items-center justify-center gap-3">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-100 to-violet-200 text-violet-800 shadow-sm">
-                  <Users size={22} />
+                  <ShieldCheck size={22} />
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-800">
@@ -278,12 +277,12 @@ export default function ServicioSitioWebBasico() {
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-8 shadow-[0_18px_60px_rgba(76,29,149,0.08)] sm:p-12">
               <div className="flex items-center justify-center gap-3">
                 <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                  ¿No encontraste la respuesta que buscabas?
+                  Lanza tu idea hoy
                 </h3>
               </div>
               <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
-                Contáctame para una consulta gratuita y hablemos juntos de tu
-                proyecto.
+                Hablemos sobre tu proyecto y crea un sitio web simple, rápido y
+                efectivo para empezar.
               </p>
               <a
                 href="/services#contacto"
