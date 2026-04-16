@@ -12,6 +12,7 @@ export const portfolioData = {
       botonDocumentacion: false,
       botonDemo: false,
       botonGit: true,
+      featuresHeight: 400,
       details: {
         technologies: [
           "Flutter",
@@ -51,6 +52,7 @@ export const portfolioData = {
       botonDocumentacion: false,
       botonDemo: true,
       botonGit: true,
+      featuresHeight: 700,
       details: {
         technologies: [
           "React",
@@ -91,6 +93,7 @@ export const portfolioData = {
       botonDocumentacion: false,
       botonDemo: true,
       botonGit: true,
+      featuresHeight: 350,
       details: {
         technologies: [
           "Astro",
@@ -127,6 +130,7 @@ export const portfolioData = {
       botonDocumentacion: true,
       botonDemo: false,
       botonGit: false,
+      featuresHeight: 350,
       details: {
         technologies: [
           "Python",
@@ -160,6 +164,7 @@ export const portfolioData = {
       botonDocumentacion: false,
       botonDemo: true,
       botonGit: true,
+      featuresHeight: 350,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: ["Característica 1", "Característica 2", "Característica 3"],
@@ -171,52 +176,113 @@ export const portfolioData = {
     {
       slug: "hackathon-01",
       title: "Tercer lugar en Hackatec 2024 etapa Nacional.",
+      fecha: "Fecha: 19 – 22 noviembre de 2024.",
+      organizador: "Organizador: Instituto Tecnológico de Colima.",
       description:
-        "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Nacional. Obteniendo el tercer lugar como integrante del equipo DevG.",
+        "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Nacional. Desarrollé junto al equipo DevG una solución mediante desarrollo web que obtuvo el 3.º lugar en la etapa Nacional del evento HackaTec. Participé en el diseño, desarrollo y presentación del proyecto.",
       images: ["/images/hackathons/hackathon-1.jpg"],
       documentacionUrl: "#",
       botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
-        features: ["Característica 1", "Característica 2", "Característica 3"],
+        features: [
+          {
+            url: "https://www.facebook.com/post1",
+            cuenta: "Instituto Tecnológico de Colima",
+          },
+          {
+            url: "https://www.facebook.com/post2",
+            cuenta: "InnovaTECNM Oficial",
+          },
+          {
+            url: "https://www.facebook.com/post3",
+            cuenta: "HackaTec 2024",
+          },
+        ],
       },
     },
     {
       slug: "hackathon-02",
       title: "Segundo Lugar en Hackatec 2024 etapa Regional.",
+      fecha: "Fecha: 10 – 13 septiembre de 2024.",
+      organizador: "Organizador: Instituto Tecnológico del Valle de Oaxaca.",
       description:
-        "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Regional. Obteniendo el segundo lugar como integrante del equipo DevG.",
+        "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Regional. Como parte del equipo DevG, se implementó una solución web que obtuvo el 2.º lugar en la etapa regional de HackaTec. Participé en el desarrollo front-end y back-end, contribuyendo a la construcción de la aplicación y su lógica funcional.",
       images: ["/images/hackathons/hackathon-2.jpg"],
       documentacionUrl: "#",
       botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
-        features: ["Característica 1", "Característica 2", "Característica 3"],
+        features: [
+          {
+            url: "https://www.facebook.com/post1",
+            cuenta: "Instituto Tecnológico de Colima",
+          },
+          {
+            url: "https://www.facebook.com/post2",
+            cuenta: "InnovaTECNM Oficial",
+          },
+          {
+            url: "https://www.facebook.com/post3",
+            cuenta: "HackaTec 2024",
+          },
+        ],
       },
     },
     {
       slug: "hackathon-03",
       title: "Participación en el Hackathon Morelos 13a Edición.",
-      description: "Ganador del premio a mejor aplicación Auth0.",
+      fecha: "Fecha: 16 – 18 mayo de 2024",
+      organizador: "Organizador: Tecnológico de Monterrey Campus Cuernavaca",
+      description:
+        "En el Hackathon Morelos (13ª edición) el proyecto recibió el premio a Mejor Aplicación Auth0 por la integración/seguridad implementada. Participé en el desarrollo y en la integración de autenticación.",
       images: ["/images/hackathons/hackathon-3.jpg"],
       documentacionUrl: "#",
       botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
-        features: ["Característica 1", "Característica 2", "Característica 3"],
+        features: [
+          {
+            url: "https://www.facebook.com/post1",
+            cuenta: "Instituto Tecnológico de Colima",
+          },
+          {
+            url: "https://www.facebook.com/post2",
+            cuenta: "InnovaTECNM Oficial",
+          },
+          {
+            url: "https://www.facebook.com/post3",
+            cuenta: "HackaTec 2024",
+          },
+        ],
       },
     },
     {
       slug: "hackathon-04",
       title: "Participación en el Hackathon Morelos 12a Edición.",
+      fecha: "Fecha: 6 – 7 octubre de 2023",
+      organizador: "Organizador: Tecnológico de Monterrey Campus Cuernavaca",
       description:
-        "Ganador de los premios: Best Use of Google Cloud y Best Domain Name from GoDaddy Registry.",
+        "Participé en el Hackathon Morelos (12ª edición) donde el proyecto obtuvo los premios Best Use of Google Cloud y Best Domain Name (GoDaddy Registry). Contribuí en la implementación técnica y despliegue.",
       images: ["/images/hackathons/hackathon-4.jpg"],
       documentacionUrl: "#",
       botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
-        features: ["Característica 1", "Característica 2", "Característica 3"],
+        features: [
+          {
+            url: "https://www.facebook.com/post1",
+            cuenta: "Instituto Tecnológico de Colima",
+          },
+          {
+            url: "https://www.facebook.com/post2",
+            cuenta: "InnovaTECNM Oficial",
+          },
+          {
+            url: "https://www.facebook.com/post3",
+            cuenta: "HackaTec 2024",
+          },
+        ],
       },
     },
   ],

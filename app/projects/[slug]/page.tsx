@@ -42,11 +42,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-stretch">
           <div className="space-y-8">
             <div>
-              <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              <h1 className="text-xl font-semibold tracking-tight lg:text-3xl">
                 {project.title}
               </h1>
 
-              <p className="mt-5 max-w-xl text-base text-justify leading-8 text-slate-600 sm:text-lg whitespace-pre-line">
+              <p className="mt-2 max-w-xl text-sm text-justify leading-8 text-slate-600 lg:text-base whitespace-pre-line">
                 {project.description}
               </p>
             </div>
@@ -86,7 +86,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </div>
 
             <div>
-              <h2 className="flex items-center gap-3 text-2xl font-semibold tracking-tight">
+              <h2 className="flex items-center justify-center lg:justify-start gap-3 text-xl lg:text-3xl font-semibold tracking-tight">
                 <LuCode className="h-5 w-5 text-sky-600" />
                 <span>Tecnologías usadas</span>
               </h2>
@@ -104,7 +104,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
               {project.botonDemo && project.liveDemo && (
                 <a
                   href={project.liveDemo}
@@ -143,19 +143,22 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 h-full max-h-[calc(100vh-80px)]">
+          <div className="flex flex-col gap-6">
             <ProjectImageCarousel
               title={project.title}
               images={project.images}
             />
 
-            <div className="group rounded-[2rem] border border-orange-200 bg-white p-6 shadow-sm flex flex-col flex-1 overflow-hidden">
-              <h2 className="flex items-center gap-3 text-2xl font-semibold tracking-tight">
+            <div
+              className="group rounded-[2rem] border border-orange-200 bg-white p-6 shadow-sm flex flex-col overflow-hidden"
+              style={{ height: `${project.featuresHeight || 400}px` }}
+            >
+              <h2 className="flex items-center justify-center lg:justify-start gap-3 text-xl lg:text-3xl font-semibold tracking-tight">
                 <IoIosApps className="h-5 w-5 text-orange-500" />
                 <span>Características principales</span>
               </h2>
 
-              <div className="mt-5 space-y-3 overflow-y-auto pr-2 flex-1 min-h-0">
+              <div className="mt-5 space-y-3 pr-2 flex-1 max-h-[600px] overflow-y-auto">
                 {project.details.features.map((feature) => (
                   <div
                     key={feature}
