@@ -271,7 +271,7 @@ export default function Navbar() {
                   aria-label="Cambiar icono de tema"
                 >
                   {themeIcon === "sun" ? <Sun size={18} /> : <Moon size={18} />}
-                  <span>{themeIcon === "sun" ? "Sol" : "Luna"}</span>
+                  <span>{themeIcon === "sun" ? "Claro" : "Oscuro"}</span>
                 </button>
               </div>
             </div>

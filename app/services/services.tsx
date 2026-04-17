@@ -334,7 +334,7 @@ export default function Services() {
             <div className="grid gap-12 lg:grid-cols-2 items-center">
               {/* Form */}
               <div className="animate-fadeInUp">
-                <h2 className="text-4xl font-semibold tracking-tight">
+                <h2 className="text-4xl font-semibold tracking-tight text-center lg:text-left">
                   Hablemos de tu proyecto
                 </h2>
 
@@ -476,7 +476,7 @@ export default function Services() {
               <div className="space-y-6 animate-fadeInUp delay-100">
                 {/* FAQ */}
                 <div>
-                  <h3 className="text-2xl font-semibold">
+                  <h3 className="text-2xl font-semibold text-center lg:text-left">
                     Preguntas frecuentes
                   </h3>
 

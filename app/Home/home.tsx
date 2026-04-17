@@ -231,10 +231,10 @@ export default function Hero() {
 
               <div className="relative h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                  <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl text-center lg:text-left">
                     Enrique Calvo García
                   </h3>
-                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500">
+                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500 text-center lg:text-left">
                     Ingeniero en Sistemas Computacionales
                   </p>
 
@@ -478,7 +478,7 @@ export default function Hero() {
 
                 <div className="mt-2 pt-6 flex justify-center">
                   <Link
-                    href="/contact"
+                    href="/services/web"
                     className="inline-flex items-center gap-2 rounded-full  bg-blue-600 px-5 py-2 text-sm text-white  transition hover:bg-blue-700 shadow-md hover:shadow-lg"
                   >
                     Descubre más
@@ -513,7 +513,7 @@ export default function Hero() {
 
                 <div className="mt-auto pt-6 flex justify-center">
                   <Link
-                    href="/contact"
+                    href="/services/appweb"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                   >
                     Descubre más
@@ -548,7 +548,7 @@ export default function Hero() {
 
                 <div className="mt-auto pt-6 flex justify-center">
                   <Link
-                    href="/contact"
+                    href="/services/inteligencia"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                   >
                     Descubre más

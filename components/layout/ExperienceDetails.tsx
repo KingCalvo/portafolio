@@ -17,23 +17,21 @@ export default function ExperienceDetails() {
 
   return (
     <div className="mt-7">
-      {/* TÍTULO */}
       <h5 className="text-sm font-semibold text-slate-800 mb-2">
         Responsabilidades y logros
       </h5>
 
-      {/* TEXTO PRINCIPAL */}
       <div className="flex items-start gap-3">
         <span className="text-sky-500 mt-1">✔</span>
 
-        <p className="text-sm leading-7 text-slate-600 text-justify">
+        <p className="text-sm leading-7 text-slate-600 text-start lg:text-justify">
           Participé en el desarrollo end-to-end del proyecto FixGo (App
           Android), transformando una idea de negocio en un producto funcional
           orientado a la gestión de servicios.
         </p>
       </div>
 
-      {/* BOTÓN ARRIBA (solo cuando está cerrado) */}
+      {/* Solo cuando está cerrado */}
       {!open && (
         <div className="flex justify-center mt-5">
           <button
@@ -48,24 +46,23 @@ export default function ExperienceDetails() {
         </div>
       )}
 
-      {/* CONTENIDO */}
       <div
         className={`overflow-hidden transition-all duration-500 ${
-          open ? "max-h-[1200px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          open ? "max-h-[2000px] opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}
       >
         <div className="space-y-4">
           {items.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <span className="text-sky-500 mt-1">✔</span>
-              <p className="text-sm leading-7 text-slate-600 text-justify">
+              <p className="text-sm leading-7 text-slate-600 text-start lg:text-justify">
                 {item}
               </p>
             </div>
           ))}
         </div>
 
-        {/* BOTÓN ABAJO (cuando está abierto) */}
+        {/* Cuando está abierto) */}
         {open && (
           <div className="flex justify-center mt-6">
             <button

@@ -207,14 +207,14 @@ export default function About() {
 
             <div className="relative h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
               <div>
-                <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl text-center lg:text-left">
                   Enrique Calvo García
                 </h3>
-                <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500">
+                <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500 text-center lg:text-left">
                   Ingeniero en Sistemas Computacionales
                 </p>
 
-                <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-[15px] text-justify">
+                <p className="mt-6 text-sm leading-6 sm:leading-7 text-slate-600 sm:text-[15px] text-justify">
                   Soy Ingeniero en Sistemas Computacionales, soy autodidacta y
                   disciplinado; me entusiasma aprender nuevas tecnologías y
                   aplicar buenas prácticas para entregar soluciones de calidad.
@@ -288,7 +288,7 @@ export default function About() {
               <div className="relative pl-12 mb-10">
                 <div className="absolute left-4 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-slate-900 ring-4 ring-white" />
 
-                <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-2 lg:p-7 shadow-sm">
                   <h4 className="text-xl font-semibold">Experiencia</h4>
 
                   <div className="mt-4 rounded-xl bg-slate-50 p-5">
@@ -308,7 +308,7 @@ export default function About() {
                       San Francisco 23, Frac. Burgos, Temixco, Morelos · Remoto
                     </p>
 
-                    <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
+                    <p className="mt-4 text-sm leading-6 sm:leading-7 text-slate-600 text-justify tracking-[0.01em]">
                       Desarrollo de la aplicación móvil FixGo (Android) con
                       Flutter, implementando módulos de proveedor y
                       administrador; gestión de servicios, autenticación,
@@ -325,7 +325,7 @@ export default function About() {
               <div className="relative pl-12">
                 <div className="absolute left-4 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-slate-900 ring-4 ring-white" />
 
-                <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+                <div className="rounded-[2rem] border border-slate-200 bg-white p-2 lg:p-7 shadow-sm">
                   <h4 className="text-xl font-semibold">Educación</h4>
 
                   <div className="mt-4 rounded-xl bg-slate-50 p-5">
@@ -339,13 +339,22 @@ export default function About() {
 
                     <p className="mt-1 text-xs text-slate-500">2021 – 2026</p>
 
-                    <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
-                      Participación en Hackathon Morelos 12a edición y 13a
-                      edición y Hackatec etapa regional y etapa nacional.
-                      Formación académica y autodidacta junto con participación
-                      en talleres extracurriculares de especialización
-                      (Ciberseguridad, IA, redes neuronales, etc.).
-                    </p>
+                    <div className="mt-4 space-y-3 text-sm text-slate-600 leading-6 text-justify">
+                      <p>
+                        Participación en Hackathon Morelos (12a y 13a edición) y
+                        Hackatec en etapa regional y nacional.
+                      </p>
+
+                      <p>
+                        Formación académica y autodidacta junto con
+                        participación en talleres extracurriculares de
+                        especialización.
+                      </p>
+
+                      <p className="text-slate-500">
+                        (Ciberseguridad, IA, redes neuronales, etc.)
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
