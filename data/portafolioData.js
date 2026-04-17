@@ -208,7 +208,7 @@ export const portfolioData = {
       organizador: "Organizador: Instituto Tecnológico del Valle de Oaxaca.",
       description:
         "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Regional. Como parte del equipo DevG, se implementó una solución web que obtuvo el 2.º lugar en la etapa regional de HackaTec. Participé en el desarrollo front-end y back-end, contribuyendo a la construcción de la aplicación y su lógica funcional.",
-      images: ["/images/hackathons/hackathon-2.jpg"],
+      images: ["/images/projects/chivalry.jpg"],
       documentacionUrl: "#",
       botonDocumentacion: true,
       details: {

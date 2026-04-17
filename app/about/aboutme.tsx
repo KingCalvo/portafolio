@@ -37,6 +37,8 @@ import {
   FaMobileScreenButton,
 } from "react-icons/fa6";
 import { VscVscode } from "react-icons/vsc";
+import ExperienceDetails from "@/components/layout/ExperienceDetails";
+
 type TechItem = {
   name: string;
   Icon: IconType;
@@ -313,6 +315,8 @@ export default function About() {
                       imágenes, reportes PDF, gráficas, mapas, panel
                       administrativo y optimización de rendimiento.
                     </p>
+
+                    <ExperienceDetails />
                   </div>
                 </div>
               </div>

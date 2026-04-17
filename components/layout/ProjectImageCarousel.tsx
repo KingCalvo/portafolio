@@ -51,7 +51,6 @@ export default function ProjectImageCarousel({
 
   return (
     <>
-      {/* NORMAL */}
       <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
         <button
           type="button"
@@ -90,7 +89,6 @@ export default function ProjectImageCarousel({
         )}
       </div>
 
-      {/* EXPANDED */}
       {isExpanded && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm"
@@ -109,7 +107,6 @@ export default function ProjectImageCarousel({
                 priority
               />
 
-              {/* TOP RIGHT CONTROLS */}
               <div className="absolute right-4 top-4 flex items-center gap-2">
                 {/* CONTADOR */}
                 {safeImages.length > 1 && (
@@ -118,7 +115,6 @@ export default function ProjectImageCarousel({
                   </div>
                 )}
 
-                {/* CLOSE */}
                 <button
                   onClick={() => setIsExpanded(false)}
                   className="rounded-full bg-white/90 p-3 shadow-md hover:scale-105"
@@ -127,7 +123,6 @@ export default function ProjectImageCarousel({
                 </button>
               </div>
 
-              {/* ARROWS */}
               {safeImages.length > 1 && (
                 <>
                   <button
