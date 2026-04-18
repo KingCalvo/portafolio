@@ -1,4 +1,4 @@
-import Faq from "@/app/faq/faq";
+import Faq from "@/app/[locale]/faq/faq";
 
 export default function FaqPage() {
   return (

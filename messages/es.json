@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca",
+    "projects": "Proyectos",
+    "services": "Servicios"
+  },
+  "home": {
+    "title": "Bienvenido a mi portafolio"
+  }
+}

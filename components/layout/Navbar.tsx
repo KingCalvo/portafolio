@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useRouter, usePathname } from "@/i18n/navigation";
 import {
   Home,
   User,
@@ -14,15 +13,14 @@ import {
   Moon,
   ChevronDown,
 } from "lucide-react";
+import { useTranslations, useLocale } from "next-intl";
 
 const navItems = [
-  { name: "Inicio", icon: Home, href: "/" },
-  { name: "Acerca", icon: User, href: "/about" },
-  { name: "Proyectos", icon: Folder, href: "/projects" },
-  { name: "Servicios", icon: Briefcase, href: "/services" },
+  { key: "home", icon: Home, href: "/" },
+  { key: "about", icon: User, href: "/about" },
+  { key: "projects", icon: Folder, href: "/projects" },
+  { key: "services", icon: Briefcase, href: "/services" },
 ];
-
-type Language = "ES" | "EN";
 
 function FlagMX() {
   return (
@@ -55,13 +53,21 @@ function FlagUS() {
 }
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("nav");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
-  const [language, setLanguage] = useState<Language>("ES");
   const [themeIcon, setThemeIcon] = useState<"sun" | "moon">("sun");
 
-  const languageRef = useRef<HTMLDivElement | null>(null);
+  const desktopLanguageRef = useRef<HTMLDivElement | null>(null);
+  const mobileLanguageRef = useRef<HTMLDivElement | null>(null);
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const cleanPath = pathname.replace(/^\/(es|en)/, "") || "/";
+  const changeLanguage = (lang: "es" | "en") => {
+    router.replace(pathname, { locale: lang });
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -82,8 +88,10 @@ export default function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        languageRef.current &&
-        !languageRef.current.contains(event.target as Node)
+        desktopLanguageRef.current &&
+        !desktopLanguageRef.current.contains(event.target as Node) &&
+        mobileLanguageRef.current &&
+        !mobileLanguageRef.current.contains(event.target as Node)
       ) {
         setLanguageOpen(false);
       }
@@ -93,13 +101,14 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const isActive = (href: string) =>
-    href === "/"
-      ? pathname === "/"
-      : pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = (href: string) => {
+    if (href === "/") return cleanPath === "/";
+
+    return cleanPath === href || cleanPath.startsWith(`${href}/`);
+  };
 
   const languageLabel =
-    language === "ES"
+    locale === "es"
       ? { text: "🇲🇽", longText: "Español", flag: <FlagMX /> }
       : { text: "🇺🇸", longText: "English", flag: <FlagUS /> };
 
@@ -108,7 +117,7 @@ export default function Navbar() {
       <nav className="w-full px-4 py-3 lg:px-6">
         <div className="flex items-center gap-3">
           {/* Left brand */}
-          <Link href="/" className="flex min-w-0 items-center gap-3">
+          <Link href={`/${locale}`} className="flex min-w-0 items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center bg-slate-950 text-sm font-semibold text-white shadow-sm">
               EC
             </div>
@@ -131,7 +140,7 @@ export default function Navbar() {
 
                 return (
                   <Link
-                    key={item.name}
+                    key={item.key}
                     href={item.href}
                     className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                       active
@@ -140,7 +149,7 @@ export default function Navbar() {
                     }`}
                   >
                     <item.icon size={16} />
-                    <span>{item.name}</span>
+                    <span>{t(item.key)}</span>
                   </Link>
                 );
               })}
@@ -149,10 +158,11 @@ export default function Navbar() {
 
           {/* Desktop right controls */}
           <div className="hidden items-center gap-2 lg:flex">
-            <div ref={languageRef} className="relative">
+            <div ref={desktopLanguageRef} className="relative">
               <button
                 type="button"
                 onClick={() => setLanguageOpen((prev) => !prev)}
+                onMouseDown={(e) => e.stopPropagation()}
                 className="inline-flex h-11 min-w-[140px] items-center justify-between gap-3 border border-slate-200/70 shadow-sm rounded-full bg-white px-4 text-sm font-medium text-slate-900 transition hover:bg-slate-50 cursor-pointer"
               >
                 <span className="flex items-center gap-2">
@@ -165,11 +175,14 @@ export default function Navbar() {
               </button>
 
               {languageOpen && (
-                <div className="absolute right-0 mt-2 w-full border border-slate-200/70 shadow-sm bg-white rounded-2xl">
+                <div
+                  className="absolute right-0 mt-2 w-full border border-slate-200/70 shadow-sm bg-white rounded-2xl"
+                  onMouseDown={(e) => e.stopPropagation()}
+                >
                   <button
                     type="button"
                     onClick={() => {
-                      setLanguage("EN");
+                      changeLanguage("en");
                       setLanguageOpen(false);
                     }}
                     className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100 cursor-pointer"
@@ -180,7 +193,7 @@ export default function Navbar() {
                   <button
                     type="button"
                     onClick={() => {
-                      setLanguage("ES");
+                      changeLanguage("es");
                       setLanguageOpen(false);
                     }}
                     className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100 cursor-pointer"
@@ -239,7 +252,7 @@ export default function Navbar() {
 
               return (
                 <Link
-                  key={item.name}
+                  key={item.key}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
                   className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition ${
@@ -249,23 +262,22 @@ export default function Navbar() {
                   }`}
                 >
                   <item.icon size={18} />
-                  <span>{item.name}</span>
+                  <span>{t(item.key)}</span>
                 </Link>
               );
             })}
 
             <div className="mt-2 border-t border-slate-200 pt-4">
               <div className="flex flex-col gap-3">
-                <div ref={languageRef} className="relative">
+                <div ref={mobileLanguageRef} className="relative">
                   <button
                     type="button"
                     onClick={() => setLanguageOpen((prev) => !prev)}
+                    onMouseDown={(e) => e.stopPropagation()}
                     className="inline-flex h-12 w-full items-center justify-between gap-3 border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
                   >
-                    <span className="flex items-center gap-2">
-                      {language === "ES" ? <FlagMX /> : <FlagUS />}
-                      <span>{language === "ES" ? "Español" : "English"}</span>
-                    </span>
+                    {locale === "es" ? <FlagMX /> : <FlagUS />}
+                    <span>{locale === "es" ? "Español" : "English"}</span>
                     <ChevronDown size={16} className="text-slate-500" />
                   </button>
 
@@ -273,7 +285,7 @@ export default function Navbar() {
                     <div className="mt-2 w-full overflow-hidden border border-slate-200 rounded-xl shadow-sm bg-white">
                       <button
                         onClick={() => {
-                          setLanguage("ES");
+                          changeLanguage("es");
                           setLanguageOpen(false);
                         }}
                         className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100"
@@ -284,7 +296,7 @@ export default function Navbar() {
 
                       <button
                         onClick={() => {
-                          setLanguage("EN");
+                          changeLanguage("en");
                           setLanguageOpen(false);
                         }}
                         className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100"

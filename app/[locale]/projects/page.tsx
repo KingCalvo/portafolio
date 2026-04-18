@@ -1,4 +1,4 @@
-import Projects from "@/app/projects/projectsHacks";
+import Projects from "@/app/[locale]/projects/projectsHacks";
 
 export default function ProjectsPage() {
   return (
