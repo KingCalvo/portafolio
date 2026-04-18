@@ -71,7 +71,7 @@ export default function ServicioSitioWebBasico() {
       </section>
 
       <section className="relative bg-white py-24 sm:py-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1">
             <div className="relative mx-auto w-full max-w-[360px]">
               <div className="absolute -left-8 top-10 h-24 w-24 rounded-full bg-fuchsia-200/70 blur-2xl" />
@@ -108,13 +108,13 @@ export default function ServicioSitioWebBasico() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Empieza sin complicarte
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Lo esencial para estar online
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700 text-justify">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Si estás comenzando o necesitas lanzar algo rápido, un sitio web
               básico es la mejor opción. Una página clara, directa y profesional
               donde puedes mostrar tu idea, producto o servicio sin perder
@@ -127,13 +127,13 @@ export default function ServicioSitioWebBasico() {
       <section className="bg-gradient-to-b from-white via-fuchsia-50/40 to-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Rápido y sin complicaciones
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Tu one-page o landing lista en pocos días
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Creo tu sitio en poco tiempo, con todo lo necesario para que
               funcione correctamente desde el inicio. Sin procesos largos ni
               complicados, enfocado en que puedas estar online lo antes posible.
@@ -141,7 +141,7 @@ export default function ServicioSitioWebBasico() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-rapido.png"
                 alt="Sitio rápido"
@@ -158,7 +158,7 @@ export default function ServicioSitioWebBasico() {
       <section className="bg-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -170,13 +170,13 @@ export default function ServicioSitioWebBasico() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Simple y efectivo
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Una sola página
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Tu sitio se estructura en una sola página donde organizamos toda
               la información de forma clara. Ideal para presentar tu proyecto,
               evento o producto de manera directa y fácil de entender.
@@ -189,13 +189,13 @@ export default function ServicioSitioWebBasico() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Listo para crecer
               </h2>
-              <p className="mt-8 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+              <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Empieza pequeño
               </p>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+              <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
                 Comienzas con lo básico, pero con una base sólida. Cuando tu
                 proyecto crezca, tu sitio también puede evolucionar sin
                 necesidad de empezar desde cero.
@@ -203,7 +203,7 @@ export default function ServicioSitioWebBasico() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
                 <Image
                   src="/images/servicios/web-basica-precio.png"
                   alt="Precio accesible"
@@ -222,10 +222,10 @@ export default function ServicioSitioWebBasico() {
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
               Tener una página web hace la diferencia
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-700">
+            <p className="mt-6 text-[17px] leading-8 text-slate-700">
               Aunque sea simple, un sitio web propio transmite confianza y
               profesionalismo. Es el primer paso para mostrar tu proyecto al
               mundo y comenzar a generar oportunidades.

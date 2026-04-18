@@ -72,7 +72,7 @@ export default function ServicioAppWeb() {
       <section className="relative bg-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -119,7 +119,7 @@ export default function ServicioAppWeb() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-rapido.png"
                 alt="Sitio rápido"
@@ -136,7 +136,7 @@ export default function ServicioAppWeb() {
       <section className="bg-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -171,7 +171,7 @@ export default function ServicioAppWeb() {
               <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Escalable y flexible
               </h2>
-              <p className="mt-8 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+              <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Crece sin límites
               </p>
               <p className="mt-8 max-w-2xl text-[17px] leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
@@ -183,7 +183,7 @@ export default function ServicioAppWeb() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
                 <Image
                   src="/images/servicios/web-basica-precio.png"
                   alt="Precio accesible"

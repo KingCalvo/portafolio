@@ -74,9 +74,9 @@ export default function ServicioSitioWeb() {
       </section>
 
       <section className="relative bg-white py-24 sm:py-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -88,13 +88,13 @@ export default function ServicioSitioWeb() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Más que presencia online
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Diseño que realmente funciona
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700 text-justify">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Hoy no basta con solo “estar en internet”. Tu sitio web debe
               atraer, comunicar y convertir visitantes en clientes. Diseño
               páginas modernas, responsivas y enfocadas en resultados, pensadas
@@ -107,13 +107,13 @@ export default function ServicioSitioWeb() {
       <section className="bg-gradient-to-b from-white via-fuchsia-50/40 to-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Rápido y profesional
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Sin complicaciones
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Desarrollo sitios web con tecnología actual, optimizados para
               cargar rápido y funcionar perfectamente en cualquier dispositivo.
               Obtienes un resultado profesional en poco tiempo, sin procesos
@@ -122,7 +122,7 @@ export default function ServicioSitioWeb() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-rapido.png"
                 alt="Sitio rápido"
@@ -139,7 +139,7 @@ export default function ServicioSitioWeb() {
       <section className="bg-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -151,13 +151,13 @@ export default function ServicioSitioWeb() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Listo para crecer
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Escala cuando quieras
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Tu sitio no se queda limitado. Está preparado para agregar nuevas
               secciones, funciones o integraciones cuando lo necesites. Empiezas
               con una base sólida y creces sin tener que rehacer todo.
@@ -170,13 +170,13 @@ export default function ServicioSitioWeb() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Todo incluido
               </h2>
-              <p className="mt-8 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+              <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Sin costos innecesarios
               </p>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+              <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
                 Incluyo diseño personalizado, optimización SEO y estructura
                 profesional. Pagas por un sitio que realmente aporta valor, sin
                 extras que no necesitas.
@@ -184,7 +184,7 @@ export default function ServicioSitioWeb() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
                 <Image
                   src="/images/servicios/web-basica-precio.png"
                   alt="Precio accesible"
@@ -203,10 +203,10 @@ export default function ServicioSitioWeb() {
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
               Tu sitio web marca la diferencia
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-700">
+            <p className="mt-6 text-[17px] leading-8 text-slate-700">
               Tu página web es la base de tu presencia digital. Es donde tus
               clientes te conocen, confían en tu negocio y deciden contactarte.
               Un sitio bien diseñado, rápido y optimizado no solo se ve

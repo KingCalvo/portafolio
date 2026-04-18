@@ -71,9 +71,9 @@ export default function ServicioMetaverso() {
       </section>
 
       <section className="relative bg-white py-24 sm:py-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -85,13 +85,13 @@ export default function ServicioMetaverso() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Más que un servidor
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Un mundo propio
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700 text-justify">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               No se trata solo de crear un servidor, sino de construir una
               experiencia. Desarrollo mundos virtuales personalizados en
               plataformas como Minecraft, Roblox o Hytale, pensados para
@@ -104,13 +104,13 @@ export default function ServicioMetaverso() {
       <section className="bg-gradient-to-b from-white via-fuchsia-50/40 to-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Totalmente personalizado
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Hecho para tu idea
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Cada servidor se diseña desde cero según tus objetivos: mecánicas,
               reglas, estética y funcionalidades. No es una plantilla, es un
               entorno virtual adaptado a lo que quieres lograr.
@@ -118,7 +118,7 @@ export default function ServicioMetaverso() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-rapido.png"
                 alt="Sitio rápido"
@@ -135,7 +135,7 @@ export default function ServicioMetaverso() {
       <section className="bg-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -147,13 +147,13 @@ export default function ServicioMetaverso() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Plugins y sistemas
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Funcionalidad a medida
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Desarrollo e integro plugins, mods y sistemas personalizados según
               lo que necesites. Desde mecánicas específicas hasta
               configuraciones avanzadas, tu servidor o mapa tendrá exactamente
@@ -167,13 +167,13 @@ export default function ServicioMetaverso() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Gestión y estabilidad
               </h2>
-              <p className="mt-8 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+              <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Todo bajo control
               </p>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+              <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
                 Me encargo de la configuración, optimización y mantenimiento del
                 servidor. Desde plugins personalizados hasta rendimiento y
                 seguridad, para que tu mundo funcione sin problemas.
@@ -181,7 +181,7 @@ export default function ServicioMetaverso() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
                 <Image
                   src="/images/servicios/web-basica-precio.png"
                   alt="Precio accesible"
@@ -200,10 +200,10 @@ export default function ServicioMetaverso() {
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
               El metaverso es conexión
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-700">
+            <p className="mt-6 text-[17px] leading-8 text-slate-700">
               Los mundos virtuales permiten crear comunidades, experiencias y
               nuevas formas de interacción. Ya sea para entretenimiento, marca o
               proyecto, un entorno bien diseñado puede generar engagement real y

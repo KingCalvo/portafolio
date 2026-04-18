@@ -187,16 +187,16 @@ export const portfolioData = {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: [
           {
-            url: "https://www.facebook.com/post1",
-            cuenta: "Instituto Tecnológico de Colima",
+            url: "https://www.facebook.com/share/p/1Nx683bKnT/",
+            cuenta: "Instituto Tecnológico de Cuautla",
           },
           {
-            url: "https://www.facebook.com/post2",
-            cuenta: "InnovaTECNM Oficial",
+            url: "https://www.facebook.com/photo/?fbid=1026545432607893&set=pcb.1026549235940846",
+            cuenta: "Tecnológico Nacional de México",
           },
           {
-            url: "https://www.facebook.com/post3",
-            cuenta: "HackaTec 2024",
+            url: "https://www.facebook.com/watch/?v=579932787755487&rdid=WEtYRd2u2w1UaUSL",
+            cuenta: "Tecnológico Nacional de México",
           },
         ],
       },
@@ -208,23 +208,23 @@ export const portfolioData = {
       organizador: "Organizador: Instituto Tecnológico del Valle de Oaxaca.",
       description:
         "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Regional. Como parte del equipo DevG, se implementó una solución web que obtuvo el 2.º lugar en la etapa regional de HackaTec. Participé en el desarrollo front-end y back-end, contribuyendo a la construcción de la aplicación y su lógica funcional.",
-      images: ["/images/projects/chivalry.jpg"],
+      images: ["/images/hackathons/hackathon-2.jpg"],
       documentacionUrl: "#",
       botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: [
           {
-            url: "https://www.facebook.com/post1",
-            cuenta: "Instituto Tecnológico de Colima",
+            url: "https://www.facebook.com/photo.php?fbid=941729371327172&set=a.570632155103564&type=3",
+            cuenta: "TecNM Campus Valle de Oaxaca",
           },
           {
-            url: "https://www.facebook.com/post2",
-            cuenta: "InnovaTECNM Oficial",
+            url: "https://www.facebook.com/photo.php?fbid=845415721128657&set=a.558799416456957&type=3",
+            cuenta: "Instituto Tecnológico de Cuautla",
           },
           {
-            url: "https://www.facebook.com/post3",
-            cuenta: "HackaTec 2024",
+            url: "https://www.facebook.com/photo/?fbid=944591331040976&set=pcb.944602304373212",
+            cuenta: "TecNM Campus Valle de Oaxaca",
           },
         ],
       },
@@ -238,21 +238,21 @@ export const portfolioData = {
         "En el Hackathon Morelos (13ª edición) el proyecto recibió el premio a Mejor Aplicación Auth0 por la integración/seguridad implementada. Participé en el desarrollo y en la integración de autenticación.",
       images: ["/images/hackathons/hackathon-3.jpg"],
       documentacionUrl: "#",
-      botonDocumentacion: true,
+      botonDocumentacion: false,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: [
           {
-            url: "https://www.facebook.com/post1",
-            cuenta: "Instituto Tecnológico de Colima",
+            url: "https://www.facebook.com/photo.php?fbid=979056764222875&set=a.978758177586067&type=3",
+            cuenta: "Hackathon Morelos",
           },
           {
-            url: "https://www.facebook.com/post2",
-            cuenta: "InnovaTECNM Oficial",
+            url: "https://www.facebook.com/share/p/1Gp3TbXerr/",
+            cuenta: "Instituto Tecnológico de Cuautla",
           },
           {
-            url: "https://www.facebook.com/post3",
-            cuenta: "HackaTec 2024",
+            url: "https://www.facebook.com/photo.php?fbid=979027164225835&set=a.978758177586067&type=3",
+            cuenta: "Hackathon Morelos",
           },
         ],
       },
@@ -266,21 +266,17 @@ export const portfolioData = {
         "Participé en el Hackathon Morelos (12ª edición) donde el proyecto obtuvo los premios Best Use of Google Cloud y Best Domain Name (GoDaddy Registry). Contribuí en la implementación técnica y despliegue.",
       images: ["/images/hackathons/hackathon-4.jpg"],
       documentacionUrl: "#",
-      botonDocumentacion: true,
+      botonDocumentacion: false,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
         features: [
           {
-            url: "https://www.facebook.com/post1",
-            cuenta: "Instituto Tecnológico de Colima",
+            url: "https://www.facebook.com/share/p/17HT4P9auR/",
+            cuenta: "Hackathon Morelos",
           },
           {
-            url: "https://www.facebook.com/post2",
-            cuenta: "InnovaTECNM Oficial",
-          },
-          {
-            url: "https://www.facebook.com/post3",
-            cuenta: "HackaTec 2024",
+            url: "https://www.facebook.com/photo/?fbid=641987271471504&set=pcb.641988208138077",
+            cuenta: "Instituto Tecnológico de Cuautla",
           },
         ],
       },

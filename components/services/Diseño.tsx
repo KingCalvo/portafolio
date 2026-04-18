@@ -71,9 +71,9 @@ export default function ServicioDiseñoUX() {
       </section>
 
       <section className="relative bg-white py-24 sm:py-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -85,13 +85,13 @@ export default function ServicioDiseñoUX() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Empieza con claridad
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Antes de escribir código
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700 text-justify">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Antes de desarrollar, necesitas entender qué construir y por qué.
               Definimos tu producto desde la base, validando ideas y
               enfocándonos en resolver problemas reales para tus usuarios.
@@ -103,13 +103,13 @@ export default function ServicioDiseñoUX() {
       <section className="bg-gradient-to-b from-white via-fuchsia-50/40 to-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Diseña con estrategia
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               No a prueba y error
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               A través de procesos de discovery analizamos tu idea, tu mercado y
               tus usuarios. Esto permite tomar decisiones informadas y evitar
               cambios costosos más adelante.
@@ -117,7 +117,7 @@ export default function ServicioDiseñoUX() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-rapido.png"
                 alt="Sitio rápido"
@@ -134,7 +134,7 @@ export default function ServicioDiseñoUX() {
       <section className="bg-white py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-95 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -146,13 +146,13 @@ export default function ServicioDiseñoUX() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Prototipos reales
             </h2>
-            <p className="mt-6 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               Prueba antes de construir
             </p>
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
               Creo prototipos en baja y alta fidelidad para visualizar tu
               producto antes de desarrollarlo. Así puedes probar flujos,
               detectar errores y mejorar la experiencia desde el inicio.
@@ -165,13 +165,13 @@ export default function ServicioDiseñoUX() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+              <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Menos errores
               </h2>
-              <p className="mt-8 text-2xl font-medium tracking-tight text-slate-600 sm:text-3xl md:whitespace-nowrap whitespace-normal text-center md:text-left">
+              <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 Más eficiencia
               </p>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-700">
+              <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
                 Un buen diseño UX reduce retrabajo, acelera el desarrollo y
                 mejora el resultado final. Invertir en esta etapa te ahorra
                 tiempo, dinero y problemas en el futuro.
@@ -179,7 +179,7 @@ export default function ServicioDiseñoUX() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-95 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
                 <Image
                   src="/images/servicios/web-basica-precio.png"
                   alt="Precio accesible"
@@ -198,10 +198,10 @@ export default function ServicioDiseñoUX() {
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-4xl font-semibold tracking-tight text-slate-800 sm:text-5xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
               El diseño UX hace la diferencia
             </h2>
-            <p className="mt-6 text-lg leading-8 text-slate-700">
+            <p className="mt-6 text-[17px] leading-8 text-slate-700">
               Un producto bien pensado no solo se ve bien, funciona mejor. El
               diseño UX te permite crear experiencias claras, intuitivas y
               enfocadas en el usuario, aumentando las probabilidades de éxito de

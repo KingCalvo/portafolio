@@ -207,7 +207,15 @@ export default function Navbar() {
           {/* Mobile button */}
           <button
             type="button"
-            onClick={() => setMobileOpen((prev) => !prev)}
+            onClick={() => {
+              setMobileOpen((prev) => {
+                const newState = !prev;
+
+                if (!newState) setLanguageOpen(false);
+
+                return newState;
+              });
+            }}
             className="ml-auto inline-flex h-11 w-11 items-center justify-center border border-slate-200 bg-white text-slate-900 transition hover:bg-slate-50 lg:hidden"
             aria-label="Abrir menú"
           >
@@ -248,19 +256,45 @@ export default function Navbar() {
 
             <div className="mt-2 border-t border-slate-200 pt-4">
               <div className="flex flex-col gap-3">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setLanguage((prev) => (prev === "ES" ? "EN" : "ES"))
-                  }
-                  className="inline-flex h-12 items-center justify-between gap-3 border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
-                >
-                  <span className="flex items-center gap-2">
-                    {language === "ES" ? <FlagMX /> : <FlagUS />}
-                    <span>{language === "ES" ? "Español" : "English"}</span>
-                  </span>
-                  <ChevronDown size={16} className="text-slate-500" />
-                </button>
+                <div ref={languageRef} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setLanguageOpen((prev) => !prev)}
+                    className="inline-flex h-12 w-full items-center justify-between gap-3 border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
+                  >
+                    <span className="flex items-center gap-2">
+                      {language === "ES" ? <FlagMX /> : <FlagUS />}
+                      <span>{language === "ES" ? "Español" : "English"}</span>
+                    </span>
+                    <ChevronDown size={16} className="text-slate-500" />
+                  </button>
+
+                  {languageOpen && (
+                    <div className="mt-2 w-full overflow-hidden border border-slate-200 rounded-xl shadow-sm bg-white">
+                      <button
+                        onClick={() => {
+                          setLanguage("ES");
+                          setLanguageOpen(false);
+                        }}
+                        className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100"
+                      >
+                        <FlagMX />
+                        Español
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          setLanguage("EN");
+                          setLanguageOpen(false);
+                        }}
+                        className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100"
+                      >
+                        <FlagUS />
+                        English
+                      </button>
+                    </div>
+                  )}
+                </div>
 
                 <button
                   type="button"
