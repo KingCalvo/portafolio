@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 import { Folder, Github, Linkedin } from "lucide-react";
 import { FaWhatsapp, FaExternalLinkAlt } from "react-icons/fa";
 import { IoArrowForward } from "react-icons/io5";
 import { portfolioData } from "@/data/portafolioData";
+import { portfolioDataEN } from "@/data/portafolioDataEN";
 import { SiGmail } from "react-icons/si";
 import {
   SiJavascript,
@@ -22,10 +23,16 @@ import {
   SiDocker,
 } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa6";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import { useMemo } from "react";
 
 export default function Hero() {
+  const locale = useLocale();
+  const t = useTranslations("home");
+  const data = locale === "es" ? portfolioData : portfolioDataEN;
   const [isHoveringCTA, setIsHoveringCTA] = useState(false);
-  const fullText = "Desarrollador Mobile & Web";
+  const fullText = useMemo(() => t("role"), [t]);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -50,9 +57,9 @@ export default function Hero() {
     }
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting]);
+  }, [displayText, isDeleting, fullText]);
 
-  const featuredProjects = portfolioData.projects.slice(0, 3);
+  const featuredProjects = data.projects.slice(0, 3);
 
   const stack = [
     { name: "React", Icon: SiReact, color: "#61DAFB" },
@@ -76,7 +83,8 @@ export default function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2 w-full">
           <div className="max-w-xl">
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1 text-center lg:text-left">
-              Hola, soy <span className="text-slate-900">Enrique</span>
+              {t("heroGreeting")}{" "}
+              <span className="text-slate-900">Enrique</span>
             </h1>
 
             <div className="mt-4 inline-flex rounded-2xl border border-slate-200 bg-slate-50 px-5 py-3 shadow-sm">
@@ -87,10 +95,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-6 max-w-lg text-base leading-7 text-slate-500 sm:text-lg text-justify">
-              Ingeniero en Sistemas Computacionales apasionado por construir
-              soluciones de software prácticas y escalables. Disfruto convertir
-              ideas en productos digitales funcionales que combinan eficiencia
-              técnica con creatividad, especialmente en desarrollo web y móvil.
+              {t("heroDescription")}
             </p>
 
             <div className="mt-8 flex justify-center gap-2 sm:gap-4 lg:justify-start">
@@ -101,7 +106,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm text-center sm:px-6 sm:py-3 sm:text-base font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 <Folder size={18} className="hidden sm:inline" />
-                Ver proyectos
+                {t("viewProjects")}
               </Link>
               <a
                 href="https://wa.me/7351241139"
@@ -112,7 +117,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
               >
                 <FaWhatsapp size={24} />
-                Contáctame
+                {t("contact")}
               </a>
               <a
                 href="https://mail.google.com/mail/?view=cm&to=enriquecalvo.dev@gmail.com"
@@ -129,7 +134,7 @@ export default function Hero() {
 
             <div className="mt-10 border-t border-slate-200 pt-6 text-center lg:text-center">
               <p className="font-semibold uppercase tracking-[0.25em] text-slate-400">
-                Sígueme
+                {t("followMe")}
               </p>
 
               <div className="mt-4 flex items-center justify-center gap-4">
@@ -180,7 +185,7 @@ export default function Hero() {
         <div className="py-10 overflow-hidden marquee-wrapper">
           <div className="mx-auto max-w-6xl px-6">
             <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-              Stack principal
+              {t("stack")}
             </p>
 
             <div className="mt-9 relative overflow-hidden">
@@ -216,10 +221,11 @@ export default function Hero() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
-              Acerca de <span className="animate-pulse">mí</span>
+              {t("aboutTitle1")}{" "}
+              <span className="animate-pulse">{t("aboutTitle2")}</span>
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
-              Una breve presentación sobre mi perfil y experiencia.
+              {t("aboutSubtitle")}
             </p>
           </div>
 
@@ -235,34 +241,30 @@ export default function Hero() {
                     Enrique Calvo García
                   </h3>
                   <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500 text-center lg:text-left">
-                    Ingeniero en Sistemas Computacionales
+                    {t("career")}
                   </p>
 
                   <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-[15px] text-justify">
-                    Soy Ingeniero en Sistemas Computacionales, soy autodidacta y
-                    disciplinado; me entusiasma aprender nuevas tecnologías y
-                    aplicar buenas prácticas para entregar soluciones de
-                    calidad. Me destaco en trabajo en equipo, comunicación con
-                    clientes y resolución pragmática de problemas.
+                    {t("aboutDescription")}
                   </p>
                 </div>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-                      Enfoque
+                      {t("focus")}
                     </p>
                     <p className="mt-2 text-sm text-slate-700">
-                      Web apps, mobile apps y experiencia de usuario
+                      {t("focusDesc")}
                     </p>
                   </div>
 
                   <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
                     <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-                      Forma de trabajo
+                      {t("workStyle")}
                     </p>
                     <p className="mt-2 text-sm text-slate-700">
-                      Limpio, eficiente, comunicativo y orientado a resultados
+                      {t("workStyleDesc")}
                     </p>
                   </div>
                 </div>
@@ -288,14 +290,13 @@ export default function Hero() {
                 <div className="mt-2 space-y-3 text-center">
                   <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                     <p className="text-sm text-slate-600 leading-6">
-                      Desarrollo de aplicaciones web modernas con React &
-                      Next.js.
+                      {t("aboutCard1")}
                     </p>
                   </div>
 
                   <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                     <p className="text-sm text-slate-600 leading-6">
-                      Apps móviles multiplataforma con Flutter.
+                      {t("aboutCard2")}
                     </p>
                   </div>
                 </div>
@@ -306,33 +307,25 @@ export default function Hero() {
           {/* Experiencia */}
           <div className="mt-6 space-y-8 pt-8">
             <h4 className="text-2xl font-semibold text-center">
-              Experiencia profesional
+              {t("expTitle")}
             </h4>
             <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="flex items-center gap-3">
                 <span className="h-6 w-1 rounded-full bg-slate-900" />
-                <h4 className="text-2xl font-semibold">Experiencia</h4>
+                <h4 className="text-2xl font-semibold">{t("experience")}</h4>
               </div>
 
               <div className="mt-6 rounded-2xl bg-mist-50 p-6">
                 <p className="text-lg font-semibold text-slate-900">
-                  Mobile Developer (Flutter)
+                  {t("jobTitle")}
                 </p>
                 <p className="mt-1 text-sm font-medium text-slate-600">
-                  Naatik A.I. Solutions SAPI de CV · Jornada completa
+                  {t("company")}
                 </p>
-                <p className="mt-1 text-sm text-slate-500">
-                  jun. 2025 - dic. 2025 · 7 meses
-                </p>
-                <p className="mt-1 text-sm text-slate-500">
-                  San Francisco 23, Frac. Burgos, Temixco, Morelos, C.P. 62584 ·
-                  En remoto
-                </p>
+                <p className="mt-1 text-sm text-slate-500">{t("time")}</p>
+                <p className="mt-1 text-sm text-slate-500">{t("location")}</p>
                 <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
-                  Desarrollo de la aplicación móvil FixGo (Android) con Flutter,
-                  implementando módulos de proveedor y administrador; gestión de
-                  servicios, autenticación, imágenes, reportes PDF, gráficas,
-                  mapas, panel administrativo y optimización de rendimiento.
+                  {t("jobDesc")}
                 </p>
               </div>
             </div>
@@ -343,7 +336,7 @@ export default function Hero() {
                 href="/about"
                 className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-white font-medium shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
-                Ver perfil completo
+                {t("viewProfile")}
               </Link>
             </div>
           </div>
@@ -355,10 +348,10 @@ export default function Hero() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-              Proyectos destacados
+              {t("projectsTitle")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
-              Algunos de los proyectos que he creado
+              {t("projectsSubtitle")}
             </p>
 
             <div className="text-center mt-8">
@@ -366,7 +359,7 @@ export default function Hero() {
                 href="/projects"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-900 hover:text-slate-900"
               >
-                Ver todos los proyectos
+                {t("viewAllProjects")}
               </Link>
             </div>
           </div>
@@ -403,7 +396,7 @@ export default function Hero() {
                         className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm text-white"
                       >
                         <FaExternalLinkAlt className="h-3.5 w-3.5" />
-                        Ver proyecto
+                        {t("viewProject")}
                       </a>
                     ) : (
                       <span />
@@ -413,7 +406,7 @@ export default function Hero() {
                       href={`/projects/${item.slug}`}
                       className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 hover:border-slate-900 hover:text-slate-900"
                     >
-                      Detalles
+                      {t("details")}
                       <IoArrowForward className="h-4 w-4" />
                     </Link>
                   </div>
@@ -429,10 +422,10 @@ export default function Hero() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
-              Mis servicios
+              {t("servicesTitle")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
-              Soluciones personalizadas para tus necesidades digitales.
+              {t("servicesSubtitle")}
             </p>
           </div>
 
@@ -441,7 +434,7 @@ export default function Hero() {
               href="/services"
               className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-900 hover:text-slate-900"
             >
-              Ver todos los servicios
+              {t("viewAllServices")}
             </Link>
           </div>
 
@@ -451,7 +444,7 @@ export default function Hero() {
             <article className="overflow-hidden rounded-[2rem] border border-blue-500/30 ring-2 ring-blue-500/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-500/10 before:blur-xl before:opacity-70 before:-z-10">
               {/* Badge */}
               <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-1 text-sm font-semibold text-white">
-                Destacado
+                {t("featured")}
               </span>
 
               {/* Imagen */}
@@ -466,14 +459,11 @@ export default function Hero() {
 
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-xl font-semibold text-center">
-                  Sitios web
+                  {t("service1Title")}
                 </h3>
 
                 <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                  Creo sitios web modernos y responsivos, desde páginas de
-                  destino sencillas hasta sitios mas completos con todas las
-                  funciones que necesitas. Diseño personalizado, optimización
-                  SEO y excelente rendimiento.
+                  {t("service1Desc")}
                 </p>
 
                 <div className="mt-2 pt-6 flex justify-center">
@@ -481,7 +471,7 @@ export default function Hero() {
                     href="/services/web"
                     className="inline-flex items-center gap-2 rounded-full  bg-blue-600 px-5 py-2 text-sm text-white  transition hover:bg-blue-700 shadow-md hover:shadow-lg"
                   >
-                    Descubre más
+                    {t("discoverMore")}
                     <IoArrowForward className="h-4 w-4" />
                   </Link>
                 </div>
@@ -501,14 +491,11 @@ export default function Hero() {
 
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-xl font-semibold text-center">
-                  Aplicaciones web y PWA
+                  {t("service2Title")}
                 </h3>
 
                 <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                  Desarrollo aplicaciones web personalizadas y Aplicaciones Web
-                  Progresivas (PWA): desde paneles de control empresariales
-                  hasta plataformas complejas, hasta aplicaciones instalables en
-                  cualquier dispositivo, funcionando incluso offline.
+                  {t("service2Desc")}
                 </p>
 
                 <div className="mt-auto pt-6 flex justify-center">
@@ -516,7 +503,7 @@ export default function Hero() {
                     href="/services/appweb"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                   >
-                    Descubre más
+                    {t("discoverMore")}
                     <IoArrowForward className="h-4 w-4" />
                   </Link>
                 </div>
@@ -536,14 +523,11 @@ export default function Hero() {
 
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-xl font-semibold text-center">
-                  Integraciones con IA
+                  {t("service3Title")}
                 </h3>
 
                 <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                  Integro inteligencia artificial en tus proyectos para
-                  automatizar procesos, mejorar la experiencia del usuario y
-                  crear soluciones innovadoras. Chatbots, análisis de datos,
-                  automatización inteligente.
+                  {t("service3Desc")}
                 </p>
 
                 <div className="mt-auto pt-6 flex justify-center">
@@ -551,7 +535,7 @@ export default function Hero() {
                     href="/services/inteligencia"
                     className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                   >
-                    Descubre más
+                    {t("discoverMore")}
                     <IoArrowForward className="h-4 w-4" />
                   </Link>
                 </div>

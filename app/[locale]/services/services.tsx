@@ -1,14 +1,17 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { IoArrowForward } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Services() {
+  const t = useTranslations("services");
+
   const [form, setForm] = useState({
     nombre: "",
     apellidos: "",
@@ -43,23 +46,17 @@ export default function Services() {
     setError("");
     setSuccess("");
 
-    if (!form.nombre.trim())
-      return setError("El nombre es obligatorio y solo debe contener letras.");
+    if (!form.nombre.trim()) return setError(t("errorName"));
 
-    if (!form.apellidos.trim())
-      return setError(
-        "Los apellidos son obligatorios y solo deben contener letras.",
-      );
+    if (!form.apellidos.trim()) return setError(t("errorLastname"));
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(form.correo))
-      return setError("Ingresa un correo electrónico válido.");
+    if (!emailRegex.test(form.correo)) return setError(t("errorEmail"));
 
-    if (!/^\d{10}$/.test(form.telefono))
-      return setError("El teléfono debe tener exactamente 10 dígitos.");
+    if (!/^\d{10}$/.test(form.telefono)) return setError(t("errorPhone"));
 
-    if (!form.servicio) return setError("Selecciona un servicio.");
+    if (!form.servicio) return setError(t("errorService"));
 
     setLoading(true);
 
@@ -74,7 +71,7 @@ export default function Services() {
 
       if (!res.ok) throw new Error();
 
-      setSuccess("Tu mensaje fue enviado correctamente 🚀");
+      setSuccess(t("successSubmit"));
 
       setForm({
         nombre: "",
@@ -84,7 +81,7 @@ export default function Services() {
         servicio: "",
       });
     } catch (err) {
-      setError("Error al enviar el formulario.");
+      setError(t("errorSubmit"));
       setLoading(false);
     }
   };
@@ -103,17 +100,14 @@ export default function Services() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
-            Solutions
+            {t("badge")}
           </span>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
-            Transformo ideas en Realidad digital.
+            {t("title1")}
           </h1>
 
           <p className="mx-auto mt-8 max-w-3xl text-base leading-7 text-slate-500 sm:text-lg">
-            Diseñador y desarrollador web. Ofrezco soluciones completas para
-            hacer realidad tus ideas digitales, desde páginas de destino
-            sencillas hasta proyectos complejos con inteligencia artificial y
-            gamificación.
+            {t("description1")}
           </p>
         </div>
 
@@ -123,7 +117,7 @@ export default function Services() {
           <article className="overflow-hidden rounded-[2rem] border border-blue-500/30 ring-2 ring-blue-500/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-500/10 before:blur-xl before:opacity-70 before:-z-10">
             {/* Badge */}
             <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-1 text-sm font-semibold text-white">
-              Destacado
+              {t("featured")}
             </span>
 
             {/* Imagen */}
@@ -137,13 +131,12 @@ export default function Services() {
             </div>
 
             <div className="flex flex-1 flex-col p-6">
-              <h3 className="text-xl font-semibold text-center">Sitios web</h3>
+              <h3 className="text-xl font-semibold text-center">
+                {t("service1Title")}
+              </h3>
 
               <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                Creo sitios web modernos y responsivos, desde páginas de destino
-                sencillas hasta sitios mas completos con todas las funciones que
-                necesitas. Diseño personalizado, optimización SEO y excelente
-                rendimiento.
+                {t("service1Desc")}
               </p>
 
               <div className="mt-2 pt-6 flex justify-center">
@@ -151,7 +144,7 @@ export default function Services() {
                   href="/services/web"
                   className="inline-flex items-center gap-2 rounded-full  bg-blue-600 px-5 py-2 text-sm text-white  transition hover:bg-blue-700 shadow-md hover:shadow-lg"
                 >
-                  Descubre más
+                  {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
                 </Link>
               </div>
@@ -171,14 +164,11 @@ export default function Services() {
 
             <div className="flex flex-1 flex-col p-6">
               <h3 className="text-xl font-semibold text-center">
-                Aplicaciones web y PWA
+                {t("service2Title")}
               </h3>
 
               <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                Desarrollo aplicaciones web personalizadas y Aplicaciones Web
-                Progresivas (PWA): desde paneles de control empresariales hasta
-                plataformas complejas, hasta aplicaciones que funcionan en
-                cualquier dispositivo.
+                {t("service2Desc")}
               </p>
 
               <div className="mt-auto pt-6 flex justify-center">
@@ -186,7 +176,7 @@ export default function Services() {
                   href="/services/appweb"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
-                  Descubre más
+                  {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
                 </Link>
               </div>
@@ -206,14 +196,11 @@ export default function Services() {
 
             <div className="flex flex-1 flex-col p-6">
               <h3 className="text-xl font-semibold text-center">
-                Integraciones con IA
+                {t("service3Title")}
               </h3>
 
               <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                Integro inteligencia artificial en tus proyectos para
-                automatizar procesos, mejorar la experiencia del usuario y crear
-                soluciones innovadoras. Chatbots, análisis de datos,
-                automatización inteligente.
+                {t("service3Desc")}
               </p>
 
               <div className="mt-auto pt-6 flex justify-center">
@@ -221,7 +208,7 @@ export default function Services() {
                   href="/services/inteligencia"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
-                  Descubre más
+                  {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
                 </Link>
               </div>
@@ -241,14 +228,11 @@ export default function Services() {
 
             <div className="flex flex-1 flex-col p-6">
               <h3 className="text-xl font-semibold text-center">
-                Sitio Web Básico
+                {t("service4Title")}
               </h3>
 
               <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                Este es el plan perfecto para crear un sitio rápido y con todo
-                lo necesario. Ideal para eventos, productos únicos o esa gran
-                idea que no puede esperar más. Comienza con un sitio básico,
-                siempre hay tiempo para crecer.
+                {t("service4Desc")}
               </p>
 
               <div className="mt-auto pt-6 flex justify-center">
@@ -256,7 +240,7 @@ export default function Services() {
                   href="/services/web-basico"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
-                  Descubre más
+                  {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
                 </Link>
               </div>
@@ -275,13 +259,12 @@ export default function Services() {
             </div>
 
             <div className="flex flex-1 flex-col p-6">
-              <h3 className="text-xl font-semibold text-center">Diseño UX</h3>
+              <h3 className="text-xl font-semibold text-center">
+                {t("service5Title")}
+              </h3>
 
               <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                Definimos y validamos tu producto antes de desarrollarlo.
-                Realizamos product discovery y prototipos en baja y alta
-                definición para probar ideas, optimizar flujos y reducir errores
-                desde el inicio.
+                {t("service5Desc")}
               </p>
 
               <div className="mt-auto pt-6 flex justify-center">
@@ -289,7 +272,7 @@ export default function Services() {
                   href="/services/design"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
-                  Descubre más
+                  {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
                 </Link>
               </div>
@@ -308,12 +291,12 @@ export default function Services() {
             </div>
 
             <div className="flex flex-1 flex-col p-6">
-              <h3 className="text-xl font-semibold text-center">Metaverso</h3>
+              <h3 className="text-xl font-semibold text-center">
+                {t("service6Title")}
+              </h3>
 
               <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
-                Creo servidores personalizados de Minecraft, Roblox y Hytale.
-                Experiencias virtuales personalizadas, configuración completa,
-                plugins personalizados y gestión dedicada para tu mundo virtual.
+                {t("service6Desc")}
               </p>
 
               <div className="mt-auto pt-6 flex justify-center">
@@ -321,7 +304,7 @@ export default function Services() {
                   href="/services/metaverso"
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                 >
-                  Descubre más
+                  {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
                 </Link>
               </div>
@@ -335,13 +318,11 @@ export default function Services() {
               {/* Form */}
               <div className="animate-fadeInUp">
                 <h2 className="text-4xl font-semibold tracking-tight text-center lg:text-left">
-                  Hablemos de tu proyecto
+                  {t("contactTitle")}
                 </h2>
 
                 <p className="mt-4 text-slate-500 text-justify">
-                  Rellena el formulario para ser contactado o escribe
-                  directamente por WhatsApp. Normalmente respondo en menos de 24
-                  horas laborales.
+                  {t("contactDesc")}
                 </p>
 
                 {/* Botones */}
@@ -371,26 +352,26 @@ export default function Services() {
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div>
                     <label className="block text-sm font-medium text-gray-600 pb-2">
-                      Nombre
+                      {t("name")}
                     </label>
                     <input
                       name="nombre"
                       value={form.nombre}
                       onChange={handleChange}
-                      placeholder="Escribe tu nombre"
+                      placeholder={t("namePlaceholder")}
                       className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-600 pb-2">
-                      Apellidos
+                      {t("lastname")}
                     </label>
                     <input
                       name="apellidos"
                       value={form.apellidos}
                       onChange={handleChange}
-                      placeholder="Escribe tu apellido"
+                      placeholder={t("lastnamePlaceholder")}
                       className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
@@ -398,7 +379,7 @@ export default function Services() {
 
                 <div className="mt-4">
                   <label className="block text-sm font-medium text-gray-600 pb-2">
-                    Correo electrónico
+                    {t("email")}
                   </label>
                   <input
                     name="correo"
@@ -408,27 +389,27 @@ export default function Services() {
                       setSuccess("");
                       setForm({ ...form, correo: e.target.value });
                     }}
-                    placeholder="your@email.com"
+                    placeholder={t("emailPlaceholder")}
                     className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
                 <div className="mt-4">
                   <label className="block text-sm font-medium text-gray-600 pb-2">
-                    Teléfono
+                    {t("phone")}
                   </label>
                   <input
                     name="telefono"
                     value={form.telefono}
                     onChange={handleChange}
-                    placeholder="7351241139"
+                    placeholder={t("phonePlaceholder")}
                     className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
                 <div className="mt-4">
                   <label className="block text-sm font-medium text-gray-600 pb-2">
-                    Servicio
+                    {t("service")}
                   </label>
                   <select
                     name="servicio"
@@ -440,13 +421,13 @@ export default function Services() {
                     }}
                     className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-500 cursor-pointer transition focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="">Seleccione un servicio</option>
-                    <option>Sitios web</option>
-                    <option>Aplicaciones web y PWA</option>
-                    <option>Integraciones con IA</option>
-                    <option>Sitio web básico</option>
-                    <option>Diseño UX</option>
-                    <option>Metaverso</option>
+                    <option value="">{t("selectService")}</option>
+                    <option>{t("option1")}</option>
+                    <option>{t("option2")}</option>
+                    <option>{t("option3")}</option>
+                    <option>{t("option4")}</option>
+                    <option>{t("option5")}</option>
+                    <option>{t("option6")}</option>
                   </select>
                 </div>
                 <button
@@ -456,7 +437,7 @@ export default function Services() {
                     ${loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}
                   `}
                 >
-                  {loading ? "Enviando..." : "Enviar solicitud"}
+                  {loading ? t("sending") : t("submit")}
                 </button>
                 {/* Mensajes */}
                 {error && (
@@ -477,27 +458,14 @@ export default function Services() {
                 {/* FAQ */}
                 <div>
                   <h3 className="text-2xl font-semibold text-center lg:text-left">
-                    Preguntas frecuentes
+                    {t("faqTitle")}
                   </h3>
 
                   <div className="mt-6 space-y-3 text-justify">
                     {[
-                      {
-                        question:
-                          "¿Cómo se gestiona la comunicación durante el proyecto?",
-                        answer:
-                          "La comunicación es una prioridad para mí: te mantengo informado con actualizaciones periódicas de progreso (semanales o según prefieras). Nos mantenemos en contacto por correo electrónico, chat o videollamadas. Te involucro en decisiones importantes y siempre estoy disponible para preguntas.",
-                      },
-                      {
-                        question: "¿Qué métodos de pago aceptas?",
-                        answer:
-                          "Acepto transferencias bancarias, PayPal y otros métodos de pago seguros. Podemos acordar un calendario de pagos basado en la duración y la complejidad del proyecto: normalmente un depósito inicial (30-50%) y saldo a la entrega; Para proyectos más largos, pagos intermedios vinculados a hitos. Todo se registra y documenta mediante facturación electrónica para total transparencia y seguridad.",
-                      },
-                      {
-                        question: "¿Trabajas con presupuestos limitados?",
-                        answer:
-                          "Sí, puedo adaptar soluciones a tu presupuesto. Podemos empezar con un MVP (Producto Mínimo Viable) que incluya características esenciales y luego escalar gradualmente según los resultados y tus necesidades. También ofrezco soluciones modulares que permiten añadir funciones a lo largo del tiempo, para que puedas invertir progresivamente. Lo importante es definir las prioridades juntos.",
-                      },
+                      { question: t("faq1q"), answer: t("faq1a") },
+                      { question: t("faq2q"), answer: t("faq2a") },
+                      { question: t("faq3q"), answer: t("faq3a") },
                     ].map((faq, index) => {
                       const isOpen = openIndex === index;
 
@@ -539,43 +507,41 @@ export default function Services() {
                       );
                     })}
                   </div>
-
-                  <a
+                  <Link
                     href="/faq"
                     className="mt-4 ml-1 inline-block text-blue-600 text-sm lg:text-base"
                   >
-                    Consulta todas las preguntas frecuentes →
-                  </a>
+                    {t("viewAllFaq")}
+                  </Link>
                 </div>
 
                 {/* Donde trabajo */}
                 <div className="rounded-3xl border border-[#dee4ff] bg-white p-6 shadow-[0_15px_50px_rgba(76,29,149,0.08)] hover:shadow-[0_20px_60px_rgba(76,29,149,0.12)]">
-                  <h4 className="text-lg font-semibold">Dónde trabajo</h4>
+                  <h4 className="text-lg font-semibold">{t("workLocation")}</h4>
                   <p className="mt-2 text-sm text-slate-500">
-                    Trabajo de forma remota y puedo colaborar en proyectos
-                    nacionales e internacionales.
+                    {t("workLocationDesc")}
                   </p>
                 </div>
 
                 {/* Horario */}
                 <div className="rounded-3xl border border-[#dee4ff] bg-white p-6 shadow-[0_15px_50px_rgba(76,29,149,0.08)] hover:shadow-[0_20px_60px_rgba(76,29,149,0.12)]">
-                  <h4 className="text-lg font-semibold">Horario de trabajo</h4>
+                  <h4 className="text-lg font-semibold">{t("schedule")}</h4>
 
                   <div className="mt-3 text-sm text-slate-500 space-y-2">
                     <div className="flex justify-between">
-                      <span>Lunes - viernes</span>
+                      <span>{t("mondayFriday")}</span>
                       <span>09:00 – 18:00</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Internacional</span>
+                      <span>{t("international")}</span>
                       <span>Flexible</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Sábado - domingo</span>
-                      <span>Cerrado</span>
+                      <span>{t("weekend")}</span>
+                      <span>{t("closed")}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="font-semibold">Teléfono:</span>{" "}
+                      <span className="font-semibold">{t("phoneLabel")}</span>{" "}
                       <span>+52 735 124 1139</span>
                     </div>
                   </div>

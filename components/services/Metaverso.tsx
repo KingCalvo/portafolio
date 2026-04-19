@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+import { Link } from "@/i18n/navigation";
 import {
   ArrowRight,
   ShieldCheck,
@@ -8,6 +9,7 @@ import {
   Settings,
 } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -43,6 +45,7 @@ function FeatureCard({
 }
 
 export default function ServicioMetaverso() {
+  const t = useTranslations("servicesMeta");
   return (
     <main className="bg-white text-slate-900">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#22002c] via-[#6b005f] to-[#8a0a5d] text-white">
@@ -55,18 +58,18 @@ export default function ServicioMetaverso() {
 
         <div className="relative mx-auto flex min-h-[82vh] w-full max-w-6xl flex-col items-center justify-center px-6 py-20 text-center">
           <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Conecta con tu comunidad
+            {t("heroTitle1")}
             <br />
-            en un mundo virtual
+            {t("heroTitle2")}
           </h1>
 
-          <a
+          <Link
             href="/services#contacto"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#2b0041] px-7 py-3 text-sm font-semibold tracking-wide text-white shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#220031]"
           >
-            Contactame, ¡es gratis!
+            {t("cta")}
             <ArrowRight size={18} />
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -86,16 +89,13 @@ export default function ServicioMetaverso() {
 
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Más que un servidor
+              {t("section1Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Un mundo propio
+              {t("section1Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              No se trata solo de crear un servidor, sino de construir una
-              experiencia. Desarrollo mundos virtuales personalizados en
-              plataformas como Minecraft, Roblox o Hytale, pensados para
-              comunidades, marcas o proyectos únicos.
+              {t("section1Text")}
             </p>
           </div>
         </div>
@@ -105,15 +105,13 @@ export default function ServicioMetaverso() {
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Totalmente personalizado
+              {t("section2Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Hecho para tu idea
+              {t("section2Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              Cada servidor se diseña desde cero según tus objetivos: mecánicas,
-              reglas, estética y funcionalidades. No es una plantilla, es un
-              entorno virtual adaptado a lo que quieres lograr.
+              {t("section2Text")}
             </p>
           </div>
 
@@ -148,16 +146,13 @@ export default function ServicioMetaverso() {
 
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Plugins y sistemas
+              {t("section3Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Funcionalidad a medida
+              {t("section3Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              Desarrollo e integro plugins, mods y sistemas personalizados según
-              lo que necesites. Desde mecánicas específicas hasta
-              configuraciones avanzadas, tu servidor o mapa tendrá exactamente
-              las funciones que buscas.
+              {t("section3Text")}
             </p>
           </div>
         </div>
@@ -168,15 +163,13 @@ export default function ServicioMetaverso() {
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-                Gestión y estabilidad
+                {t("section4Title")}
               </h2>
               <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-                Todo bajo control
+                {t("section4Subtitle")}
               </p>
               <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-                Me encargo de la configuración, optimización y mantenimiento del
-                servidor. Desde plugins personalizados hasta rendimiento y
-                seguridad, para que tu mundo funcione sin problemas.
+                {t("section4Text")}
               </p>
             </div>
 
@@ -201,36 +194,33 @@ export default function ServicioMetaverso() {
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
-              El metaverso es conexión
+              {t("finalTitle")}
             </h2>
             <p className="mt-6 text-[17px] leading-8 text-slate-700">
-              Los mundos virtuales permiten crear comunidades, experiencias y
-              nuevas formas de interacción. Ya sea para entretenimiento, marca o
-              proyecto, un entorno bien diseñado puede generar engagement real y
-              oportunidades únicas.
+              {t("finalText")}
             </p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <FeatureCard
               icon={Gamepad2}
-              title="Experiencia única"
-              text="Crea un mundo virtual totalmente diferente y adaptado a tu visión."
+              title={t("feature1Title")}
+              text={t("feature1Text")}
             />
             <FeatureCard
               icon={Users}
-              title="Comunidad activa"
-              text="Fomenta la interacción y participación constante de tus usuarios."
+              title={t("feature2Title")}
+              text={t("feature2Text")}
             />
             <FeatureCard
               icon={Settings}
-              title="Alta personalización"
-              text="Plugins, mecánicas y diseño completamente a medida."
+              title={t("feature3Title")}
+              text={t("feature3Text")}
             />
             <FeatureCard
               icon={ShieldCheck}
-              title="Rendimiento estable"
-              text="Servidores optimizados para una experiencia fluida y sin fallos."
+              title={t("feature4Title")}
+              text={t("feature4Text")}
             />
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
               <div className="flex items-center justify-center gap-3">
@@ -239,12 +229,11 @@ export default function ServicioMetaverso() {
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-800">
-                  Control total
+                  {t("feature5Title")}
                 </h3>
               </div>
               <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
-                Gestiona tu mundo virtual con reglas, sistemas y configuraciones
-                propias.
+                {t("feature5Text")}
               </p>
             </article>
           </div>
@@ -257,19 +246,18 @@ export default function ServicioMetaverso() {
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-8 shadow-[0_18px_60px_rgba(76,29,149,0.08)] sm:p-12">
               <div className="flex items-center justify-center gap-3">
                 <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                  Crea tu propio mundo virtual
+                  {t("contactTitle")}
                 </h3>
               </div>
               <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
-                Hablemos sobre tu idea y construyamos una experiencia única que
-                conecte con tu comunidad.
+                {t("contactText")}
               </p>
-              <a
+              <Link
                 href="/services#contacto"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
-                Contáctame ahora
-              </a>
+                {t("contactBtn")}
+              </Link>
             </article>
           </div>
         </div>

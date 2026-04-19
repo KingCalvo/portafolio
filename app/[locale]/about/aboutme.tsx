@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import type { IconType } from "react-icons";
@@ -38,6 +39,7 @@ import {
 } from "react-icons/fa6";
 import { VscVscode } from "react-icons/vsc";
 import ExperienceDetails from "@/components/layout/ExperienceDetails";
+import { useTranslations } from "next-intl";
 
 type TechItem = {
   name: string;
@@ -49,67 +51,6 @@ type TechGroup = {
   title: string;
   items: TechItem[];
 };
-
-const techGroups: TechGroup[] = [
-  {
-    title: "Lenguajes",
-    items: [
-      { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
-      { name: "Dart", Icon: SiDart, color: "#0175C2" },
-      { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
-      { name: "Python", Icon: SiPython, color: "#3776AB" },
-      { name: "SQL", Icon: FaDatabase, color: "#4E73DF" },
-      { name: "Java", Icon: FaJava, color: "#F89820" },
-    ],
-  },
-  {
-    title: "Desarrollo web",
-    items: [
-      { name: "React", Icon: SiReact, color: "#61DAFB" },
-      { name: "Next JS", Icon: SiNextdotjs, color: "#111111" },
-      { name: "NodeJS", Icon: SiNodedotjs, color: "#339933" },
-      { name: "Astro", Icon: SiAstro, color: "#FF5D01" },
-      { name: "Express.js", Icon: SiExpress, color: "#000000" },
-      { name: "TailwindCSS", Icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "Vite.js", Icon: SiVite, color: "#646CFF" },
-    ],
-  },
-  {
-    title: "Desarrollo móvil",
-    items: [
-      { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
-      { name: "BLoC", Icon: SiFlutter, color: "#0175C2" },
-      { name: "React Native", Icon: FaMobileScreenButton, color: "#61DAFB" },
-      { name: "Expo", Icon: SiExpo, color: "#000020" },
-    ],
-  },
-  {
-    title: "Bases de datos",
-    items: [
-      { name: "Postgres", Icon: SiPostgresql, color: "#336791" },
-      { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
-      { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
-      { name: "SQLite", Icon: SiSqlite, color: "#003B57" },
-      { name: "Redis", Icon: SiRedis, color: "#DC382D" },
-      { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
-    ],
-  },
-  {
-    title: "Herramientas",
-    items: [
-      { name: "Docker", Icon: SiDocker, color: "#2496ED" },
-      { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
-      { name: "Trello", Icon: SiTrello, color: "#0052CC" },
-      { name: "Git", Icon: SiGit, color: "#F05032" },
-      { name: "GitHub", Icon: SiGithub, color: "#181717" },
-      { name: "Google Cloud", Icon: SiGooglecloud, color: "#4285F4" },
-      { name: "npm", Icon: SiNpm, color: "#CB3837" },
-      { name: "pnpm", Icon: SiPnpm, color: "#F69220" },
-      { name: "VS Code", Icon: VscVscode, color: "#007ACC" },
-      { name: "Cursor", Icon: FaCode, color: "#111111" },
-    ],
-  },
-];
 
 function TechChip({ item }: { item: TechItem }) {
   const { Icon, color } = item;
@@ -167,16 +108,71 @@ function TechGroupCard({ group }: { group: TechGroup }) {
   );
 }
 
-const skills = [
-  "Autoaprendizaje",
-  "Trabajo en equipo",
-  "Resolución de problemas",
-  "Atención y trato con clientes",
-  "Creatividad",
-  "Disciplina y responsabilidad",
-];
-
 export default function About() {
+  const t = useTranslations("about");
+
+  const techGroups: TechGroup[] = [
+    {
+      title: t("tech.languages"),
+      items: [
+        { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
+        { name: "Dart", Icon: SiDart, color: "#0175C2" },
+        { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+        { name: "Python", Icon: SiPython, color: "#3776AB" },
+        { name: "SQL", Icon: FaDatabase, color: "#4E73DF" },
+        { name: "Java", Icon: FaJava, color: "#F89820" },
+      ],
+    },
+    {
+      title: t("tech.web"),
+      items: [
+        { name: "React", Icon: SiReact, color: "#61DAFB" },
+        { name: "Next JS", Icon: SiNextdotjs, color: "#111111" },
+        { name: "NodeJS", Icon: SiNodedotjs, color: "#339933" },
+        { name: "Astro", Icon: SiAstro, color: "#FF5D01" },
+        { name: "Express.js", Icon: SiExpress, color: "#000000" },
+        { name: "TailwindCSS", Icon: SiTailwindcss, color: "#06B6D4" },
+        { name: "Vite.js", Icon: SiVite, color: "#646CFF" },
+      ],
+    },
+    {
+      title: t("tech.mobile"),
+      items: [
+        { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
+        { name: "BLoC", Icon: SiFlutter, color: "#0175C2" },
+        { name: "React Native", Icon: FaMobileScreenButton, color: "#61DAFB" },
+        { name: "Expo", Icon: SiExpo, color: "#000020" },
+      ],
+    },
+    {
+      title: t("tech.database"),
+      items: [
+        { name: "Postgres", Icon: SiPostgresql, color: "#336791" },
+        { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
+        { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
+        { name: "SQLite", Icon: SiSqlite, color: "#003B57" },
+        { name: "Redis", Icon: SiRedis, color: "#DC382D" },
+        { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
+      ],
+    },
+    {
+      title: t("tech.tools"),
+      items: [
+        { name: "Docker", Icon: SiDocker, color: "#2496ED" },
+        { name: "Figma", Icon: SiFigma, color: "#F24E1E" },
+        { name: "Trello", Icon: SiTrello, color: "#0052CC" },
+        { name: "Git", Icon: SiGit, color: "#F05032" },
+        { name: "GitHub", Icon: SiGithub, color: "#181717" },
+        { name: "Google Cloud", Icon: SiGooglecloud, color: "#4285F4" },
+        { name: "npm", Icon: SiNpm, color: "#CB3837" },
+        { name: "pnpm", Icon: SiPnpm, color: "#F69220" },
+        { name: "VS Code", Icon: VscVscode, color: "#007ACC" },
+        { name: "Cursor", Icon: FaCode, color: "#111111" },
+      ],
+    },
+  ];
+
+  const skills = t.raw("skills") as string[];
   return (
     <section
       id="about"
@@ -186,15 +182,16 @@ export default function About() {
         {/* Título */}
         <div className="text-center">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
-            About me
+            {t("badge")}
           </span>
           <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
-            Acerca de{" "}
-            <span className="text-shadow-slate-950 animate-pulse">mí</span>
+            {t("title1")}{" "}
+            <span className="text-shadow-slate-950 animate-pulse">
+              {t("title2")}
+            </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
-            Una breve presentación sobre mi perfil, experiencia, formación y
-            habilidades.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -211,34 +208,30 @@ export default function About() {
                   Enrique Calvo García
                 </h3>
                 <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500 text-center lg:text-left">
-                  Ingeniero en Sistemas Computacionales
+                  {t("career")}
                 </p>
 
                 <p className="mt-6 text-sm leading-6 sm:leading-7 text-slate-600 sm:text-[15px] text-justify">
-                  Soy Ingeniero en Sistemas Computacionales, soy autodidacta y
-                  disciplinado; me entusiasma aprender nuevas tecnologías y
-                  aplicar buenas prácticas para entregar soluciones de calidad.
-                  Me destaco en trabajo en equipo, comunicación con clientes y
-                  resolución pragmática de problemas.
+                  {t("description")}
                 </p>
               </div>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-                    Enfoque
+                    {t("focus")}
                   </p>
                   <p className="mt-2 text-sm text-slate-700">
-                    Web apps, mobile apps y experiencia de usuario
+                    {t("focusDesc")}
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
-                    Forma de trabajo
+                    {t("workStyle")}
                   </p>
                   <p className="mt-2 text-sm text-slate-700">
-                    Limpio, eficiente, comunicativo y orientado a resultados
+                    {t("workStyleDesc")}
                   </p>
                 </div>
               </div>
@@ -264,13 +257,13 @@ export default function About() {
               <div className="mt-2 space-y-3 text-center">
                 <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                   <p className="text-sm text-slate-600 leading-6">
-                    Desarrollo de aplicaciones web modernas con React & Next.js.
+                    {t("aboutCard1")}
                   </p>
                 </div>
 
                 <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
                   <p className="text-sm text-slate-600 leading-6">
-                    Apps móviles multiplataforma con Flutter.
+                    {t("aboutCard2")}
                   </p>
                 </div>
               </div>
@@ -289,31 +282,27 @@ export default function About() {
                 <div className="absolute left-4 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-slate-900 ring-4 ring-white" />
 
                 <div className="rounded-[2rem] border border-slate-200 bg-white p-2 lg:p-7 shadow-sm">
-                  <h4 className="text-xl font-semibold">Experiencia</h4>
+                  <h4 className="text-xl font-semibold">
+                    {t("experienceTitle")}
+                  </h4>
 
                   <div className="mt-4 rounded-xl bg-slate-50 p-5">
                     <p className="text-lg font-semibold text-slate-900">
-                      Mobile Developer (Flutter)
+                      {t("jobTitle")}
                     </p>
 
                     <p className="mt-1 text-sm font-medium text-slate-600">
-                      Naatik A.I. Solutions SAPI de CV · Jornada completa
+                      {t("company")}
                     </p>
 
-                    <p className="mt-1 text-xs text-slate-500">
-                      jun. 2025 - dic. 2025 · 7 meses
-                    </p>
+                    <p className="mt-1 text-xs text-slate-500">{t("time")}</p>
 
                     <p className="mt-1 text-xs text-slate-500">
-                      San Francisco 23, Frac. Burgos, Temixco, Morelos · Remoto
+                      {t("location")}
                     </p>
 
                     <p className="mt-4 text-sm leading-6 sm:leading-7 text-slate-600 text-justify tracking-[0.01em]">
-                      Desarrollo de la aplicación móvil FixGo (Android) con
-                      Flutter, implementando módulos de proveedor y
-                      administrador; gestión de servicios, autenticación,
-                      imágenes, reportes PDF, gráficas, mapas, panel
-                      administrativo y optimización de rendimiento.
+                      {t("jobDesc")}
                     </p>
 
                     <ExperienceDetails />
@@ -326,34 +315,27 @@ export default function About() {
                 <div className="absolute left-4 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-slate-900 ring-4 ring-white" />
 
                 <div className="rounded-[2rem] border border-slate-200 bg-white p-2 lg:p-7 shadow-sm">
-                  <h4 className="text-xl font-semibold">Educación</h4>
+                  <h4 className="text-xl font-semibold">
+                    {t("educationTitle")}
+                  </h4>
 
                   <div className="mt-4 rounded-xl bg-slate-50 p-5">
                     <p className="text-lg font-semibold text-slate-900">
-                      Ingeniero en Sistemas Computacionales
+                      {t("degree")}
                     </p>
 
-                    <p className="mt-1 text-sm text-slate-600">
-                      Instituto Tecnológico de Cuautla
-                    </p>
+                    <p className="mt-1 text-sm text-slate-600">{t("school")}</p>
 
-                    <p className="mt-1 text-xs text-slate-500">2021 – 2026</p>
+                    <p className="mt-1 text-xs text-slate-500">
+                      {t("educationTime")}
+                    </p>
 
                     <div className="mt-4 space-y-3 text-sm text-slate-600 leading-6 text-justify">
-                      <p>
-                        Participación en Hackathon Morelos (12a y 13a edición) y
-                        Hackatec en etapa regional y nacional.
-                      </p>
+                      <p>{t("eduDesc1")}</p>
 
-                      <p>
-                        Formación académica y autodidacta junto con
-                        participación en talleres extracurriculares de
-                        especialización.
-                      </p>
+                      <p>{t("eduDesc2")}</p>
 
-                      <p className="text-slate-500">
-                        (Ciberseguridad, IA, redes neuronales, etc.)
-                      </p>
+                      <p className="text-slate-500">{t("eduDesc3")}</p>
                     </div>
                   </div>
                 </div>
@@ -365,7 +347,7 @@ export default function About() {
           <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
             <div className="flex items-center gap-3">
               <span className="h-6 w-1 rounded-full bg-slate-900" />
-              <h4 className="text-xl font-semibold">Habilidades</h4>
+              <h4 className="text-xl font-semibold">{t("skillsTitle")}</h4>
             </div>
 
             <div className="mt-3 flex flex-wrap gap-2">
@@ -384,9 +366,7 @@ export default function About() {
           <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
             <div className="flex items-center gap-3">
               <span className="h-6 w-1 rounded-full bg-slate-900" />
-              <h4 className="text-xl font-semibold">
-                Mis habilidades como desarrollador
-              </h4>
+              <h4 className="text-xl font-semibold">{t("devSkillsTitle")}</h4>
             </div>
 
             <div className="mt-6 space-y-10">

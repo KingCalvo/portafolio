@@ -1,5 +1,6 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 
 export default function BackToProjectsButton() {
   const router = useRouter();
@@ -21,7 +22,13 @@ export default function BackToProjectsButton() {
   };
 
   const handleBack = () => {
-    router.push(`/projects?tab=${tab}`, { scroll: false });
+    router.push(
+      {
+        pathname: "/projects",
+        query: { tab },
+      },
+      { scroll: false },
+    );
 
     let attempts = 0;
 

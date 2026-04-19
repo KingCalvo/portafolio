@@ -1,4 +1,4 @@
-import Diseño from "@/components/services/Diseño";
+import Diseño from "@/components/services/Design";
 
 export default function IAPage() {
   return (

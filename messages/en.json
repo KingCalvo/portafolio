@@ -6,6 +6,572 @@
     "services": "Services"
   },
   "home": {
-    "title": "Welcome to my portfolio"
+    "title": "Enrique Calvo Garcia Portfolio",
+    "description": "Web developer specialized in building modern experiences",
+
+    "heroGreeting": "Hi, I'm",
+    "role": "Mobile & Web Developer",
+    "heroDescription": "Computer Systems Engineer passionate about building practical and scalable software solutions. I enjoy turning ideas into functional digital products that combine technical efficiency with creativity, especially in web and mobile development.",
+
+    "viewProjects": "View projects",
+    "contact": "Contact me",
+    "followMe": "Follow me",
+    "stack": "Main stack",
+
+    "aboutTitle1": "About",
+    "aboutTitle2": "me",
+    "aboutSubtitle": "A brief overview of my profile and experience.",
+    "career": "Computer Systems Engineer",
+    "aboutDescription": "I am a Computer Systems Engineer, self-taught and disciplined; I am enthusiastic about learning new technologies and applying best practices to deliver quality solutions. I stand out in teamwork, client communication, and pragmatic problem solving.",
+
+    "focus": "Focus",
+    "focusDesc": "Web apps, mobile apps and user experience",
+    "workStyle": "Work style",
+    "workStyleDesc": "Clean, efficient, communicative and results-oriented",
+    "aboutCard1": "Modern web application development with React & Next.js.",
+    "aboutCard2": "Cross-platform mobile apps with Flutter.",
+
+    "expTitle": "Professional experience",
+    "experience": "Experience",
+    "jobTitle": "Mobile Developer (Flutter)",
+    "company": "Naatik A.I. Solutions SAPI de CV · Full-time",
+    "time": "Jun 2025 - Dec 2025 · 7 months",
+    "location": "San Francisco 23, Frac. Burgos, Temixco, Morelos, C.P. 62584 · Remote",
+    "jobDesc": "Development of the FixGo mobile application (Android) with Flutter, implementing provider and admin modules; service management, authentication, images, PDF reports, charts, maps, admin panel and performance optimization.",
+
+    "viewProfile": "View full profile",
+
+    "projectsTitle": "Featured projects",
+    "projectsSubtitle": "Some of the projects I have created",
+    "viewAllProjects": "View all projects",
+    "viewProject": "View project",
+    "details": "Details",
+
+    "servicesTitle": "My services",
+    "servicesSubtitle": "Custom solutions for your digital needs.",
+    "viewAllServices": "View all services",
+    "featured": "Featured",
+    "discoverMore": "Discover more",
+
+    "service1Title": "Websites",
+    "service1Desc": "I create modern and responsive websites, from simple landing pages to more complete sites with all the features you need. Custom design, SEO optimization and excellent performance.",
+
+    "service2Title": "Web applications and PWA",
+    "service2Desc": "I develop custom web applications and Progressive Web Apps (PWA): from business dashboards to complex platforms, to installable applications on any device, working even offline.",
+
+    "service3Title": "AI integrations",
+    "service3Desc": "I integrate artificial intelligence into your projects to automate processes, improve user experience and create innovative solutions. Chatbots, data analysis, intelligent automation."
+  },
+
+  "about": {
+    "badge": "Learn more about me",
+
+    "title1": "About",
+    "title2": "me",
+
+    "subtitle": "A brief presentation about my profile, experience, education and skills.",
+
+    "career": "Computer Systems Engineer",
+
+    "description": "I am a Computer Systems Engineer, self-taught and disciplined; I am enthusiastic about learning new technologies and applying best practices to deliver quality solutions. I stand out in teamwork, client communication, and pragmatic problem solving.",
+
+    "focus": "Focus",
+    "focusDesc": "Web apps, mobile apps and user experience",
+
+    "workStyle": "Work style",
+    "workStyleDesc": "Clean, efficient, communicative and results-oriented",
+
+    "aboutCard1": "Modern web application development with React & Next.js.",
+    "aboutCard2": "Cross-platform mobile apps with Flutter.",
+
+    "experienceTitle": "Experience",
+    "jobTitle": "Mobile Developer (Flutter)",
+    "company": "Naatik A.I. Solutions SAPI de CV · Full-time",
+    "time": "Jun 2025 - Dec 2025 · 7 months",
+    "location": "San Francisco 23, Frac. Burgos, Temixco, Morelos · Remote",
+    "jobDesc": "Development of the FixGo mobile application (Android) with Flutter, implementing provider and admin modules; service management, authentication, images, PDF reports, charts, maps, admin panel and performance optimization.",
+
+    "educationTitle": "Education",
+    "degree": "Computer Systems Engineer",
+    "school": "Technological Institute of Cuautla",
+    "educationTime": "2021 – 2026",
+
+    "eduDesc1": "Participation in Hackathon Morelos (12th and 13th edition) and Hackatec at regional and national stages.",
+    "eduDesc2": "Academic and self-taught training along with participation in extracurricular specialization workshops.",
+    "eduDesc3": "(Cybersecurity, AI, neural networks, etc.)",
+
+    "skillsTitle": "Skills",
+
+    "skills": [
+      "Self-learning",
+      "Teamwork",
+      "Problem solving",
+      "Customer service and communication",
+      "Creativity",
+      "Discipline and responsibility"
+    ],
+
+    "devSkillsTitle": "My developer skills",
+
+    "tech": {
+      "languages": "Languages",
+      "web": "Web development",
+      "mobile": "Mobile development",
+      "database": "Databases",
+      "tools": "Tools"
+    },
+    "experienceDetails": {
+      "title1": "Responsibilities and achievements",
+
+      "summary": "I participated in the end-to-end development of the FixGo project (Android App), transforming a business idea into a functional product focused on service management.",
+
+      "items": [
+        "I participated in the UI/UX design of the product using Figma, collaborating in defining flows, screens and user experience.",
+        "I participated in the design and implementation of the software architecture applying Clean Architecture in Flutter/Dart, ensuring proper separation of concerns and system scalability.",
+        "I developed the Provider Module, allowing providers to manage their profile, manage active services, view requests, upload evidence of completed work through images, check their history and visualize metrics through charts.",
+        "I developed the Admin Module, focused on overall system supervision, user and provider management, service control, PDF report generation, statistics visualization and platform performance monitoring.",
+        "I implemented user authentication, role management and access control within the application.",
+        "I integrated maps and geolocation for displaying providers and available services, improving user experience.",
+        "I collaborated in deployment for pilot testing, performance optimization and fixing issues detected during system validation."
+      ],
+
+      "viewMore": "View more",
+      "viewLess": "View less"
+    }
+  },
+
+  "projects": {
+    "badge": "Portfolio Showcase",
+    "title1": "Projects",
+    "description1": "Explore my journey through projects and hackathons. Each section represents a milestone in my continuous learning.",
+
+    "tabProjects": "Projects",
+    "tabHackathons": "Hackathons",
+
+    "viewProject": "View project",
+    "details": "Details"
+  },
+  "projectDetail": {
+    "breadcrumb": "Projects",
+    "totalTech": "Total Technologies",
+    "features": "Main features",
+    "technologies": "Technologies used",
+    "demo": "Live demo",
+    "documentation": "Documentation"
+  },
+  "hackathonDetail": {
+    "breadcrumb": "Hackathons",
+    "officialPosts": "Official posts",
+    "viewPost": "View post",
+    "technologies": "Technologies used",
+    "documentation": "Documentation"
+  },
+
+  "services": {
+    "badge": "Solutions",
+    "title1": "I transform ideas into digital reality.",
+    "description1": "Web designer and developer. I offer complete solutions to bring your digital ideas to life, from simple landing pages to complex projects with artificial intelligence and gamification.",
+
+    "featured": "Featured",
+    "discoverMore": "Discover more",
+
+    "service1Title": "Websites",
+    "service1Desc": "I create modern and responsive websites, from simple landing pages to more complete sites with all the features you need. Custom design, SEO optimization and excellent performance.",
+
+    "service2Title": "Web applications and PWA",
+    "service2Desc": "I develop custom web applications and Progressive Web Apps (PWA): from business dashboards to complex platforms, to applications that work on any device.",
+
+    "service3Title": "AI integrations",
+    "service3Desc": "I integrate artificial intelligence into your projects to automate processes, improve user experience and create innovative solutions. Chatbots, data analysis, intelligent automation.",
+
+    "service4Title": "Basic website",
+    "service4Desc": "This is the perfect plan to create a fast site with everything you need. Ideal for events, single products or that big idea that cannot wait any longer. Start with a basic site, there is always time to grow.",
+
+    "service5Title": "UX Design",
+    "service5Desc": "We define and validate your product before development. We carry out product discovery and low and high fidelity prototypes to test ideas, optimize flows and reduce errors from the start.",
+
+    "service6Title": "Metaverse",
+    "service6Desc": "I create custom servers for Minecraft, Roblox and Hytale. Personalized virtual experiences, full configuration, custom plugins and dedicated management for your virtual world.",
+
+    "contactTitle": "Let's talk about your project",
+    "contactDesc": "Fill out the form to be contacted or write directly via WhatsApp. I usually respond in less than 24 business hours.",
+
+    "whatsapp": "WhatsApp",
+    "gmail": "Gmail",
+
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+
+    "lastname": "Last name",
+    "lastnamePlaceholder": "Enter your last name",
+
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+
+    "phone": "Phone",
+    "phonePlaceholder": "7351241139",
+
+    "service": "Service",
+    "selectService": "Select a service",
+
+    "option1": "Websites",
+    "option2": "Web applications and PWA",
+    "option3": "AI integrations",
+    "option4": "Basic website",
+    "option5": "UX Design",
+    "option6": "Metaverse",
+
+    "sending": "Sending...",
+    "submit": "Submit request",
+
+    "faqTitle": "Frequently asked questions",
+
+    "faq1q": "How is communication managed during the project?",
+    "faq1a": "Communication is a priority for me: I keep you informed with regular progress updates (weekly or as you prefer). We stay in touch via email, chat or video calls. I involve you in important decisions and I am always available for questions.",
+
+    "faq2q": "What payment methods do you accept?",
+    "faq2a": "I accept bank transfers, PayPal and other secure payment methods. We can agree on a payment schedule based on the duration and complexity of the project: usually an initial deposit (30-50%) and balance on delivery; for longer projects, intermediate payments tied to milestones. Everything is recorded and documented through electronic invoicing for full transparency and security.",
+
+    "faq3q": "Do you work with limited budgets?",
+    "faq3a": "Yes, I can adapt solutions to your budget. We can start with an MVP (Minimum Viable Product) that includes essential features and then scale gradually according to results and your needs. I also offer modular solutions that allow adding features over time, so you can invest progressively. The important thing is to define priorities together.",
+
+    "viewAllFaq": "View all frequently asked questions →",
+
+    "workLocation": "Where I work",
+    "workLocationDesc": "I work remotely and can collaborate on national and international projects.",
+
+    "schedule": "Working hours",
+    "mondayFriday": "Monday - Friday",
+    "international": "International",
+    "weekend": "Saturday - Sunday",
+    "closed": "Closed",
+    "phoneLabel": "Phone:",
+
+    "errorName": "Name is required and must contain only letters.",
+    "errorLastname": "Last name is required and must contain only letters.",
+    "errorEmail": "Enter a valid email address.",
+    "errorPhone": "Phone number must be exactly 10 digits.",
+    "errorService": "Select a service.",
+    "errorSubmit": "Error sending the form.",
+    "successSubmit": "Your message was sent successfully 🚀"
+  },
+
+  "servicesWeb": {
+    "label": "Featured service",
+    "heroTitle1": "Professional websites",
+    "heroTitle2": "that help grow your business",
+    "cta": "Contact me, it's free!",
+
+    "section1Title": "More than online presence",
+    "section1Subtitle": "Design that truly works",
+    "section1Text": "Today, it's not enough to just “be on the internet”. Your website must attract, communicate, and convert visitors into clients. I design modern, responsive websites focused on results, created to make your business look professional from the very first moment.",
+
+    "section2Title": "Fast and professional",
+    "section2Subtitle": "No complications",
+    "section2Text": "I develop websites using modern technology, optimized to load quickly and perform perfectly on any device. You get a professional result in a short time, without complicated processes.",
+
+    "section3Title": "Ready to grow",
+    "section3Subtitle": "Scale whenever you want",
+    "section3Text": "Your site is not limited. It is prepared to add new sections, features, or integrations whenever you need. You start with a solid foundation and grow without having to rebuild everything.",
+
+    "section4Title": "All included",
+    "section4Subtitle": "No unnecessary costs",
+    "section4Text": "I include custom design, SEO optimization, and a professional structure. You pay for a website that truly adds value, without extras you don’t need.",
+
+    "finalTitle": "Your website makes the difference",
+    "finalText": "Your website is the foundation of your digital presence. It is where your clients get to know you, trust your business, and decide to contact you. A well-designed, fast, and optimized site not only looks professional, it also works for you by attracting opportunities and generating results.",
+
+    "feature1Title": "More visibility",
+    "feature1Text": "Appear in search engines and reach more clients consistently.",
+
+    "feature2Title": "More trust",
+    "feature2Text": "A professional website builds credibility from the first glance.",
+
+    "feature3Title": "More clients",
+    "feature3Text": "Design focused on guiding users to contact you or make a purchase.",
+
+    "feature4Title": "Better performance",
+    "feature4Text": "Fast, optimized websites adapted to all devices.",
+
+    "feature5Title": "100% control",
+    "feature5Text": "Your website is completely yours, without relying on external platforms.",
+
+    "contactTitle": "Ready to have a professional website?",
+    "contactText": "Let's talk about your idea and build a website that truly represents your business and helps you grow.",
+    "contactBtn": "Contact me now"
+  },
+
+  "servicesAppWeb": {
+    "heroTitle1": "Web applications and PWAs",
+    "heroTitle2": "tailored to your business",
+    "cta": "Contact me, it's free!",
+
+    "section1Title": "Software made for you",
+    "section1Subtitle": "More than a website",
+    "section1Text": "When a website is not enough, you need an application. I develop custom web applications that adapt exactly to what your business requires: from dashboards to complete platforms. Everything is designed to automate processes and improve efficiency.",
+
+    "section2Title": "Powerful and functional",
+    "section2Subtitle": "Everything in one place",
+    "section2Text": "Your tools, data, and processes centralized in a single application. I create intuitive, fast, and secure solutions that work directly from the browser, without the need for complicated installations.",
+
+    "section3Title": "Works on any device",
+    "section3Subtitle": "Access from anywhere",
+    "section3Text": "Your application works directly from the browser, whether on mobile, tablet, or computer. You don’t need to install anything: just access it and work quickly, comfortably, and from anywhere.",
+
+    "section4Title": "Scalable and flexible",
+    "section4Subtitle": "Grow without limits",
+    "section4Text": "Your application is prepared to evolve: new features, more users, or integrations with other systems. You start with what you need and expand the platform as your business grows.",
+
+    "finalTitle": "An application changes the way you work",
+    "finalText": "A web application is not just presence, it is a tool that transforms your business. It allows you to organize processes, manage information, and operate more efficiently, all from one place and accessible at any time.",
+
+    "feature1Title": "Automation",
+    "feature1Text": "Reduce manual tasks and optimize processes within your business.",
+
+    "feature2Title": "Real-time access",
+    "feature2Text": "View and manage information from anywhere at any time.",
+
+    "feature3Title": "Higher productivity",
+    "feature3Text": "Centralize tools and improve the efficiency of your team or project.",
+
+    "feature4Title": "Professional experience",
+    "feature4Text": "Modern, intuitive interfaces designed to make usage easier.",
+
+    "feature5Title": "100% customized",
+    "feature5Text": "Each application is developed according to your needs, without templates or limitations.",
+
+    "contactTitle": "Turn your idea into an application",
+    "contactText": "Let’s talk about your project and create a digital solution that truly optimizes your business.",
+    "contactBtn": "Contact me now"
+  },
+
+  "servicesIA": {
+    "heroTitle1": "AI integrations",
+    "heroTitle2": "to boost your business",
+    "cta": "Contact me, it's free!",
+
+    "section1Title": "More than automation",
+    "section1Subtitle": "Intelligence applied to your business",
+    "section1Text": "Artificial intelligence is no longer the future, it is a competitive advantage. I integrate AI solutions into your projects to automate tasks, improve user experience, and help you make better decisions with your data.",
+
+    "section2Title": "Automate and optimize",
+    "section2Subtitle": "Less manual work",
+    "section2Text": "Reduce repetitive tasks and optimize key processes with intelligent automation. From automatic responses to more efficient workflows, AI helps you save time and focus on what matters.",
+
+    "section3Title": "Smarter experience",
+    "section3Subtitle": "Modern interaction",
+    "section3Text": "Improve how your users interact with your business. From chatbots to intelligent assistants, you can offer fast, personalized responses available at all times.",
+
+    "section4Title": "Custom solutions",
+    "section4Subtitle": "Tailored to your project",
+    "section4Text": "Each integration is designed according to your needs: data analysis, automation, assistants, or intelligent systems. It's not about using AI as a trend, but applying it where it truly adds value.",
+
+    "finalTitle": "AI makes the difference",
+    "finalText": "Integrating artificial intelligence into your business allows you to work more efficiently, offer better experiences, and make more informed decisions. It's not just technology, it's a real advantage over your competition.",
+
+    "feature1Title": "Smart automation",
+    "feature1Text": "Reduce manual tasks and improve efficiency in your processes.",
+
+    "feature2Title": "24/7 support",
+    "feature2Text": "Respond to your customers at any time with chatbots and intelligent assistants.",
+
+    "feature3Title": "Better decision making",
+    "feature3Text": "Analyze data and gain useful insights to grow your business.",
+
+    "feature4Title": "Personalized experience",
+    "feature4Text": "Offer interactions tailored to each user automatically.",
+
+    "feature5Title": "Competitive advantage",
+    "feature5Text": "Stand out with modern solutions that provide real value.",
+
+    "contactTitle": "Take your project to the next level",
+    "contactText": "Let's talk about how to integrate artificial intelligence into your business and create smarter, more efficient solutions.",
+    "contactBtn": "Contact me now"
+  },
+
+  "servicesDesign": {
+    "heroTitle1": "Design your product",
+    "heroTitle2": "before developing it",
+    "cta": "Contact me, it's free!",
+
+    "section1Title": "Start with clarity",
+    "section1Subtitle": "Before writing code",
+    "section1Text": "Before developing, you need to understand what to build and why. We define your product from the ground up, validating ideas and focusing on solving real problems for your users.",
+
+    "section2Title": "Design with strategy",
+    "section2Subtitle": "Not trial and error",
+    "section2Text": "Through discovery processes, we analyze your idea, your market, and your users. This allows for informed decisions and avoids costly changes later.",
+
+    "section3Title": "Real prototypes",
+    "section3Subtitle": "Test before building",
+    "section3Text": "I create low and high fidelity prototypes to visualize your product before developing it. This way you can test flows, detect errors, and improve the experience from the start.",
+
+    "section4Title": "Fewer errors",
+    "section4Subtitle": "More efficiency",
+    "section4Text": "Good UX design reduces rework, speeds up development, and improves the final result. Investing in this stage saves you time, money, and problems in the future.",
+
+    "finalTitle": "UX design makes the difference",
+    "finalText": "A well-thought-out product not only looks good, it works better. UX design allows you to create clear, intuitive, and user-focused experiences, increasing the chances of success for your project.",
+
+    "feature1Title": "Early validation",
+    "feature1Text": "Test if your idea works before investing in development.",
+
+    "feature2Title": "Better experience",
+    "feature2Text": "Designs created so users can easily understand and use your product.",
+
+    "feature3Title": "Time saving",
+    "feature3Text": "Avoid unnecessary changes during development.",
+
+    "feature4Title": "Optimized flows",
+    "feature4Text": "Properly structure navigation and interactions from the start.",
+
+    "feature5Title": "Clear decisions",
+    "feature5Text": "Design with data, analysis, and defined goals, not just intuition. This allows you to make better decisions, reduce uncertainty, and build a product with a higher chance of success.",
+
+    "contactTitle": "Design before building",
+    "contactText": "Let's talk about your idea and define a clear, functional product ready to be properly developed.",
+    "contactBtn": "Contact me now"
+  },
+
+  "servicesWebBasico": {
+    "heroTitle1": "Your first landing page",
+    "heroTitle2": "fast and functional",
+    "cta": "Contact me, it's free!",
+
+    "cardLabel1": "Simple and clear landing",
+    "cardLabel2": "Easy to navigate",
+
+    "section1Title": "Start without complications",
+    "section1Subtitle": "Everything you need to be online",
+    "section1Text": "If you are starting out or need to launch something quickly, a basic website is the best option. A clear, direct, and professional page where you can showcase your idea, product, or service without wasting time.",
+
+    "section2Title": "Fast and hassle-free",
+    "section2Subtitle": "Your one-page or landing ready in a few days",
+    "section2Text": "I create your site in a short time, with everything needed to work correctly from the start. No long or complicated processes, focused on getting you online as soon as possible.",
+
+    "section3Title": "Simple and effective",
+    "section3Subtitle": "One single page",
+    "section3Text": "Your site is structured in a single page where we organize all the information clearly. Ideal for presenting your project, event, or product in a direct and easy-to-understand way.",
+
+    "section4Title": "Ready to grow",
+    "section4Subtitle": "Start small",
+    "section4Text": "You start with the basics, but with a solid foundation. As your project grows, your site can evolve without needing to start from scratch.",
+
+    "finalTitle": "Having a website makes the difference",
+    "finalText": "Even if it's simple, having your own website builds trust and professionalism. It is the first step to showcase your project to the world and start generating opportunities.",
+
+    "feature1Title": "Instant presence",
+    "feature1Text": "Publish your project online quickly and easily.",
+
+    "feature2Title": "Easy to understand",
+    "feature2Text": "All your information organized in one clear and direct page.",
+
+    "feature3Title": "Low cost",
+    "feature3Text": "An affordable solution with everything you need to get started.",
+
+    "feature4Title": "Professional design",
+    "feature4Text": "A modern page adapted to any device",
+
+    "feature5Title": "Solid foundation",
+    "feature5Text": "You start with the essentials, but ready to improve in the future.",
+
+    "contactTitle": "Launch your idea today",
+    "contactText": "Let's talk about your project and create a simple, fast, and effective website to get started.",
+    "contactBtn": "Contact me now"
+  },
+
+  "servicesMeta": {
+    "heroTitle1": "Connect with your community",
+    "heroTitle2": "in a virtual world",
+    "cta": "Contact me, it's free!",
+
+    "section1Title": "More than a server",
+    "section1Subtitle": "Your own world",
+    "section1Text": "It's not just about creating a server, but about building an experience. I develop custom virtual worlds on platforms like Minecraft, Roblox or Hytale, designed for communities, brands or unique projects.",
+
+    "section2Title": "Fully customized",
+    "section2Subtitle": "Made for your idea",
+    "section2Text": "Each server is designed from scratch based on your goals: mechanics, rules, aesthetics and functionalities. It's not a template, it's a virtual environment tailored to what you want to achieve.",
+
+    "section3Title": "Plugins and systems",
+    "section3Subtitle": "Custom functionality",
+    "section3Text": "I develop and integrate plugins, mods and custom systems according to your needs. From specific mechanics to advanced configurations, your server or map will have exactly the features you're looking for.",
+
+    "section4Title": "Management and stability",
+    "section4Subtitle": "Everything under control",
+    "section4Text": "I handle the configuration, optimization and maintenance of the server. From custom plugins to performance and security, so your world runs smoothly.",
+
+    "finalTitle": "The metaverse is connection",
+    "finalText": "Virtual worlds allow you to create communities, experiences and new forms of interaction. Whether for entertainment, branding or a project, a well-designed environment can generate real engagement and unique opportunities.",
+
+    "feature1Title": "Unique experience",
+    "feature1Text": "Create a completely different virtual world tailored to your vision.",
+
+    "feature2Title": "Active community",
+    "feature2Text": "Encourage constant interaction and participation from your users.",
+
+    "feature3Title": "High customization",
+    "feature3Text": "Plugins, mechanics and design fully tailored.",
+
+    "feature4Title": "Stable performance",
+    "feature4Text": "Optimized servers for a smooth and error-free experience.",
+
+    "feature5Title": "Full control",
+    "feature5Text": "Manage your virtual world with your own rules, systems and configurations.",
+
+    "contactTitle": "Create your own virtual world",
+    "contactText": "Let's talk about your idea and build a unique experience that connects with your community.",
+    "contactBtn": "Contact me now"
+  },
+
+  "faq": {
+    "title1": "Frequently asked questions",
+    "subtitle": "Everything you need to know about how I work, the services I offer and how we can collaborate.",
+
+    "q1": "How long does a project take?",
+    "a1": "The time varies depending on the complexity of the project. A simple landing page takes 1-2 weeks, a complete website with multiple pages takes between 3 and 4 weeks, while a custom web application can take between 2 and 4 months. During the initial free consultation, we analyze your needs together and define realistic and transparent timelines for your specific project.",
+
+    "q2": "Do you offer support after launch?",
+    "a2": "Yes, I offer full support after launch. This includes regular maintenance, security updates, new features and technical assistance. We can define together a support plan that fits your needs: from on-demand work to monthly maintenance. Support is part of my service.",
+
+    "q3": "How does the free consultation work?",
+    "a3": "The free consultation lasts between 30 and 45 minutes and is an opportunity to get to know each other and understand your needs. We analyze together the objectives, target audience, budget and technical requirements: what you need, what you want to achieve and how we can structure the project. I provide you with a technical evaluation and a detailed quote with no obligation. We can do it via video call (Zoom, Meet, etc.)",
+
+    "q4": "Do you work with limited budgets?",
+    "a4": "Yes, I can adapt solutions to your budget. We can start with an MVP (Minimum Viable Product) that includes essential features and then scale gradually according to results and your needs. I also offer modular solutions that allow adding features over time, so you can invest progressively. The important thing is to define priorities together.",
+
+    "q5": "Is design included in the service?",
+    "a5": "Yes, design is always included. I offer a complete service that covers the entire process: design, development, testing and UX/UI deployment. I create wireframes, mockups and interactive prototypes before development. If you prefer, I can also collaborate with your existing design team. The goal is to create an optimal user experience that meets your objectives.",
+
+    "q6": "What technologies do you use?",
+    "a6": "I choose technologies based on the needs of the project: performance, scalability, maintainability. I use modern and well-established stacks (Next.js, React, TypeScript, Node.js, Tailwind CSS and others). During the consultation we discuss which are the best for your case and why.",
+
+    "q7": "How is communication managed during the project?",
+    "a7": "Communication is a priority for me: I keep you informed with regular progress updates (weekly or as you prefer). We stay in touch via email, chat or video calls. I involve you in important decisions and I am always available for questions.",
+
+    "q8": "What payment methods do you accept?",
+    "a8": "I accept bank transfers, PayPal and other secure payment methods. We can agree on a payment schedule based on the duration and complexity of the project: usually an initial deposit (30-50%) and the balance upon delivery; for longer projects, intermediate payments linked to milestones. Everything is recorded and documented through electronic invoicing for full transparency and security.",
+
+    "ctaTitle": "Didn't find the answer you were looking for?",
+    "ctaText": "Contact me for a free consultation and let's talk about your project.",
+    "ctaButton": "Contact me now"
+  },
+
+  "footer": {
+    "role": "Web developer",
+    "description": "I create websites, applications and interactive solutions that combine design, performance and strategy to turn traffic and ideas into real results.",
+
+    "linksTitle": "Links",
+    "home": "Home",
+    "projects": "Projects",
+    "services": "Services",
+    "faq": "FAQ",
+
+    "infoTitle": "Information",
+    "about": "About",
+    "contact": "Contact",
+    "email": "Email",
+
+    "copyright": "© Enrique Calvo Garcia 2026. All rights reserved."
   }
 }

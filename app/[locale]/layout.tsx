@@ -4,6 +4,29 @@ import Footer from "@/components/layout/Footer";
 
 import { NextIntlClientProvider } from "next-intl";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
+
+  /* const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!; */
+  const baseUrl = "https://tusitio.com"; //Cambiarlo despues
+
+  return {
+    metadataBase: new URL(baseUrl),
+
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        es: "/es",
+        en: "/en",
+      },
+    },
+  };
+}
+
 export default async function LocaleLayout({
   children,
   params,

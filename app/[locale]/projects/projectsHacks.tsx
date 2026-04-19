@@ -2,12 +2,29 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { portfolioData } from "@/data/portafolioData";
+import { portfolioDataEN } from "@/data/portafolioDataEN";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { IoArrowForward } from "react-icons/io5";
 import { useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+
+type BaseItem = {
+  slug: string;
+  title: string;
+  description: string;
+  images: string[];
+};
+
+type ProjectItem = BaseItem & {
+  liveDemo?: string;
+  botonDemo?: boolean;
+};
+
+type HackathonItem = BaseItem & {};
 
 type PortfolioCardItem = {
   slug: string;
@@ -18,13 +35,15 @@ type PortfolioCardItem = {
   botonDemo?: boolean;
 };
 
-const tabs = [
-  { id: "projects", label: "Proyectos" },
-  { id: "hackathons", label: "Hackathons" },
-];
-
 export default function Projects() {
+  const locale = useLocale();
+  const t = useTranslations("projects");
   const searchParams = useSearchParams();
+  const data = locale === "es" ? portfolioData : portfolioDataEN;
+  const tabs = [
+    { id: "projects", label: t("tabProjects") },
+    { id: "hackathons", label: t("tabHackathons") },
+  ];
 
   const initialTab =
     (searchParams.get("tab") as "projects" | "hackathons") || "projects";
@@ -33,17 +52,16 @@ export default function Projects() {
     initialTab,
   );
 
-  const currentItems: PortfolioCardItem[] = (
-    activeTab === "projects" ? portfolioData.projects : portfolioData.hackathons
-  ).map((item) => ({
+  const items: (ProjectItem | HackathonItem)[] =
+    activeTab === "projects" ? data.projects : data.hackathons;
+  const currentItems: PortfolioCardItem[] = items.map((item) => ({
     slug: item.slug,
     title: item.title,
     description: item.description,
     image: item.images?.[0] ?? "/images/placeholder.jpg",
-    liveDemo: item.liveDemo,
-    botonDemo: item.botonDemo,
+    liveDemo: "liveDemo" in item ? item.liveDemo : undefined,
+    botonDemo: "botonDemo" in item ? item.botonDemo : false,
   }));
-
   return (
     <section
       id="projects"
@@ -52,16 +70,15 @@ export default function Projects() {
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="text-center">
           <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
-            Portfolio Showcase
+            {t("badge")}
           </span>
 
           <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
-            Proyectos
+            {t("title1")}
           </h2>
 
           <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-500 sm:text-base">
-            Explora mi trayectoria a través de proyectos y hackatones. Cada
-            sección representa un hito en mi continuo aprendizaje.
+            {t("description1")}
           </p>
         </div>
 
@@ -141,17 +158,20 @@ export default function Projects() {
                               className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
                             >
                               <FaExternalLinkAlt className="h-3.5 w-3.5" />
-                              Ver proyecto
+                              {t("viewProject")}
                             </a>
                           ) : (
                             <span />
                           )}
 
                           <Link
-                            href={`/${activeTab}/${item.slug}?tab=${activeTab}`}
+                            href={{
+                              pathname: `/${activeTab}/${item.slug}`,
+                              query: { tab: activeTab },
+                            }}
                             className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
                           >
-                            Detalles
+                            {t("details")}
                             <IoArrowForward className="h-4 w-4" />
                           </Link>
                         </div>

@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+import { Link } from "@/i18n/navigation";
 import {
   ArrowRight,
   Layers3,
@@ -6,9 +7,9 @@ import {
   Rocket,
   ShieldCheck,
   TrendingUp,
-  Users,
 } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -44,6 +45,7 @@ function FeatureCard({
 }
 
 export default function ServicioSitioWeb() {
+  const t = useTranslations("servicesWeb");
   return (
     <main className="bg-white text-slate-900">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#22002c] via-[#6b005f] to-[#8a0a5d] text-white">
@@ -55,21 +57,21 @@ export default function ServicioSitioWeb() {
         </div>
 
         <div className="relative mx-auto flex min-h-[82vh] w-full max-w-6xl flex-col items-center justify-center px-6 py-20 text-center">
-          <SectionLabel>Servicio destacado</SectionLabel>
+          <SectionLabel>{t("label")}</SectionLabel>
 
           <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Sitios web profesionales
+            {t("heroTitle1")}
             <br />
-            que hacen crecer tu negocio
+            {t("heroTitle2")}
           </h1>
 
-          <a
+          <Link
             href="/services#contacto"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#2b0041] px-7 py-3 text-sm font-semibold tracking-wide text-white shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#220031]"
           >
-            Contactame, ¡es gratis!
+            {t("cta")}
             <ArrowRight size={18} />
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -89,16 +91,13 @@ export default function ServicioSitioWeb() {
 
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Más que presencia online
+              {t("section1Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Diseño que realmente funciona
+              {t("section1Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              Hoy no basta con solo “estar en internet”. Tu sitio web debe
-              atraer, comunicar y convertir visitantes en clientes. Diseño
-              páginas modernas, responsivas y enfocadas en resultados, pensadas
-              para que tu negocio se vea profesional desde el primer momento.
+              {t("section1Text")}
             </p>
           </div>
         </div>
@@ -108,16 +107,13 @@ export default function ServicioSitioWeb() {
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Rápido y profesional
+              {t("section2Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Sin complicaciones
+              {t("section2Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              Desarrollo sitios web con tecnología actual, optimizados para
-              cargar rápido y funcionar perfectamente en cualquier dispositivo.
-              Obtienes un resultado profesional en poco tiempo, sin procesos
-              complicados.
+              {t("section2Text")}
             </p>
           </div>
 
@@ -152,15 +148,13 @@ export default function ServicioSitioWeb() {
 
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Listo para crecer
+              {t("section3Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Escala cuando quieras
+              {t("section3Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              Tu sitio no se queda limitado. Está preparado para agregar nuevas
-              secciones, funciones o integraciones cuando lo necesites. Empiezas
-              con una base sólida y creces sin tener que rehacer todo.
+              {t("section3Text")}
             </p>
           </div>
         </div>
@@ -171,15 +165,13 @@ export default function ServicioSitioWeb() {
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-                Todo incluido
+                {t("section4Title")}
               </h2>
               <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-                Sin costos innecesarios
+                {t("section4Subtitle")}
               </p>
               <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-                Incluyo diseño personalizado, optimización SEO y estructura
-                profesional. Pagas por un sitio que realmente aporta valor, sin
-                extras que no necesitas.
+                {t("section4Text")}
               </p>
             </div>
 
@@ -204,37 +196,33 @@ export default function ServicioSitioWeb() {
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
-              Tu sitio web marca la diferencia
+              {t("finalTitle")}
             </h2>
             <p className="mt-6 text-[17px] leading-8 text-slate-700">
-              Tu página web es la base de tu presencia digital. Es donde tus
-              clientes te conocen, confían en tu negocio y deciden contactarte.
-              Un sitio bien diseñado, rápido y optimizado no solo se ve
-              profesional, también trabaja para ti atrayendo oportunidades y
-              generando resultados.
+              {t("finalText")}
             </p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <FeatureCard
               icon={TrendingUp}
-              title="Más visibilidad"
-              text="Aparece en buscadores y llega a más clientes de forma constante."
+              title={t("feature1Title")}
+              text={t("feature1Text")}
             />
             <FeatureCard
               icon={ShieldCheck}
-              title="Más confianza"
-              text="Un sitio profesional genera credibilidad desde el primer vistazo."
+              title={t("feature2Title")}
+              text={t("feature2Text")}
             />
             <FeatureCard
               icon={MousePointerClick}
-              title="Más clientes"
-              text="Diseño enfocado en guiar al usuario para que te contacte o compre."
+              title={t("feature3Title")}
+              text={t("feature3Text")}
             />
             <FeatureCard
               icon={Rocket}
-              title="Mejor rendimiento"
-              text="Sitios rápidos, optimizados y adaptados a todos los dispositivos."
+              title={t("feature4Title")}
+              text={t("feature4Text")}
             />
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
               <div className="flex items-center justify-center gap-3">
@@ -243,12 +231,11 @@ export default function ServicioSitioWeb() {
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-800">
-                  100% de control
+                  {t("feature5Title")}
                 </h3>
               </div>
               <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
-                Tu web es completamente tuya, sin depender de plataformas
-                externas.
+                {t("feature5Text")}
               </p>
             </article>
           </div>
@@ -261,19 +248,18 @@ export default function ServicioSitioWeb() {
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-8 shadow-[0_18px_60px_rgba(76,29,149,0.08)] sm:p-12">
               <div className="flex items-center justify-center gap-3">
                 <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                  ¿Listo para tener un sitio web profesional?
+                  {t("contactTitle")}
                 </h3>
               </div>
               <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
-                Hablemos sobre tu idea y construyamos un sitio web que realmente
-                represente tu negocio y te ayude a crecer.
+                {t("contactText")}
               </p>
-              <a
+              <Link
                 href="/services#contacto"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
-                Contáctame ahora
-              </a>
+                {t("contactBtn")}
+              </Link>
             </article>
           </div>
         </div>

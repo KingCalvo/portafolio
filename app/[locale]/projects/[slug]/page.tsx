@@ -1,25 +1,31 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { IoIosApps } from "react-icons/io";
 import { LuBox, LuCode, LuFileText } from "react-icons/lu";
 import { portfolioData } from "@/data/portafolioData";
+import { portfolioDataEN } from "@/data/portafolioDataEN";
 import ProjectImageCarousel from "@/components/layout/ProjectImageCarousel";
 import BackToProjectsButton from "@/components/molecules/BackToProjectsButton";
 import { Github } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 type PageProps = {
   params: Promise<{
     slug: string;
+    locale: string;
   }>;
 };
 
 type PortfolioProject = (typeof portfolioData.projects)[number];
 
 export default async function ProjectDetailPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const t = await getTranslations({ locale, namespace: "projectDetail" });
 
-  const project = portfolioData.projects.find((p) => p.slug === slug);
+  const data = locale === "es" ? portfolioData : portfolioDataEN;
+
+  const project = data.projects.find((p) => p.slug === slug);
 
   if (!project) return notFound();
 
@@ -33,7 +39,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <BackToProjectsButton />
 
           <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400">
-            <span>Projects</span>
+            <span>{t("breadcrumb")}</span>
             <span>›</span>
             <span className="font-medium text-slate-900">{project.title}</span>
           </div>
@@ -64,7 +70,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 </div>
 
                 <p className="mt-3 text-sm text-slate-500 text-center">
-                  Total Tecnologías
+                  {t("totalTech")}
                 </p>
               </div>
 
@@ -80,7 +86,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 </div>
 
                 <p className="mt-3 text-sm text-slate-500 text-center">
-                  Características principales
+                  {t("features")}
                 </p>
               </div>
             </div>
@@ -88,7 +94,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div>
               <h2 className="flex items-center justify-center lg:justify-start gap-3 text-xl lg:text-3xl font-semibold tracking-tight">
                 <LuCode className="h-5 w-5 text-sky-600" />
-                <span>Tecnologías usadas</span>
+                <span>{t("technologies")}</span>
               </h2>
 
               <div className="mt-5 flex flex-wrap gap-3">
@@ -113,7 +119,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
                 >
                   <FaExternalLinkAlt className="h-3.5 w-3.5" />
-                  Demo en directo
+                  {t("demo")}
                 </a>
               )}
 
@@ -137,7 +143,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-800 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-sky-800 hover:bg-sky-800 hover:text-white hover:shadow-md"
                 >
                   <LuFileText className="h-4 w-4" />
-                  Documentación
+                  {t("documentation")}
                 </a>
               )}
             </div>
@@ -153,9 +159,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               className="group rounded-[2rem] border border-orange-200 bg-white p-6 shadow-sm flex flex-col overflow-hidden"
               style={{ height: `${project.featuresHeight || 400}px` }}
             >
-              <h2 className="flex items-center justify-center lg:justify-start gap-3 text-xl lg:text-3xl font-semibold tracking-tight">
+              <h2 className="flex items-center justify-center gap-3 text-xl lg:text-3xl font-semibold tracking-tight">
                 <IoIosApps className="h-5 w-5 text-orange-500" />
-                <span>Características principales</span>
+                <span>{t("features")}</span>
               </h2>
 
               <div className="mt-5 space-y-3 pr-2 flex-1 max-h-[600px] overflow-y-auto">

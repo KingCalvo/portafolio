@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import logo from "@/public/images/contenido/yo1.jpeg";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("footer");
   return (
     <footer
       className="bg-[#0f172a] text-white pt-12"
@@ -25,14 +27,12 @@ export default function Footer() {
               <p className="text-sm font-semibold text-white sm:text-base">
                 Enrique Calvo Garcia
               </p>
-              <p className="text-xs text-gray-400 sm:text-sm">Web developer</p>
+              <p className="text-xs text-gray-400 sm:text-sm">{t("role")}</p>
             </div>
           </div>
 
           <p className="text-sm leading-6 text-gray-300 text-justify">
-            Creo sitios web, aplicaciones y soluciones interactivas que combinan
-            diseño, rendimiento y estrategia para convertir tráfico e ideas en
-            resultados concretos.
+            {t("description")}
           </p>
 
           <div className="mt-5 flex gap-4 text-xl">
@@ -67,26 +67,28 @@ export default function Footer() {
 
         <div className="flex justify-start md:justify-center">
           <div className="w-40 text-left">
-            <h3 className="mb-4 text-lg font-semibold text-white">Enlaces</h3>
+            <h3 className="mb-4 text-lg font-semibold text-white">
+              {t("linksTitle")}
+            </h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="/" className="hover:text-white">
-                  Inicio
+                  {t("home")}
                 </Link>
               </li>
               <li>
                 <Link href="/projects" className="hover:text-white">
-                  Proyectos
+                  {t("projects")}
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="hover:text-white">
-                  Servicios
+                  {t("services")}
                 </Link>
               </li>
               <li>
                 <Link href="/faq" className="hover:text-white">
-                  Preguntas frecuentes
+                  {t("faq")}
                 </Link>
               </li>
             </ul>
@@ -96,30 +98,25 @@ export default function Footer() {
         <div className="flex justify-start md:justify-center">
           <div className="w-40 text-left">
             <h3 className="mb-4 text-lg font-semibold text-white">
-              Información
+              {t("infoTitle")}
             </h3>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="/about" className="hover:text-white">
-                  Acerca de
+                  {t("about")}
                 </Link>
               </li>
               <li>
-                <a
-                  href="/services#contacto"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-white"
-                >
-                  Contacto
-                </a>
+                <Link href="/services#contacto" className="hover:text-white">
+                  {t("contact")}
+                </Link>
               </li>
               <li>
                 <a
                   href="mailto:enriquecalvo.dev@gmail.com"
                   className="hover:text-white"
                 >
-                  Correo electrónico
+                  {t("email")}
                 </a>
               </li>
             </ul>
@@ -130,7 +127,7 @@ export default function Footer() {
       <div className="mt-10 border-t border-gray-700" />
 
       <div className="py-6 text-center text-sm text-gray-400">
-        © Enrique Calvo Garcia 2026. Todos los derechos reservados.
+        {t("copyright")}
       </div>
     </footer>
   );

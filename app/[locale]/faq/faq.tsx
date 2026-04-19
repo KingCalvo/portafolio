@@ -12,8 +12,11 @@ import {
   MessagesSquare,
   CreditCard,
 } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function FAQ() {
+  const t = useTranslations("faq");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -21,54 +24,14 @@ export default function FAQ() {
   };
 
   const faqs = [
-    {
-      icon: <Clock size={18} />,
-      question: "¿Cuánto tiempo tarda un proyecto?",
-      answer:
-        "El tiempo varía según la complejidad del proyecto. Una landing page sencilla tarda 1-2 semanas, una web completa con varias páginas tarda entre 3 y 4 semanas, mientras que una aplicación web personalizada puede tardar entre 2 y 4 meses. Durante la consulta gratuita inicial, analizamos juntos tus necesidades y definimos plazos realistas y transparentes para tu proyecto específico.",
-    },
-    {
-      icon: <LifeBuoy size={18} />,
-      question: "¿Ofreces soporte después del lanzamiento?",
-      answer:
-        "Sí, ofrezco soporte completo tras el lanzamiento. Esto incluye mantenimiento regular, actualizaciones de seguridad, nuevas funciones y asistencia técnica. Podemos definir juntos un plan de apoyo que se adapte a tus necesidades: desde trabajos bajo demanda hasta mantenimiento mensual. El apoyo forma parte de mi servicio.",
-    },
-    {
-      icon: <MessageCircle size={18} />,
-      question: "¿Cómo funciona la consulta gratuita?",
-      answer:
-        "La consulta gratuita dura entre 30 y 45 minutos y es una oportunidad para conocernos y entender tus necesidades. Analizamos conjuntamente los objetivos, el público objetivo, el presupuesto y los requisitos técnicos: qué necesitas, qué quieres lograr y cómo podemos estructurar el proyecto. Te doy una evaluación técnica y un presupuesto detallado sin ninguna obligación. Podemos hacerlo por videollamada (Zoom, Meet, etc.)",
-    },
-    {
-      icon: <Wallet size={18} />,
-      question: "¿Trabajas con presupuestos limitados?",
-      answer:
-        "Sí, puedo adaptar soluciones a tu presupuesto. Podemos empezar con un MVP (Producto Mínimo Viable) que incluya características esenciales y luego escalar gradualmente según los resultados y tus necesidades. También ofrezco soluciones modulares que permiten añadir funciones a lo largo del tiempo, para que puedas invertir progresivamente. Lo importante es definir las prioridades juntos.",
-    },
-    {
-      icon: <Palette size={18} />,
-      question: "¿Está incluido el diseño en el servicio?",
-      answer:
-        "Sí, el diseño siempre está incluido. Ofrezco un servicio completo que abarca todo el proceso: diseño, desarrollo, pruebas y despliegue de UX/UI. Creo wireframes, maquetas y prototipos interactivos antes de desarrollarlo. Si prefieres, también puedo colaborar con tu equipo de diseño actual. El objetivo es crear una experiencia de usuario óptima que cumpla tus objetivos.",
-    },
-    {
-      icon: <Settings size={18} />,
-      question: "¿Qué tecnologías utilizas?",
-      answer:
-        "Elijo tecnologías en función de las necesidades del proyecto: rendimiento, escalabilidad, mantenibilidad. Utilizo stacks modernos y bien establecidos (Next.js, React, TypeScript, Node.js, Tailwind CSS y otros). Durante la consulta hablamos sobre cuáles son las mejores para tu caso y por qué.",
-    },
-    {
-      icon: <MessagesSquare size={18} />,
-      question: "¿Cómo se gestiona la comunicación durante el proyecto?",
-      answer:
-        "La comunicación es una prioridad para mí: te mantengo informado con actualizaciones periódicas de progreso (semanales o según prefieras). Nos mantenemos en contacto por correo electrónico, chat o videollamadas. Te involucro en decisiones importantes y siempre estoy disponible para preguntas.",
-    },
-    {
-      icon: <CreditCard size={18} />,
-      question: "¿Qué métodos de pago aceptas?",
-      answer:
-        "Acepto transferencias bancarias, PayPal y otros métodos de pago seguros. Podemos acordar un calendario de pagos basado en la duración y la complejidad del proyecto: normalmente un depósito inicial (30-50%) y saldo a la entrega; Para proyectos más largos, pagos intermedios vinculados a hitos. Todo se registra y documenta mediante facturación electrónica para total transparencia y seguridad.",
-    },
+    { icon: <Clock size={18} />, question: t("q1"), answer: t("a1") },
+    { icon: <LifeBuoy size={18} />, question: t("q2"), answer: t("a2") },
+    { icon: <MessageCircle size={18} />, question: t("q3"), answer: t("a3") },
+    { icon: <Wallet size={18} />, question: t("q4"), answer: t("a4") },
+    { icon: <Palette size={18} />, question: t("q5"), answer: t("a5") },
+    { icon: <Settings size={18} />, question: t("q6"), answer: t("a6") },
+    { icon: <MessagesSquare size={18} />, question: t("q7"), answer: t("a7") },
+    { icon: <CreditCard size={18} />, question: t("q8"), answer: t("a8") },
   ];
 
   return (
@@ -76,12 +39,11 @@ export default function FAQ() {
       <div className="mx-auto max-w-4xl px-6">
         <div className="text-center animate-fadeInUp">
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
-            Preguntas frecuentes
+            {t("title1")}
           </h1>
 
           <p className="mt-6 text-slate-500 max-w-2xl mx-auto">
-            Todo lo que quieras saber sobre cómo trabajo, los servicios que
-            ofrezco y cómo podemos colaborar.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -138,21 +100,20 @@ export default function FAQ() {
         <div className="mt-20 animate-fadeInUp">
           <div className="rounded-[2rem] border border-slate-200 p-8 sm:p-12 text-center bg-white shadow-sm">
             <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
-              ¿No encontraste la respuesta que buscabas?
+              {t("ctaTitle")}
             </h3>
 
             <p className="mt-4 text-slate-500 max-w-2xl mx-auto leading-relaxed">
-              Contáctame para una consulta gratuita y hablemos juntos de tu
-              proyecto.
+              {t("ctaText")}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-              <a
+              <Link
                 href="/services#contacto"
                 className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-white font-medium transition hover:bg-slate-800 hover:-translate-y-0.5"
               >
-                Contáctame ahora
-              </a>
+                {t("ctaButton")}
+              </Link>
             </div>
           </div>
         </div>

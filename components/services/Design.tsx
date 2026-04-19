@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+import { Link } from "@/i18n/navigation";
 import {
   ArrowRight,
   Rocket,
@@ -8,6 +9,7 @@ import {
   Lightbulb,
 } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -43,6 +45,7 @@ function FeatureCard({
 }
 
 export default function ServicioDiseñoUX() {
+  const t = useTranslations("servicesDesign");
   return (
     <main className="bg-white text-slate-900">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#22002c] via-[#6b005f] to-[#8a0a5d] text-white">
@@ -55,18 +58,18 @@ export default function ServicioDiseñoUX() {
 
         <div className="relative mx-auto flex min-h-[82vh] w-full max-w-6xl flex-col items-center justify-center px-6 py-20 text-center">
           <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-            Diseña tu producto
+            {t("heroTitle1")}
             <br />
-            antes de desarrollarlo
+            {t("heroTitle2")}
           </h1>
 
-          <a
+          <Link
             href="/services#contacto"
             className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#2b0041] px-7 py-3 text-sm font-semibold tracking-wide text-white shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#220031]"
           >
-            Contactame, ¡es gratis!
+            {t("cta")}
             <ArrowRight size={18} />
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -86,15 +89,13 @@ export default function ServicioDiseñoUX() {
 
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Empieza con claridad
+              {t("section1Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Antes de escribir código
+              {t("section1Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              Antes de desarrollar, necesitas entender qué construir y por qué.
-              Definimos tu producto desde la base, validando ideas y
-              enfocándonos en resolver problemas reales para tus usuarios.
+              {t("section1Text")}
             </p>
           </div>
         </div>
@@ -104,15 +105,13 @@ export default function ServicioDiseñoUX() {
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Diseña con estrategia
+              {t("section2Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              No a prueba y error
+              {t("section2Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              A través de procesos de discovery analizamos tu idea, tu mercado y
-              tus usuarios. Esto permite tomar decisiones informadas y evitar
-              cambios costosos más adelante.
+              {t("section2Text")}
             </p>
           </div>
 
@@ -147,15 +146,13 @@ export default function ServicioDiseñoUX() {
 
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Prototipos reales
+              {t("section3Title")}
             </h2>
             <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-              Prueba antes de construir
+              {t("section3Subtitle")}
             </p>
             <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-              Creo prototipos en baja y alta fidelidad para visualizar tu
-              producto antes de desarrollarlo. Así puedes probar flujos,
-              detectar errores y mejorar la experiencia desde el inicio.
+              {t("section3Text")}
             </p>
           </div>
         </div>
@@ -166,15 +163,13 @@ export default function ServicioDiseñoUX() {
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
               <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-                Menos errores
+                {t("section4Title")}
               </h2>
               <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
-                Más eficiencia
+                {t("section4Subtitle")}
               </p>
               <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
-                Un buen diseño UX reduce retrabajo, acelera el desarrollo y
-                mejora el resultado final. Invertir en esta etapa te ahorra
-                tiempo, dinero y problemas en el futuro.
+                {t("section4Text")}
               </p>
             </div>
 
@@ -199,36 +194,33 @@ export default function ServicioDiseñoUX() {
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
-              El diseño UX hace la diferencia
+              {t("finalTitle")}
             </h2>
             <p className="mt-6 text-[17px] leading-8 text-slate-700">
-              Un producto bien pensado no solo se ve bien, funciona mejor. El
-              diseño UX te permite crear experiencias claras, intuitivas y
-              enfocadas en el usuario, aumentando las probabilidades de éxito de
-              tu proyecto.
+              {t("finalText")}
             </p>
           </div>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             <FeatureCard
               icon={Eye}
-              title="Validación temprana"
-              text="Comprueba si tu idea funciona antes de invertir en desarrollo."
+              title={t("feature1Title")}
+              text={t("feature1Text")}
             />
             <FeatureCard
               icon={Users}
-              title="Mejor experiencia"
-              text="Diseños pensados para que el usuario entienda y use tu producto fácilmente."
+              title={t("feature2Title")}
+              text={t("feature2Text")}
             />
             <FeatureCard
               icon={Rocket}
-              title="Ahorro de tiempo"
-              text="Evita cambios innecesarios durante el desarrollo."
+              title={t("feature3Title")}
+              text={t("feature3Text")}
             />
             <FeatureCard
               icon={GitBranch}
-              title="Flujos optimizados"
-              text="Organiza correctamente la navegación y las interacciones desde el inicio."
+              title={t("feature4Title")}
+              text={t("feature4Text")}
             />
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
               <div className="flex items-center justify-center gap-3">
@@ -237,14 +229,11 @@ export default function ServicioDiseñoUX() {
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-800">
-                  Decisiones claras
+                  {t("feature5Title")}
                 </h3>
               </div>
               <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
-                Diseña con datos, análisis y objetivos definidos, no solo con
-                intuición. Esto te permite tomar mejores decisiones, reducir la
-                incertidumbre y construir un producto con mayor probabilidad de
-                éxito.
+                {t("feature5Text")}
               </p>
             </article>
           </div>
@@ -257,19 +246,18 @@ export default function ServicioDiseñoUX() {
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-8 shadow-[0_18px_60px_rgba(76,29,149,0.08)] sm:p-12">
               <div className="flex items-center justify-center gap-3">
                 <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                  Diseña antes de construir
+                  {t("contactTitle")}
                 </h3>
               </div>
               <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
-                Hablemos sobre tu idea y define un producto claro, funcional y
-                listo para desarrollarse correctamente.
+                {t("contactText")}
               </p>
-              <a
+              <Link
                 href="/services#contacto"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
-                Contáctame ahora
-              </a>
+                {t("contactBtn")}
+              </Link>
             </article>
           </div>
         </div>

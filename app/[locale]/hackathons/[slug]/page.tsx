@@ -1,21 +1,33 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { notFound } from "next/navigation";
 import { LuBox, LuCode, LuFileText, LuExternalLink } from "react-icons/lu";
 import { portfolioData } from "@/data/portafolioData";
+import { portfolioDataEN } from "@/data/portafolioDataEN";
 import ProjectImageCarousel from "@/components/layout/ProjectImageCarousel";
 import BackToProjectsButton from "@/components/molecules/BackToProjectsButton";
 import { FaFacebook } from "react-icons/fa";
+import { getTranslations } from "next-intl/server";
 
 type PageProps = {
   params: Promise<{
     slug: string;
+    locale: string;
   }>;
 };
 
 export default async function ProjectDetailPage({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
 
-  const project = portfolioData.hackathons.find((p) => p.slug === slug);
+  const data = locale === "es" ? portfolioData : portfolioDataEN;
+
+  const project = data.hackathons.find((p) => p.slug === slug);
+
+  if (!project) return notFound();
+
+  const t = await getTranslations({
+    locale,
+    namespace: "hackathonDetail",
+  });
 
   if (!project) return notFound();
 
@@ -28,7 +40,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
 
           <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400">
-            <span>Hackathons</span>
+            <span>{t("breadcrumb")}</span>
             <span>›</span>
             <span className="font-medium text-slate-900">{project.title}</span>
           </div>
@@ -56,7 +68,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div className="group rounded-[2rem] border border-blue-200 bg-white p-6 shadow-sm flex flex-col flex-1">
               <h2 className="flex items-center justify-center gap-3 text-xl lg:text-3xl font-semibold tracking-tight text-center">
                 <LuExternalLink className="text-blue-600 w-5 h-5" />
-                <span>Publicaciones oficiales</span>
+                <span>{t("officialPosts")}</span>
               </h2>
 
               <div className="mt-5 space-y-3 overflow-y-auto pr-2 flex-1 min-h-0">
@@ -76,7 +88,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                       </p>
 
                       <span className="text-xs text-center lg:text-sm font-medium text-blue-600">
-                        Ver publicación
+                        {t("viewPost")}
                       </span>
                     </div>
                   </a>
@@ -94,7 +106,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div>
               <h2 className="flex items-center justify-center gap-3 text-xl lg:text-3xl font-semibold tracking-tight">
                 <LuCode className="h-5 w-5 text-sky-600" />
-                <span>Tecnologías usadas</span>
+                <span>{t("technologies")}</span>
               </h2>
 
               <div className="mt-5 flex flex-wrap gap-3 justify-center">
@@ -119,7 +131,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-800 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-sky-800 hover:bg-sky-800 hover:text-white hover:shadow-md"
                 >
                   <LuFileText className="h-4 w-4" />
-                  Documentación
+                  {t("documentation")}
                 </a>
               )}
             </div>
