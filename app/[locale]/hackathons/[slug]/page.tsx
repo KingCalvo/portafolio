@@ -32,7 +32,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   if (!project) return notFound();
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white py-16 text-slate-900 pt-28">
+    <section className="min-h-screen bg-background py-16 text-slate-900 pt-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <div className="w-full sm:w-auto">
@@ -128,7 +128,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   href={project.documentacionUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-800 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-sky-800 hover:bg-sky-800 hover:text-white hover:shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-primary-500 bg-primary-700 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-primary-600 hover:text-white hover:shadow-md"
                 >
                   <LuFileText className="h-4 w-4" />
                   {t("documentation")}

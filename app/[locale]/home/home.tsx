@@ -77,7 +77,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="bg-background text-slate-900 flex flex-col">
+    <section id="home" className="bg-background text-foreground flex flex-col">
       {/* Hero */}
       <div className="mx-auto w-full max-w-6xl px-6 py-20 min-h-screen flex flex-col justify-center">
         <div className="grid items-center gap-12 lg:grid-cols-2 w-full">
@@ -103,7 +103,7 @@ export default function Hero() {
                 href="/projects"
                 onMouseEnter={() => setIsHoveringCTA(true)}
                 onMouseLeave={() => setIsHoveringCTA(false)}
-                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm text-center sm:px-6 sm:py-3 sm:text-base font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-4 py-2 text-sm text-center sm:px-6 sm:py-3 sm:text-base font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
               >
                 <Folder size={18} className="hidden sm:inline" />
                 {t("viewProjects")}
@@ -217,7 +217,7 @@ export default function Hero() {
       </div>
 
       {/* About + experiencia */}
-      <div className="bg-gradient-to-b from-white via-slate-50 to-white py-20 lg:py-28">
+      <div className="bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
@@ -227,6 +227,16 @@ export default function Hero() {
             <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
               {t("aboutSubtitle")}
             </p>
+
+            {/* CTA */}
+            <div className="mt-8 flex justify-center">
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
+              >
+                {t("viewProfile")}
+              </Link>
+            </div>
           </div>
 
           <div className="mt-12 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
@@ -305,10 +315,7 @@ export default function Hero() {
           </div>
 
           {/* Experiencia */}
-          <div className="mt-6 space-y-8 pt-8">
-            <h4 className="text-2xl font-semibold text-center">
-              {t("expTitle")}
-            </h4>
+          <div className="mt-2 space-y-8 pt-8">
             <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="flex items-center gap-3">
                 <span className="h-6 w-1 rounded-full bg-slate-900" />
@@ -329,22 +336,12 @@ export default function Hero() {
                 </p>
               </div>
             </div>
-
-            {/* CTA */}
-            <div className="mt-10 flex justify-center">
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-white font-medium shadow-md transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
-              >
-                {t("viewProfile")}
-              </Link>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Proyectos destacados */}
-      <div className="bg-white py-20 lg:py-28">
+      <div className="bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
@@ -357,7 +354,7 @@ export default function Hero() {
             <div className="text-center mt-8">
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-900 hover:text-slate-900"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
               >
                 {t("viewAllProjects")}
               </Link>
@@ -393,7 +390,7 @@ export default function Hero() {
                         href={item.liveDemo}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm text-white"
+                        className="inline-flex items-center gap-2 rounded-full bg-primary-800 transition hover:bg-primary-900 px-4 py-2 text-sm text-white"
                       >
                         <FaExternalLinkAlt className="h-3.5 w-3.5" />
                         {t("viewProject")}
@@ -404,7 +401,7 @@ export default function Hero() {
 
                     <Link
                       href={`/projects/${item.slug}`}
-                      className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 hover:border-slate-900 hover:text-slate-900"
+                      className="inline-flex items-center gap-2 rounded-full border border-bg-primary-500 px-4 py-2 text-sm bg-primary-500 text-white hover:bg-primary-600"
                     >
                       {t("details")}
                       <IoArrowForward className="h-4 w-4" />
@@ -418,7 +415,7 @@ export default function Hero() {
       </div>
 
       {/* Servicios */}
-      <div className="bg-gradient-to-b from-white via-slate-50 to-white py-20 lg:py-28">
+      <div className="bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
@@ -432,7 +429,7 @@ export default function Hero() {
           <div className="text-center mt-8">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-900 hover:text-slate-900"
+              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
             >
               {t("viewAllServices")}
             </Link>
@@ -441,9 +438,9 @@ export default function Hero() {
           {/* Cards */}
           <div className="mt-12 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
             {/* Card 1 */}
-            <article className="overflow-hidden rounded-[2rem] border border-blue-500/30 ring-2 ring-blue-500/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-500/10 before:blur-xl before:opacity-70 before:-z-10">
+            <article className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10">
               {/* Badge */}
-              <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-1 text-sm font-semibold text-white">
+              <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-400 px-3 py-1 text-sm font-semibold text-white">
                 {t("featured")}
               </span>
 
@@ -469,7 +466,7 @@ export default function Hero() {
                 <div className="mt-2 pt-6 flex justify-center">
                   <Link
                     href="/services/web"
-                    className="inline-flex items-center gap-2 rounded-full  bg-blue-600 px-5 py-2 text-sm text-white  transition hover:bg-blue-700 shadow-md hover:shadow-lg"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                   >
                     {t("discoverMore")}
                     <IoArrowForward className="h-4 w-4" />
@@ -501,7 +498,7 @@ export default function Hero() {
                 <div className="mt-auto pt-6 flex justify-center">
                   <Link
                     href="/services/appweb"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                   >
                     {t("discoverMore")}
                     <IoArrowForward className="h-4 w-4" />
@@ -533,7 +530,7 @@ export default function Hero() {
                 <div className="mt-auto pt-6 flex justify-center">
                   <Link
                     href="/services/inteligencia"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                   >
                     {t("discoverMore")}
                     <IoArrowForward className="h-4 w-4" />

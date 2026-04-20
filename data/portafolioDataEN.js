@@ -151,24 +151,6 @@ export const portfolioDataEN = {
         ],
       },
     },
-
-    {
-      slug: "proyecto-01",
-      title: "Project 01",
-      description: "Short project description.",
-      images: ["/images/projects/project-5.jpg"],
-      liveDemo: "#",
-      githubUrl: "#",
-      documentacionUrl: "#",
-      botonDocumentacion: false,
-      botonDemo: true,
-      botonGit: true,
-      featuresHeight: 350,
-      details: {
-        technologies: ["Next.js", "Postgres", "Redis"],
-        features: ["Feature 1", "Feature 2", "Feature 3"],
-      },
-    },
   ],
 
   hackathons: [

@@ -29,9 +29,9 @@ function FeatureCard({
   text: string;
 }) {
   return (
-    <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white/85 p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)]">
+    <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)]">
       <div className="flex items-center justify-center gap-3">
-        <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-fuchsia-100 to-violet-200 text-violet-800 shadow-sm">
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-500 text-white shadow-sm">
           <Icon size={22} />
         </div>
 
@@ -47,7 +47,7 @@ function FeatureCard({
 export default function ServicioMetaverso() {
   const t = useTranslations("servicesMeta");
   return (
-    <main className="bg-white text-slate-900">
+    <main className="bg-background text-slate-900">
       <section className="relative overflow-hidden bg-gradient-to-br from-[#22002c] via-[#6b005f] to-[#8a0a5d] text-white">
         <div className="absolute inset-0 opacity-70">
           <div className="absolute -left-24 -top-16 h-56 w-56 rounded-full bg-fuchsia-500/20 blur-3xl" />
@@ -73,7 +73,7 @@ export default function ServicioMetaverso() {
         </div>
       </section>
 
-      <section className="relative bg-white py-24 sm:py-28">
+      <section className="relative bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
             <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
@@ -101,7 +101,7 @@ export default function ServicioMetaverso() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white via-fuchsia-50/40 to-white py-24 sm:py-28">
+      <section className="bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
@@ -130,7 +130,7 @@ export default function ServicioMetaverso() {
         </div>
       </section>
 
-      <section className="bg-white py-24 sm:py-28">
+      <section className="bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
             <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
@@ -158,7 +158,7 @@ export default function ServicioMetaverso() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-fuchsia-50/50 to-white py-24 sm:py-28">
+      <section className="bg-background py-24 sm:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
@@ -188,7 +188,7 @@ export default function ServicioMetaverso() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-white py-24 sm:py-28">
+      <section className="relative overflow-hidden bg-background py-24 sm:py-28">
         <div className="absolute inset-0" />
 
         <div className="relative mx-auto max-w-6xl px-6">
@@ -224,7 +224,7 @@ export default function ServicioMetaverso() {
             />
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
               <div className="flex items-center justify-center gap-3">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-100 to-violet-200 text-violet-800 shadow-sm">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-500 text-white shadow-sm">
                   <Globe size={22} />
                 </div>
 
@@ -240,7 +240,7 @@ export default function ServicioMetaverso() {
         </div>
       </section>
 
-      <section id="contacto" className="bg-white py-10 sm:py-16">
+      <section id="contacto" className="bg-background py-10 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="animate-fadeInUp">
             <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-8 shadow-[0_18px_60px_rgba(76,29,149,0.08)] sm:p-12">
@@ -254,7 +254,7 @@ export default function ServicioMetaverso() {
               </p>
               <Link
                 href="/services#contacto"
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
+                className="mt-8 inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-primary-600"
               >
                 {t("contactBtn")}
               </Link>

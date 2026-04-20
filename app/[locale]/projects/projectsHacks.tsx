@@ -65,7 +65,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-24 text-slate-900"
+      className="relative overflow-hidden bg-background py-24 text-slate-900"
     >
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="text-center">
@@ -96,7 +96,7 @@ export default function Projects() {
                   }
                   className={`cursor-pointer rounded-full px-9 py-4 text-sm font-medium transition-all duration-300 ${
                     isActive
-                      ? "bg-slate-900 text-white shadow-md"
+                      ? "bg-primary-800 text-white shadow-md"
                       : "text-slate-500 hover:text-slate-900"
                   }`}
                 >
@@ -155,7 +155,7 @@ export default function Projects() {
                               href={item.liveDemo}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
+                              className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-primary-900"
                             >
                               <FaExternalLinkAlt className="h-3.5 w-3.5" />
                               {t("viewProject")}
@@ -169,7 +169,7 @@ export default function Projects() {
                               pathname: `/${activeTab}/${item.slug}`,
                               query: { tab: activeTab },
                             }}
-                            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                            className="inline-flex items-center gap-2 rounded-full border border-bg-primary-500 px-4 py-2 text-sm font-medium bg-primary-500 text-white hover:bg-primary-600"
                           >
                             {t("details")}
                             <IoArrowForward className="h-4 w-4" />

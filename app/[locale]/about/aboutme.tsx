@@ -57,7 +57,7 @@ function TechChip({ item }: { item: TechItem }) {
 
   return (
     <div
-      className="group relative flex flex-col items-center justify-center rounded-2xl bg-white px-4 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md w-full overflow-hidden"
+      className="group relative flex flex-col items-center justify-center rounded-2xl bg-white px-4 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md w-full"
       style={
         {
           "--tech-color": color,
@@ -176,14 +176,11 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-24 text-slate-900"
+      className="relative overflow-hidden bg-background py-24 text-slate-900"
     >
       <div className="relative mx-auto max-w-6xl px-6">
         {/* Título */}
         <div className="text-center">
-          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
-            {t("badge")}
-          </span>
           <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
             {t("title1")}{" "}
             <span className="text-shadow-slate-950 animate-pulse">
@@ -354,7 +351,7 @@ export default function About() {
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-900 hover:bg-slate-900 hover:text-white"
+                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-900 hover:bg-primary-900 hover:text-white"
                 >
                   {skill}
                 </span>

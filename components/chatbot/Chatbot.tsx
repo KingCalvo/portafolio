@@ -106,7 +106,7 @@ export default function Chatbot() {
 
           <div
             onClick={handleOpen}
-            className="w-14 h-14 rounded-full shadow-lg cursor-pointer flex items-center justify-center bg-blue-500 hover:bg-blue-600 transition"
+            className="w-14 h-14 rounded-full shadow-lg cursor-pointer flex items-center justify-center bg-primary-600 hover:bg-primary-500 transition"
           >
             <LuBotMessageSquare size={38} className="text-white" />
           </div>
@@ -128,7 +128,7 @@ export default function Chatbot() {
               <div>
                 <p className="text-sm font-semibold">Enrique Calvo Garcia</p>
                 <p className="text-xs text-gray-500 flex items-center gap-1">
-                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                   Online
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function Chatbot() {
                   {msg.role === "bot" && msg.showCTA && (
                     <Link
                       href="/services#contacto"
-                      className="block mt-2 w-fit bg-blue-500 text-white text-xs px-3 py-1.5 rounded-full hover:bg-blue-600 transition"
+                      className="block mt-2 w-fit bg-primary-500 text-white text-xs px-3 py-1.5 rounded-full hover:bg-primary-600 transition"
                     >
                       {locale === "es" ? "Contrátame 🚀" : "Hire me 🚀"}
                     </Link>
@@ -219,7 +219,7 @@ export default function Chatbot() {
 
             <button
               onClick={sendMessage}
-              className="w-9 h-9 bg-blue-500 rounded-full flex items-center justify-center text-white text-lg hover:bg-blue-600 cursor-pointer"
+              className="w-9 h-9 bg-primary-500 rounded-full flex items-center justify-center text-white text-lg hover:bg-primary-600 cursor-pointer"
             >
               ➤
             </button>

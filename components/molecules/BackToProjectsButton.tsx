@@ -46,7 +46,7 @@ export default function BackToProjectsButton() {
   return (
     <button
       onClick={handleBack}
-      className="flex w-full sm:w-auto items-center justify-center sm:justify-start rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-500 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-900 hover:shadow-md cursor-pointer"
+      className="flex w-full sm:w-auto items-center justify-center sm:justify-start rounded-full border border-primary-500/50 bg-primary-800 px-4 py-2 text-sm font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-primary-900 hover:text-white hover:shadow-md cursor-pointer"
     >
       ← Back
     </button>

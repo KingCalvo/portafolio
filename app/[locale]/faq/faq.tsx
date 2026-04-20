@@ -35,7 +35,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="min-h-screen bg-white text-slate-900 py-24">
+    <section className="min-h-screen bg-background text-slate-900 py-24">
       <div className="mx-auto max-w-4xl px-6">
         <div className="text-center animate-fadeInUp">
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
@@ -110,7 +110,7 @@ export default function FAQ() {
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href="/services#contacto"
-                className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-white font-medium transition hover:bg-slate-800 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center rounded-full bg-primary-800 px-6 py-3 text-white font-medium transition hover:bg-primary-900 hover:-translate-y-0.5"
               >
                 {t("ctaButton")}
               </Link>

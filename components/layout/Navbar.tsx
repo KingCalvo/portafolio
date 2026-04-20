@@ -14,6 +14,8 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
+import Image from "next/image";
+import logo from "@/public/images/contenido/yo1.jpeg";
 
 const navItems = [
   { key: "home", icon: Home, href: "/" },
@@ -132,9 +134,12 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           {/* Left brand */}
           <Link href={`/${locale}`} className="flex min-w-0 items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center bg-slate-950 text-sm font-semibold text-white shadow-sm">
-              EC
-            </div>
+            <Image
+              src={logo}
+              alt="Enrique Calvo Garcia"
+              className="h-16 w-16 object-cover rounded-xl shadow-md"
+              priority
+            />
 
             <div className="min-w-0 leading-tight">
               <p className="truncate text-sm font-semibold text-slate-900 sm:text-base">
@@ -158,8 +163,8 @@ export default function Navbar() {
                     href={item.href}
                     className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                       active
-                        ? "bg-slate-950 text-white shadow-md"
-                        : "text-slate-600 hover:bg-slate-100/80 backdrop-blur-sm hover:text-slate-900"
+                        ? "bg-primary-800 text-white shadow-md"
+                        : "text-slate-600 hover:bg-primary-500/20 backdrop-blur-sm hover:text-slate-900"
                     }`}
                   >
                     <item.icon size={16} />

@@ -33,7 +33,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const featureCount = project.details.features.length;
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white py-16 text-slate-900 pt-28">
+    <section className="min-h-screen bg-background py-16 text-slate-900 pt-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-wrap items-center gap-3">
           <BackToProjectsButton />
@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="group rounded-[1.5rem] border border-sky-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
                 <div className="flex justify-center items-center gap-3">
-                  <div className="flex h-10 w-11 items-center justify-center rounded-2xl bg-sky-50 text-sky-600 transition duration-300 group-hover:scale-105 group-hover:bg-sky-100">
+                  <div className="flex h-10 w-11 items-center justify-center rounded-2xl text-sky-600 transition duration-300 group-hover:scale-105">
                     <LuCode className="h-5 w-5" />
                   </div>
 
@@ -74,9 +74,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 </p>
               </div>
 
-              <div className="group rounded-[1.5rem] border border-orange-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-300 hover:shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
+              <div className="group rounded-[1.5rem] border border-primary-500/50 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-500/50 hover:shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
                 <div className="flex justify-center items-center gap-3">
-                  <div className="flex h-10 w-11 items-center justify-center rounded-2xl bg-orange-50 text-orange-500 transition duration-300 group-hover:scale-105 group-hover:bg-orange-100">
+                  <div className="flex h-10 w-11 items-center justify-center rounded-2xl text-primary-500 transition duration-300 group-hover:scale-105">
                     <IoIosApps className="h-5 w-5" />
                   </div>
 
@@ -116,7 +116,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   href={project.liveDemo}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-md"
                 >
                   <FaExternalLinkAlt className="h-3.5 w-3.5" />
                   {t("demo")}
@@ -128,7 +128,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-blue-800 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-sky-800 hover:bg-blue-900 hover:text-white hover:shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-primary-500 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-primary-600 hover:bg-primary-600 hover:text-white hover:shadow-md"
                 >
                   <Github className="h-4 w-4" />
                   GitHub
@@ -140,7 +140,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   href={project.documentacionUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-800 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-sky-800 hover:bg-sky-800 hover:text-white hover:shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full border border-primary-500 bg-primary-700 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:border-primary-600 hover:text-white hover:shadow-md"
                 >
                   <LuFileText className="h-4 w-4" />
                   {t("documentation")}
@@ -156,11 +156,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             />
 
             <div
-              className="group rounded-[2rem] border border-orange-200 bg-white p-6 shadow-sm flex flex-col overflow-hidden"
+              className="group rounded-[2rem] border border-primary-500/50 bg-white p-6 shadow-sm flex flex-col overflow-hidden"
               style={{ height: `${project.featuresHeight || 400}px` }}
             >
               <h2 className="flex items-center justify-center gap-3 text-xl lg:text-3xl font-semibold tracking-tight">
-                <IoIosApps className="h-5 w-5 text-orange-500" />
+                <IoIosApps className="h-5 w-5 text-primary-500" />
                 <span>{t("features")}</span>
               </h2>
 
@@ -168,9 +168,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.details.features.map((feature) => (
                   <div
                     key={feature}
-                    className="flex items-start gap-3 text-justify rounded-2xl px-4 py-3 transition duration-300 hover:-translate-y-0.5 hover:border-orange-300 hover:bg-white"
+                    className="flex items-start gap-3 text-justify rounded-2xl px-4 py-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
                   >
-                    <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-orange-500 shadow-[0_0_0_4px_rgba(249,115,22,0.12)]" />
+                    <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-primary-500" />
                     <p className="text-sm leading-6 text-slate-600">
                       {feature}
                     </p>

@@ -95,7 +95,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="min-h-screen bg-white text-slate-900 py-24"
+      className="min-h-screen bg-background text-slate-900 py-24"
     >
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
@@ -114,9 +114,9 @@ export default function Services() {
         {/* Cards */}
         <div className="mt-16 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
           {/* Card 1 */}
-          <article className="overflow-hidden rounded-[2rem] border border-blue-500/30 ring-2 ring-blue-500/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-500/10 before:blur-xl before:opacity-70 before:-z-10">
+          <article className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10">
             {/* Badge */}
-            <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-1 text-sm font-semibold text-white">
+            <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-400 px-3 py-1 text-sm font-semibold text-white">
               {t("featured")}
             </span>
 
@@ -142,7 +142,7 @@ export default function Services() {
               <div className="mt-2 pt-6 flex justify-center">
                 <Link
                   href="/services/web"
-                  className="inline-flex items-center gap-2 rounded-full  bg-blue-600 px-5 py-2 text-sm text-white  transition hover:bg-blue-700 shadow-md hover:shadow-lg"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                 >
                   {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
@@ -174,7 +174,7 @@ export default function Services() {
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/services/appweb"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                 >
                   {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
@@ -206,7 +206,7 @@ export default function Services() {
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/services/inteligencia"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                 >
                   {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
@@ -238,7 +238,7 @@ export default function Services() {
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/services/web-basico"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                 >
                   {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
@@ -270,7 +270,7 @@ export default function Services() {
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/services/design"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                 >
                   {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
@@ -302,7 +302,7 @@ export default function Services() {
               <div className="mt-auto pt-6 flex justify-center">
                 <Link
                   href="/services/metaverso"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700 transition hover:border-slate-900 hover:text-slate-900"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-5 py-2 text-sm text-white transition hover:bg-primary-900 shadow-md hover:shadow-lg"
                 >
                   {t("discoverMore")}
                   <IoArrowForward className="h-4 w-4" />
@@ -434,7 +434,7 @@ export default function Services() {
                   onClick={handleSubmit}
                   disabled={loading}
                   className={`mt-6 w-full rounded-xl py-4 text-white font-semibold transition cursor-pointer
-                    ${loading ? "bg-blue-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"}
+                    ${loading ? "bg-primary-800 cursor-not-allowed" : "bg-primary-800 hover:bg-primary-900"}
                   `}
                 >
                   {loading ? t("sending") : t("submit")}
@@ -509,7 +509,7 @@ export default function Services() {
                   </div>
                   <Link
                     href="/faq"
-                    className="mt-4 ml-1 inline-block text-blue-600 text-sm lg:text-base"
+                    className="mt-4 ml-1 inline-block text-primary-800 text-sm lg:text-base"
                   >
                     {t("viewAllFaq")}
                   </Link>
