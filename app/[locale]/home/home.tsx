@@ -77,7 +77,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="bg-white text-slate-900 flex flex-col">
+    <section id="home" className="bg-background text-slate-900 flex flex-col">
       {/* Hero */}
       <div className="mx-auto w-full max-w-6xl px-6 py-20 min-h-screen flex flex-col justify-center">
         <div className="grid items-center gap-12 lg:grid-cols-2 w-full">

@@ -57,7 +57,6 @@ export default function Navbar() {
   const t = useTranslations("nav");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
-  const [themeIcon, setThemeIcon] = useState<"sun" | "moon">("sun");
 
   const desktopLanguageRef = useRef<HTMLDivElement | null>(null);
   const mobileLanguageRef = useRef<HTMLDivElement | null>(null);
@@ -67,6 +66,21 @@ export default function Navbar() {
   const cleanPath = pathname.replace(/^\/(es|en)/, "") || "/";
   const changeLanguage = (lang: "es" | "en") => {
     router.replace(pathname, { locale: lang });
+  };
+
+  const [mode, setMode] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+    const saved = localStorage.getItem("mode") as "light" | "dark" | null;
+    return saved || "light";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-mode", mode);
+    localStorage.setItem("mode", mode);
+  }, [mode]);
+
+  const toggleMode = () => {
+    setMode((prev) => (prev === "light" ? "dark" : "light"));
   };
 
   useEffect(() => {
@@ -207,13 +221,11 @@ export default function Navbar() {
 
             <button
               type="button"
-              onClick={() =>
-                setThemeIcon((prev) => (prev === "sun" ? "moon" : "sun"))
-              }
+              onClick={toggleMode}
               className="inline-flex h-11 w-11 items-center justify-center border border-slate-200/70 shadow-sm rounded-full bg-white text-slate-900 transition hover:bg-slate-50 cursor-pointer"
               aria-label="Cambiar icono de tema"
             >
-              {themeIcon === "sun" ? <Sun size={18} /> : <Moon size={18} />}
+              {mode === "light" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
 
@@ -310,14 +322,12 @@ export default function Navbar() {
 
                 <button
                   type="button"
-                  onClick={() =>
-                    setThemeIcon((prev) => (prev === "sun" ? "moon" : "sun"))
-                  }
+                  onClick={toggleMode}
                   className="inline-flex h-12 items-center justify-center gap-2 border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
                   aria-label="Cambiar icono de tema"
                 >
-                  {themeIcon === "sun" ? <Sun size={18} /> : <Moon size={18} />}
-                  <span>{themeIcon === "sun" ? "Claro" : "Oscuro"}</span>
+                  {mode === "light" ? <Sun size={18} /> : <Moon size={18} />}
+                  <span>{mode === "light" ? "Claro" : "Oscuro"}</span>
                 </button>
               </div>
             </div>

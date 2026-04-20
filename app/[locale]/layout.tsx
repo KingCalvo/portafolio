@@ -37,11 +37,16 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  const messages = (await import(`../../messages/${locale}.json`)).default;
+  const validLocales = ["es", "en"];
+
+  const currentLocale = validLocales.includes(locale) ? locale : "es";
+
+  const messages = (await import(`../../messages/${currentLocale}.json`))
+    .default;
 
   return (
     <html lang={locale}>
-      <body className="bg-white text-slate-900">
+      <body className="bg-background text-slate-900">
         <NextIntlClientProvider
           key={locale}
           locale={locale}

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale } from "next-intl";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { LuBotMessageSquare } from "react-icons/lu";
 
 type Message = {
   role: "user" | "bot";
@@ -17,9 +18,10 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const [showHint, setShowHint] = useState(true);
   const locale = useLocale();
   const endRef = useRef<HTMLDivElement>(null);
+  const hintText = locale === "es" ? "¿Alguna pregunta?" : "Any questions?";
 
   const initialMessage =
     locale === "es"
@@ -36,6 +38,20 @@ export default function Chatbot() {
       setMessages([{ role: "bot", text: initialMessage, showCTA: true }]);
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShowHint(false);
+      } else {
+        setShowHint(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -77,19 +93,23 @@ export default function Chatbot() {
 
   return (
     <>
-      {/* Btn Flotante */}
+      {/* Btn Flotante + Hint */}
       {!open && (
-        <div
-          onClick={handleOpen}
-          className="fixed bottom-5 right-5 w-14 h-14 rounded-full shadow-lg cursor-pointer z-50 flex items-center justify-center"
-        >
-          <Image
-            src="/images/contenido/avatar_SaludandoM.png"
-            alt="chat"
-            width={40}
-            height={40}
-            className="rounded-full"
-          />
+        <div className="fixed bottom-5 right-5 flex items-center gap-2 z-50">
+          <div
+            className={`bg-black text-white text-xs px-3 py-2 rounded-full shadow-md whitespace-nowrap transition-all duration-500 ease-in-out ${
+              showHint ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
+            }`}
+          >
+            {hintText}
+          </div>
+
+          <div
+            onClick={handleOpen}
+            className="w-14 h-14 rounded-full shadow-lg cursor-pointer flex items-center justify-center bg-blue-500 hover:bg-blue-600 transition"
+          >
+            <LuBotMessageSquare size={38} className="text-white" />
+          </div>
         </div>
       )}
 

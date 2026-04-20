@@ -3,6 +3,39 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Paleta 1 - azul claro */
+  --blue-900: #5d6fd5;
+  --blue-800: #8593e0;
+  --blue-700: #aeb7ea;
+  --blue-600: #d6dbf5;
+  --blue-500: #dee4ff;
+}
+
+/* Modo oscuro / claro */
+[data-mode="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+[data-mode="light"] {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+[data-theme="blue"] {
+  --blue-900: #0b0f69;
+  --blue-800: #16179c;
+  --blue-700: #1e1fe3;
+  --blue-600: #5363ff;
+  --blue-500: #8596ff;
+}
+
+[data-theme="darkblue"] {
+  --blue-900: #000035;
+  --blue-800: #11095c;
+  --blue-700: #231382;
+  --blue-600: #341ca9;
+  --blue-500: #4626d0;
 }
 
 @theme inline {
@@ -10,6 +43,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-primary-900: var(--blue-900);
+  --color-primary-800: var(--blue-800);
+  --color-primary-700: var(--blue-700);
+  --color-primary-600: var(--blue-600);
+  --color-primary-500: var(--blue-500);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -44,4 +83,19 @@ html {
 
 .marquee-wrapper:hover .animate-marquee {
   animation-play-state: paused;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease;
 }
