@@ -70,11 +70,7 @@ export default function Navbar() {
     router.replace(pathname, { locale: lang });
   };
 
-  const [mode, setMode] = useState<"light" | "dark">(() => {
-    if (typeof window === "undefined") return "light";
-    const saved = localStorage.getItem("mode") as "light" | "dark" | null;
-    return saved || "light";
-  });
+  const [mode, setMode] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-mode", mode);

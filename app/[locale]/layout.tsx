@@ -45,7 +45,19 @@ export default async function LocaleLayout({
     .default;
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            const mode = localStorage.getItem("mode");
+            if (mode) {
+              document.documentElement.setAttribute("data-mode", mode);
+            }
+          `,
+          }}
+        />
+      </head>
       <body className="bg-background text-slate-900">
         <NextIntlClientProvider
           key={locale}
