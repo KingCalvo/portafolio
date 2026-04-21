@@ -162,8 +162,13 @@ export const portfolioData = {
       organizador: "Organizador: Instituto Tecnológico de Colima.",
       description:
         "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Nacional. Desarrollé junto al equipo DevG una solución mediante desarrollo web que obtuvo el 3.º lugar en la etapa Nacional del evento HackaTec. Participé en el diseño, desarrollo y presentación del proyecto.",
-      images: ["/images/hackathons/hackathon-1.jpg"],
-      documentacionUrl: "#",
+      images: [
+        "/images/hackathons/hackatecNacional-2.jpeg",
+        "/images/hackathons/CertificadoEtapaNacional.png",
+        "/images/hackathons/hackatecNacional-1.jpg",
+      ],
+      documentacionUrl:
+        "https://drive.google.com/file/d/1Oiv7scu01YUCJkItjMMPJFVD-HC46c08/view?usp=sharing",
       botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
@@ -190,8 +195,13 @@ export const portfolioData = {
       organizador: "Organizador: Instituto Tecnológico del Valle de Oaxaca.",
       description:
         "Participación en la Cumbre de Desarrollo Tecnológico, Emprendimiento e Innovación (InnovaTECNM 2024) durante el evento HackaTec 2024 Etapa Regional. Como parte del equipo DevG, se implementó una solución web que obtuvo el 2.º lugar en la etapa regional de HackaTec. Participé en el desarrollo front-end y back-end, contribuyendo a la construcción de la aplicación y su lógica funcional.",
-      images: ["/images/hackathons/hackathon-2.jpg"],
-      documentacionUrl: "#",
+      images: [
+        "/images/hackathons/hackatecRegional-1.jpg",
+        "/images/hackathons/CertificadoEtapaRegional.png",
+        "/images/hackathons/hackatecRegional-2.jpg",
+      ],
+      documentacionUrl:
+        "https://drive.google.com/file/d/14dC03_8YDfMxxGYmBS4a8SStRzst575N/view?usp=sharing",
       botonDocumentacion: true,
       details: {
         technologies: ["Next.js", "Postgres", "Redis"],
@@ -218,7 +228,12 @@ export const portfolioData = {
       organizador: "Organizador: Tecnológico de Monterrey Campus Cuernavaca",
       description:
         "En el Hackathon Morelos (13ª edición) el proyecto recibió el premio a Mejor Aplicación Auth0 por la integración/seguridad implementada. Participé en el desarrollo y en la integración de autenticación.",
-      images: ["/images/hackathons/hackathon-3.jpg"],
+      images: [
+        "/images/hackathons/hackMorelos13-5.jpg",
+        "/images/hackathons/hackMorelos13-4.jpg",
+        "/images/hackathons/hackMorelos13-1.jpeg",
+        "/images/hackathons/hackMorelos13-2.png",
+      ],
       documentacionUrl: "#",
       botonDocumentacion: false,
       details: {
@@ -246,7 +261,10 @@ export const portfolioData = {
       organizador: "Organizador: Tecnológico de Monterrey Campus Cuernavaca",
       description:
         "Participé en el Hackathon Morelos (12ª edición) donde el proyecto obtuvo los premios Best Use of Google Cloud y Best Domain Name (GoDaddy Registry). Contribuí en la implementación técnica y despliegue.",
-      images: ["/images/hackathons/hackathon-4.jpg"],
+      images: [
+        "/images/hackathons/hackMorelos12-2.jpg",
+        "/images/hackathons/hackMorelos12-1.jpg",
+      ],
       documentacionUrl: "#",
       botonDocumentacion: false,
       details: {
