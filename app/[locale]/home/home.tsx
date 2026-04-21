@@ -84,17 +84,17 @@ export default function Hero() {
           <div className="max-w-xl">
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl transition duration-300 hover:-translate-y-1 text-center lg:text-left">
               {t("heroGreeting")}{" "}
-              <span className="text-slate-900">Enrique</span>
+              <span className="text-foreground">Enrique</span>
             </h1>
 
-            <div className="mt-4 inline-flex rounded-2xl border border-slate-200 bg-slate-50 px-5 py-3 shadow-sm">
+            <div className="mt-4 inline-flex rounded-2xl border border-border bg-muted px-5 py-3 shadow-sm">
               <span className="font-mono text-2xl font-bold tracking-tight sm:text-3xl">
                 {displayText}
                 <span className="ml-1 animate-pulse">|</span>
               </span>
             </div>
 
-            <p className="mt-6 max-w-lg text-base leading-7 text-slate-500 sm:text-lg text-justify">
+            <p className="mt-6 max-w-lg text-base leading-7 text-muted-foreground sm:text-lg text-justify">
               {t("heroDescription")}
             </p>
 
@@ -132,8 +132,8 @@ export default function Hero() {
               </a>
             </div>
 
-            <div className="mt-10 border-t border-slate-200 pt-6 text-center lg:text-center">
-              <p className="font-semibold uppercase tracking-[0.25em] text-slate-400">
+            <div className="mt-10 border-t border-border pt-6 text-center lg:text-center">
+              <p className="font-semibold uppercase tracking-[0.25em] text-muted-foreground">
                 {t("followMe")}
               </p>
 
@@ -143,7 +143,7 @@ export default function Hero() {
                   aria-label="LinkedIn"
                   onMouseEnter={() => setIsHoveringCTA(true)}
                   onMouseLeave={() => setIsHoveringCTA(false)}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-blue-500 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-blue-500 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md"
                 >
                   <Linkedin className="text-white" size={18} />
                 </a>
@@ -153,7 +153,7 @@ export default function Hero() {
                   aria-label="GitHub"
                   onMouseEnter={() => setIsHoveringCTA(true)}
                   onMouseLeave={() => setIsHoveringCTA(false)}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-slate-900 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-slate-900 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
                 >
                   <Github className="text-white" size={18} />
                 </a>
@@ -184,7 +184,7 @@ export default function Hero() {
         {/* Stack tecnologico */}
         <div className="py-10 overflow-hidden marquee-wrapper">
           <div className="mx-auto max-w-6xl px-6">
-            <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+            <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
               {t("stack")}
             </p>
 
@@ -201,7 +201,7 @@ export default function Hero() {
                       className="transition duration-300 group-hover/item:scale-110 mt-2"
                     />
 
-                    <span className="mt-3 text-sm text-slate-600">
+                    <span className="mt-3 text-sm text-muted-foreground">
                       {tech.name}
                     </span>
                   </div>
@@ -209,8 +209,8 @@ export default function Hero() {
               </div>
 
               {/* Fades */}
-              <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white to-transparent" />
-              <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white to-transparent" />
+              <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-background to-transparent" />
+              <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-background to-transparent" />
             </div>
           </div>
         </div>
@@ -224,7 +224,7 @@ export default function Hero() {
               {t("aboutTitle1")}{" "}
               <span className="animate-pulse">{t("aboutTitle2")}</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
               {t("aboutSubtitle")}
             </p>
 
@@ -232,7 +232,7 @@ export default function Hero() {
             <div className="mt-8 flex justify-center">
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
+                className="inline-flex items-center justify-center rounded-full border border-primary-800 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
               >
                 {t("viewProfile")}
               </Link>
@@ -245,35 +245,35 @@ export default function Hero() {
               <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-sky-500/10 blur-2xl" />
               <div className="absolute -bottom-6 right-0 h-24 w-24 rounded-full bg-indigo-500/10 blur-2xl" />
 
-              <div className="relative h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+              <div className="relative h-full overflow-hidden rounded-[2rem] border border-border bg-card p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl text-center lg:text-left">
-                    Enrique Calvo García
+                    Enrique Calvo Garcia
                   </h3>
-                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500 text-center lg:text-left">
+                  <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-muted-foreground text-center lg:text-left">
                     {t("career")}
                   </p>
 
-                  <p className="mt-6 text-sm leading-7 text-slate-600 sm:text-[15px] text-justify">
+                  <p className="mt-6 text-sm leading-7 text-muted-foreground sm:text-[15px] text-justify">
                     {t("aboutDescription")}
                   </p>
                 </div>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                  <div className="rounded-2xl border border-border bg-muted p-5 text-center">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                       {t("focus")}
                     </p>
-                    <p className="mt-2 text-sm text-slate-700">
+                    <p className="mt-2 text-sm text-muted-foreground">
                       {t("focusDesc")}
                     </p>
                   </div>
 
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                  <div className="rounded-2xl border border-border bg-muted p-5 text-center">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                       {t("workStyle")}
                     </p>
-                    <p className="mt-2 text-sm text-slate-700">
+                    <p className="mt-2 text-sm text-muted-foreground">
                       {t("workStyleDesc")}
                     </p>
                   </div>
@@ -283,12 +283,12 @@ export default function Hero() {
 
             {/* Right */}
             <div className="flex h-full">
-              <div className="w-full rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+              <div className="w-full rounded-[2rem] border border-border bg-card p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
                 <div className="flex h-[260px] items-center justify-center">
-                  <div className="relative h-56 w-56 overflow-hidden rounded-full bg-slate-100 shadow-lg">
+                  <div className="relative h-56 w-56 overflow-hidden rounded-full bg-muted shadow-lg">
                     <Image
                       src="/images/contenido/foto.jpg"
-                      alt="Foto de Enrique Calvo García"
+                      alt="Foto de Enrique Calvo Garcia"
                       fill
                       className="object-cover"
                       priority
@@ -298,14 +298,14 @@ export default function Hero() {
 
                 {/* Contenido */}
                 <div className="mt-2 space-y-3 text-center">
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                    <p className="text-sm text-slate-600 leading-6">
+                  <div className="rounded-xl border border-border bg-muted px-4 py-3">
+                    <p className="text-sm text-muted-foreground leading-6">
                       {t("aboutCard1")}
                     </p>
                   </div>
 
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                    <p className="text-sm text-slate-600 leading-6">
+                  <div className="rounded-xl border border-border bg-muted px-4 py-3">
+                    <p className="text-sm text-muted-foreground leading-6">
                       {t("aboutCard2")}
                     </p>
                   </div>
@@ -316,22 +316,26 @@ export default function Hero() {
 
           {/* Experiencia */}
           <div className="mt-2 space-y-8 pt-8">
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+            <div className="rounded-[2rem] border border-border bg-card p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="flex items-center gap-3">
-                <span className="h-6 w-1 rounded-full bg-slate-900" />
+                <span className="h-6 w-1 rounded-full bg-foreground" />
                 <h4 className="text-2xl font-semibold">{t("experience")}</h4>
               </div>
 
-              <div className="mt-6 rounded-2xl bg-mist-50 p-6">
-                <p className="text-lg font-semibold text-slate-900">
+              <div className="mt-6 rounded-2xl bg-muted p-6">
+                <p className="text-lg font-semibold text-foreground">
                   {t("jobTitle")}
                 </p>
-                <p className="mt-1 text-sm font-medium text-slate-600">
+                <p className="mt-1 text-sm font-medium text-muted-foreground">
                   {t("company")}
                 </p>
-                <p className="mt-1 text-sm text-slate-500">{t("time")}</p>
-                <p className="mt-1 text-sm text-slate-500">{t("location")}</p>
-                <p className="mt-4 text-sm leading-7 text-slate-600 text-justify">
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t("time")}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t("location")}
+                </p>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground text-justify">
                   {t("jobDesc")}
                 </p>
               </div>
@@ -347,14 +351,14 @@ export default function Hero() {
             <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               {t("projectsTitle")}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
               {t("projectsSubtitle")}
             </p>
 
             <div className="text-center mt-8">
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
+                className="inline-flex items-center gap-2 rounded-full border border-primary-800 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
               >
                 {t("viewAllProjects")}
               </Link>
@@ -366,9 +370,9 @@ export default function Hero() {
             {featuredProjects.map((item) => (
               <article
                 key={item.slug}
-                className="group flex flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex flex-col overflow-hidden rounded-[2rem] border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                   <Image
                     src={item.images?.[0] ?? "/images/placeholder.jpg"}
                     alt={item.title}
@@ -380,7 +384,7 @@ export default function Hero() {
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-semibold">{item.title}</h3>
 
-                  <p className="mt-3 line-clamp-3 text-sm text-slate-500">
+                  <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">
                     {item.description}
                   </p>
 
@@ -390,7 +394,7 @@ export default function Hero() {
                         href={item.liveDemo}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full bg-primary-800 transition hover:bg-primary-900 px-4 py-2 text-sm text-white"
+                        className="inline-flex items-center gap-2 rounded-full bg-primary-800 border border-primary-800 transition hover:bg-primary-900 px-4 py-2 text-sm text-white"
                       >
                         <FaExternalLinkAlt className="h-3.5 w-3.5" />
                         {t("viewProject")}
@@ -401,7 +405,7 @@ export default function Hero() {
 
                     <Link
                       href={`/projects/${item.slug}`}
-                      className="inline-flex items-center gap-2 rounded-full border border-bg-primary-500 px-4 py-2 text-sm bg-primary-500 text-white hover:bg-primary-600"
+                      className="inline-flex items-center gap-2 rounded-full border border-primary-500 px-4 py-2 text-sm bg-primary-500 text-white hover:bg-primary-600"
                     >
                       {t("details")}
                       <IoArrowForward className="h-4 w-4" />
@@ -421,7 +425,7 @@ export default function Hero() {
             <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
               {t("servicesTitle")}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 sm:text-base">
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
               {t("servicesSubtitle")}
             </p>
           </div>
@@ -429,7 +433,7 @@ export default function Hero() {
           <div className="text-center mt-8">
             <Link
               href="/services"
-              className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
+              className="inline-flex items-center justify-center rounded-full border border-primary-800 bg-primary-800 px-6 py-3 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
             >
               {t("viewAllServices")}
             </Link>
@@ -438,7 +442,7 @@ export default function Hero() {
           {/* Cards */}
           <div className="mt-12 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
             {/* Card 1 */}
-            <article className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10">
+            <article className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-card shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10">
               {/* Badge */}
               <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-400 px-3 py-1 text-sm font-semibold text-white">
                 {t("featured")}
@@ -459,7 +463,7 @@ export default function Hero() {
                   {t("service1Title")}
                 </h3>
 
-                <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+                <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                   {t("service1Desc")}
                 </p>
 
@@ -476,7 +480,7 @@ export default function Hero() {
             </article>
 
             {/* Card 2 */}
-            <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="relative aspect-16/10 overflow-hidden">
                 <Image
                   src="/images/projects/chivalry.jpg"
@@ -491,7 +495,7 @@ export default function Hero() {
                   {t("service2Title")}
                 </h3>
 
-                <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+                <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                   {t("service2Desc")}
                 </p>
 
@@ -508,7 +512,7 @@ export default function Hero() {
             </article>
 
             {/* Card 3 */}
-            <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="relative aspect-16/10 overflow-hidden">
                 <Image
                   src="/images/projects/chivalry.jpg"
@@ -523,7 +527,7 @@ export default function Hero() {
                   {t("service3Title")}
                 </h3>
 
-                <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+                <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                   {t("service3Desc")}
                 </p>
 

@@ -97,7 +97,7 @@ export default function Chatbot() {
       {!open && (
         <div className="fixed bottom-5 right-5 flex items-center gap-2 z-50">
           <div
-            className={`bg-black text-white text-xs px-3 py-2 rounded-full shadow-md whitespace-nowrap transition-all duration-500 ease-in-out ${
+            className={`bg-slate-900 text-white border border-slate-700 text-xs px-3 py-2 rounded-full shadow-md whitespace-nowrap transition-all duration-500 ease-in-out ${
               showHint ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
             }`}
           >
@@ -115,8 +115,8 @@ export default function Chatbot() {
 
       {/* Chat */}
       {open && (
-        <div className="fixed bottom-4 right-4 w-[360px] h-[520px] bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.15)] flex flex-col overflow-hidden">
-          <div className="flex items-center justify-between px-4 py-3 bg-gray-100 border-b border-gray-200/60">
+        <div className="fixed bottom-4 right-4 w-[360px] h-[520px] bg-card rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-3 bg-muted border-b border-border">
             <div className="flex items-center gap-2">
               <Image
                 src="/images/contenido/avatar_SaludandoM.png"
@@ -127,8 +127,8 @@ export default function Chatbot() {
               />
               <div>
                 <p className="text-sm font-semibold">Enrique Calvo Garcia</p>
-                <p className="text-xs text-gray-500 flex items-center gap-1">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                <p className="text-xs text-muted-foreground flex items-center gap-1">
+                  <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
                   Online
                 </p>
               </div>
@@ -136,14 +136,14 @@ export default function Chatbot() {
 
             <button
               onClick={() => setOpen(false)}
-              className="text-gray-500 hover:text-black text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-200 transition cursor-pointer"
+              className="text-muted-foreground hover:text-foreground text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-muted transition cursor-pointer"
             >
               ×
             </button>
           </div>
 
           {/* Mensajes */}
-          <div className="flex-1 overflow-y-auto px-3 py-2 space-y-2 bg-white">
+          <div className="flex-1 overflow-y-auto px-3 py-2 space-y-2 bg-background">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -165,8 +165,8 @@ export default function Chatbot() {
                 <div
                   className={`px-3 py-2 text-sm max-w-[70%] ${
                     msg.role === "user"
-                      ? "bg-blue-500 text-white rounded-2xl rounded-br-md"
-                      : "bg-gray-100 text-black rounded-2xl rounded-bl-md"
+                      ? "bg-primary-500 text-white rounded-2xl rounded-br-md"
+                      : "bg-muted text-foreground rounded-2xl rounded-bl-md"
                   }`}
                 >
                   {msg.text}
@@ -193,10 +193,10 @@ export default function Chatbot() {
                   height={24}
                   className="rounded-full"
                 />
-                <div className="bg-gray-100 px-3 py-2 rounded-2xl text-sm flex gap-1">
-                  <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></span>
-                  <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce delay-100"></span>
-                  <span className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce delay-200"></span>
+                <div className="bg-muted px-3 py-2 rounded-2xl text-sm flex gap-1">
+                  <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full animate-bounce"></span>
+                  <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full animate-bounce delay-100"></span>
+                  <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full animate-bounce delay-200"></span>
                 </div>
               </div>
             )}
@@ -204,12 +204,12 @@ export default function Chatbot() {
             <div ref={endRef} />
           </div>
 
-          <div className="p-2 border-t border-gray-200/60 flex items-center gap-2 bg-white">
+          <div className="p-2 border-t border-border flex items-center gap-2 bg-card">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-              className="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm outline-none"
+              className="flex-1 bg-muted text-foreground placeholder:text-muted-foreground rounded-full px-4 py-2 text-sm outline-none"
               placeholder={
                 locale === "es"
                   ? "Escribe un mensaje..."

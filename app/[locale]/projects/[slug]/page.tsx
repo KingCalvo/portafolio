@@ -33,15 +33,15 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const featureCount = project.details.features.length;
 
   return (
-    <section className="min-h-screen bg-background py-16 text-slate-900 pt-28">
+    <section className="min-h-screen bg-background py-16 text-foreground pt-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-wrap items-center gap-3">
           <BackToProjectsButton />
 
-          <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <span>{t("breadcrumb")}</span>
             <span>›</span>
-            <span className="font-medium text-slate-900">{project.title}</span>
+            <span className="font-medium text-foreground">{project.title}</span>
           </div>
         </div>
 
@@ -52,40 +52,40 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.title}
               </h1>
 
-              <p className="mt-2 max-w-xl text-sm text-justify leading-8 text-slate-600 lg:text-base whitespace-pre-line">
+              <p className="mt-2 max-w-xl text-sm text-justify leading-8 text-muted-foreground lg:text-base whitespace-pre-line">
                 {project.description}
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="group rounded-[1.5rem] border border-sky-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
+              <div className="group rounded-[1.5rem] border border-sky-200 bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
                 <div className="flex justify-center items-center gap-3">
                   <div className="flex h-10 w-11 items-center justify-center rounded-2xl text-sky-600 transition duration-300 group-hover:scale-105">
                     <LuCode className="h-5 w-5" />
                   </div>
 
-                  <div className="text-3xl font-semibold leading-none text-slate-900">
+                  <div className="text-3xl font-semibold leading-none text-foreground">
                     {techCount}
                   </div>
                 </div>
 
-                <p className="mt-3 text-sm text-slate-500 text-center">
+                <p className="mt-3 text-sm text-muted-foreground text-center">
                   {t("totalTech")}
                 </p>
               </div>
 
-              <div className="group rounded-[1.5rem] border border-primary-500/50 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-500/50 hover:shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
+              <div className="group rounded-[1.5rem] border border-primary-500/50 bg-card p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary-500/50 hover:shadow-[0_20px_50px_rgba(15,23,42,0.10)]">
                 <div className="flex justify-center items-center gap-3">
                   <div className="flex h-10 w-11 items-center justify-center rounded-2xl text-primary-500 transition duration-300 group-hover:scale-105">
                     <IoIosApps className="h-5 w-5" />
                   </div>
 
-                  <div className="text-3xl font-semibold leading-none text-slate-900">
+                  <div className="text-3xl font-semibold leading-none text-foreground">
                     {featureCount}
                   </div>
                 </div>
 
-                <p className="mt-3 text-sm text-slate-500 text-center">
+                <p className="mt-3 text-sm text-muted-foreground text-center">
                   {t("features")}
                 </p>
               </div>
@@ -101,7 +101,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.details.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="group inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:shadow-md"
+                    className="group inline-flex items-center gap-2 rounded-full border border-sky-200 bg-card px-4 py-2 text-sm font-medium text-muted-foreground shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-muted hover:shadow-md"
                   >
                     <LuBox className="h-4 w-4 text-sky-500 transition duration-300 group-hover:text-sky-700" />
                     {tech}
@@ -156,7 +156,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             />
 
             <div
-              className="group rounded-[2rem] border border-primary-500/50 bg-white p-6 shadow-sm flex flex-col overflow-hidden"
+              className="group rounded-[2rem] border border-primary-500/50 bg-card p-6 shadow-sm flex flex-col overflow-hidden"
               style={{ height: `${project.featuresHeight || 400}px` }}
             >
               <h2 className="flex items-center justify-center gap-3 text-xl lg:text-3xl font-semibold tracking-tight">
@@ -168,10 +168,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.details.features.map((feature) => (
                   <div
                     key={feature}
-                    className="flex items-start gap-3 text-justify rounded-2xl px-4 py-3 transition duration-300 hover:-translate-y-0.5 hover:bg-white"
+                    className="flex items-start gap-3 text-justify rounded-2xl px-4 py-3 transition duration-300 hover:-translate-y-0.5 hover:bg-card"
                   >
                     <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-primary-500" />
-                    <p className="text-sm leading-6 text-slate-600">
+                    <p className="text-sm leading-6 text-muted-foreground">
                       {feature}
                     </p>
                   </div>

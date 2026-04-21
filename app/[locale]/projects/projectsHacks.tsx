@@ -65,11 +65,11 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-background py-24 text-slate-900"
+      className="relative overflow-hidden bg-background py-24 text-foreground"
     >
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
+          <span className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground shadow-sm">
             {t("badge")}
           </span>
 
@@ -77,13 +77,13 @@ export default function Projects() {
             {t("title1")}
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-slate-500 sm:text-base">
+          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
             {t("description1")}
           </p>
         </div>
 
         <div className="mt-10 flex justify-center">
-          <div className="inline-flex rounded-full border border-slate-200 bg-white p-1 shadow-sm">
+          <div className="inline-flex rounded-full border border-border bg-card p-1 shadow-sm">
             {tabs.map((tab) => {
               const isActive = activeTab === tab.id;
 
@@ -97,7 +97,7 @@ export default function Projects() {
                   className={`cursor-pointer rounded-full px-9 py-4 text-sm font-medium transition-all duration-300 ${
                     isActive
                       ? "bg-primary-800 text-white shadow-md"
-                      : "text-slate-500 hover:text-slate-900"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {tab.label}
@@ -128,9 +128,9 @@ export default function Projects() {
                       delay: index * 0.05,
                       ease: "easeOut",
                     }}
-                    className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
+                    className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.12)]"
                   >
-                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -140,11 +140,11 @@ export default function Projects() {
                     </div>
 
                     <div className="flex flex-1 flex-col p-6">
-                      <h3 className="text-xl font-semibold text-slate-900">
+                      <h3 className="text-xl font-semibold text-foreground">
                         {item.title}
                       </h3>
 
-                      <p className="mt-3 line-clamp-3 text-sm leading-7 text-slate-500">
+                      <p className="mt-3 line-clamp-3 text-sm leading-7 text-muted-foreground">
                         {item.description}
                       </p>
 
@@ -169,7 +169,7 @@ export default function Projects() {
                               pathname: `/${activeTab}/${item.slug}`,
                               query: { tab: activeTab },
                             }}
-                            className="inline-flex items-center gap-2 rounded-full border border-bg-primary-500 px-4 py-2 text-sm font-medium bg-primary-500 text-white hover:bg-primary-600"
+                            className="inline-flex items-center gap-2 rounded-full border border-primary-500 px-4 py-2 text-sm font-medium bg-primary-500 text-white hover:bg-primary-600"
                           >
                             {t("details")}
                             <IoArrowForward className="h-4 w-4" />

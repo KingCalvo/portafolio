@@ -32,17 +32,17 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   if (!project) return notFound();
 
   return (
-    <section className="min-h-screen bg-background py-16 text-slate-900 pt-28">
+    <section className="min-h-screen bg-background py-16 text-foreground pt-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <div className="w-full sm:w-auto">
             <BackToProjectsButton />
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+          <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <span>{t("breadcrumb")}</span>
             <span>›</span>
-            <span className="font-medium text-slate-900">{project.title}</span>
+            <span className="font-medium text-foreground">{project.title}</span>
           </div>
         </div>
         <div className="mt-10 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-stretch">
@@ -52,20 +52,20 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.title}
               </h1>
 
-              <p className="mt-2 max-w-xl text-xs text-justify leading-8 text-slate-600 lg:text-sm whitespace-pre-line">
+              <p className="mt-2 max-w-xl text-xs text-justify leading-8 text-muted-foreground lg:text-sm whitespace-pre-line">
                 {project.fecha}
               </p>
 
-              <p className="max-w-xl text-sm text-justify leading-8 text-slate-600 lg:text-base whitespace-pre-line">
+              <p className="max-w-xl text-sm text-justify leading-8 text-muted-foreground lg:text-base whitespace-pre-line">
                 {project.organizador}
               </p>
 
-              <p className="mt-5 max-w-xl text-sm text-justify leading-8 text-slate-600 lg:text-base whitespace-pre-line">
+              <p className="mt-5 max-w-xl text-sm text-justify leading-8 text-muted-foreground0 lg:text-base whitespace-pre-line">
                 {project.description}
               </p>
             </div>
 
-            <div className="group rounded-[2rem] border border-blue-200 bg-white p-6 shadow-sm flex flex-col flex-1">
+            <div className="group rounded-[2rem] border border-blue-200 bg-card p-6 shadow-sm flex flex-col flex-1">
               <h2 className="flex items-center justify-center gap-3 text-xl lg:text-3xl font-semibold tracking-tight text-center">
                 <LuExternalLink className="text-blue-600 w-5 h-5" />
                 <span>{t("officialPosts")}</span>
@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     <FaFacebook className="text-blue-600 w-4 h-4" />
 
                     <div className="flex items-center justify-between w-full">
-                      <p className="text-xs lg:text-sm font-medium text-slate-700 group-hover:text-blue-700 transition">
+                      <p className="text-xs lg:text-sm font-medium text-muted-foreground group-hover:text-blue-700 transition">
                         {post.cuenta}
                       </p>
 
@@ -113,7 +113,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 {project.details.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="group inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:shadow-md"
+                    className="group inline-flex items-center gap-2 rounded-full border border-sky-200 bg-card px-4 py-2 text-sm font-medium text-muted-foreground shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-muted hover:shadow-md"
                   >
                     <LuBox className="h-4 w-4 text-sky-500 transition duration-300 group-hover:text-sky-700" />
                     {tech}

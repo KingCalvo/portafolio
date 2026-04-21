@@ -35,14 +35,14 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="min-h-screen bg-background text-slate-900 py-24">
+    <section className="min-h-screen bg-background text-foreground py-24">
       <div className="mx-auto max-w-4xl px-6">
         <div className="text-center animate-fadeInUp">
           <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight">
             {t("title1")}
           </h1>
 
-          <p className="mt-6 text-slate-500 max-w-2xl mx-auto">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
             {t("subtitle")}
           </p>
         </div>
@@ -55,25 +55,25 @@ export default function FAQ() {
             return (
               <div
                 key={index}
-                className="rounded-2xl border border-slate-200 p-5 cursor-pointer transition hover:shadow-md animate-fadeInUp"
+                className="rounded-2xl border border-border p-5 cursor-pointer transition hover:shadow-md animate-fadeInUp"
                 style={{ animationDelay: `${index * 0.05}s` }}
                 onClick={() => toggle(index)}
               >
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-3 font-medium text-lg">
                     {/* Icono */}
-                    <span className="flex items-center justify-center rounded-full border border-slate-200 bg-white p-2">
+                    <span className="flex items-center justify-center rounded-full border border-border bg-card p-2">
                       {faq.icon}
                     </span>
 
                     {faq.question}
                   </div>
                   <span
-                    className={`flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 ${
-                      isOpen ? "rotate-180 bg-slate-100" : ""
+                    className={`flex items-center justify-center rounded-full border border-border bg-card p-1 shadow-sm transition-all duration-300 ${
+                      isOpen ? "rotate-180 bg-muted" : ""
                     }`}
                   >
-                    <ChevronDown size={18} className="text-slate-600" />
+                    <ChevronDown size={18} className="text-muted-foreground" />
                   </span>
                 </div>
 
@@ -86,7 +86,7 @@ export default function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="text-slate-500 leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -98,12 +98,12 @@ export default function FAQ() {
 
         {/* CTA */}
         <div className="mt-20 animate-fadeInUp">
-          <div className="rounded-[2rem] border border-slate-200 p-8 sm:p-12 text-center bg-white shadow-sm">
+          <div className="rounded-[2rem] border border-border p-8 sm:p-12 text-center bg-card shadow-sm">
             <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">
               {t("ctaTitle")}
             </h3>
 
-            <p className="mt-4 text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t("ctaText")}
             </p>
 

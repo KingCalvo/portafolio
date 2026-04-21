@@ -95,18 +95,18 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="min-h-screen bg-background text-slate-900 py-24"
+      className="min-h-screen bg-background text-foreground py-24"
     >
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <span className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 shadow-sm">
+          <span className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground shadow-sm">
             {t("badge")}
           </span>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
             {t("title1")}
           </h1>
 
-          <p className="mx-auto mt-8 max-w-3xl text-base leading-7 text-slate-500 sm:text-lg">
+          <p className="mx-auto mt-8 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">
             {t("description1")}
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function Services() {
         {/* Cards */}
         <div className="mt-16 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
           {/* Card 1 */}
-          <article className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-white shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10">
+          <article className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-card shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10">
             {/* Badge */}
             <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-400 px-3 py-1 text-sm font-semibold text-white">
               {t("featured")}
@@ -135,7 +135,7 @@ export default function Services() {
                 {t("service1Title")}
               </h3>
 
-              <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+              <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                 {t("service1Desc")}
               </p>
 
@@ -152,7 +152,7 @@ export default function Services() {
           </article>
 
           {/* Card 2 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/projects/chivalry.jpg"
@@ -167,7 +167,7 @@ export default function Services() {
                 {t("service2Title")}
               </h3>
 
-              <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+              <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                 {t("service2Desc")}
               </p>
 
@@ -184,7 +184,7 @@ export default function Services() {
           </article>
 
           {/* Card 3 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/projects/chivalry.jpg"
@@ -199,7 +199,7 @@ export default function Services() {
                 {t("service3Title")}
               </h3>
 
-              <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+              <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                 {t("service3Desc")}
               </p>
 
@@ -216,7 +216,7 @@ export default function Services() {
           </article>
 
           {/* Card 4 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/projects/chivalry.jpg"
@@ -231,7 +231,7 @@ export default function Services() {
                 {t("service4Title")}
               </h3>
 
-              <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+              <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                 {t("service4Desc")}
               </p>
 
@@ -248,7 +248,7 @@ export default function Services() {
           </article>
 
           {/* Card 5 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/projects/chivalry.jpg"
@@ -263,7 +263,7 @@ export default function Services() {
                 {t("service5Title")}
               </h3>
 
-              <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+              <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                 {t("service5Desc")}
               </p>
 
@@ -280,7 +280,7 @@ export default function Services() {
           </article>
 
           {/* Card 6 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/projects/chivalry.jpg"
@@ -295,7 +295,7 @@ export default function Services() {
                 {t("service6Title")}
               </h3>
 
-              <p className="mt-3 text-sm text-slate-500 leading-7 text-justify">
+              <p className="mt-3 text-sm text-muted-foreground leading-7 text-justify">
                 {t("service6Desc")}
               </p>
 
@@ -313,15 +313,15 @@ export default function Services() {
         </div>
         {/* Contacto */}
         <div id="contacto" className="scroll-mt-32 mt-24">
-          <div className="rounded-[2.5rem] border border-[#dee4ff] bg-white/80 backdrop-blur-sm p-6 sm:p-10 shadow-[0_25px_80px_rgba(76,29,149,0.08)]">
-            <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <div className="rounded-[2.5rem] border border-border bg-card backdrop-blur-sm backdrop-blur-sm p-6 sm:p-10 shadow-[0_25px_80px_rgba(76,29,149,0.08)]">
+            <div className="grid gap-12 lg:grid-cols-2 items-start">
               {/* Form */}
               <div className="animate-fadeInUp">
                 <h2 className="text-4xl font-semibold tracking-tight text-center lg:text-left">
                   {t("contactTitle")}
                 </h2>
 
-                <p className="mt-4 text-slate-500 text-justify">
+                <p className="mt-4 text-muted-foreground text-justify">
                   {t("contactDesc")}
                 </p>
 
@@ -351,7 +351,7 @@ export default function Services() {
                 {/* Inputs */}
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-gray-600 pb-2">
+                    <label className="block text-sm font-medium text-foreground pb-2">
                       {t("name")}
                     </label>
                     <input
@@ -359,12 +359,12 @@ export default function Services() {
                       value={form.nombre}
                       onChange={handleChange}
                       placeholder={t("namePlaceholder")}
-                      className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground transition focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-600 pb-2">
+                    <label className="block text-sm font-medium text-foreground pb-2">
                       {t("lastname")}
                     </label>
                     <input
@@ -372,13 +372,13 @@ export default function Services() {
                       value={form.apellidos}
                       onChange={handleChange}
                       placeholder={t("lastnamePlaceholder")}
-                      className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground transition focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     />
                   </div>
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-600 pb-2">
+                  <label className="block text-sm font-medium text-foreground pb-2">
                     {t("email")}
                   </label>
                   <input
@@ -390,12 +390,12 @@ export default function Services() {
                       setForm({ ...form, correo: e.target.value });
                     }}
                     placeholder={t("emailPlaceholder")}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground transition focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   />
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-600 pb-2">
+                  <label className="block text-sm font-medium text-foreground pb-2">
                     {t("phone")}
                   </label>
                   <input
@@ -403,32 +403,38 @@ export default function Services() {
                     value={form.telefono}
                     onChange={handleChange}
                     placeholder={t("phonePlaceholder")}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 transition focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted-foreground transition focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                   />
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-gray-600 pb-2">
+                  <label className="block text-sm font-medium text-foreground pb-2">
                     {t("service")}
                   </label>
-                  <select
-                    name="servicio"
-                    value={form.servicio}
-                    onChange={(e) => {
-                      setError("");
-                      setSuccess("");
-                      setForm({ ...form, servicio: e.target.value });
-                    }}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-500 cursor-pointer transition focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="">{t("selectService")}</option>
-                    <option>{t("option1")}</option>
-                    <option>{t("option2")}</option>
-                    <option>{t("option3")}</option>
-                    <option>{t("option4")}</option>
-                    <option>{t("option5")}</option>
-                    <option>{t("option6")}</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      name="servicio"
+                      value={form.servicio}
+                      onChange={(e) => {
+                        setError("");
+                        setSuccess("");
+                        setForm({ ...form, servicio: e.target.value });
+                      }}
+                      className="w-full rounded-xl border border-border bg-background px-4 py-3 pr-10 text-foreground cursor-pointer transition focus:outline-none focus:ring-2 focus:ring-primary-500 appearance-none"
+                    >
+                      <option value="">{t("selectService")} </option>
+                      <option>{t("option1")}</option>
+                      <option>{t("option2")}</option>
+                      <option>{t("option3")}</option>
+                      <option>{t("option4")}</option>
+                      <option>{t("option5")}</option>
+                      <option>{t("option6")}</option>
+                    </select>
+                    <ChevronDown
+                      size={18}
+                      className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground"
+                    />
+                  </div>
                 </div>
                 <button
                   onClick={handleSubmit}
@@ -473,19 +479,19 @@ export default function Services() {
                         <div
                           key={index}
                           onClick={() => toggle(index)}
-                          className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md cursor-pointer"
+                          className="group rounded-2xl border border-border bg-card p-5 shadow-sm hover:shadow-md cursor-pointer"
                         >
                           <div className="flex justify-between items-center text-sm text-left lg:text-base">
                             {faq.question}
 
                             <span
-                              className={`flex items-center justify-center rounded-full border border-slate-200 bg-white p-1 shadow-sm transition-all duration-300 ${
-                                isOpen ? "rotate-180 bg-slate-100" : ""
+                              className={`flex items-center justify-center rounded-full border border-border bg-card p-1 shadow-sm transition-all duration-300 ${
+                                isOpen ? "rotate-180 bg-muted" : ""
                               }`}
                             >
                               <ChevronDown
                                 size={16}
-                                className="text-slate-600"
+                                className="text-muted-foreground"
                               />
                             </span>
                           </div>
@@ -498,7 +504,7 @@ export default function Services() {
                             }`}
                           >
                             <div className="overflow-hidden">
-                              <p className="text-sm text-slate-500">
+                              <p className="text-sm text-muted-foreground">
                                 {faq.answer}
                               </p>
                             </div>
@@ -509,25 +515,25 @@ export default function Services() {
                   </div>
                   <Link
                     href="/faq"
-                    className="mt-4 ml-1 inline-block text-primary-800 text-sm lg:text-base"
+                    className="mt-4 ml-1 inline-flex items-center gap-2 text-primary-600 hover:text-primary-500 transition font-medium transition hover:underline"
                   >
                     {t("viewAllFaq")}
                   </Link>
                 </div>
 
                 {/* Donde trabajo */}
-                <div className="rounded-3xl border border-[#dee4ff] bg-white p-6 shadow-[0_15px_50px_rgba(76,29,149,0.08)] hover:shadow-[0_20px_60px_rgba(76,29,149,0.12)]">
+                <div className="rounded-3xl border border-border bg-card backdrop-blur-sm p-6 shadow-[0_15px_50px_rgba(76,29,149,0.08)] hover:shadow-[0_20px_60px_rgba(76,29,149,0.12)]">
                   <h4 className="text-lg font-semibold">{t("workLocation")}</h4>
-                  <p className="mt-2 text-sm text-slate-500">
+                  <p className="mt-2 text-sm text-muted-foreground">
                     {t("workLocationDesc")}
                   </p>
                 </div>
 
                 {/* Horario */}
-                <div className="rounded-3xl border border-[#dee4ff] bg-white p-6 shadow-[0_15px_50px_rgba(76,29,149,0.08)] hover:shadow-[0_20px_60px_rgba(76,29,149,0.12)]">
+                <div className="rounded-3xl border border-border bg-card backdrop-blur-sm p-6 shadow-[0_15px_50px_rgba(76,29,149,0.08)] hover:shadow-[0_20px_60px_rgba(76,29,149,0.12)]">
                   <h4 className="text-lg font-semibold">{t("schedule")}</h4>
 
-                  <div className="mt-3 text-sm text-slate-500 space-y-2">
+                  <div className="mt-3 text-sm text-muted-foreground space-y-2">
                     <div className="flex justify-between">
                       <span>{t("mondayFriday")}</span>
                       <span>09:00 – 18:00</span>

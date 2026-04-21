@@ -125,7 +125,7 @@ export default function Navbar() {
       : { text: "🇺🇸", longText: "English", flag: <FlagUS /> };
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 w-full border-b border-slate-200 bg-white/95 shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl">
+    <header className="fixed left-0 right-0 top-0 z-50 w-full border-b border-slate-700 bg-[#0f172a] shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl">
       <nav className="w-full px-4 py-3 lg:px-6">
         <div className="flex items-center gap-3">
           {/* Left brand */}
@@ -138,10 +138,10 @@ export default function Navbar() {
             />
 
             <div className="min-w-0 leading-tight">
-              <p className="truncate text-sm font-semibold text-slate-900 sm:text-base">
+              <p className="truncate text-sm font-semibold text-white sm:text-base">
                 Enrique Calvo Garcia
               </p>
-              <p className="truncate text-xs text-slate-500 sm:text-sm">
+              <p className="truncate text-xs text-slate-400 sm:text-sm">
                 Web developer
               </p>
             </div>
@@ -159,8 +159,8 @@ export default function Navbar() {
                     href={item.href}
                     className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
                       active
-                        ? "bg-primary-800 text-white shadow-md"
-                        : "text-slate-600 hover:bg-primary-500/20 backdrop-blur-sm hover:text-slate-900"
+                        ? "bg-primary-600 text-white shadow-md"
+                        : "text-white bg-primary-500/20 hover:bg-primary-500/10 backdrop-blur-sm"
                     }`}
                   >
                     <item.icon size={16} />
@@ -178,7 +178,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setLanguageOpen((prev) => !prev)}
                 onMouseDown={(e) => e.stopPropagation()}
-                className="inline-flex h-11 min-w-[140px] items-center justify-between gap-3 border border-slate-200/70 shadow-sm rounded-full bg-white px-4 text-sm font-medium text-slate-900 transition hover:bg-slate-50 cursor-pointer"
+                className="inline-flex h-11 min-w-[140px] items-center justify-between gap-3 border border-slate-700 shadow-sm rounded-full bg-slate-800 px-4 text-sm font-medium text-white transition hover:bg-slate-700 cursor-pointer"
               >
                 <span className="flex items-center gap-2">
                   {languageLabel.flag}
@@ -191,7 +191,7 @@ export default function Navbar() {
 
               {languageOpen && (
                 <div
-                  className="absolute right-0 mt-2 w-full border border-slate-200/70 shadow-sm bg-white rounded-2xl"
+                  className="absolute right-0 mt-2 w-full border border-slate-700 shadow-sm bg-slate-800 rounded-2xl"
                   onMouseDown={(e) => e.stopPropagation()}
                 >
                   <button
@@ -200,7 +200,7 @@ export default function Navbar() {
                       changeLanguage("en");
                       setLanguageOpen(false);
                     }}
-                    className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100 cursor-pointer"
+                    className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-300 hover:bg-slate-800 hover:text-white cursor-pointer rounded-2xl"
                   >
                     <FlagUS />
                     English
@@ -211,7 +211,7 @@ export default function Navbar() {
                       changeLanguage("es");
                       setLanguageOpen(false);
                     }}
-                    className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100 cursor-pointer"
+                    className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-300 hover:bg-slate-800 hover:text-white cursor-pointer rounded-2xl"
                   >
                     <FlagMX />
                     Español
@@ -223,7 +223,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={toggleMode}
-              className="inline-flex h-11 w-11 items-center justify-center border border-slate-200/70 shadow-sm rounded-full bg-white text-slate-900 transition hover:bg-slate-50 cursor-pointer"
+              className="inline-flex h-11 w-11 items-center justify-center border border-slate-700 shadow-sm rounded-full bg-slate-800 text-white transition hover:bg-slate-700 cursor-pointer"
               aria-label="Cambiar icono de tema"
             >
               {mode === "light" ? <Sun size={18} /> : <Moon size={18} />}
@@ -242,7 +242,7 @@ export default function Navbar() {
                 return newState;
               });
             }}
-            className="ml-auto inline-flex h-11 w-11 items-center justify-center border border-slate-200 bg-white text-slate-900 transition hover:bg-slate-50 lg:hidden"
+            className="ml-auto inline-flex h-11 w-11 items-center justify-center border border-slate-700 bg-slate-800 text-white transition hover:bg-slate-700 lg:hidden"
             aria-label="Abrir menú"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -258,7 +258,7 @@ export default function Navbar() {
             : "invisible opacity-0 -translate-y-2"
         }`}
       >
-        <div className="border border-slate-200 bg-white p-4 shadow-[0_18px_45px_rgba(15,23,42,0.15)]">
+        <div className="border border-slate-700 bg-[#0f172a] p-4 shadow-[0_18px_45px_rgba(15,23,42,0.15)]">
           <div className="flex flex-col gap-2">
             {navItems.map((item) => {
               const active = isActive(item.href);
@@ -271,7 +271,7 @@ export default function Navbar() {
                   className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition ${
                     active
                       ? "bg-slate-950 text-white"
-                      : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                      : "text-slate-300 hover:bg-slate-800 hover:text-white hover:text-white"
                   }`}
                 >
                   <item.icon size={18} />
@@ -280,14 +280,14 @@ export default function Navbar() {
               );
             })}
 
-            <div className="mt-2 border-t border-slate-200 pt-4">
+            <div className="mt-2 border-t border-slate-700 pt-4">
               <div className="flex flex-col gap-3">
                 <div ref={mobileLanguageRef} className="relative">
                   <button
                     type="button"
                     onClick={() => setLanguageOpen((prev) => !prev)}
                     onMouseDown={(e) => e.stopPropagation()}
-                    className="inline-flex h-12 w-full items-center justify-between gap-3 border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
+                    className="inline-flex h-12 w-full items-center justify-between gap-3 border border-slate-700 bg-slate-800 px-4 text-sm font-medium text-white transition hover:bg-slate-700"
                   >
                     {locale === "es" ? <FlagMX /> : <FlagUS />}
                     <span>{locale === "es" ? "Español" : "English"}</span>
@@ -295,13 +295,13 @@ export default function Navbar() {
                   </button>
 
                   {languageOpen && (
-                    <div className="mt-2 w-full overflow-hidden border border-slate-200 rounded-xl shadow-sm bg-white">
+                    <div className="mt-2 w-full overflow-hidden border border-slate-700 rounded-xl shadow-sm bg-slate-800">
                       <button
                         onClick={() => {
                           changeLanguage("es");
                           setLanguageOpen(false);
                         }}
-                        className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100"
+                        className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
                       >
                         <FlagMX />
                         Español
@@ -312,7 +312,7 @@ export default function Navbar() {
                           changeLanguage("en");
                           setLanguageOpen(false);
                         }}
-                        className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-700 hover:bg-slate-100"
+                        className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
                       >
                         <FlagUS />
                         English
@@ -324,7 +324,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={toggleMode}
-                  className="inline-flex h-12 items-center justify-center gap-2 border border-slate-200 bg-white px-4 text-sm font-medium text-slate-900 transition hover:bg-slate-50"
+                  className="inline-flex h-12 items-center justify-center gap-2 border border-slate-700 bg-slate-800 px-4 text-sm font-medium text-white transition hover:bg-slate-700"
                   aria-label="Cambiar icono de tema"
                 >
                   {mode === "light" ? <Sun size={18} /> : <Moon size={18} />}

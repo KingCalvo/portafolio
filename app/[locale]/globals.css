@@ -3,6 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --card: #ffffff;
+  --border: #e5e5e5;
+
   /* Paleta azul */
   --blue-900: #040749;
   --blue-800: #0b0f69;
@@ -11,20 +17,45 @@
   --blue-500: #5d6fd5;
 }
 
-/* Modo oscuro / claro */
+/* Modo oscuro */
 [data-mode="dark"] {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #020617;
+
+  /* Cards con tono azul */
+  --card: #0b1220;
+
+  /* bloques internos */
+  --muted: #111827;
+
+  /* texto */
+  --foreground: #e5e7eb;
+  --muted-foreground: #ffffffbf;
+
+  /* bordes suaves azulados */
+  --border: #1f2937;
 }
 
+/* Modo claro */
 [data-mode="light"] {
   --background: #ffffff;
   --foreground: #171717;
+
+  --muted: #f5f5f5;
+  --muted-foreground: #1e293b;
+  --card: #ffffff;
+  --border: #e5e5e5;
 }
 
+/* Tailwind mapping */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
@@ -45,6 +76,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Animaciones */
 @keyframes marquee {
   0% {
     transform: translateX(0);

@@ -29,17 +29,17 @@ function FeatureCard({
   text: string;
 }) {
   return (
-    <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)]">
+    <article className="flex flex-col items-center text-center rounded-4xl border border-border bg-card p-6 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)]">
       <div className="flex items-center justify-center gap-3">
         <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-500 text-white shadow-sm">
           <Icon size={22} />
         </div>
 
-        <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-800">
+        <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
           {title}
         </h3>
       </div>
-      <p className="mt-4 text-base leading-7 text-slate-700">{text}</p>
+      <p className="mt-4 text-base leading-7 text-muted-foreground">{text}</p>
     </article>
   );
 }
@@ -47,8 +47,8 @@ function FeatureCard({
 export default function ServicioSitioWebBasico() {
   const t = useTranslations("servicesWebBasico");
   return (
-    <main className="bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#22002c] via-[#6b005f] to-[#8a0a5d] text-white">
+    <main className="bg-card text-foreground">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 text-white">
         <div className="absolute inset-0 opacity-70">
           <div className="absolute -left-24 -top-16 h-56 w-56 rounded-full bg-fuchsia-500/20 blur-3xl" />
           <div className="absolute -right-20 top-16 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl" />
@@ -65,7 +65,7 @@ export default function ServicioSitioWebBasico() {
 
           <Link
             href="/services#contacto"
-            className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#2b0041] px-7 py-3 text-sm font-semibold tracking-wide text-white shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#220031]"
+            className="mt-10 inline-flex items-center gap-2 rounded-full bg-primary-500 px-7 py-3 text-sm font-semibold tracking-wide text-white shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-primary-600"
           >
             {t("cta")}
             <ArrowRight size={18} />
@@ -79,7 +79,7 @@ export default function ServicioSitioWebBasico() {
             <div className="relative mx-auto w-full max-w-[360px]">
               <div className="absolute -left-8 top-10 h-24 w-24 rounded-full bg-fuchsia-200/70 blur-2xl" />
               <div className="rounded-4xl border border-fuchsia-100 bg-gradient-to-br from-fuchsia-50 via-white to-violet-100 p-6 shadow-[0_18px_55px_rgba(76,29,149,0.10)]">
-                <div className="rounded-[1.35rem] border border-fuchsia-200 bg-white p-3 shadow-inner">
+                <div className="rounded-[1.35rem] border border-fuchsia-200 bg-card p-3 shadow-inner">
                   <div className="flex items-center gap-2 border-b border-fuchsia-100 pb-3">
                     <div className="h-3 w-3 rounded-full bg-fuchsia-300" />
                     <div className="h-3 w-3 rounded-full bg-violet-200" />
@@ -101,7 +101,7 @@ export default function ServicioSitioWebBasico() {
                   <div className="rounded-full bg-fuchsia-100 px-1 lg:px-2 py-2 text-sm font-medium text-violet-900">
                     {t("cardLabel1")}
                   </div>
-                  <div className="flex items-center gap-1 rounded-full bg-white px-1 lg:px-2 py-2 text-sm text-violet-900 shadow-sm">
+                  <div className="flex items-center gap-1 rounded-full bg-card px-1 lg:px-2 py-2 text-sm text-violet-900 shadow-sm">
                     <MousePointerClick size={16} />
                     <span>{t("cardLabel2")}</span>
                   </div>
@@ -111,13 +111,13 @@ export default function ServicioSitioWebBasico() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               {t("section1Title")}
             </h2>
-            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+            <p className="mt-6 text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               {t("section1Subtitle")}
             </p>
-            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
+            <p className="mt-8 max-w-2xl leading-8 text-muted-foreground text-justify text-[17px] pr-6 lg:pr-0">
               {t("section1Text")}
             </p>
           </div>
@@ -127,19 +127,19 @@ export default function ServicioSitioWebBasico() {
       <section className="bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               {t("section2Title")}
             </h2>
-            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+            <p className="mt-6 text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               {t("section2Subtitle")}
             </p>
-            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
+            <p className="mt-8 max-w-2xl leading-8 text-muted-foreground text-justify text-[17px] pr-6 lg:pr-0">
               {t("section2Text")}
             </p>
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
                 src="/images/servicios/web-basica-rapido.png"
                 alt="Sitio rápido"
@@ -156,7 +156,7 @@ export default function ServicioSitioWebBasico() {
       <section className="bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
                 src="/images/servicios/web-basica-escalable.png"
                 alt="Sitio escalable"
@@ -168,13 +168,13 @@ export default function ServicioSitioWebBasico() {
           </div>
 
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               {t("section3Title")}
             </h2>
-            <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+            <p className="mt-6 text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
               {t("section3Subtitle")}
             </p>
-            <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
+            <p className="mt-8 max-w-2xl leading-8 text-muted-foreground text-justify text-[17px] pr-6 lg:pr-0">
               {t("section3Text")}
             </p>
           </div>
@@ -185,19 +185,19 @@ export default function ServicioSitioWebBasico() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 {t("section4Title")}
               </h2>
-              <p className="mt-6 text-xl font-medium tracking-tight text-slate-600 sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
+              <p className="mt-6 text-xl font-medium tracking-tight text-muted-foreground sm:text-2xl md:whitespace-nowrap whitespace-normal text-center md:text-left pr-6 lg:pr-0">
                 {t("section4Subtitle")}
               </p>
-              <p className="mt-8 max-w-2xl leading-8 text-slate-700 text-justify text-[17px] pr-6 lg:pr-0">
+              <p className="mt-8 max-w-2xl leading-8 text-muted-foreground text-justify text-[17px] pr-6 lg:pr-0">
                 {t("section4Text")}
               </p>
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-white">
+              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
                 <Image
                   src="/images/servicios/web-basica-precio.png"
                   alt="Precio accesible"
@@ -216,10 +216,10 @@ export default function ServicioSitioWebBasico() {
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-4xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               {t("finalTitle")}
             </h2>
-            <p className="mt-6 text-[17px] leading-8 text-slate-700">
+            <p className="mt-6 text-[17px] leading-8 text-muted-foreground">
               {t("finalText")}
             </p>
           </div>
@@ -245,17 +245,17 @@ export default function ServicioSitioWebBasico() {
               title={t("feature4Title")}
               text={t("feature4Text")}
             />
-            <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-6 shadow-[0_18px_60px_rgba(76,29,149,0.08)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
+            <article className="flex flex-col items-center text-center rounded-4xl border border-border bg-card p-6 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(76,29,149,0.12)] md:col-span-2">
               <div className="flex items-center justify-center gap-3">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-500 text-white shadow-sm">
                   <ShieldCheck size={22} />
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-800">
+                <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-foreground">
                   {t("feature5Title")}
                 </h3>
               </div>
-              <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
+              <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground">
                 {t("feature5Text")}
               </p>
             </article>
@@ -266,13 +266,13 @@ export default function ServicioSitioWebBasico() {
       <section id="contacto" className="bg-background py-10 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <div className="animate-fadeInUp">
-            <article className="flex flex-col items-center text-center rounded-4xl border border-[#dee4ff] bg-white p-8 shadow-[0_18px_60px_rgba(76,29,149,0.08)] sm:p-12">
+            <article className="flex flex-col items-center text-center rounded-4xl border border-border bg-card p-8 shadow-sm sm:p-12">
               <div className="flex items-center justify-center gap-3">
                 <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                   {t("contactTitle")}
                 </h3>
               </div>
-              <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">
+              <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
                 {t("contactText")}
               </p>
               <Link

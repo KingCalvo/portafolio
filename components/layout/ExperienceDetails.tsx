@@ -11,14 +11,14 @@ export default function ExperienceDetails() {
   const items = t.raw("items") as string[];
   return (
     <div className="mt-7">
-      <h5 className="text-sm font-semibold text-slate-800 mb-2">
+      <h5 className="text-sm font-semibold text-foreground mb-2">
         {t("title1")}
       </h5>
 
       <div className="flex items-start gap-3">
         <span className="text-primary-600 mt-1">✔</span>
 
-        <p className="text-sm leading-7 text-slate-600 text-start lg:text-justify">
+        <p className="text-sm leading-7 text-muted-foreground text-start lg:text-justify">
           {t("summary")}
         </p>
       </div>
@@ -28,7 +28,7 @@ export default function ExperienceDetails() {
         <div className="flex justify-center mt-5">
           <button
             onClick={() => setOpen(true)}
-            className="group relative inline-flex items-center gap-2 rounded-full border border-white bg-primary-800 px-6 py-2.5 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg cursor-pointer"
+            className="group relative inline-flex items-center gap-2 rounded-full bg-primary-800 px-6 py-2.5 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg cursor-pointer"
           >
             {t("viewMore")}
             <span className="transition hover:-translate-y-0.5">↓</span>
@@ -45,7 +45,7 @@ export default function ExperienceDetails() {
           {items.map((item, i) => (
             <div key={i} className="flex items-start gap-3">
               <span className="text-primary-600 mt-1">✔</span>
-              <p className="text-sm leading-7 text-slate-600 text-start lg:text-justify">
+              <p className="text-sm leading-7 text-muted-foreground text-start lg:text-justify">
                 {item}
               </p>
             </div>
@@ -57,7 +57,7 @@ export default function ExperienceDetails() {
           <div className="flex justify-center mt-6">
             <button
               onClick={() => setOpen(false)}
-              className="group relative inline-flex items-center gap-2 rounded-full border border-white bg-primary-800 px-6 py-2.5 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg cursor-pointer"
+              className="group relative inline-flex items-center gap-2 rounded-full bg-primary-800 px-6 py-2.5 text-sm font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg cursor-pointer"
             >
               {t("viewLess")}
               <span className="transition hover:-translate-y-0.5">↑</span>

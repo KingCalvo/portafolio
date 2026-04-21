@@ -57,7 +57,7 @@ function TechChip({ item }: { item: TechItem }) {
 
   return (
     <div
-      className="group relative flex flex-col items-center justify-center rounded-2xl bg-white px-4 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md w-full"
+      className="group relative flex flex-col items-center justify-center rounded-2xl bg-card px-4 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md w-full"
       style={
         {
           "--tech-color": color,
@@ -72,7 +72,7 @@ function TechChip({ item }: { item: TechItem }) {
       />
 
       {/* Texto */}
-      <span className="mt-3 text-sm font-medium text-slate-600 text-center break-words leading-tight">
+      <span className="mt-3 text-sm font-medium text-muted-foreground text-center break-words leading-tight">
         {item.name}
       </span>
 
@@ -93,7 +93,7 @@ function TechGroupCard({ group }: { group: TechGroup }) {
       {/* Header */}
       <div className="flex items-center gap-3 justify-center">
         <div className="h-2 w-2 rounded-full bg-slate-900" />
-        <h5 className="text-base font-semibold text-slate-900 tracking-tight">
+        <h5 className="text-base font-semibold text-foreground tracking-tight">
           {group.title}
         </h5>
       </div>
@@ -176,7 +176,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-background py-24 text-slate-900"
+      className="relative overflow-hidden bg-background py-24 text-foreground"
     >
       <div className="relative mx-auto max-w-6xl px-6">
         {/* Título */}
@@ -187,7 +187,7 @@ export default function About() {
               {t("title2")}
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
             {t("subtitle")}
           </p>
         </div>
@@ -199,35 +199,35 @@ export default function About() {
             <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-sky-500/10 blur-2xl" />
             <div className="absolute -bottom-6 right-0 h-24 w-24 rounded-full bg-indigo-500/10 blur-2xl" />
 
-            <div className="relative h-full overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+            <div className="relative h-full overflow-hidden rounded-[2rem] border border-border bg-card p-8 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
               <div>
                 <h3 className="text-2xl font-semibold tracking-tight sm:text-3xl text-center lg:text-left">
-                  Enrique Calvo García
+                  Enrique Calvo Garcia
                 </h3>
-                <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-slate-500 text-center lg:text-left">
+                <p className="mt-2 text-sm font-medium uppercase tracking-[0.22em] text-muted-foreground text-center lg:text-left">
                   {t("career")}
                 </p>
 
-                <p className="mt-6 text-sm leading-6 sm:leading-7 text-slate-600 sm:text-[15px] text-justify">
+                <p className="mt-6 text-sm leading-6 sm:leading-7 text-muted-foreground sm:text-[15px] text-justify">
                   {t("description")}
                 </p>
               </div>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                <div className="rounded-2xl border border-border bg-muted p-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                     {t("focus")}
                   </p>
-                  <p className="mt-2 text-sm text-slate-700">
+                  <p className="mt-2 text-sm text-muted-foreground">
                     {t("focusDesc")}
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">
+                <div className="rounded-2xl border border-border bg-muted p-5 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
                     {t("workStyle")}
                   </p>
-                  <p className="mt-2 text-sm text-slate-700">
+                  <p className="mt-2 text-sm text-muted-foreground">
                     {t("workStyleDesc")}
                   </p>
                 </div>
@@ -237,12 +237,12 @@ export default function About() {
 
           {/* Right */}
           <div className="flex h-full">
-            <div className="w-full rounded-[2rem] border border-slate-200 bg-white p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
+            <div className="w-full rounded-[2rem] border border-border bg-card p-5 shadow-[0_18px_50px_rgba(15,23,42,0.08)] flex flex-col justify-between">
               <div className="flex h-[260px] items-center justify-center">
-                <div className="relative h-56 w-56 overflow-hidden rounded-full bg-slate-100 shadow-lg">
+                <div className="relative h-56 w-56 overflow-hidden rounded-full bg-muted shadow-lg">
                   <Image
                     src="/images/contenido/foto.jpg"
-                    alt="Foto de Enrique Calvo García"
+                    alt="Foto de Enrique Calvo Garcia"
                     fill
                     className="object-cover"
                     priority
@@ -252,14 +252,14 @@ export default function About() {
 
               {/* Contenido */}
               <div className="mt-2 space-y-3 text-center">
-                <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  <p className="text-sm text-slate-600 leading-6">
+                <div className="rounded-xl border border-border bg-muted px-4 py-3">
+                  <p className="text-sm text-muted-foreground leading-6">
                     {t("aboutCard1")}
                   </p>
                 </div>
 
-                <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  <p className="text-sm text-slate-600 leading-6">
+                <div className="rounded-xl border border-border bg-muted px-4 py-3">
+                  <p className="text-sm text-muted-foreground leading-6">
                     {t("aboutCard2")}
                   </p>
                 </div>
@@ -278,27 +278,32 @@ export default function About() {
               <div className="relative pl-12 mb-10">
                 <div className="absolute left-4 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-slate-900 ring-4 ring-white" />
 
-                <div className="rounded-[2rem] border border-slate-200 bg-white p-2 lg:p-7 shadow-sm">
-                  <h4 className="text-xl font-semibold">
-                    {t("experienceTitle")}
-                  </h4>
+                <div className="rounded-[2rem] border border-border bg-card p-2 lg:p-7 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <span className="h-6 w-1 rounded-full bg-foreground" />
+                    <h4 className="text-xl font-semibold">
+                      {t("experienceTitle")}
+                    </h4>
+                  </div>
 
-                  <div className="mt-4 rounded-xl bg-slate-50 p-5">
-                    <p className="text-lg font-semibold text-slate-900">
+                  <div className="mt-4 rounded-xl bg-muted p-5">
+                    <p className="text-lg font-semibold text-foreground">
                       {t("jobTitle")}
                     </p>
 
-                    <p className="mt-1 text-sm font-medium text-slate-600">
+                    <p className="mt-1 text-sm font-medium text-muted-foreground">
                       {t("company")}
                     </p>
 
-                    <p className="mt-1 text-xs text-slate-500">{t("time")}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      {t("time")}
+                    </p>
 
-                    <p className="mt-1 text-xs text-slate-500">
+                    <p className="mt-1 text-xs text-muted-foreground">
                       {t("location")}
                     </p>
 
-                    <p className="mt-4 text-sm leading-6 sm:leading-7 text-slate-600 text-justify tracking-[0.01em]">
+                    <p className="mt-4 text-sm leading-6 sm:leading-7 text-muted-foreground text-justify tracking-[0.01em]">
                       {t("jobDesc")}
                     </p>
 
@@ -311,28 +316,33 @@ export default function About() {
               <div className="relative pl-12">
                 <div className="absolute left-4 top-6 -translate-x-1/2 h-4 w-4 rounded-full bg-slate-900 ring-4 ring-white" />
 
-                <div className="rounded-[2rem] border border-slate-200 bg-white p-2 lg:p-7 shadow-sm">
-                  <h4 className="text-xl font-semibold">
-                    {t("educationTitle")}
-                  </h4>
+                <div className="rounded-[2rem] border border-border bg-card p-2 lg:p-7 shadow-sm">
+                  <div className="flex items-center gap-3">
+                    <span className="h-6 w-1 rounded-full bg-foreground" />
+                    <h4 className="text-xl font-semibold">
+                      {t("educationTitle")}
+                    </h4>
+                  </div>
 
-                  <div className="mt-4 rounded-xl bg-slate-50 p-5">
-                    <p className="text-lg font-semibold text-slate-900">
+                  <div className="mt-4 rounded-xl bg-muted p-5">
+                    <p className="text-lg font-semibold text-foreground">
                       {t("degree")}
                     </p>
 
-                    <p className="mt-1 text-sm text-slate-600">{t("school")}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {t("school")}
+                    </p>
 
-                    <p className="mt-1 text-xs text-slate-500">
+                    <p className="mt-1 text-xs text-muted-foreground">
                       {t("educationTime")}
                     </p>
 
-                    <div className="mt-4 space-y-3 text-sm text-slate-600 leading-6 text-justify">
+                    <div className="mt-4 space-y-3 text-sm text-muted-foreground leading-6 text-justify">
                       <p>{t("eduDesc1")}</p>
 
                       <p>{t("eduDesc2")}</p>
 
-                      <p className="text-slate-500">{t("eduDesc3")}</p>
+                      <p className="text-muted-foreground">{t("eduDesc3")}</p>
                     </div>
                   </div>
                 </div>
@@ -341,9 +351,9 @@ export default function About() {
           </div>
 
           {/* Habilidades */}
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <div className="rounded-[2rem] border border-border bg-card p-7 shadow-sm">
             <div className="flex items-center gap-3">
-              <span className="h-6 w-1 rounded-full bg-slate-900" />
+              <span className="h-6 w-1 rounded-full bg-foreground" />
               <h4 className="text-xl font-semibold">{t("skillsTitle")}</h4>
             </div>
 
@@ -351,7 +361,7 @@ export default function About() {
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-900 hover:bg-primary-900 hover:text-white"
+                  className="rounded-full border border-border bg-card px-4 py-2 text-sm text-muted-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-900 hover:bg-primary-900 hover:text-white"
                 >
                   {skill}
                 </span>
@@ -360,9 +370,9 @@ export default function About() {
           </div>
 
           {/* Habilidades como desarrollador */}
-          <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
+          <div className="rounded-[2rem] border border-border bg-card p-7 shadow-sm">
             <div className="flex items-center gap-3">
-              <span className="h-6 w-1 rounded-full bg-slate-900" />
+              <span className="h-6 w-1 rounded-full bg-foreground" />
               <h4 className="text-xl font-semibold">{t("devSkillsTitle")}</h4>
             </div>
 
@@ -370,29 +380,29 @@ export default function About() {
               <div className="grid md:grid-cols-1 gap-10">
                 {/* Columna izquierda */}
                 <div className="space-y-10">
-                  <div className="bg-slate-50 rounded-2xl">
+                  <div className="bg-muted rounded-2xl">
                     <TechGroupCard group={techGroups[1]} />
                   </div>
 
-                  <div className="bg-slate-50 rounded-2xl">
+                  <div className="bg-muted rounded-2xl">
                     <TechGroupCard group={techGroups[2]} />
                   </div>
                 </div>
 
                 {/* Columna derecha */}
                 <div className="space-y-10">
-                  <div className="bg-slate-50 rounded-2xl">
+                  <div className="bg-muted rounded-2xl">
                     <TechGroupCard group={techGroups[0]} />
                   </div>
 
-                  <div className="bg-slate-50 rounded-2xl">
+                  <div className="bg-muted rounded-2xl">
                     <TechGroupCard group={techGroups[3]} />
                   </div>
                 </div>
               </div>
 
               {/* Herramientas */}
-              <div className="bg-slate-50 rounded-2xl pt-6">
+              <div className="bg-muted rounded-2xl pt-6">
                 <TechGroupCard group={techGroups[4]} />
               </div>
             </div>
