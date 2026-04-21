@@ -3,6 +3,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Chatbot from "@/components/chatbot/Chatbot";
 import { NextIntlClientProvider } from "next-intl";
+import Script from "next/script";
+import { cookies } from "next/headers";
 
 export async function generateMetadata({
   params,
@@ -37,33 +39,19 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  const validLocales = ["es", "en"];
+  const cookieStore = await cookies();
+  const mode = cookieStore.get("mode")?.value || "light";
 
+  const validLocales = ["es", "en"];
   const currentLocale = validLocales.includes(locale) ? locale : "es";
 
   const messages = (await import(`../../messages/${currentLocale}.json`))
     .default;
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-            const mode = localStorage.getItem("mode");
-            if (mode) {
-              document.documentElement.setAttribute("data-mode", mode);
-            }
-          `,
-          }}
-        />
-      </head>
-      <body className="bg-background text-slate-900">
-        <NextIntlClientProvider
-          key={locale}
-          locale={locale}
-          messages={messages}
-        >
+    <html lang={currentLocale} data-mode={mode} suppressHydrationWarning>
+      <body className="bg-background text-foreground">
+        <NextIntlClientProvider locale={currentLocale} messages={messages}>
           <Navbar />
           {children}
           <Chatbot />

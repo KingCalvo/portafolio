@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, useRouter, usePathname } from "@/i18n/navigation";
 import {
   Home,
@@ -70,16 +70,36 @@ export default function Navbar() {
     router.replace(pathname, { locale: lang });
   };
 
-  const [mode, setMode] = useState<"light" | "dark">("light");
+  const [mode, setMode] = useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+
+    const saved = localStorage.getItem("mode");
+    if (saved === "dark" || saved === "light") return saved;
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-mode", mode);
+    document.documentElement.style.colorScheme = mode;
     localStorage.setItem("mode", mode);
   }, [mode]);
 
   const toggleMode = () => {
-    setMode((prev) => (prev === "light" ? "dark" : "light"));
+    setMode((prev) => {
+      const newMode = prev === "light" ? "dark" : "light";
+      document.cookie = `mode=${newMode}; path=/; max-age=31536000`;
+      return newMode;
+    });
   };
+
+  const [mounted, setMounted] = useState(false);
+
+  useLayoutEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -226,7 +246,15 @@ export default function Navbar() {
               className="inline-flex h-11 w-11 items-center justify-center border border-slate-700 shadow-sm rounded-full bg-slate-800 text-white transition hover:bg-slate-700 cursor-pointer"
               aria-label="Cambiar icono de tema"
             >
-              {mode === "light" ? <Sun size={18} /> : <Moon size={18} />}
+              {mounted ? (
+                mode === "light" ? (
+                  <Sun size={18} />
+                ) : (
+                  <Moon size={18} />
+                )
+              ) : (
+                <div className="w-[18px] h-[18px]" />
+              )}
             </button>
           </div>
 
@@ -327,7 +355,15 @@ export default function Navbar() {
                   className="inline-flex h-12 items-center justify-center gap-2 border border-slate-700 bg-slate-800 px-4 text-sm font-medium text-white transition hover:bg-slate-700"
                   aria-label="Cambiar icono de tema"
                 >
-                  {mode === "light" ? <Sun size={18} /> : <Moon size={18} />}
+                  {mounted ? (
+                    mode === "light" ? (
+                      <Sun size={18} />
+                    ) : (
+                      <Moon size={18} />
+                    )
+                  ) : (
+                    <div className="w-[18px] h-[18px]" />
+                  )}
                   <span>{mode === "light" ? "Claro" : "Oscuro"}</span>
                 </button>
               </div>
