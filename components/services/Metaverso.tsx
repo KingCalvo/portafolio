@@ -76,12 +76,12 @@ export default function ServicioMetaverso() {
       <section className="relative bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
-                src="/images/servicios/web-basica-escalable.png"
-                alt="Sitio escalable"
+                src="/images/servicios/Metaverso/Mundo.png"
+                alt="Un mundo propio"
                 fill
-                className="object-cover"
+                className="object-center"
                 sizes="320px"
               />
             </div>
@@ -116,10 +116,10 @@ export default function ServicioMetaverso() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
-                src="/images/servicios/web-basica-rapido.png"
-                alt="Sitio rápido"
+                src="/images/servicios/Metaverso/Personalizado.png"
+                alt="Totalmente personalizado"
                 fill
                 className="object-cover"
                 sizes="320px"
@@ -133,10 +133,10 @@ export default function ServicioMetaverso() {
       <section className="bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
-                src="/images/servicios/web-basica-escalable.png"
-                alt="Sitio escalable"
+                src="/images/servicios/Metaverso/Plugins.png"
+                alt="Plugins"
                 fill
                 className="object-cover"
                 sizes="320px"
@@ -174,10 +174,10 @@ export default function ServicioMetaverso() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
                 <Image
-                  src="/images/servicios/web-basica-precio.png"
-                  alt="Precio accesible"
+                  src="/images/servicios/Metaverso/Estabilidad.png"
+                  alt="Estabilidad y rendimiento"
                   fill
                   className="object-cover"
                   sizes="320px"

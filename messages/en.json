@@ -3,7 +3,9 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "services": "Services"
+    "services": "Services",
+    "light": "Light",
+    "dark": "Dark"
   },
   "home": {
     "title": "Enrique Calvo Garcia Portfolio",
@@ -187,7 +189,7 @@
     "service4Title": "Basic website",
     "service4Desc": "This is the perfect plan to create a fast site with everything you need. Ideal for events, single products or that big idea that cannot wait any longer. Start with a basic site, there is always time to grow.",
 
-    "service5Title": "UX Design",
+    "service5Title": "Digital Interfaces and Experience Design",
     "service5Desc": "We define and validate your product before development. We carry out product discovery and low and high fidelity prototypes to test ideas, optimize flows and reduce errors from the start.",
 
     "service6Title": "Metaverse",

@@ -76,10 +76,10 @@ export default function ServicioIA() {
       <section className="relative bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
-                src="/images/servicios/web-basica-escalable.png"
-                alt="Sitio escalable"
+                src="/images/servicios/IA/Automatizacion.png"
+                alt="Sitio con IA"
                 fill
                 className="object-cover"
                 sizes="320px"
@@ -116,10 +116,10 @@ export default function ServicioIA() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
-                src="/images/servicios/web-basica-rapido.png"
-                alt="Sitio rápido"
+                src="/images/servicios/IA/Automatiza.png"
+                alt="Automatiza y optimiza"
                 fill
                 className="object-cover"
                 sizes="320px"
@@ -133,10 +133,10 @@ export default function ServicioIA() {
       <section className="bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
-                src="/images/servicios/web-basica-escalable.png"
-                alt="Sitio escalable"
+                src="/images/servicios/IA/Experiencia.png"
+                alt="Experiencia personalizada"
                 fill
                 className="object-cover"
                 sizes="320px"
@@ -174,10 +174,10 @@ export default function ServicioIA() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
                 <Image
-                  src="/images/servicios/web-basica-precio.png"
-                  alt="Precio accesible"
+                  src="/images/servicios/IA/Soluciones.png"
+                  alt="Soluciones personalizadas"
                   fill
                   className="object-cover"
                   sizes="320px"

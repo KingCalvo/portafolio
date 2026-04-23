@@ -15,7 +15,9 @@ import {
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
-import logo from "@/public/images/contenido/yo1.jpeg";
+import logo from "@/public/images/contenido/avatar_SaludandoM.png";
+
+type ThemeMode = "light" | "dark";
 
 const navItems = [
   { key: "home", icon: Home, href: "/" },
@@ -54,12 +56,12 @@ function FlagUS() {
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ initialMode }: { initialMode: ThemeMode }) {
   const locale = useLocale();
   const t = useTranslations("nav");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
-
+  const [mode, setMode] = useState<ThemeMode>(initialMode);
   const desktopLanguageRef = useRef<HTMLDivElement | null>(null);
   const mobileLanguageRef = useRef<HTMLDivElement | null>(null);
 
@@ -70,36 +72,16 @@ export default function Navbar() {
     router.replace(pathname, { locale: lang });
   };
 
-  const [mode, setMode] = useState<"light" | "dark">(() => {
-    if (typeof window === "undefined") return "light";
-
-    const saved = localStorage.getItem("mode");
-    if (saved === "dark" || saved === "light") return saved;
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  });
-
   useEffect(() => {
     document.documentElement.setAttribute("data-mode", mode);
     document.documentElement.style.colorScheme = mode;
     localStorage.setItem("mode", mode);
+    document.cookie = `mode=${mode}; path=/; max-age=31536000`;
   }, [mode]);
 
   const toggleMode = () => {
-    setMode((prev) => {
-      const newMode = prev === "light" ? "dark" : "light";
-      document.cookie = `mode=${newMode}; path=/; max-age=31536000`;
-      return newMode;
-    });
+    setMode((prev) => (prev === "light" ? "dark" : "light"));
   };
-
-  const [mounted, setMounted] = useState(false);
-
-  useLayoutEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -149,7 +131,7 @@ export default function Navbar() {
       <nav className="w-full px-4 py-3 lg:px-6">
         <div className="flex items-center gap-3">
           {/* Left brand */}
-          <Link href={`/${locale}`} className="flex min-w-0 items-center gap-3">
+          <div className="flex min-w-0 items-center gap-3">
             <Image
               src={logo}
               alt="Enrique Calvo Garcia"
@@ -165,7 +147,7 @@ export default function Navbar() {
                 Web developer
               </p>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop center menu */}
           <div className="hidden flex-1 justify-center lg:flex">
@@ -246,15 +228,7 @@ export default function Navbar() {
               className="inline-flex h-11 w-11 items-center justify-center border border-slate-700 shadow-sm rounded-full bg-slate-800 text-white transition hover:bg-slate-700 cursor-pointer"
               aria-label="Cambiar icono de tema"
             >
-              {mounted ? (
-                mode === "light" ? (
-                  <Sun size={18} />
-                ) : (
-                  <Moon size={18} />
-                )
-              ) : (
-                <div className="w-[18px] h-[18px]" />
-              )}
+              {mode === "light" ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
 
@@ -355,16 +329,8 @@ export default function Navbar() {
                   className="inline-flex h-12 items-center justify-center gap-2 border border-slate-700 bg-slate-800 px-4 text-sm font-medium text-white transition hover:bg-slate-700"
                   aria-label="Cambiar icono de tema"
                 >
-                  {mounted ? (
-                    mode === "light" ? (
-                      <Sun size={18} />
-                    ) : (
-                      <Moon size={18} />
-                    )
-                  ) : (
-                    <div className="w-[18px] h-[18px]" />
-                  )}
-                  <span>{mode === "light" ? "Claro" : "Oscuro"}</span>
+                  {mode === "light" ? <Sun size={18} /> : <Moon size={18} />}
+                  <span>{mode === "light" ? t("light") : t("dark")}</span>
                 </button>
               </div>
             </div>

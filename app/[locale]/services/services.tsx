@@ -123,10 +123,10 @@ export default function Services() {
             {/* Imagen */}
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
-                src="/images/projects/chivalry.jpg"
+                src="/images/servicios/SiteWeb.png"
                 alt="Sitios web"
                 fill
-                className="object-cover transition duration-500 group-hover:scale-105"
+                className="object-fill transition duration-500 group-hover:scale-105"
               />
             </div>
 
@@ -155,10 +155,10 @@ export default function Services() {
           <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
-                src="/images/projects/chivalry.jpg"
-                alt="Sitios web"
+                src="/images/servicios/WebApp.png"
+                alt="Aplicaciones web"
                 fill
-                className="object-cover transition duration-500 group-hover:scale-105"
+                className="object-fill transition duration-500 group-hover:scale-105"
               />
             </div>
 
@@ -187,10 +187,10 @@ export default function Services() {
           <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
-                src="/images/projects/chivalry.jpg"
-                alt="Sitios web"
+                src="/images/servicios/IA.png"
+                alt="Integración con IA"
                 fill
-                className="object-cover transition duration-500 group-hover:scale-105"
+                className="object-fill transition duration-500 group-hover:scale-105"
               />
             </div>
 
@@ -219,10 +219,10 @@ export default function Services() {
           <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
-                src="/images/projects/chivalry.jpg"
-                alt="Sitios web"
+                src="/images/servicios/OnePage.png"
+                alt="Sitios Web simple"
                 fill
-                className="object-cover transition duration-500 group-hover:scale-105"
+                className="object-fill transition duration-500 group-hover:scale-105"
               />
             </div>
 
@@ -251,10 +251,10 @@ export default function Services() {
           <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
-                src="/images/projects/chivalry.jpg"
-                alt="Sitios web"
+                src="/images/servicios/Design.png"
+                alt="Diseño"
                 fill
-                className="object-cover transition duration-500 group-hover:scale-105"
+                className="object-fill transition duration-500 group-hover:scale-105"
               />
             </div>
 
@@ -283,10 +283,10 @@ export default function Services() {
           <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
-                src="/images/projects/chivalry.jpg"
-                alt="Sitios web"
+                src="/images/servicios/HytaleServer.png"
+                alt="Metaverso"
                 fill
-                className="object-cover transition duration-500 group-hover:scale-105"
+                className="object-fill transition duration-500 group-hover:scale-105"
               />
             </div>
 

@@ -61,7 +61,7 @@ export default function ProjectImageCarousel({
             src={currentImage}
             alt={`${title} - imagen ${currentIndex + 1}`}
             fill
-            className="object-cover"
+            className="object-cover cursor-zoom-in"
             priority
           />
         </button>

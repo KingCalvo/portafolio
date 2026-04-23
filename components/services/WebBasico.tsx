@@ -76,37 +76,14 @@ export default function ServicioSitioWebBasico() {
       <section className="relative bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="order-2 lg:order-1">
-            <div className="relative mx-auto w-full max-w-[360px]">
-              <div className="absolute -left-8 top-10 h-24 w-24 rounded-full bg-fuchsia-200/70 blur-2xl" />
-              <div className="rounded-4xl border border-fuchsia-100 bg-gradient-to-br from-fuchsia-50 via-white to-violet-100 p-6 shadow-[0_18px_55px_rgba(76,29,149,0.10)]">
-                <div className="rounded-[1.35rem] border border-fuchsia-200 bg-card p-3 shadow-inner">
-                  <div className="flex items-center gap-2 border-b border-fuchsia-100 pb-3">
-                    <div className="h-3 w-3 rounded-full bg-fuchsia-300" />
-                    <div className="h-3 w-3 rounded-full bg-violet-200" />
-                    <div className="h-3 w-3 rounded-full bg-pink-200" />
-                    <div className="ml-auto h-2 w-16 rounded-full bg-slate-100" />
-                  </div>
-
-                  <div className="mt-4 grid gap-3">
-                    <div className="h-24 rounded-2xl bg-gradient-to-br from-fuchsia-100 to-violet-200" />
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="h-20 rounded-2xl bg-fuchsia-50" />
-                      <div className="h-20 rounded-2xl bg-violet-50" />
-                    </div>
-                    <div className="h-14 rounded-2xl bg-slate-50" />
-                  </div>
-                </div>
-
-                <div className="mt-5 flex items-center justify-between text-center">
-                  <div className="rounded-full bg-fuchsia-100 px-1 lg:px-2 py-2 text-sm font-medium text-violet-900">
-                    {t("cardLabel1")}
-                  </div>
-                  <div className="flex items-center gap-1 rounded-full bg-card px-1 lg:px-2 py-2 text-sm text-violet-900 shadow-sm">
-                    <MousePointerClick size={16} />
-                    <span>{t("cardLabel2")}</span>
-                  </div>
-                </div>
-              </div>
+            <div className="relative w-90 lg:w-100 h-80 rounded-[2rem] overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+              <Image
+                src="/images/servicios/SitioBasico/Online.png"
+                alt="Sitio en linea"
+                fill
+                className="object-fill"
+                sizes="320px"
+              />
             </div>
           </div>
 
@@ -138,13 +115,13 @@ export default function ServicioSitioWebBasico() {
             </p>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-violet-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+          <div className="flex justify-center lg:justify-items-end-safe">
+            <div className="relative w-90 lg:w-100 h-80 rounded-4xl overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
-                src="/images/servicios/web-basica-rapido.png"
+                src="/images/servicios/SitioBasico/Rapido.png"
                 alt="Sitio rápido"
                 fill
-                className="object-cover"
+                className="object-fill"
                 sizes="320px"
                 priority={false}
               />
@@ -155,13 +132,13 @@ export default function ServicioSitioWebBasico() {
 
       <section className="bg-background py-24 sm:py-28">
         <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative w-90 lg:w-120 h-80 rounded-[2rem] overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+          <div className="order-2 lg:order-1 flex justify-center lg:justify-items-end-safe">
+            <div className="relative w-90 lg:w-100 h-80 rounded-[2rem] overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
               <Image
-                src="/images/servicios/web-basica-escalable.png"
-                alt="Sitio escalable"
+                src="/images/servicios/SitioBasico/Simple.png"
+                alt="Sitio simple"
                 fill
-                className="object-cover"
+                className="object-fill"
                 sizes="320px"
               />
             </div>
@@ -196,13 +173,13 @@ export default function ServicioSitioWebBasico() {
               </p>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative w-90 lg:w-120 h-80 rounded-4xl overflow-hidden border border-fuchsia-100 shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
+            <div className="flex justify-center lg:justify-items-end-safe">
+              <div className="relative w-90 lg:w-100 h-80 rounded-4xl overflow-hidden shadow-[0_18px_55px_rgba(76,29,149,0.10)] bg-card">
                 <Image
-                  src="/images/servicios/web-basica-precio.png"
-                  alt="Precio accesible"
+                  src="/images/servicios/SitioBasico/Crecer.png"
+                  alt="Listo para crecer"
                   fill
-                  className="object-cover"
+                  className="object-fill"
                   sizes="320px"
                 />
               </div>

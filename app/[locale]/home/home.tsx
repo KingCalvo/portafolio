@@ -164,7 +164,7 @@ export default function Hero() {
           {/* Imagen */}
           <div className="flex justify-center lg:justify-end">
             <div className="group relative w-full max-w-[360px] sm:max-w-[380px] lg:max-w-[480px]">
-              <div className="relative h-[340px] sm:h-[420px] lg:h-[520px] overflow-hidden rounded-3xl bg-slate-900 shadow-[0_20px_60px_rgba(15,23,42,0.15)] transition duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
+              <div className="relative h-[340px] sm:h-[420px] lg:h-[520px] overflow-hidden rounded-3xl bg-[#0f172a] shadow-[0_20px_60px_rgba(15,23,42,0.15)] transition duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_30px_80px_rgba(15,23,42,0.25)]">
                 <Image
                   src={
                     isHoveringCTA

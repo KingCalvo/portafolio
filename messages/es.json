@@ -3,7 +3,9 @@
     "home": "Inicio",
     "about": "Acerca",
     "projects": "Proyectos",
-    "services": "Servicios"
+    "services": "Servicios",
+    "light": "Claro",
+    "dark": "Oscuro"
   },
   "home": {
     "title": "Portafolio de Enrique Calvo Garcia",
@@ -183,10 +185,10 @@
     "service3Title": "Integraciones con IA",
     "service3Desc": "Integro inteligencia artificial en tus proyectos para automatizar procesos, mejorar la experiencia del usuario y crear soluciones innovadoras. Chatbots, análisis de datos, automatización inteligente.",
 
-    "service4Title": "Sitio Web Básico",
+    "service4Title": "Sitio Web básico",
     "service4Desc": "Este es el plan perfecto para crear un sitio rápido y con todo lo necesario. Ideal para eventos, productos únicos o esa gran idea que no puede esperar más. Comienza con un sitio básico, siempre hay tiempo para crecer.",
 
-    "service5Title": "Diseño UX",
+    "service5Title": "Diseño de interfaces y experiencias digitales",
     "service5Desc": "Definimos y validamos tu producto antes de desarrollarlo. Realizamos product discovery y prototipos en baja y alta definición para probar ideas, optimizar flujos y reducir errores desde el inicio.",
 
     "service6Title": "Metaverso",

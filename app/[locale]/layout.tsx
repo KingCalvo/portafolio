@@ -40,7 +40,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   const cookieStore = await cookies();
-  const mode = cookieStore.get("mode")?.value || "light";
+  const mode = cookieStore.get("mode")?.value === "dark" ? "dark" : "light";
 
   const validLocales = ["es", "en"];
   const currentLocale = validLocales.includes(locale) ? locale : "es";
@@ -52,7 +52,7 @@ export default async function LocaleLayout({
     <html lang={currentLocale} data-mode={mode} suppressHydrationWarning>
       <body className="bg-background text-foreground">
         <NextIntlClientProvider locale={currentLocale} messages={messages}>
-          <Navbar />
+          <Navbar initialMode={mode} />
           {children}
           <Chatbot />
           <Footer />
