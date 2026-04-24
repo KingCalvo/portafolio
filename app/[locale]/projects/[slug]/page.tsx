@@ -19,6 +19,25 @@ type PageProps = {
 
 type PortfolioProject = (typeof portfolioData.projects)[number];
 
+export async function generateMetadata({ params }: PageProps) {
+  const { slug, locale } = await params;
+
+  const data = locale === "es" ? portfolioData : portfolioDataEN;
+
+  const project = data.projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Not found",
+    };
+  }
+
+  return {
+    title: `Portfolio - ${project.title}`,
+    description: project.description.slice(0, 150),
+  };
+}
+
 export default async function ProjectDetailPage({ params }: PageProps) {
   const { slug, locale } = await params;
   const t = await getTranslations({ locale, namespace: "projectDetail" });

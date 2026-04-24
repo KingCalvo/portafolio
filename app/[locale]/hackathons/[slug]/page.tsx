@@ -15,6 +15,25 @@ type PageProps = {
   }>;
 };
 
+export async function generateMetadata({ params }: PageProps) {
+  const { slug, locale } = await params;
+
+  const data = locale === "es" ? portfolioData : portfolioDataEN;
+
+  const hackathon = data.hackathons.find((h) => h.slug === slug);
+
+  if (!hackathon) {
+    return {
+      title: "Not found",
+    };
+  }
+
+  return {
+    title: `Portfolio - ${hackathon.title}`,
+    description: hackathon.description.slice(0, 150),
+  };
+}
+
 export default async function ProjectDetailPage({ params }: PageProps) {
   const { slug, locale } = await params;
 

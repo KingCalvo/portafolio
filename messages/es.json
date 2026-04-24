@@ -8,7 +8,7 @@
     "dark": "Oscuro"
   },
   "home": {
-    "title": "Portafolio de Enrique Calvo Garcia",
+    "title": "Portafolio - Enrique Calvo Garcia",
     "description": "Desarrollador web especializado en crear experiencias modernas",
     "heroGreeting": "Hola, soy",
     "role": "Desarrollador Mobile & Web",
@@ -66,6 +66,8 @@
 
   "about": {
     "badge": "Conoceme",
+
+    "title": "Portafolio - Sobre mí",
 
     "title1": "Acerca de",
     "title2": "mí",
@@ -143,6 +145,8 @@
 
   "projects": {
     "badge": "Portfolio Showcase",
+    "title": "Portafolio - Proyectos",
+
     "title1": "Proyectos",
     "description1": "Explora mi trayectoria a través de proyectos y hackathons. Cada sección representa un hito en mi continuo aprendizaje.",
 
@@ -170,8 +174,11 @@
 
   "services": {
     "badge": "Solutions",
+
+    "title": "Portafolio - Servicios",
+
     "title1": "Transformo ideas en Realidad digital.",
-    "description1": "Diseñador y desarrollador web. Ofrezco soluciones completas para hacer realidad tus ideas digitales, desde páginas de destino sencillas hasta proyectos complejos con inteligencia artificial y gamificación.",
+    "description1": "Ofrezco soluciones completas para hacer realidad tus ideas digitales, desde páginas de destino sencillas hasta proyectos complejos con inteligencia artificial y gamificación.",
 
     "featured": "Destacado",
     "discoverMore": "Descubre más",
@@ -258,6 +265,9 @@
   },
 
   "servicesWeb": {
+    "title": "Portafolio - Sitio Web",
+    "description": "Creo sitios web modernos y responsivos, desde páginas de destino sencillas hasta sitios mas completos con todas las funciones que necesitas. Diseño personalizado, optimización SEO y excelente rendimiento.",
+
     "label": "Servicio destacado",
     "heroTitle1": "Sitios web profesionales",
     "heroTitle2": "que hacen crecer tu negocio",
@@ -303,6 +313,9 @@
   },
 
   "servicesAppWeb": {
+    "title": "Portafolio - Aplicaciones web y PWA",
+    "description": "Desarrollo aplicaciones web personalizadas y Aplicaciones Web Progresivas (PWA): desde paneles de control empresariales hasta plataformas complejas, hasta aplicaciones que funcionan en cualquier dispositivo.",
+
     "heroTitle1": "Aplicaciones web y PWA",
     "heroTitle2": "a la medida de tu negocio",
     "cta": "Contactame, ¡es gratis!",
@@ -347,6 +360,9 @@
   },
 
   "servicesIA": {
+    "title": "Portafolio - Integraciones con IA",
+    "description": "Integro inteligencia artificial en tus proyectos para automatizar procesos, mejorar la experiencia del usuario y crear soluciones innovadoras. Chatbots, análisis de datos, automatización inteligente.",
+
     "heroTitle1": "Integraciones con IA",
     "heroTitle2": "para potenciar tu negocio",
     "cta": "Contactame, ¡es gratis!",
@@ -390,51 +406,10 @@
     "contactBtn": "Contáctame ahora"
   },
 
-  "servicesDesign": {
-    "heroTitle1": "Diseña tu producto",
-    "heroTitle2": "antes de desarrollarlo",
-    "cta": "Contactame, ¡es gratis!",
-
-    "section1Title": "Empieza con claridad",
-    "section1Subtitle": "Antes de escribir código",
-    "section1Text": "Antes de desarrollar, necesitas entender qué construir y por qué. Definimos tu producto desde la base, validando ideas y enfocándonos en resolver problemas reales para tus usuarios.",
-
-    "section2Title": "Diseña con estrategia",
-    "section2Subtitle": "No a prueba y error",
-    "section2Text": "A través de procesos de discovery analizamos tu idea, tu mercado y tus usuarios. Esto permite tomar decisiones informadas y evitar cambios costosos más adelante.",
-
-    "section3Title": "Prototipos reales",
-    "section3Subtitle": "Prueba antes de construir",
-    "section3Text": "Creo prototipos en baja y alta fidelidad para visualizar tu producto antes de desarrollarlo. Así puedes probar flujos, detectar errores y mejorar la experiencia desde el inicio.",
-
-    "section4Title": "Menos errores",
-    "section4Subtitle": "Más eficiencia",
-    "section4Text": "Un buen diseño UX reduce retrabajo, acelera el desarrollo y mejora el resultado final. Invertir en esta etapa te ahorra tiempo, dinero y problemas en el futuro.",
-
-    "finalTitle": "El diseño UX hace la diferencia",
-    "finalText": "Un producto bien pensado no solo se ve bien, funciona mejor. El diseño UX te permite crear experiencias claras, intuitivas y enfocadas en el usuario, aumentando las probabilidades de éxito de tu proyecto.",
-
-    "feature1Title": "Validación temprana",
-    "feature1Text": "Comprueba si tu idea funciona antes de invertir en desarrollo.",
-
-    "feature2Title": "Mejor experiencia",
-    "feature2Text": "Diseños pensados para que el usuario entienda y use tu producto fácilmente.",
-
-    "feature3Title": "Ahorro de tiempo",
-    "feature3Text": "Evita cambios innecesarios durante el desarrollo.",
-
-    "feature4Title": "Flujos optimizados",
-    "feature4Text": "Organiza correctamente la navegación y las interacciones desde el inicio.",
-
-    "feature5Title": "Decisiones claras",
-    "feature5Text": "Diseña con datos, análisis y objetivos definidos, no solo con intuición. Esto te permite tomar mejores decisiones, reducir la incertidumbre y construir un producto con mayor probabilidad de éxito.",
-
-    "contactTitle": "Diseña antes de construir",
-    "contactText": "Hablemos sobre tu idea y define un producto claro, funcional y listo para desarrollarse correctamente.",
-    "contactBtn": "Contáctame ahora"
-  },
-
   "servicesWebBasico": {
+    "title": "Portafolio - Sitio web básico",
+    "description": "Este es el plan perfecto para crear un sitio rápido y con todo lo necesario. Ideal para eventos, productos únicos o esa gran idea que no puede esperar más. Comienza con un sitio básico, siempre hay tiempo para crecer.",
+
     "heroTitle1": "Tu primera landing page",
     "heroTitle2": "rápida y funcional",
     "cta": "Contactame, ¡es gratis!",
@@ -481,7 +456,57 @@
     "contactBtn": "Contáctame ahora"
   },
 
+  "servicesDesign": {
+    "title": "Portafolio - Diseño de interfaces y experiencias digitales",
+    "description": "Definimos y validamos tu producto antes de desarrollarlo. Realizamos product discovery y prototipos en baja y alta definición para probar ideas, optimizar flujos y reducir errores desde el inicio.",
+
+    "heroTitle1": "Diseña tu producto",
+    "heroTitle2": "antes de desarrollarlo",
+    "cta": "Contactame, ¡es gratis!",
+
+    "section1Title": "Empieza con claridad",
+    "section1Subtitle": "Antes de escribir código",
+    "section1Text": "Antes de desarrollar, necesitas entender qué construir y por qué. Definimos tu producto desde la base, validando ideas y enfocándonos en resolver problemas reales para tus usuarios.",
+
+    "section2Title": "Diseña con estrategia",
+    "section2Subtitle": "No a prueba y error",
+    "section2Text": "A través de procesos de discovery analizamos tu idea, tu mercado y tus usuarios. Esto permite tomar decisiones informadas y evitar cambios costosos más adelante.",
+
+    "section3Title": "Prototipos reales",
+    "section3Subtitle": "Prueba antes de construir",
+    "section3Text": "Creo prototipos en baja y alta fidelidad para visualizar tu producto antes de desarrollarlo. Así puedes probar flujos, detectar errores y mejorar la experiencia desde el inicio.",
+
+    "section4Title": "Menos errores",
+    "section4Subtitle": "Más eficiencia",
+    "section4Text": "Un buen diseño UX reduce retrabajo, acelera el desarrollo y mejora el resultado final. Invertir en esta etapa te ahorra tiempo, dinero y problemas en el futuro.",
+
+    "finalTitle": "El diseño UX hace la diferencia",
+    "finalText": "Un producto bien pensado no solo se ve bien, funciona mejor. El diseño UX te permite crear experiencias claras, intuitivas y enfocadas en el usuario, aumentando las probabilidades de éxito de tu proyecto.",
+
+    "feature1Title": "Validación temprana",
+    "feature1Text": "Comprueba si tu idea funciona antes de invertir en desarrollo.",
+
+    "feature2Title": "Mejor experiencia",
+    "feature2Text": "Diseños pensados para que el usuario entienda y use tu producto fácilmente.",
+
+    "feature3Title": "Ahorro de tiempo",
+    "feature3Text": "Evita cambios innecesarios durante el desarrollo.",
+
+    "feature4Title": "Flujos optimizados",
+    "feature4Text": "Organiza correctamente la navegación y las interacciones desde el inicio.",
+
+    "feature5Title": "Decisiones claras",
+    "feature5Text": "Diseña con datos, análisis y objetivos definidos, no solo con intuición. Esto te permite tomar mejores decisiones, reducir la incertidumbre y construir un producto con mayor probabilidad de éxito.",
+
+    "contactTitle": "Diseña antes de construir",
+    "contactText": "Hablemos sobre tu idea y define un producto claro, funcional y listo para desarrollarse correctamente.",
+    "contactBtn": "Contáctame ahora"
+  },
+
   "servicesMeta": {
+    "title": "Portafolio - Metaverso",
+    "description": "Creo servidores personalizados de Minecraft, Roblox y Hytale. Experiencias virtuales personalizadas, configuración completa, plugins personalizados y gestión dedicada para tu mundo virtual.",
+
     "heroTitle1": "Conecta con tu comunidad",
     "heroTitle2": "en un mundo virtual",
     "cta": "Contactame, ¡es gratis!",
@@ -526,6 +551,7 @@
   },
 
   "faq": {
+    "title": "Portafolio - Preguntas",
     "title1": "Preguntas frecuentes",
     "subtitle": "Todo lo que quieras saber sobre cómo trabajo, los servicios que ofrezco y cómo podemos colaborar.",
 

@@ -8,7 +8,7 @@
     "dark": "Dark"
   },
   "home": {
-    "title": "Enrique Calvo Garcia Portfolio",
+    "title": "Portfolio - Enrique Calvo Garcia",
     "description": "Web developer specialized in building modern experiences",
 
     "heroGreeting": "Hi, I'm",
@@ -67,6 +67,7 @@
 
   "about": {
     "badge": "Learn more about me",
+    "title": "Portfolio - About me",
 
     "title1": "About",
     "title2": "me",
@@ -144,6 +145,7 @@
 
   "projects": {
     "badge": "Portfolio Showcase",
+    "title": "Portfolio - Projects",
     "title1": "Projects",
     "description1": "Explore my journey through projects and hackathons. Each section represents a milestone in my continuous learning.",
 
@@ -171,8 +173,9 @@
 
   "services": {
     "badge": "Solutions",
+    "title": "Portfolio - Services",
     "title1": "I transform ideas into digital reality.",
-    "description1": "Web designer and developer. I offer complete solutions to bring your digital ideas to life, from simple landing pages to complex projects with artificial intelligence and gamification.",
+    "description1": "I offer complete solutions to bring your digital ideas to life, from simple landing pages to complex projects with artificial intelligence and gamification.",
 
     "featured": "Featured",
     "discoverMore": "Discover more",
@@ -259,6 +262,8 @@
   },
 
   "servicesWeb": {
+    "title": "Portfolio - Website",
+    "description": "I create modern and responsive websites, from simple landing pages to more complete sites with all the features you need. Custom design, SEO optimization, and excellent performance.",
     "label": "Featured service",
     "heroTitle1": "Professional websites",
     "heroTitle2": "that help grow your business",
@@ -304,6 +309,9 @@
   },
 
   "servicesAppWeb": {
+    "title": "Portfolio - Web Applications and PWA",
+    "description": "I develop custom web applications and Progressive Web Apps (PWA): from business dashboards to complex platforms, including applications that run on any device.",
+
     "heroTitle1": "Web applications and PWAs",
     "heroTitle2": "tailored to your business",
     "cta": "Contact me, it's free!",
@@ -348,6 +356,9 @@
   },
 
   "servicesIA": {
+    "title": "Portfolio - AI Integrations",
+    "description": "I integrate artificial intelligence into your projects to automate processes, improve user experience, and create innovative solutions. Chatbots, data analysis, and intelligent automation.",
+
     "heroTitle1": "AI integrations",
     "heroTitle2": "to boost your business",
     "cta": "Contact me, it's free!",
@@ -391,51 +402,10 @@
     "contactBtn": "Contact me now"
   },
 
-  "servicesDesign": {
-    "heroTitle1": "Design your product",
-    "heroTitle2": "before developing it",
-    "cta": "Contact me, it's free!",
-
-    "section1Title": "Start with clarity",
-    "section1Subtitle": "Before writing code",
-    "section1Text": "Before developing, you need to understand what to build and why. We define your product from the ground up, validating ideas and focusing on solving real problems for your users.",
-
-    "section2Title": "Design with strategy",
-    "section2Subtitle": "Not trial and error",
-    "section2Text": "Through discovery processes, we analyze your idea, your market, and your users. This allows for informed decisions and avoids costly changes later.",
-
-    "section3Title": "Real prototypes",
-    "section3Subtitle": "Test before building",
-    "section3Text": "I create low and high fidelity prototypes to visualize your product before developing it. This way you can test flows, detect errors, and improve the experience from the start.",
-
-    "section4Title": "Fewer errors",
-    "section4Subtitle": "More efficiency",
-    "section4Text": "Good UX design reduces rework, speeds up development, and improves the final result. Investing in this stage saves you time, money, and problems in the future.",
-
-    "finalTitle": "UX design makes the difference",
-    "finalText": "A well-thought-out product not only looks good, it works better. UX design allows you to create clear, intuitive, and user-focused experiences, increasing the chances of success for your project.",
-
-    "feature1Title": "Early validation",
-    "feature1Text": "Test if your idea works before investing in development.",
-
-    "feature2Title": "Better experience",
-    "feature2Text": "Designs created so users can easily understand and use your product.",
-
-    "feature3Title": "Time saving",
-    "feature3Text": "Avoid unnecessary changes during development.",
-
-    "feature4Title": "Optimized flows",
-    "feature4Text": "Properly structure navigation and interactions from the start.",
-
-    "feature5Title": "Clear decisions",
-    "feature5Text": "Design with data, analysis, and defined goals, not just intuition. This allows you to make better decisions, reduce uncertainty, and build a product with a higher chance of success.",
-
-    "contactTitle": "Design before building",
-    "contactText": "Let's talk about your idea and define a clear, functional product ready to be properly developed.",
-    "contactBtn": "Contact me now"
-  },
-
   "servicesWebBasico": {
+    "title": "Portfolio - Basic Website",
+    "description": "This is the perfect plan to create a fast website with everything you need. Ideal for events, single products, or that great idea that can't wait any longer. Start with a basic site—there’s always time to grow.",
+
     "heroTitle1": "Your first landing page",
     "heroTitle2": "fast and functional",
     "cta": "Contact me, it's free!",
@@ -482,7 +452,57 @@
     "contactBtn": "Contact me now"
   },
 
+  "servicesDesign": {
+    "title": "Portfolio - UI/UX Design and Digital Experiences",
+    "description": "We define and validate your product before development. We conduct product discovery and create low- and high-fidelity prototypes to test ideas, optimize flows, and reduce errors from the start.",
+
+    "heroTitle1": "Design your product",
+    "heroTitle2": "before developing it",
+    "cta": "Contact me, it's free!",
+
+    "section1Title": "Start with clarity",
+    "section1Subtitle": "Before writing code",
+    "section1Text": "Before developing, you need to understand what to build and why. We define your product from the ground up, validating ideas and focusing on solving real problems for your users.",
+
+    "section2Title": "Design with strategy",
+    "section2Subtitle": "Not trial and error",
+    "section2Text": "Through discovery processes, we analyze your idea, your market, and your users. This allows for informed decisions and avoids costly changes later.",
+
+    "section3Title": "Real prototypes",
+    "section3Subtitle": "Test before building",
+    "section3Text": "I create low and high fidelity prototypes to visualize your product before developing it. This way you can test flows, detect errors, and improve the experience from the start.",
+
+    "section4Title": "Fewer errors",
+    "section4Subtitle": "More efficiency",
+    "section4Text": "Good UX design reduces rework, speeds up development, and improves the final result. Investing in this stage saves you time, money, and problems in the future.",
+
+    "finalTitle": "UX design makes the difference",
+    "finalText": "A well-thought-out product not only looks good, it works better. UX design allows you to create clear, intuitive, and user-focused experiences, increasing the chances of success for your project.",
+
+    "feature1Title": "Early validation",
+    "feature1Text": "Test if your idea works before investing in development.",
+
+    "feature2Title": "Better experience",
+    "feature2Text": "Designs created so users can easily understand and use your product.",
+
+    "feature3Title": "Time saving",
+    "feature3Text": "Avoid unnecessary changes during development.",
+
+    "feature4Title": "Optimized flows",
+    "feature4Text": "Properly structure navigation and interactions from the start.",
+
+    "feature5Title": "Clear decisions",
+    "feature5Text": "Design with data, analysis, and defined goals, not just intuition. This allows you to make better decisions, reduce uncertainty, and build a product with a higher chance of success.",
+
+    "contactTitle": "Design before building",
+    "contactText": "Let's talk about your idea and define a clear, functional product ready to be properly developed.",
+    "contactBtn": "Contact me now"
+  },
+
   "servicesMeta": {
+    "title": "Portfolio - Metaverse",
+    "description": "I create custom servers for Minecraft, Roblox, and Hytale. Personalized virtual experiences, full setup, custom plugins, and dedicated management for your virtual world.",
+
     "heroTitle1": "Connect with your community",
     "heroTitle2": "in a virtual world",
     "cta": "Contact me, it's free!",
@@ -527,6 +547,7 @@
   },
 
   "faq": {
+    "title": "Portfolio - Questions",
     "title1": "Frequently asked questions",
     "subtitle": "Everything you need to know about how I work, the services I offer and how we can collaborate.",
 
