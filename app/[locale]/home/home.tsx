@@ -36,6 +36,14 @@ export default function Hero() {
   const fullText = useMemo(() => t("role"), [t]);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     const typingSpeed = isDeleting ? 50 : 90;
@@ -446,6 +454,7 @@ export default function Hero() {
           <motion.div
             variants={containerVariants}
             initial="hidden"
+            animate={isMobile ? "show" : undefined}
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3"
@@ -527,6 +536,7 @@ export default function Hero() {
           <motion.div
             variants={containerVariants}
             initial="hidden"
+            animate={isMobile ? "show" : undefined}
             whileInView="show"
             viewport={{ once: false, margin: "-100px" }}
             className="mt-12 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3"

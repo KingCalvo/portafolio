@@ -40,6 +40,7 @@ import {
 import { VscVscode } from "react-icons/vsc";
 import ExperienceDetails from "@/components/layout/ExperienceDetails";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 
 type TechItem = {
   name: string;
@@ -53,6 +54,7 @@ type TechGroup = {
 };
 
 let xpAudio: HTMLAudioElement | null = null;
+let audioUnlocked = false;
 let lastPlayTime = 0;
 const COOLDOWN = 250;
 
@@ -78,6 +80,8 @@ function TechChip({ item }: { item: TechItem }) {
       xpAudio = new Audio("/sounds/XP.mp3");
       xpAudio.volume = 0.3;
     }
+
+    if (!audioUnlocked) return;
 
     // Reiniciar sonido si ya estaba en reproducción
     xpAudio.currentTime = 0;
@@ -197,6 +201,32 @@ export default function About() {
       ],
     },
   ];
+
+  useEffect(() => {
+    const unlockAudio = () => {
+      if (!xpAudio) {
+        xpAudio = new Audio("/sounds/XP.mp3");
+        xpAudio.volume = 0.3;
+      }
+
+      xpAudio
+        .play()
+        .then(() => {
+          xpAudio?.pause();
+          xpAudio!.currentTime = 0;
+          audioUnlocked = true;
+        })
+        .catch(() => {});
+
+      document.removeEventListener("pointerdown", unlockAudio);
+    };
+
+    document.addEventListener("pointerdown", unlockAudio, { once: true });
+
+    return () => {
+      document.removeEventListener("pointerdown", unlockAudio);
+    };
+  }, []);
 
   const skills = t.raw("skills") as string[];
   return (

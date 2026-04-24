@@ -9,6 +9,7 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Services() {
   const t = useTranslations("services");
@@ -24,6 +25,14 @@ export default function Services() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -140,6 +149,7 @@ export default function Services() {
         <motion.div
           variants={containerVariants}
           initial="hidden"
+          animate={isMobile ? "show" : undefined}
           whileInView="show"
           viewport={{ once: false, amount: 0.3 }}
           className="mt-16 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3"
@@ -159,7 +169,11 @@ export default function Services() {
               <Image
                 src="/images/servicios/SiteWeb.png"
                 alt="Sitios web"
+                priority
                 fill
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1280px) 50vw,
+                33vw"
                 className="object-fill"
               />
             </div>
@@ -195,6 +209,9 @@ export default function Services() {
                 src="/images/servicios/WebApp.png"
                 alt="Aplicaciones web"
                 fill
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1280px) 50vw,
+                33vw"
                 className="object-fill"
               />
             </div>
@@ -230,6 +247,9 @@ export default function Services() {
                 src="/images/servicios/IA.png"
                 alt="Integración con IA"
                 fill
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1280px) 50vw,
+                33vw"
                 className="object-fill"
               />
             </div>
@@ -265,6 +285,9 @@ export default function Services() {
                 src="/images/servicios/OnePage.png"
                 alt="Sitios Web simple"
                 fill
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1280px) 50vw,
+                33vw"
                 className="object-fill"
               />
             </div>
@@ -300,6 +323,9 @@ export default function Services() {
                 src="/images/servicios/Design.png"
                 alt="Diseño"
                 fill
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1280px) 50vw,
+                33vw"
                 className="object-fill"
               />
             </div>
@@ -335,6 +361,9 @@ export default function Services() {
                 src="/images/servicios/HytaleServer.png"
                 alt="Metaverso"
                 fill
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1280px) 50vw,
+                33vw"
                 className="object-fill"
               />
             </div>
