@@ -69,23 +69,21 @@ function TechChip({ item }: { item: TechItem }) {
 
   const handleClick = () => {
     const now = Date.now();
-
-    // Evita spam o loop de sonidos
     if (now - lastPlayTime < COOLDOWN) return;
 
     lastPlayTime = now;
 
-    // Crear audio solo una vez
     if (!xpAudio) {
-      xpAudio = new Audio("/sounds/XP.mp3");
+      xpAudio = new Audio("/sounds/xp.mp3");
       xpAudio.volume = 0.3;
     }
 
-    if (!audioUnlocked) return;
-
-    // Reiniciar sonido si ya estaba en reproducción
     xpAudio.currentTime = 0;
-    xpAudio.play().catch(() => {});
+    xpAudio.playbackRate = 0.95 + Math.random() * 0.1;
+
+    xpAudio.play().catch((err) => {
+      console.log("Audio error:", err);
+    });
   };
 
   return (
