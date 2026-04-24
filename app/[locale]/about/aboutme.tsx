@@ -52,18 +52,43 @@ type TechGroup = {
   items: TechItem[];
 };
 
+let xpAudio: HTMLAudioElement | null = null;
+let lastPlayTime = 0;
+const COOLDOWN = 250;
+
 function TechChip({ item }: { item: TechItem }) {
   const { Icon, color } = item;
+
   const isDarkColor =
     color === "#000000" ||
     color === "#111111" ||
     color === "#000020" ||
     color === "#181717";
 
+  const handleClick = () => {
+    const now = Date.now();
+
+    // Evita spam o loop de sonidos
+    if (now - lastPlayTime < COOLDOWN) return;
+
+    lastPlayTime = now;
+
+    // Crear audio solo una vez
+    if (!xpAudio) {
+      xpAudio = new Audio("/sounds/XP.mp3");
+      xpAudio.volume = 0.3;
+    }
+
+    // Reiniciar sonido si ya estaba en reproducción
+    xpAudio.currentTime = 0;
+    xpAudio.play().catch(() => {});
+  };
+
   return (
-    <div
+    <button
+      onClick={handleClick}
       data-dark={isDarkColor ? "true" : "false"}
-      className="group relative flex flex-col items-center justify-center rounded-2xl bg-card px-4 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md w-full"
+      className="group relative flex flex-col items-center justify-center rounded-2xl bg-card px-4 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md w-full cursor-pointer active:scale-95"
       style={
         {
           "--tech-color": color,
@@ -84,7 +109,7 @@ function TechChip({ item }: { item: TechItem }) {
 
       {/* Glow */}
       <div className="tech-glow pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100" />
-    </div>
+    </button>
   );
 }
 
