@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import { portfolioData } from "@/data/portafolioData";
 import { portfolioDataEN } from "@/data/portafolioDataEN";
+import esMessages from "@/messages/es.json";
+import enMessages from "@/messages/en.json";
 
 export async function POST(req: Request) {
   const { message, locale } = await req.json();
-
+  const messagesData = locale === "es" ? esMessages : enMessages;
   const portfolio = locale === "es" ? portfolioData : portfolioDataEN;
 
   const projectsContext = portfolio.projects
@@ -16,6 +18,126 @@ export async function POST(req: Request) {
     `,
     )
     .join("\n");
+
+  const aboutContext = `
+        Hero: ${messagesData.home.heroDescription}
+    
+        Career: ${messagesData.about.career}
+        About: ${messagesData.about.description}
+        Focus: ${messagesData.about.focusDesc}
+        Work Style: ${messagesData.about.workStyleDesc}
+        `;
+
+  const servicesContext = `
+      ${messagesData.home.service1Title}: ${messagesData.home.service1Desc}
+      ${messagesData.home.service2Title}: ${messagesData.home.service2Desc}
+      ${messagesData.home.service3Title}: ${messagesData.home.service3Desc}
+      ${messagesData.services.service4Title}: ${messagesData.services.service4Desc}
+      ${messagesData.services.service5Title}: ${messagesData.services.service5Desc}
+      ${messagesData.services.service6Title}: ${messagesData.services.service6Desc}
+      `;
+
+  const experienceContext = `
+      Experiencia:
+      Mobile Developer (Flutter)
+      Naatik A.I. Solutions SAPI de CV · Jornada completa
+      jun. 2025 - dic. 2025 · 7 meses
+      San Francisco 23, Frac. Burgos, Temixco, Morelos · Remoto
+    
+      Desarrollo de la aplicación móvil FixGo con Flutter...
+    
+      Responsabilidades:
+      - Desarrollo end-to-end
+      - UI/UX con Figma
+      - Clean Architecture
+      - Módulo proveedor/admin
+      - Autenticación y roles
+      - Mapas y geolocalización
+      - Optimización y pruebas
+      `;
+
+  const experienceContextEN = `
+      Experience:
+      Mobile Developer (Flutter)
+      Naatik A.I. Solutions SAPI de CV · Full-time
+      Jun 2025 - Dec 2025 · 7 months
+      San Francisco 23, Frac. Burgos, Temixco, Morelos · Remote
+    
+      Developed the FixGo mobile application (Android) using Flutter.
+    
+      Responsibilities:
+      - End-to-end development
+      - UI/UX design using Figma
+      - Implementation of Clean Architecture
+      - Provider and admin modules
+      - Authentication and role management
+      - Maps and geolocation integration
+      - Performance optimization and testing
+      `;
+
+  const educationContext = `
+      Educación:
+      Ingeniero en Sistemas Computacionales
+      Instituto Tecnológico de Cuautla (2021–2026)
+    
+      Participación en hackathons y formación en:
+      Ciberseguridad, IA, redes neuronales
+      `;
+
+  const educationContextEN = `
+      Education:
+      Computer Systems Engineering
+      Instituto Tecnológico de Cuautla (2021–2026)
+    
+      Participation in hackathons and additional training in:
+      Cybersecurity, Artificial Intelligence, Neural Networks
+      `;
+
+  const skillsContext = `
+      Habilidades:
+      Autoaprendizaje, trabajo en equipo, resolución de problemas,
+      atención al cliente, creatividad, disciplina
+      `;
+
+  const skillsContextEN = `
+      Skills:
+      Self-learning, teamwork, problem solving,
+      customer communication, creativity, discipline and responsibility
+      `;
+
+  const skillsDeveloperContext = `
+      Lenguajes:
+      JavaScript, Dart, TypeScript, Python, SQL, Java
+    
+      Desarrollo Web:
+      React, Next.js, Node.js, Astro, Express.js, Tailwind CSS, Vite.js
+    
+      Desarrollo Móvil:
+      Flutter, BLoC, React Native, Expo
+    
+      Bases de Datos:
+      PostgreSQL, Firebase, Supabase, SQLite, Redis, MongoDB
+    
+      Herramientas:
+      Docker, Figma, Trello, Git, GitHub, Google Cloud, npm, pnpm, VS Code, Cursor
+      `;
+
+  const skillsDeveloperContextEN = `
+      Languages:
+      JavaScript, Dart, TypeScript, Python, SQL, Java
+    
+      Web Development:
+      React, Next.js, Node.js, Astro, Express.js, Tailwind CSS, Vite.js
+    
+      Mobile Development:
+      Flutter, BLoC, React Native, Expo
+    
+      Databases:
+      PostgreSQL, Firebase, Supabase, SQLite, Redis, MongoDB
+    
+      Tools:
+      Docker, Figma, Trello, Git, GitHub, Google Cloud, npm, pnpm, VS Code, Cursor
+      `;
 
   const systemPrompt =
     locale === "es"
@@ -36,12 +158,23 @@ export async function POST(req: Request) {
         PROYECTOS:
         ${projectsContext}
 
+        INFORMACIÓN:
+        ${aboutContext}
+
+        EXPERIENCIA:
+        ${experienceContext}
+
+        EDUCACIÓN:
+        ${educationContext}
+
+        HABILIDADES:
+        ${skillsContext}                                                                                                                                                    
+        HABILIDADES TÉCNICAS:
+        ${skillsDeveloperContext}PROYECTOS:
+        ${projectsContext}
+
         SERVICIOS:
-        - Desarrollo de sitios web modernos
-        - Aplicaciones web y PWA
-        - Integraciones con inteligencia artificial
-        - Diseño UX
-        - Desarrollo de apps móviles
+        ${servicesContext}
 
         REGLAS:
         - Responde como humano, no como robot
@@ -49,7 +182,11 @@ export async function POST(req: Request) {
         - No inventes información
         - Si te preguntan algo que no está aquí, dilo claramente
         - Si preguntan por contacto, sugiere que usen la sección de contacto del portafolio
-`
+
+        CONTACTO:
+        - Correo: enriquecalvo.dev@gmail.com
+        - GitHub: https://github.com/KingCalvo
+        `
       : `
         You are the portfolio assistant of Enrique Calvo Garcia.
 
@@ -66,17 +203,35 @@ export async function POST(req: Request) {
         PROJECTS:
         ${projectsContext}
 
+        INFORMATION:
+        ${aboutContext}
+
+        EXPERIENCE:
+        ${experienceContextEN}
+
+        EDUCATION:
+        ${educationContextEN}
+
+        SKILLS:
+        ${skillsContextEN}
+
+        TECHNICAL SKILLS:
+        ${skillsDeveloperContextEN}
+
+        PROJECTS:
+        ${projectsContext}
+
         SERVICES:
-        - Web development
-        - Web apps & PWA
-        - AI integrations
-        - UX design
-        - Mobile apps
+        ${servicesContext}
 
         RULES:
         - Be human and friendly
         - Keep answers short
         - Do not invent information
+
+        CONTACT:
+        - Email: enriquecalvo.dev@gmail.com
+        - GitHub: https://github.com/KingCalvo
         `;
 
   const response = await fetch(

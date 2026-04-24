@@ -225,7 +225,7 @@ export default function Hero() {
 
                     setHoverTimeout(timeout);
                   }}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-slate-900 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-slate-800 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-900 hover:shadow-md"
                 >
                   <Github className="text-white" size={18} />
                 </a>
@@ -270,8 +270,11 @@ export default function Hero() {
                   >
                     <tech.Icon
                       size={34}
-                      style={{ color: tech.color }}
-                      className="transition duration-300 group-hover/item:scale-110 mt-2"
+                      data-dark={tech.color === "#111111" ? "true" : "false"}
+                      style={
+                        { "--tech-color": tech.color } as React.CSSProperties
+                      }
+                      className="tech-icon transition duration-300 group-hover/item:scale-110 mt-2"
                     />
 
                     <span className="mt-3 text-sm text-muted-foreground">
