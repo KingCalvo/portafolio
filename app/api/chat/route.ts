@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { portfolioData } from "@/data/portafolioData";
-import { portfolioDataEN } from "@/data/portafolioDataEN";
+import { portfolioData } from "@/data/PortafolioData";
+import { portfolioDataEN } from "@/data/PortafolioDataEN";
 import esMessages from "@/messages/es.json";
 import enMessages from "@/messages/en.json";
 

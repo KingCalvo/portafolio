@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import DisableBfcache from "@/components/layout/DisableBfcache";
 import { cookies } from "next/headers";
 import ConsoleLegend from "@/components/molecules/ConsoleLegend";
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
   params,
@@ -13,20 +14,57 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  /* const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!; */
-  const baseUrl = "https://tusitio.com";
+
+  const baseUrl = "https://enriquecalvo.site";
+
+  const t = await getTranslations({
+    locale,
+    namespace: "metadata",
+  });
 
   return {
     metadataBase: new URL(baseUrl),
+
+    title: {
+      default: t("title"),
+      template: "%s | Enrique Calvo",
+    },
+
+    description: t("description"),
+
     icons: {
       icon: "/images/contenido/avatar_SaludandoM.png",
     },
+
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `${baseUrl}/${locale}`,
       languages: {
-        es: "/es",
-        en: "/en",
+        es: `${baseUrl}/es`,
+        en: `${baseUrl}/en`,
       },
+    },
+
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: `${baseUrl}/${locale}`,
+      siteName: "Enrique Calvo",
+      images: [
+        {
+          url: "/images/contenido/avatar_SaludandoM.png",
+          width: 800,
+          height: 600,
+        },
+      ],
+      locale: locale,
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/images/contenido/avatar_SaludandoM.png"],
     },
   };
 }

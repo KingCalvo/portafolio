@@ -7,6 +7,12 @@
     "light": "Light",
     "dark": "Dark"
   },
+
+  "metadata": {
+    "title": "Enrique Calvo | Web Developer",
+    "description": "Portfolio of Enrique Calvo Garcia, developer of modern web and mobile applications."
+  },
+
   "home": {
     "title": "Portfolio - Enrique Calvo Garcia",
     "description": "Web developer specialized in building modern experiences",
