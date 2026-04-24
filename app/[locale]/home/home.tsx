@@ -77,7 +77,7 @@ export default function Hero() {
     { name: "Astro", Icon: SiAstro, color: "#FF5D01" },
     { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
     { name: "Docker", Icon: SiDocker, color: "#2496ED" },
-    { name: "Postgres", Icon: SiPostgresql, color: "#336791" },
+    { name: "PostgreSQL", Icon: SiPostgresql, color: "#336791" },
     { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
     { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
     { name: "Dart", Icon: SiDart, color: "#0175C2" },

@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
-import { portfolioData } from "@/data/PortafolioData";
-import { portfolioDataEN } from "@/data/PortafolioDataEN";
+import { portfolioData } from "@/data/portafolioData";
+import { portfolioDataEN } from "@/data/portafolioDataEN";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://enriquecalvo.site";

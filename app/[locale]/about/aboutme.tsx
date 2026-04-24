@@ -175,7 +175,7 @@ export default function About() {
     {
       title: t("tech.database"),
       items: [
-        { name: "Postgres", Icon: SiPostgresql, color: "#336791" },
+        { name: "PostgreSQL", Icon: SiPostgresql, color: "#336791" },
         { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
         { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
         { name: "SQLite", Icon: SiSqlite, color: "#003B57" },
