@@ -74,7 +74,7 @@ function TechChip({ item }: { item: TechItem }) {
     lastPlayTime = now;
 
     if (!xpAudio) {
-      xpAudio = new Audio("/sounds/xp.mp3");
+      xpAudio = new Audio("/sounds/xp-m.mp3");
       xpAudio.volume = 0.3;
     }
 
@@ -203,7 +203,7 @@ export default function About() {
   useEffect(() => {
     const unlockAudio = () => {
       if (!xpAudio) {
-        xpAudio = new Audio("/sounds/XP.mp3");
+        xpAudio = new Audio("/sounds/xp-m.mp3");
         xpAudio.volume = 0.3;
       }
 
