@@ -51,13 +51,12 @@ export async function generateMetadata({
       siteName: "Enrique Calvo",
       images: [
         {
-          url: `${baseUrl}/og?locale=${locale}`,
-          width: 1200,
-          height: 630,
-          alt: t("title"),
+          url: "/images/contenido/avatar_SaludandoM.png",
+          width: 800,
+          height: 600,
         },
       ],
-      locale: locale === "es" ? "es_ES" : "en_US",
+      locale: locale,
       type: "website",
     },
 
@@ -65,7 +64,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [`${baseUrl}/og?locale=${locale}`],
+      images: ["/images/contenido/avatar_SaludandoM.png"],
     },
   };
 }
