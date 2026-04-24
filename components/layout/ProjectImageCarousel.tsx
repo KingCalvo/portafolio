@@ -51,38 +51,41 @@ export default function ProjectImageCarousel({
 
   return (
     <>
-      <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+      <div className="relative overflow-hidden rounded-[2rem] border border-border bg-muted shadow-sm">
         <button
           type="button"
           onClick={() => setIsExpanded(true)}
-          className="relative block w-full h-80 lg:h-[420px] bg-slate-100"
+          className="relative block w-full border-border overflow-hidden"
         >
-          <Image
-            src={currentImage}
-            alt={`${title} - imagen ${currentIndex + 1}`}
-            fill
-            className="object-cover cursor-zoom-in"
-            priority
-          />
+          <div className="relative w-full h-[260px] md:h-[320px] lg:h-[420px]">
+            <Image
+              src={currentImage}
+              alt={`${title} - imagen ${currentIndex + 1}`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 900px"
+              className="object-cover cursor-zoom-in"
+              priority
+            />
+          </div>
         </button>
 
         {safeImages.length > 1 && (
           <>
             <button
               onClick={goPrev}
-              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-md hover:scale-105"
+              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-card/90 p-3 shadow-md hover:scale-105 cursor-pointer"
             >
               <IoChevronBack className="h-5 w-5" />
             </button>
 
             <button
               onClick={goNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-md hover:scale-105"
+              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-card/90 p-3 shadow-md hover:scale-105 cursor-pointer"
             >
               <IoChevronForward className="h-5 w-5" />
             </button>
 
-            <div className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold shadow-md">
+            <div className="absolute right-4 top-4 rounded-full bg-card/90 text-foreground px-3 py-1 text-xs font-semibold shadow-md">
               {currentIndex + 1}/{safeImages.length}
             </div>
           </>
@@ -95,29 +98,30 @@ export default function ProjectImageCarousel({
           onClick={() => setIsExpanded(false)}
         >
           <div
-            className="relative w-full max-w-6xl overflow-hidden rounded-[2rem] bg-white shadow-2xl"
+            className="relative w-full max-w-6xl overflow-hidden rounded-[2rem] bg-muted shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative aspect-[16/9] w-full bg-slate-100">
+            <div className="relative max-w-7xl w-full flex items-center justify-center">
               <Image
                 src={currentImage}
                 alt={`${title} - imagen ${currentIndex + 1}`}
-                fill
-                className="object-contain"
+                width={1600}
+                height={900}
+                className="w-full max-w-[95vw] max-h-[85vh] object-contain rounded-xl shadow-2xl"
                 priority
               />
 
               <div className="absolute right-4 top-4 flex items-center gap-2">
-                {/* CONTADOR */}
+                {/* Contador */}
                 {safeImages.length > 1 && (
-                  <div className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold shadow-md">
+                  <div className="rounded-full bg-card/90 px-3 py-1 text-xs font-semibold shadow-md">
                     {currentIndex + 1}/{safeImages.length}
                   </div>
                 )}
 
                 <button
                   onClick={() => setIsExpanded(false)}
-                  className="rounded-full bg-white/90 p-3 shadow-md hover:scale-105"
+                  className="rounded-full bg-red-700 text-white p-3 shadow-md hover:scale-105 cursor-pointer"
                 >
                   <IoClose className="h-6 w-6" />
                 </button>
@@ -127,14 +131,14 @@ export default function ProjectImageCarousel({
                 <>
                   <button
                     onClick={goPrev}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-md hover:scale-105"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-card/90 p-3 shadow-md hover:scale-105 cursor-pointer"
                   >
                     <IoChevronBack className="h-5 w-5" />
                   </button>
 
                   <button
                     onClick={goNext}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 shadow-md hover:scale-105"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-card/90 p-3 shadow-md hover:scale-105 cursor-pointer"
                   >
                     <IoChevronForward className="h-5 w-5" />
                   </button>

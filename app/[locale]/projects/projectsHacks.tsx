@@ -135,6 +135,8 @@ export default function Projects() {
                         src={item.image}
                         alt={item.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority={index === 0 && activeTab === "projects"}
                         className="object-cover"
                       />
                     </div>

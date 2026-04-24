@@ -121,3 +121,20 @@ html {
   background: var(--background);
   color: var(--foreground);
 }
+
+.tech-icon {
+  color: var(--tech-color);
+}
+
+/* Override en dark mode */
+[data-mode="dark"] .tech-icon[data-dark="true"] {
+  color: #ffffff;
+}
+
+.tech-glow {
+  box-shadow: 0 0 22px var(--tech-color);
+}
+
+[data-mode="dark"] [data-dark="true"] .tech-glow {
+  box-shadow: 0 0 22px #ffffff;
+}

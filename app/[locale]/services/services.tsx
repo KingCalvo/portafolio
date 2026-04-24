@@ -8,6 +8,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
 
 export default function Services() {
   const t = useTranslations("services");
@@ -92,6 +93,30 @@ export default function Services() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1] as const,
+      },
+    },
+  };
+
   return (
     <section
       id="services"
@@ -102,7 +127,7 @@ export default function Services() {
           <span className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground shadow-sm">
             {t("badge")}
           </span>
-          <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 ">
             {t("title1")}
           </h1>
 
@@ -112,9 +137,18 @@ export default function Services() {
         </div>
 
         {/* Cards */}
-        <div className="mt-16 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
+          className="mt-16 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3"
+        >
           {/* Card 1 */}
-          <article className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-card shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10">
+          <motion.article
+            variants={itemVariants}
+            className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-card shadow-xl scale-[1.03] z-10 transition duration-300 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10"
+          >
             {/* Badge */}
             <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-400 px-3 py-1 text-sm font-semibold text-white">
               {t("featured")}
@@ -126,7 +160,7 @@ export default function Services() {
                 src="/images/servicios/SiteWeb.png"
                 alt="Sitios web"
                 fill
-                className="object-fill transition duration-500 group-hover:scale-105"
+                className="object-fill"
               />
             </div>
 
@@ -149,16 +183,19 @@ export default function Services() {
                 </Link>
               </div>
             </div>
-          </article>
+          </motion.article>
 
           {/* Card 2 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <motion.article
+            variants={itemVariants}
+            className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:shadow-lg"
+          >
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/servicios/WebApp.png"
                 alt="Aplicaciones web"
                 fill
-                className="object-fill transition duration-500 group-hover:scale-105"
+                className="object-fill"
               />
             </div>
 
@@ -181,16 +218,19 @@ export default function Services() {
                 </Link>
               </div>
             </div>
-          </article>
+          </motion.article>
 
           {/* Card 3 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <motion.article
+            variants={itemVariants}
+            className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:shadow-lg"
+          >
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/servicios/IA.png"
                 alt="Integración con IA"
                 fill
-                className="object-fill transition duration-500 group-hover:scale-105"
+                className="object-fill"
               />
             </div>
 
@@ -213,16 +253,19 @@ export default function Services() {
                 </Link>
               </div>
             </div>
-          </article>
+          </motion.article>
 
           {/* Card 4 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <motion.article
+            variants={itemVariants}
+            className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:shadow-lg"
+          >
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/servicios/OnePage.png"
                 alt="Sitios Web simple"
                 fill
-                className="object-fill transition duration-500 group-hover:scale-105"
+                className="object-fill"
               />
             </div>
 
@@ -245,16 +288,19 @@ export default function Services() {
                 </Link>
               </div>
             </div>
-          </article>
+          </motion.article>
 
           {/* Card 5 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <motion.article
+            variants={itemVariants}
+            className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:shadow-lg"
+          >
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/servicios/Design.png"
                 alt="Diseño"
                 fill
-                className="object-fill transition duration-500 group-hover:scale-105"
+                className="object-fill"
               />
             </div>
 
@@ -277,16 +323,19 @@ export default function Services() {
                 </Link>
               </div>
             </div>
-          </article>
+          </motion.article>
 
           {/* Card 6 */}
-          <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <motion.article
+            variants={itemVariants}
+            className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:shadow-lg"
+          >
             <div className="relative aspect-16/10 overflow-hidden">
               <Image
                 src="/images/servicios/HytaleServer.png"
                 alt="Metaverso"
                 fill
-                className="object-fill transition duration-500 group-hover:scale-105"
+                className="object-fill"
               />
             </div>
 
@@ -309,8 +358,8 @@ export default function Services() {
                 </Link>
               </div>
             </div>
-          </article>
-        </div>
+          </motion.article>
+        </motion.div>
         {/* Contacto */}
         <div id="contacto" className="scroll-mt-32 mt-24">
           <div className="rounded-[2.5rem] border border-border bg-card backdrop-blur-sm backdrop-blur-sm p-6 sm:p-10 shadow-[0_25px_80px_rgba(76,29,149,0.08)]">

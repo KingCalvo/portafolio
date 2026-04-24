@@ -54,9 +54,15 @@ type TechGroup = {
 
 function TechChip({ item }: { item: TechItem }) {
   const { Icon, color } = item;
+  const isDarkColor =
+    color === "#000000" ||
+    color === "#111111" ||
+    color === "#000020" ||
+    color === "#181717";
 
   return (
     <div
+      data-dark={isDarkColor ? "true" : "false"}
       className="group relative flex flex-col items-center justify-center rounded-2xl bg-card px-4 py-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md w-full"
       style={
         {
@@ -67,8 +73,8 @@ function TechChip({ item }: { item: TechItem }) {
       {/* Icono */}
       <Icon
         size={30}
-        style={{ color }}
-        className="transition duration-300 group-hover:scale-110"
+        data-dark={isDarkColor ? "true" : "false"}
+        className="tech-icon transition duration-300 group-hover:scale-110"
       />
 
       {/* Texto */}
@@ -77,12 +83,7 @@ function TechChip({ item }: { item: TechItem }) {
       </span>
 
       {/* Glow */}
-      <div
-        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100"
-        style={{
-          boxShadow: `0 0 22px var(--tech-color)`,
-        }}
-      />
+      <div className="tech-glow pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100" />
     </div>
   );
 }
@@ -244,6 +245,7 @@ export default function About() {
                     src="/images/contenido/foto.jpg"
                     alt="Foto de Enrique Calvo Garcia"
                     fill
+                    sizes="224px"
                     className="object-cover"
                     priority
                   />

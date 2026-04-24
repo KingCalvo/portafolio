@@ -26,6 +26,7 @@ import { FaDatabase } from "react-icons/fa6";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const locale = useLocale();
@@ -76,6 +77,32 @@ export default function Hero() {
     { name: "Python", Icon: SiPython, color: "#3776AB" },
   ];
 
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1] as const,
+      },
+    },
+  };
+
   return (
     <section id="home" className="bg-background text-foreground flex flex-col">
       {/* Hero */}
@@ -101,8 +128,17 @@ export default function Hero() {
             <div className="mt-8 flex justify-center gap-2 sm:gap-4 lg:justify-start">
               <Link
                 href="/projects"
-                onMouseEnter={() => setIsHoveringCTA(true)}
-                onMouseLeave={() => setIsHoveringCTA(false)}
+                onMouseEnter={() => {
+                  if (hoverTimeout) clearTimeout(hoverTimeout);
+                  setIsHoveringCTA(true);
+                }}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setIsHoveringCTA(false);
+                  }, 300);
+
+                  setHoverTimeout(timeout);
+                }}
                 className="inline-flex items-center gap-2 rounded-full bg-primary-800 px-4 py-2 text-sm text-center sm:px-6 sm:py-3 sm:text-base font-medium text-white shadow-md transition hover:-translate-y-0.5 hover:bg-primary-900 hover:shadow-lg"
               >
                 <Folder size={18} className="hidden sm:inline" />
@@ -112,8 +148,17 @@ export default function Hero() {
                 href="https://wa.me/7351241139"
                 target="_blank"
                 rel="noopener noreferrer"
-                onMouseEnter={() => setIsHoveringCTA(true)}
-                onMouseLeave={() => setIsHoveringCTA(false)}
+                onMouseEnter={() => {
+                  if (hoverTimeout) clearTimeout(hoverTimeout);
+                  setIsHoveringCTA(true);
+                }}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setIsHoveringCTA(false);
+                  }, 300);
+
+                  setHoverTimeout(timeout);
+                }}
                 className="inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
               >
                 <FaWhatsapp size={24} />
@@ -123,8 +168,17 @@ export default function Hero() {
                 href="https://mail.google.com/mail/?view=cm&to=enriquecalvo.dev@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                onMouseEnter={() => setIsHoveringCTA(true)}
-                onMouseLeave={() => setIsHoveringCTA(false)}
+                onMouseEnter={() => {
+                  if (hoverTimeout) clearTimeout(hoverTimeout);
+                  setIsHoveringCTA(true);
+                }}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setIsHoveringCTA(false);
+                  }, 300);
+
+                  setHoverTimeout(timeout);
+                }}
                 className="inline-flex items-center gap-2 rounded-full bg-[#EA4335] px-4 py-2 text-sm sm:px-6 sm:py-3 sm:text-base text-white font-bold shadow-md transition hover:-translate-y-0.5 hover:bg-[#C5221F] hover:shadow-lg"
               >
                 <SiGmail size={16} />
@@ -141,8 +195,17 @@ export default function Hero() {
                 <a
                   href="https://www.linkedin.com/in/enrique-calvo-garcia-022151168/"
                   aria-label="LinkedIn"
-                  onMouseEnter={() => setIsHoveringCTA(true)}
-                  onMouseLeave={() => setIsHoveringCTA(false)}
+                  onMouseEnter={() => {
+                    if (hoverTimeout) clearTimeout(hoverTimeout);
+                    setIsHoveringCTA(true);
+                  }}
+                  onMouseLeave={() => {
+                    const timeout = setTimeout(() => {
+                      setIsHoveringCTA(false);
+                    }, 300);
+
+                    setHoverTimeout(timeout);
+                  }}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-blue-500 transition duration-300 hover:-translate-y-0.5 hover:bg-blue-800 hover:shadow-md"
                 >
                   <Linkedin className="text-white" size={18} />
@@ -151,8 +214,17 @@ export default function Hero() {
                 <a
                   href="https://github.com/KingCalvo"
                   aria-label="GitHub"
-                  onMouseEnter={() => setIsHoveringCTA(true)}
-                  onMouseLeave={() => setIsHoveringCTA(false)}
+                  onMouseEnter={() => {
+                    if (hoverTimeout) clearTimeout(hoverTimeout);
+                    setIsHoveringCTA(true);
+                  }}
+                  onMouseLeave={() => {
+                    const timeout = setTimeout(() => {
+                      setIsHoveringCTA(false);
+                    }, 300);
+
+                    setHoverTimeout(timeout);
+                  }}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-slate-900 transition duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
                 >
                   <Github className="text-white" size={18} />
@@ -173,6 +245,7 @@ export default function Hero() {
                   }
                   alt="Avatar de Enrique"
                   fill
+                  sizes="(max-width: 640px) 360px, (max-width: 1024px) 380px, 480px"
                   className="object-cover transition duration-500"
                   priority
                 />
@@ -290,6 +363,7 @@ export default function Hero() {
                       src="/images/contenido/foto.jpg"
                       alt="Foto de Enrique Calvo Garcia"
                       fill
+                      sizes="224px"
                       className="object-cover"
                       priority
                     />
@@ -366,11 +440,18 @@ export default function Hero() {
           </div>
 
           {/* Cards */}
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+          >
             {featuredProjects.map((item) => (
-              <article
+              <motion.article
+                variants={itemVariants}
                 key={item.slug}
-                className="group flex flex-col overflow-hidden rounded-[2rem] border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex flex-col overflow-hidden rounded-[2rem] border border-border bg-card shadow-sm transition duration-300 hover:shadow-lg"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-muted">
                   <Image
@@ -412,9 +493,9 @@ export default function Hero() {
                     </Link>
                   </div>
                 </div>
-              </article>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -422,7 +503,7 @@ export default function Hero() {
       <div className="bg-background py-20 lg:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <div className="text-center">
-            <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300 hover:-translate-y-1">
+            <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl transition duration-300">
               {t("servicesTitle")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground sm:text-base">
@@ -440,9 +521,18 @@ export default function Hero() {
           </div>
 
           {/* Cards */}
-          <div className="mt-12 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, margin: "-100px" }}
+            className="mt-12 grid gap-y-10 lg:gap-y-16 gap-x-6 md:grid-cols-2 xl:grid-cols-3"
+          >
             {/* Card 1 */}
-            <article className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-card shadow-xl scale-[1.03] z-10 transition duration-300 hover:-translate-y-2 hover:shadow-2xl before:absolute before:inset-0 before:rounded-4xl before:bg-blue-400/10 before:blur-xl before:opacity-70 before:-z-10">
+            <motion.article
+              variants={itemVariants}
+              className="overflow-hidden rounded-[2rem] border border-blue-400/30 ring-2 ring-blue-400/20 bg-card shadow-xl scale-[1.03] z-10"
+            >
               {/* Badge */}
               <span className="absolute right-4 top-4 z-10 rounded-full bg-blue-400 px-3 py-1 text-sm font-semibold text-white">
                 {t("featured")}
@@ -451,10 +541,10 @@ export default function Hero() {
               {/* Imagen */}
               <div className="relative aspect-16/10 overflow-hidden">
                 <Image
-                  src="/images/projects/chivalry.jpg"
+                  src="/images/servicios/SiteWeb.png"
                   alt="Sitios web"
                   fill
-                  className="object-cover transition duration-500 group-hover:scale-105"
+                  className="object-fill"
                 />
               </div>
 
@@ -477,16 +567,19 @@ export default function Hero() {
                   </Link>
                 </div>
               </div>
-            </article>
+            </motion.article>
 
             {/* Card 2 */}
-            <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <motion.article
+              variants={itemVariants}
+              className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm"
+            >
               <div className="relative aspect-16/10 overflow-hidden">
                 <Image
-                  src="/images/projects/chivalry.jpg"
-                  alt="Sitios web"
+                  src="/images/servicios/WebApp.png"
+                  alt="Aplicaciones web"
                   fill
-                  className="object-cover transition duration-500 group-hover:scale-105"
+                  className="object-fill"
                 />
               </div>
 
@@ -509,16 +602,19 @@ export default function Hero() {
                   </Link>
                 </div>
               </div>
-            </article>
+            </motion.article>
 
             {/* Card 3 */}
-            <article className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <motion.article
+              variants={itemVariants}
+              className="group flex flex-col overflow-hidden rounded-4xl border border-border bg-card shadow-sm"
+            >
               <div className="relative aspect-16/10 overflow-hidden">
                 <Image
-                  src="/images/projects/chivalry.jpg"
-                  alt="Sitios web"
+                  src="/images/servicios/IA.png"
+                  alt="Integración con IA"
                   fill
-                  className="object-cover transition duration-500 group-hover:scale-105"
+                  className="object-fill"
                 />
               </div>
 
@@ -541,8 +637,8 @@ export default function Hero() {
                   </Link>
                 </div>
               </div>
-            </article>
-          </div>
+            </motion.article>
+          </motion.div>
         </div>
       </div>
     </section>

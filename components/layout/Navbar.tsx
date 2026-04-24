@@ -69,7 +69,10 @@ export default function Navbar({ initialMode }: { initialMode: ThemeMode }) {
   const pathname = usePathname();
   const cleanPath = pathname.replace(/^\/(es|en)/, "") || "/";
   const changeLanguage = (lang: "es" | "en") => {
+    document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000; samesite=lax`;
     router.replace(pathname, { locale: lang });
+    router.refresh();
+    setLanguageOpen(false);
   };
 
   useEffect(() => {

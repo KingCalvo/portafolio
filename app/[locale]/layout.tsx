@@ -3,8 +3,9 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Chatbot from "@/components/chatbot/Chatbot";
 import { NextIntlClientProvider } from "next-intl";
-import Script from "next/script";
+import DisableBfcache from "@/components/layout/DisableBfcache";
 import { cookies } from "next/headers";
+import ConsoleLegend from "@/components/molecules/ConsoleLegend";
 
 export async function generateMetadata({
   params,
@@ -49,9 +50,16 @@ export default async function LocaleLayout({
     .default;
 
   return (
-    <html lang={currentLocale} data-mode={mode} suppressHydrationWarning>
+    <html
+      lang={currentLocale}
+      data-mode={mode}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       <body className="bg-background text-foreground">
         <NextIntlClientProvider locale={currentLocale} messages={messages}>
+          <ConsoleLegend />
+          <DisableBfcache />
           <Navbar initialMode={mode} />
           {children}
           <Chatbot />
