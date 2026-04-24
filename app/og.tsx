@@ -2,9 +2,12 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const locale = searchParams.get("locale") || "es";
+export default function OG({
+  searchParams,
+}: {
+  searchParams: { locale?: string };
+}) {
+  const locale = searchParams.locale || "es";
 
   const isEnglish = locale === "en";
 
@@ -30,7 +33,6 @@ export async function GET(request: Request) {
         fontFamily: "sans-serif",
       }}
     >
-      {/* TEXT */}
       <div style={{ maxWidth: 700 }}>
         <h1 style={{ fontSize: 64, marginBottom: 20 }}>{title}</h1>
         <p
@@ -45,7 +47,6 @@ export async function GET(request: Request) {
         </p>
       </div>
 
-      {/* AVATAR */}
       <div
         style={{
           width: 300,
