@@ -30,12 +30,18 @@ function FlagMX() {
   return (
     <svg
       viewBox="0 0 640 480"
-      className="h-4 w-6 overflow-hidden rounded-sm"
+      className="h-4 w-6 rounded-sm overflow-hidden"
       aria-hidden="true"
     >
-      <rect width="213.3" height="480" fill="#006847" />
-      <rect x="213.3" width="213.4" height="480" fill="#fff" />
-      <rect x="426.6" width="213.4" height="480" fill="#ce1126" />
+      <rect width="213.333" height="480" fill="#006847" />
+      <rect x="213.333" width="213.333" height="480" fill="#ffffff" />
+      <rect x="426.666" width="213.334" height="480" fill="#ce1126" />
+
+      <g transform="translate(320 240)">
+        <circle r="46" fill="#8b5a2b" opacity="0.15" />
+        <circle r="26" fill="#8b5a2b" />
+        <circle r="10" fill="#c9a227" />
+      </g>
     </svg>
   );
 }
@@ -44,13 +50,23 @@ function FlagUS() {
   return (
     <svg
       viewBox="0 0 640 480"
-      className="h-4 w-6 overflow-hidden rounded-sm"
+      className="h-4 w-6 rounded-sm overflow-hidden"
       aria-hidden="true"
     >
-      <rect width="640" height="480" fill="#fff" />
-      {Array.from({ length: 7 }).map((_, i) => (
-        <rect key={i} y={i * 68.6} width="640" height="34.3" fill="#b22234" />
-      ))}
+      <rect width="640" height="480" fill="#ffffff" />
+
+      {Array.from({ length: 13 }).map((_, i) =>
+        i % 2 === 0 ? (
+          <rect
+            key={i}
+            y={i * 36.923}
+            width="640"
+            height="36.923"
+            fill="#b22234"
+          />
+        ) : null,
+      )}
+
       <rect width="280" height="260" fill="#3c3b6e" />
     </svg>
   );

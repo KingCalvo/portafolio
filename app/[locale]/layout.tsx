@@ -79,7 +79,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   const cookieStore = await cookies();
-  const mode = cookieStore.get("mode")?.value === "dark" ? "dark" : "light";
+  const mode = cookieStore.get("mode")?.value === "light" ? "light" : "dark";
 
   const validLocales = ["es", "en"];
   const currentLocale = validLocales.includes(locale) ? locale : "es";
