@@ -153,6 +153,68 @@ export const portfolioData = {
     {
       slug: "proyecto-03",
       title:
+        "EncryptPath: Plataforma web para cifrado, descifrado, hashing y análisis hexadecimal de archivos",
+      description:
+        "EncryptPath es una aplicación web enfocada en la seguridad digital y manipulación avanzada de archivos mediante criptografía moderna. La plataforma permite cargar documentos, visualizar su contenido a nivel de bytes, cifrar y descifrar archivos protegidos con contraseña, así como generar hashes SHA-256 para verificar integridad. \n\nTambién incorpora un visor hexadecimal interactivo estilo hacker que facilita inspeccionar, editar y analizar datos binarios en tiempo real desde una interfaz moderna, rápida y responsive.",
+      images: [
+        "/images/projects/EncryptPath/EncryptPath-Inicio-1.png",
+        "/images/projects/EncryptPath/EncryptPath-Inicio-2.png",
+        "/images/projects/EncryptPath/EncryptPath-Inicio-3.png",
+        "/images/projects/EncryptPath/EncryptPath-1.png",
+        "/images/projects/EncryptPath/EncryptPath-2.png",
+        "/images/projects/EncryptPath/EncryptPath-3.png",
+        "/images/projects/EncryptPath/EncryptPath-4.png",
+        "/images/projects/EncryptPath/EncryptPath-5.png",
+        "/images/projects/EncryptPath/EncryptPath-6.png",
+        "/images/projects/EncryptPath/EncryptPath-7.png",
+        "/images/projects/EncryptPath/EncryptPath-8.png",
+        "/images/projects/EncryptPath/EncryptPath-9.png",
+        "/images/projects/EncryptPath/EncryptPath-10.png",
+        "/images/projects/EncryptPath/EncryptPath-11.png",
+        "/images/projects/EncryptPath/EncryptPath-12.png",
+        "/images/projects/EncryptPath/EncryptPath-13.png",
+        "/images/projects/EncryptPath/EncryptPath-14.png",
+        "/images/projects/EncryptPath/EncryptPath-15.png",
+        "/images/projects/EncryptPath/EncryptPath-16.png",
+      ],
+      liveDemo: "https://cifrado-gray.vercel.app",
+      githubUrl: "https://github.com/KingCalvo/cifrado",
+      documentacionUrl: "#",
+      botonDocumentacion: false,
+      botonDemo: true,
+      botonGit: true,
+      featuresHeight: 350,
+      details: {
+        technologies: [
+          "Next.js",
+          "React",
+          "JavaScript",
+          "Tailwind CSS",
+          "Web Crypto API",
+        ],
+
+        features: [
+          "Permite cargar archivos locales y convertir su contenido en bytes para procesamiento interno.",
+          "Incluye cifrado seguro de archivos utilizando AES-GCM con contraseña personalizada.",
+          "Deriva claves criptográficas mediante PBKDF2 con salt aleatorio para reforzar seguridad.",
+          "Integra verificación de integridad mediante HMAC SHA-256 para detectar modificaciones o corrupción.",
+          "Permite descifrar archivos protegidos recuperando nombre, tipo y contenido original.",
+          "Genera hashes SHA-256 de cualquier archivo cargado para validación de integridad.",
+          "Incluye botón para copiar hashes generados al portapapeles con retroalimentación visual.",
+          "Muestra estado inteligente del archivo: sin cifrar, cifrado o descifrado.",
+          "Bloquea recifrado accidental de archivos ya protegidos.",
+          "Incluye visor hexadecimal y ASCII interactivo para navegar bytes manualmente.",
+          "Permite editar bytes individuales en formato ASCII o hexadecimal.",
+          "Incluye herramientas para corromper bytes de prueba y analizar fallos de integridad.",
+          "Diseño responsive adaptado a escritorio y dispositivos móviles.",
+          "Interfaz moderna estilo ciberseguridad con experiencia visual tipo hacker.",
+        ],
+      },
+    },
+
+    {
+      slug: "proyecto-02",
+      title:
         "Energ-X: Plataforma digital para el monitoreo y gestión del consumo energético",
       description:
         "Energ-X es una aplicación web orientada al monitoreo inteligente del consumo energético. La plataforma está diseñada para registrar, organizar y visualizar información de dispositivos, áreas y edificios, con el objetivo de ayudar a administrar mejor el uso de la energía. \n\nTambién incluye módulos de autenticación, paneles de control y visualizaciones gráficas que permiten consultar consumo estimado, facturación, emisiones de CO2e y evolución histórica.",
@@ -201,7 +263,7 @@ export const portfolioData = {
     },
 
     {
-      slug: "proyecto-02",
+      slug: "proyecto-01",
       title: "SVARC: Sistema de Visión Artificial para Robots de Competencia",
       description:
         "SVARC es un robot móvil autónomo diseñado para identificar objetos en tiempo real mediante visión artificial, segmentación por color y sensores. El sistema captura imágenes con una cámara ESP32-S3-WROOM CAM, las envía por UDP a una computadora para su procesamiento y, con base en la detección y la distancia estimada al objetivo, decide movimientos como avanzar, girar o detenerse.\n\n Además, integra un chasis impreso en 3D, tracción de cuatro ruedas, sensores infrarrojos y de distancia, y un sistema de control basado en microcontroladores para operar en escenarios de competencia.",
