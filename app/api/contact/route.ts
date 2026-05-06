@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
     // Email a mi
     await resend.emails.send({
-      from: "Portafolio <onboarding@resend.dev>",
+      from: "Portafolio <noreply@enriquecalvo.site>",
       to: ["enriquecalvo75@gmail.com", "enriquecalvo.dev@gmail.com"],
       subject: "Nuevo cliente potencial 🚀",
       html: `
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     // Email al cliente
     try {
       await resend.emails.send({
-        from: "Portafolio <onboarding@resend.dev>",
+        from: "Portafolio <noreply@enriquecalvo.site>",
         to: correo,
         subject: "Recibimos tu solicitud 👋",
         html: `<p>Gracias ${nombre}, te responderé pronto.</p>`,

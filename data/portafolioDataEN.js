@@ -1,7 +1,7 @@
 export const portfolioDataEN = {
   projects: [
     {
-      slug: "proyecto-05",
+      slug: "proyecto-06",
       title: "FixGo Android Application",
       description:
         "FixGo is a mobile application focused on hiring home services such as plumbing, electricity, painting, gardening, and general maintenance. Its goal is to connect clients with nearby providers in a fast, reliable, and organized way within a single platform. \n\n The system allows managing the entire hiring process, from searching for providers to service administration. During the development of the project, the provider and administrator modules were mainly implemented, establishing a solid and scalable foundation for future functionalities.",
@@ -90,7 +90,7 @@ export const portfolioDataEN = {
     },
 
     {
-      slug: "proyecto-04",
+      slug: "proyecto-05",
       title:
         "SafeBridge: Digital platform and intelligent system for real-time flood prevention in bridges",
       description:
@@ -145,6 +145,73 @@ export const portfolioDataEN = {
           "The web application handles different user types: Administrator, Operator, Guest. Each with specific permissions, ensuring security and control of information.",
           "Allows any user to access relevant information without registration, promoting transparency.",
           "The system can activate automatic barriers and physical alarms on bridges to prevent passage in risky situations.",
+        ],
+      },
+    },
+
+    {
+      slug: "proyecto-04",
+      title:
+        "Battle Matrix: online and local strategy battle game with character selection and round-based combat",
+      description:
+        "Battle Matrix is a web-based strategy battle game where players can compete in local or online matches, choose unique characters, and fight through a lives-based round system. Its goal is to deliver a fast, dynamic, and competitive experience that combines strategy, reflexes, and tactical decisions on every turn.\n\nThe platform allows players to create or join rooms, select characters, configure the number of lives, and battle in real time. Each match includes animations, sounds, dynamic music, and visual effects that enhance the gameplay experience.\n\nIn addition, the online system synchronizes rooms, players, turns, rounds, and rematches through a real-time database, providing a smooth and stable experience for both players.",
+      images: [
+        "/images/projects/BattleMatrix/BattleMatrix-Inicio.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Modos-C.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Lobby-1.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Lobby-2.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Lobby-3.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Lobby-4.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Lobby-5.png",
+        "/images/projects/BattleMatrix/BattleMatrix-SelectOnline-1.png",
+        "/images/projects/BattleMatrix/BattleMatrix-SelectOnline-2.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-1.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-2.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-3.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-4.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-5.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-6.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-C7.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-C8.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-9.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ArenaOnline-10.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Modos-C.png",
+        "/images/projects/BattleMatrix/BattleMatrix-ModoLocal.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Select-1.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Select-2.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Arena-1.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Arena-C2.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Arena-3.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Arena-4.png",
+        "/images/projects/BattleMatrix/BattleMatrix-Arena-5.png",
+      ],
+      liveDemo: "https://battle-matrix.vercel.app",
+      githubUrl: "https://github.com/KingCalvo/Battle-Matrix",
+      documentacionUrl: "#",
+      botonDocumentacion: false,
+      botonDemo: true,
+      botonGit: true,
+      featuresHeight: 600,
+      details: {
+        technologies: [
+          "Next.js",
+          "React",
+          "JavaScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Howler",
+          "Supabase",
+          "PostgreSQL",
+        ],
+        features: [
+          "Lets users play local matches against AI or another player on the same device.",
+          "Includes online mode with rooms, real-time synchronization, and turn-based gameplay for two players.",
+          "Offers character selection, with each character having a distinct visual style in the game.",
+          "Handles rounds, lives, and final victory through competitive match logic.",
+          "Adds rematch, character change, and safe room exit systems.",
+          "Integrates music, sounds, and animations to improve the battle experience.",
+          "Includes a full gameplay flow with lobby, character selection, and arena screens.",
+          "Supports a bilingual interface in Spanish and English.",
         ],
       },
     },
