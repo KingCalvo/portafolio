@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
-import logo from "@/public/images/contenido/avatar_SaludandoM.png";
+import logo from "@/public/images/contenido/LogoDragonBlanco.png";
 
 type ThemeMode = "light" | "dark";
 

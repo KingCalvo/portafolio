@@ -248,8 +248,8 @@ export default function Hero() {
                 <Image
                   src={
                     isHoveringCTA
-                      ? "/images/contenido/avatar_PulgarL.png"
-                      : "/images/contenido/avatar_SaludandoM.png"
+                      ? "/images/contenido/LogoDragonBlanco.png"
+                      : "/images/contenido/LogoDragonBlanco.png"
                   }
                   alt="Avatar de Enrique"
                   fill
