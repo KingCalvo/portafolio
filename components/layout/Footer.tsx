@@ -54,14 +54,14 @@ export default function Footer() {
               <FaLinkedin className="transition duration-300 hover:text-blue-500 hover:scale-110" />
             </a>
 
-            <a
+            {/*             <a
               href="https://www.instagram.com/enriquecalvog/"
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
             >
               <FaInstagram className="transition duration-300 hover:text-pink-500 hover:scale-110" />
-            </a>
+            </a> */}
           </div>
         </div>
 
