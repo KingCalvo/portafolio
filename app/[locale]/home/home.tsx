@@ -248,8 +248,8 @@ export default function Hero() {
                 <Image
                   src={
                     isHoveringCTA
-                      ? "/images/contenido/LogoDragonBlanco.png"
-                      : "/images/contenido/LogoDragonBlanco.png"
+                      ? "/images/contenido/avatar_PulgarL.png"
+                      : "/images/contenido/avatar_SaludandoM.png"
                   }
                   alt="Avatar de Enrique"
                   fill
@@ -371,7 +371,7 @@ export default function Hero() {
                 <div className="flex h-[260px] items-center justify-center">
                   <div className="relative h-56 w-56 overflow-hidden rounded-full bg-muted shadow-lg">
                     <Image
-                      src="/images/contenido/foto.jpg"
+                      src="/images/contenido/YoAWS.png"
                       alt="Foto de Enrique Calvo Garcia"
                       fill
                       sizes="224px"
