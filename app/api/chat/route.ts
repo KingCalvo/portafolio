@@ -110,7 +110,7 @@ export async function POST(req: Request) {
       JavaScript, Dart, TypeScript, Python, SQL, Java
     
       Desarrollo Web:
-      React, Next.js, Node.js, Astro, Express.js, Tailwind CSS, Vite.js
+      React, Next.js, Vue.js, Node.js, Astro, Express.js, Tailwind CSS, Vite.js
     
       Desarrollo Móvil:
       Flutter, BLoC, React Native, Expo
@@ -127,7 +127,7 @@ export async function POST(req: Request) {
       JavaScript, Dart, TypeScript, Python, SQL, Java
     
       Web Development:
-      React, Next.js, Node.js, Astro, Express.js, Tailwind CSS, Vite.js
+      React, Next.js, Vue.js, Node.js, Astro, Express.js, Tailwind CSS, Vite.js
     
       Mobile Development:
       Flutter, BLoC, React Native, Expo

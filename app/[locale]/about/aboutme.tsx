@@ -30,6 +30,7 @@ import {
   SiPnpm,
   SiGooglecloud,
   SiExpo,
+  SiVuedotjs,
 } from "react-icons/si";
 import {
   FaJava,
@@ -156,6 +157,7 @@ export default function About() {
       items: [
         { name: "React", Icon: SiReact, color: "#61DAFB" },
         { name: "Next JS", Icon: SiNextdotjs, color: "#111111" },
+        { name: "Vue.js", Icon: SiVuedotjs, color: "#4FC08D" },
         { name: "NodeJS", Icon: SiNodedotjs, color: "#339933" },
         { name: "Astro", Icon: SiAstro, color: "#FF5D01" },
         { name: "Express.js", Icon: SiExpress, color: "#000000" },

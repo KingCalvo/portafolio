@@ -21,6 +21,7 @@ import {
   SiFlutter,
   SiPostgresql,
   SiDocker,
+  SiVuedotjs,
 } from "react-icons/si";
 import { FaDatabase } from "react-icons/fa6";
 import { useTranslations } from "next-intl";
@@ -73,6 +74,7 @@ export default function Hero() {
   const stack = [
     { name: "React", Icon: SiReact, color: "#61DAFB" },
     { name: "Next.js", Icon: SiNextdotjs, color: "#111111" },
+    { name: "Vue.js", Icon: SiVuedotjs, color: "#4FC08D" },
     { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
     { name: "Astro", Icon: SiAstro, color: "#FF5D01" },
     { name: "Flutter", Icon: SiFlutter, color: "#02569B" },
