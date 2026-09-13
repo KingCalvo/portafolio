@@ -135,6 +135,7 @@ export const portfolioData = {
           "PostgreSQL",
           "Supabase",
           "Open-Meteo",
+          "Firebase",
           "Vite",
         ],
         features: [
